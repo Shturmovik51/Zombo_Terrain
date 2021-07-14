@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player instance;
+
     [SerializeField] private CharacterController charControl;
     [SerializeField] private Transform groundDetector;
     [SerializeField] private Transform head;
@@ -13,6 +15,9 @@ public class Player : MonoBehaviour
     [SerializeField] private int sensitivity;
     [SerializeField] private int jumpForse;
 
+    private Health playerHealth;
+    public Health PlayerHealth { get { return playerHealth; } set { playerHealth = value; } }
+
     private Vector3 gravitation;
     private Vector3 oldPos;
     private Vector3 newPos;
@@ -21,6 +26,11 @@ public class Player : MonoBehaviour
     private int shiftedSpeed;
     private int playerVelosity;
 
+    private void Awake()
+    {
+        instance = this;
+        PlayerHealth = GetComponent<Health>();
+    }
     void Start()
     {
         isGrounded = false;
@@ -33,8 +43,13 @@ public class Player : MonoBehaviour
     {
         PlayerMovement();
         PlayerLook();
-    }
 
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            playerHealth.TakeDamage(5);
+        }
+    }
+    
     private void PlayerMovement()
     {
         float x = Input.GetAxis("Horizontal");
