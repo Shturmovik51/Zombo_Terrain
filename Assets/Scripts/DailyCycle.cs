@@ -18,7 +18,6 @@ public class DailyCycle : MonoBehaviour
         dayCloudColor = cloudsMaterial.material.GetColor("_TintColor"); 
     }
 
-
     private void FixedUpdate()
     {
         DirLightRotation();
@@ -31,7 +30,7 @@ public class DailyCycle : MonoBehaviour
         Vector3 axis;
 
         transform.rotation.ToAngleAxis(out angle, out axis);
-        Debug.Log(angle);        
+        //Debug.Log(angle);        
 
         if (isOnSpeedRotation)
         {
