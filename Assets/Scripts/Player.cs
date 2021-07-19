@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -9,14 +7,16 @@ public class Player : MonoBehaviour
     [SerializeField] private CharacterController charControl;
     [SerializeField] private Transform groundDetector;
     [SerializeField] private Transform head;
+    [SerializeField] private Transform leftHand;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private Light flashLight;
     [SerializeField] private float gravityForse;
     [SerializeField] private int playerSpeed;
     [SerializeField] private int sensitivity;
     [SerializeField] private int jumpForse;
 
     private Health playerHealth;
-    public Health PlayerHealth { get { return playerHealth; } set { playerHealth = value; } }
+    public Health PlayerHealth => playerHealth;
 
     private Vector3 gravitation;
     private Vector3 oldPos;
@@ -28,8 +28,9 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
-        PlayerHealth = GetComponent<Health>();
+        if (instance == null)
+            instance = this;
+        playerHealth = GetComponent<Health>();
     }
     void Start()
     {
@@ -44,9 +45,16 @@ public class Player : MonoBehaviour
         PlayerMovement();
         PlayerLook();
 
-        if (Input.GetKeyDown(KeyCode.B))
-        {
+        if (Input.GetKeyDown(KeyCode.B))       
             playerHealth.TakeDamage(5);
+
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (!flashLight.enabled)
+                flashLight.enabled = true;
+            else if (flashLight.enabled)
+                flashLight.enabled = false;
         }
     }
     
@@ -94,5 +102,6 @@ public class Player : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -45f, 45f);
         transform.Rotate(0f, mouseLookX, 0f);
         head.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        leftHand.localRotation = Quaternion.Euler(xRotation, 0, 0);
     }
 }

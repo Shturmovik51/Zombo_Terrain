@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,7 +19,7 @@ public class GUIwork : MonoBehaviour
     }
     void OnGUI()
     {
-        if(Time.timeScale == 0)
+        if (Time.timeScale == 0)
         {
             avatarColor = avatar.color;
 
@@ -40,7 +38,7 @@ public class GUIwork : MonoBehaviour
             healthLength = Player.instance.PlayerHealth.CurrentHealth * deltaHealthLength;
         else
             healthLength = 0;
-            
+
         GUI.DrawTexture(new Rect(Screen.width * 0.5f - 100, 10, healthLength, 20), health);
 
     }
