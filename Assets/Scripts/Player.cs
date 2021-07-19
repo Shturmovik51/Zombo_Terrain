@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
         if (instance == null)
             instance = this;
         playerHealth = GetComponent<Health>();
+        playerHealth.DeathEntity += PlayerDeath;
     }
     void Start()
     {
@@ -38,10 +39,12 @@ public class Player : MonoBehaviour
         xRotation = 0f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        
     }
 
     void Update()
-    {
+    {        
         PlayerMovement();
         PlayerLook();
 
@@ -103,5 +106,10 @@ public class Player : MonoBehaviour
         transform.Rotate(0f, mouseLookX, 0f);
         head.localRotation = Quaternion.Euler(xRotation, 0, 0);
         leftHand.localRotation = Quaternion.Euler(xRotation, 0, 0);
+    }
+
+    private void PlayerDeath()
+    {
+        Debug.Log("Умер!");
     }
 }

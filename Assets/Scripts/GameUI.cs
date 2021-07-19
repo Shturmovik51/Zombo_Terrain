@@ -4,11 +4,11 @@ using UnityEngine.UI;
 public class GameUI : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private DailyCycle dailyCycle;   
     [SerializeField] private Button DayBtn;
     [SerializeField] private Button SunSetBtn;
     [SerializeField] private Button NightBtn;
     [SerializeField] private Button SunRiseBtn;
-    [SerializeField] private DailyCycle dailyCycle;   
 
     private void Awake()
     {

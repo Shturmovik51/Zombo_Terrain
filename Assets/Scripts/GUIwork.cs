@@ -3,15 +3,16 @@ using UnityEngine.UI;
 
 public class GUIwork : MonoBehaviour
 {
-    public Color avatarColor;
-    public Color avatarBGColor;
-    public Texture2D healthBar;
-    public Texture2D health;
-    public Image avatar;
-    public Image avatarBG;
-    public float healthLength;
-    float healthLengthMax;
-    float deltaHealthLength;
+    [SerializeField] private Texture2D health;
+    [SerializeField] private Texture2D healthBar;
+    [SerializeField] private Color avatarColor;
+    [SerializeField] private Color avatarBGColor;
+    [SerializeField] private Image avatar;
+    [SerializeField] private Image avatarBG;   
+    
+    private float deltaHealthLength;
+    private float healthLengthMax;
+    private float healthLength;
     private void Start()
     {
         healthLengthMax = 200;

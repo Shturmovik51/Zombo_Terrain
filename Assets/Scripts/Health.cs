@@ -4,14 +4,17 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
-    public UnityAction deathEntity;
-    public UnityAction<int> updateHP;
+    private UnityAction<int> updateHP;
+    private UnityAction deathEntity;
     private int currentHealth;
-    public int CurrentHealth { get { return currentHealth; } set { currentHealth = value;} }
-    
+
+    public UnityAction<int> UpdateHP { get { return updateHP; } set { updateHP = value; } }
+    public UnityAction DeathEntity { get { return deathEntity; } set { deathEntity = value; } }
+    public int CurrentHealth => currentHealth;
+        
     private void Start()
     {
-        GameManager.instance.healthContainer.Add(gameObject, this);
+        GameManager.instance.HealthContainer.Add(gameObject, this);
         currentHealth = maxHealth;
     }    
 
@@ -22,7 +25,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0f)
         {
-            GameManager.instance.healthContainer.Remove(gameObject);
+            GameManager.instance.HealthContainer.Remove(gameObject);
             deathEntity?.Invoke();
             //Destroy(this);
         }
