@@ -13,10 +13,13 @@ public class GUIwork : MonoBehaviour
     private float deltaHealthLength;
     private float healthLengthMax;
     private float healthLength;
+    private int currentHealth;
     private void Start()
     {
         healthLengthMax = 200;
-        deltaHealthLength = healthLengthMax / Player.instance.PlayerHealth.CurrentHealth;
+        if (Player.instance != null)
+            currentHealth = Player.instance.PlayerHealth.CurrentHealth;
+        deltaHealthLength = healthLengthMax / currentHealth;
     }
     void OnGUI()
     {
@@ -35,8 +38,11 @@ public class GUIwork : MonoBehaviour
 
         GUI.DrawTexture(new Rect(Screen.width * 0.5f - 100, 10, healthLengthMax, 20), healthBar);
 
+        if (Player.instance != null)
+            currentHealth = Player.instance.PlayerHealth.CurrentHealth;
+
         if (healthLength >= 0)
-            healthLength = Player.instance.PlayerHealth.CurrentHealth * deltaHealthLength;
+            healthLength = currentHealth * deltaHealthLength;
         else
             healthLength = 0;
 
