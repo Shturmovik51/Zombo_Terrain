@@ -25,11 +25,7 @@ public class Zomby : MonoBehaviour
     private float xRotation;
     private bool isGrounded;
     private int shiftedSpeed;
-    private bool isOnForwardMoove;
-    private bool isOnBackwardMoove;
-    private bool isOnLeftMoove;
-    private bool isOnRightMoove;
-    private bool isStanding;
+    private float angle;
     private void Awake()
     {
         if (instance == null)
@@ -47,6 +43,9 @@ public class Zomby : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0)
+            return;
+
         ZombyMovement();
         ZombyLook();
         ZombyJump();
@@ -72,24 +71,18 @@ public class Zomby : MonoBehaviour
 
         charControl.Move(moveDirection * (zombySpeed + shiftedSpeed) * Time.deltaTime);
 
+        zombyAnimator.SetFloat("Zwalk", z);
+        zombyAnimator.SetFloat("Xwalk", x);
+
+        if(shiftedSpeed == zombySpeed)
+            zombyAnimator.SetBool("isRunning", true);
+        else
+            zombyAnimator.SetBool("isRunning", false);
+
         if (z != 0 || x != 0)
-        {
-            zombyAnimator.SetFloat("Zwalk", z);
-            zombyAnimator.SetFloat("Xwalk", x);
-            zombyAnimator.SetBool("isWalking", true);
-        }
-        
-        //if (z > 0 && shiftedSpeed == 0)
-        //{
-        //    zombyAnimator.SetBool("isWalking", true);
-        //    zombyAnimator.SetBool("isRunning", false);
-        //}
-        //if (z > 0 && shiftedSpeed == zombySpeed)
-        //    zombyAnimator.SetBool("isRunning", true);
-        //if (z == 0)
-        //    zombyAnimator.SetBool("isWalking", false);
-
-
+            zombyAnimator.SetBool("isWalking", true);             
+        else
+            zombyAnimator.SetBool("isWalking", false);
     }
 
     private void ZombyJump()
@@ -111,13 +104,25 @@ public class Zomby : MonoBehaviour
 
     private void ZombyLook()
     {
-        var mouseLookX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-        var mouseLookY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+        var mouseLookX = Input.GetAxis("Mouse X");
+        var mouseLookY = Input.GetAxis("Mouse Y");
 
-        xRotation -= mouseLookY;
+        xRotation -= mouseLookY * sensitivity * Time.deltaTime;
         xRotation = Mathf.Clamp(xRotation, -45f, 45f);
-        transform.Rotate(0f, mouseLookX, 0f);
+        transform.Rotate(0f, mouseLookX * sensitivity * Time.deltaTime, 0f);
         cameraPos.localRotation = Quaternion.Euler(xRotation, 0, 0);
+
+        if (mouseLookX == 0)
+            angle = Mathf.Lerp(angle,0,0.1f);
+        if (mouseLookX > 0)
+            if (angle < mouseLookX)
+                angle = mouseLookX;        
+        if (mouseLookX < 0)
+            if (angle > mouseLookX)
+                angle = mouseLookX;
+       
+        zombyAnimator.SetFloat("Rotation", angle);
+        
     }
 
     private void ZombyDeath()

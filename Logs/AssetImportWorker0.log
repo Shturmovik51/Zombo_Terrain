@@ -2498,3 +2498,2445 @@ System memory in use after: 116.2 MB.
 Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2388.
 Total: 7.358700 ms (FindLiveObjects: 0.243000 ms CreateObjectMapping: 0.080200 ms MarkObjects: 7.003400 ms  DeleteObjects: 0.030200 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003158 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.059 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.1 MB.
+System memory in use after: 116.2 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2391.
+Total: 7.746200 ms (FindLiveObjects: 0.283300 ms CreateObjectMapping: 0.174000 ms MarkObjects: 7.257200 ms  DeleteObjects: 0.029500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 37541.462981 seconds.
+  path: Assets/Animations/Male Drunk Pack
+  artifactKey: Guid(e39c96cda242b364ba4c990660a0c078) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack using Guid(e39c96cda242b364ba4c990660a0c078) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e252bb77a4dac69c0dc32a5ce7b6e1d') in 0.011156 seconds
+  Import took 0.017132 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.834911 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk running left turn.fbx
+  artifactKey: Guid(caf1ac4406ca9dd48aa6bdaaddddf23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk running left turn.fbx using Guid(caf1ac4406ca9dd48aa6bdaaddddf23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc3e4a1839111caea71decbbc27137cc') in 0.052007 seconds
+  Import took 0.057382 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001152 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk running left turn.fbx
+  artifactKey: Guid(caf1ac4406ca9dd48aa6bdaaddddf23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk running left turn.fbx using Guid(caf1ac4406ca9dd48aa6bdaaddddf23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc3e4a1839111caea71decbbc27137cc') in 0.008709 seconds
+  Import took 0.013665 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.072305 seconds.
+  path: Assets/Animations/Male Drunk Pack/backward walking turn.fbx
+  artifactKey: Guid(621eacb24c7964545af907fdee932b36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/backward walking turn.fbx using Guid(621eacb24c7964545af907fdee932b36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '433f1556597ac4a0e90c3d2e94893aca') in 0.015414 seconds
+  Import took 0.021986 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.028650 seconds.
+  path: Assets/Animations/Male Drunk Pack/backward walking turn.fbx
+  artifactKey: Guid(621eacb24c7964545af907fdee932b36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/backward walking turn.fbx using Guid(621eacb24c7964545af907fdee932b36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '433f1556597ac4a0e90c3d2e94893aca') in 0.010522 seconds
+  Import took 0.014170 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.016549 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk idle variation.fbx
+  artifactKey: Guid(27553c92958de1349845ae00978f2ab2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk idle variation.fbx using Guid(27553c92958de1349845ae00978f2ab2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bae0a443240bd1bcc90f2b0195184706') in 0.015333 seconds
+  Import took 0.019093 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.272857 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk idle variation.fbx
+  artifactKey: Guid(27553c92958de1349845ae00978f2ab2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk idle variation.fbx using Guid(27553c92958de1349845ae00978f2ab2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec8c054b9a932297dfde6a2fbc88aed7') in 0.014224 seconds
+  Import took 0.018363 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.049710 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk idle variation.fbx
+  artifactKey: Guid(27553c92958de1349845ae00978f2ab2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk idle variation.fbx using Guid(27553c92958de1349845ae00978f2ab2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec8c054b9a932297dfde6a2fbc88aed7') in 0.009488 seconds
+  Import took 0.014084 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.056260 seconds.
+  path: Assets/Animations/Male Drunk Pack/backward walking turn.fbx
+  artifactKey: Guid(621eacb24c7964545af907fdee932b36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/backward walking turn.fbx using Guid(621eacb24c7964545af907fdee932b36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8c8e4c58942e7367905d3e8ac1eaa5e') in 0.016613 seconds
+  Import took 0.021021 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.031544 seconds.
+  path: Assets/Animations/Male Drunk Pack/backward walking turn.fbx
+  artifactKey: Guid(621eacb24c7964545af907fdee932b36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/backward walking turn.fbx using Guid(621eacb24c7964545af907fdee932b36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8c8e4c58942e7367905d3e8ac1eaa5e') in 0.010560 seconds
+  Import took 0.014552 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.942313 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk idle.fbx
+  artifactKey: Guid(c9a0dd444557745489f011be65b1288b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk idle.fbx using Guid(c9a0dd444557745489f011be65b1288b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99801109c88567a63ce8b30709263e53') in 0.022635 seconds
+  Import took 0.028223 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018232 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk idle.fbx
+  artifactKey: Guid(c9a0dd444557745489f011be65b1288b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk idle.fbx using Guid(c9a0dd444557745489f011be65b1288b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99801109c88567a63ce8b30709263e53') in 0.010989 seconds
+  Import took 0.014934 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.388023 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk running left turn.fbx
+  artifactKey: Guid(caf1ac4406ca9dd48aa6bdaaddddf23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk running left turn.fbx using Guid(caf1ac4406ca9dd48aa6bdaaddddf23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0e41c70363f36ddfcbb2fe64522d653') in 0.017810 seconds
+  Import took 0.022027 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.029499 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk running left turn.fbx
+  artifactKey: Guid(caf1ac4406ca9dd48aa6bdaaddddf23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk running left turn.fbx using Guid(caf1ac4406ca9dd48aa6bdaaddddf23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0e41c70363f36ddfcbb2fe64522d653') in 0.008286 seconds
+  Import took 0.013692 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.748727 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk walking turn.fbx
+  artifactKey: Guid(79983d328b47fe1408017e39fbfbb4c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk walking turn.fbx using Guid(79983d328b47fe1408017e39fbfbb4c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4403708884c41f77d3a77f50e9ab64a4') in 0.027271 seconds
+  Import took 0.031351 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007968 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk walking turn.fbx
+  artifactKey: Guid(79983d328b47fe1408017e39fbfbb4c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk walking turn.fbx using Guid(79983d328b47fe1408017e39fbfbb4c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4403708884c41f77d3a77f50e9ab64a4') in 0.009384 seconds
+  Import took 0.013128 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 31.395158 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk turn.fbx
+  artifactKey: Guid(77b86b3cf2ec72144bc373f44751fd80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk turn.fbx using Guid(77b86b3cf2ec72144bc373f44751fd80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '751e049caae3d9acfa120b3b4cc0a276') in 0.023008 seconds
+  Import took 0.029718 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.024561 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk turn.fbx
+  artifactKey: Guid(77b86b3cf2ec72144bc373f44751fd80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk turn.fbx using Guid(77b86b3cf2ec72144bc373f44751fd80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '751e049caae3d9acfa120b3b4cc0a276') in 0.008486 seconds
+  Import took 0.012937 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 416.824035 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Left Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Left Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '551259236153ffe42b8f166758aa88f3') in 0.017819 seconds
+  Import took 0.024015 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.029499 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Left Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Left Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '551259236153ffe42b8f166758aa88f3') in 0.011124 seconds
+  Import took 0.015563 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.059124 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Left Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Left Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa900e71faf58bc53112dc62246e2859') in 0.019599 seconds
+  Import took 0.024114 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 846.610994 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Left Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Left Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa78be450a8ffea7a8b72037673c0ef2') in 0.020311 seconds
+  Import took 0.026940 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.041744 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Left Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Left Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa78be450a8ffea7a8b72037673c0ef2') in 0.011927 seconds
+  Import took 0.016407 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 76.372997 seconds.
+  path: Assets/Animations/Scary Zombie Pack/zombie crawl.fbx
+  artifactKey: Guid(5525d9fcd95bea3499e9299ac4e0c559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/zombie crawl.fbx using Guid(5525d9fcd95bea3499e9299ac4e0c559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '214f5a90d5fd3e80e2bb0c21ab369934') in 0.023660 seconds
+  Import took 0.028397 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.046202 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Left Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Left Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5c6e7cd14c8dbd440580c445ca5d8f9') in 0.017493 seconds
+  Import took 0.043876 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008168 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Left Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Left Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5c6e7cd14c8dbd440580c445ca5d8f9') in 0.011764 seconds
+  Import took 0.015565 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.716806 seconds.
+  path: Assets/Animations/Scary Zombie Pack/zombie crawl.fbx
+  artifactKey: Guid(5525d9fcd95bea3499e9299ac4e0c559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/zombie crawl.fbx using Guid(5525d9fcd95bea3499e9299ac4e0c559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '991e0dd9645a8844d60655632a1a805b') in 0.015072 seconds
+  Import took 0.020692 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.027397 seconds.
+  path: Assets/Animations/Scary Zombie Pack/zombie crawl.fbx
+  artifactKey: Guid(5525d9fcd95bea3499e9299ac4e0c559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/zombie crawl.fbx using Guid(5525d9fcd95bea3499e9299ac4e0c559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '991e0dd9645a8844d60655632a1a805b') in 0.012767 seconds
+  Import took 0.017182 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2378.334588 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Walk Strafe Right.fbx
+  artifactKey: Guid(085b145524447c3438ff376e9f03cb1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Walk Strafe Right.fbx using Guid(085b145524447c3438ff376e9f03cb1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad89d6feaa1797df497fce1300564176') in 0.012615 seconds
+  Import took 0.020057 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.027755 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Walk Strafe Right.fbx
+  artifactKey: Guid(085b145524447c3438ff376e9f03cb1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Walk Strafe Right.fbx using Guid(085b145524447c3438ff376e9f03cb1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad89d6feaa1797df497fce1300564176') in 0.008107 seconds
+  Import took 0.012290 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.688224 seconds.
+  path: Assets/Animations/Scary Zombie Pack/zombie walk.fbx
+  artifactKey: Guid(e97d799ac4de88e44bc32e755e38c1dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/zombie walk.fbx using Guid(e97d799ac4de88e44bc32e755e38c1dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd12a52bea0c2dc6df58492e7d44495ca') in 0.018265 seconds
+  Import took 0.024175 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.020349 seconds.
+  path: Assets/Animations/Scary Zombie Pack/zombie walk.fbx
+  artifactKey: Guid(e97d799ac4de88e44bc32e755e38c1dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/zombie walk.fbx using Guid(e97d799ac4de88e44bc32e755e38c1dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd12a52bea0c2dc6df58492e7d44495ca') in 0.008788 seconds
+  Import took 0.013652 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003678 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.495 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.6 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2394.
+Total: 21.787700 ms (FindLiveObjects: 0.705100 ms CreateObjectMapping: 0.120300 ms MarkObjects: 20.875100 ms  DeleteObjects: 0.083600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 123.321699 seconds.
+  path: Assets/Animations/Scary Zombie Pack/zombie idle.fbx
+  artifactKey: Guid(9bcc4bd69a0d90441a6c03197fac8a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/zombie idle.fbx using Guid(9bcc4bd69a0d90441a6c03197fac8a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31c65f04822738cdcad5c0533287a62e') in 0.070829 seconds
+  Import took 0.076643 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003821 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.135 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2397.
+Total: 6.504000 ms (FindLiveObjects: 0.237100 ms CreateObjectMapping: 0.075400 ms MarkObjects: 6.161700 ms  DeleteObjects: 0.028400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002814 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.98 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.161 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.92 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2400.
+Total: 6.359500 ms (FindLiveObjects: 0.219900 ms CreateObjectMapping: 0.074200 ms MarkObjects: 6.035900 ms  DeleteObjects: 0.028100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 556.654873 seconds.
+  path: Assets/Animations/Scary Zombie Pack/zombie run.fbx
+  artifactKey: Guid(3a9fe2eda3c4e3240bef97c5120cfcab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/zombie run.fbx using Guid(3a9fe2eda3c4e3240bef97c5120cfcab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03376b4ebe2b3330363cf2e1770974ce') in 0.056960 seconds
+  Import took 0.061556 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.811658 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk walk backwards.fbx
+  artifactKey: Guid(6bf8ac153b91a39479ae71d5090aeb7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk walk backwards.fbx using Guid(6bf8ac153b91a39479ae71d5090aeb7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e8b65b371d32d813ab60ba721b47900') in 0.019293 seconds
+  Import took 0.025156 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.024498 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk walk backwards.fbx
+  artifactKey: Guid(6bf8ac153b91a39479ae71d5090aeb7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk walk backwards.fbx using Guid(6bf8ac153b91a39479ae71d5090aeb7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e8b65b371d32d813ab60ba721b47900') in 0.009666 seconds
+  Import took 0.013948 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.479583 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk walk.fbx
+  artifactKey: Guid(6e9621e7b4ab2874cb012f16642b3d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk walk.fbx using Guid(6e9621e7b4ab2874cb012f16642b3d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e389cc7efbb64f7957878dd9cb1f6fdb') in 0.016811 seconds
+  Import took 0.023305 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.028588 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk walk.fbx
+  artifactKey: Guid(6e9621e7b4ab2874cb012f16642b3d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk walk.fbx using Guid(6e9621e7b4ab2874cb012f16642b3d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e389cc7efbb64f7957878dd9cb1f6fdb') in 0.011233 seconds
+  Import took 0.015065 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 63.791225 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk walk.fbx
+  artifactKey: Guid(6e9621e7b4ab2874cb012f16642b3d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk walk.fbx using Guid(6e9621e7b4ab2874cb012f16642b3d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed210978c539a37bef574eac3ec0bde5') in 0.019449 seconds
+  Import took 0.024316 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002167 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk walk.fbx
+  artifactKey: Guid(6e9621e7b4ab2874cb012f16642b3d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk walk.fbx using Guid(6e9621e7b4ab2874cb012f16642b3d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed210978c539a37bef574eac3ec0bde5') in 0.011329 seconds
+  Import took 0.015582 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004994 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.652 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2403.
+Total: 14.507200 ms (FindLiveObjects: 0.294600 ms CreateObjectMapping: 0.090900 ms MarkObjects: 14.052500 ms  DeleteObjects: 0.067200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 35.595940 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk walk.fbx
+  artifactKey: Guid(6e9621e7b4ab2874cb012f16642b3d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk walk.fbx using Guid(6e9621e7b4ab2874cb012f16642b3d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2924906714beda96f92e2e5c74bfd0a6') in 0.069924 seconds
+  Import took 0.074942 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003927 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.084 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2406.
+Total: 5.867600 ms (FindLiveObjects: 0.205800 ms CreateObjectMapping: 0.066200 ms MarkObjects: 5.566900 ms  DeleteObjects: 0.026800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 190.341778 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Left Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Left Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '118d882a17909a910c0c8f4a34ae72ff') in 0.065887 seconds
+  Import took 0.071376 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.293239 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45c6932490a361cdbbbb8f819d760dfb') in 0.017107 seconds
+  Import took 0.021572 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002740 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.157 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2409.
+Total: 6.097800 ms (FindLiveObjects: 0.218200 ms CreateObjectMapping: 0.069000 ms MarkObjects: 5.781000 ms  DeleteObjects: 0.028200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003241 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.194 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.94 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2412.
+Total: 7.059700 ms (FindLiveObjects: 0.269400 ms CreateObjectMapping: 0.206700 ms MarkObjects: 6.548600 ms  DeleteObjects: 0.033200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005508 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 5.99 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.843 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2415.
+Total: 32.430400 ms (FindLiveObjects: 0.275300 ms CreateObjectMapping: 0.767500 ms MarkObjects: 31.333900 ms  DeleteObjects: 0.052100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003174 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.94 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.232 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2418.
+Total: 9.941200 ms (FindLiveObjects: 0.488600 ms CreateObjectMapping: 0.111000 ms MarkObjects: 9.307800 ms  DeleteObjects: 0.031600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.049659 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.89 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  6.068 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2421.
+Total: 6.700000 ms (FindLiveObjects: 0.235700 ms CreateObjectMapping: 0.078800 ms MarkObjects: 6.349800 ms  DeleteObjects: 0.033800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003359 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.122 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2424.
+Total: 5.978200 ms (FindLiveObjects: 0.238300 ms CreateObjectMapping: 0.071400 ms MarkObjects: 5.633500 ms  DeleteObjects: 0.033200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004759 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.446 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.89 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2427.
+Total: 30.555400 ms (FindLiveObjects: 0.247600 ms CreateObjectMapping: 0.078500 ms MarkObjects: 30.196300 ms  DeleteObjects: 0.031700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004462 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.067 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2430.
+Total: 6.108800 ms (FindLiveObjects: 0.234500 ms CreateObjectMapping: 0.073800 ms MarkObjects: 5.763000 ms  DeleteObjects: 0.035300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002756 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.03 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.126 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2433.
+Total: 6.528400 ms (FindLiveObjects: 0.233400 ms CreateObjectMapping: 0.072700 ms MarkObjects: 6.187200 ms  DeleteObjects: 0.033100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004395 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.03 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.087 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 116.9 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2436.
+Total: 5.830900 ms (FindLiveObjects: 0.249700 ms CreateObjectMapping: 0.072400 ms MarkObjects: 5.478300 ms  DeleteObjects: 0.029000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005132 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.340 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2439.
+Total: 6.654700 ms (FindLiveObjects: 0.309100 ms CreateObjectMapping: 0.094600 ms MarkObjects: 6.214300 ms  DeleteObjects: 0.035100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007038 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.86 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.552 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2442.
+Total: 66.261900 ms (FindLiveObjects: 16.158400 ms CreateObjectMapping: 43.924200 ms MarkObjects: 6.146100 ms  DeleteObjects: 0.031200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002753 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.139 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2445.
+Total: 6.603900 ms (FindLiveObjects: 0.285300 ms CreateObjectMapping: 0.086300 ms MarkObjects: 6.202200 ms  DeleteObjects: 0.028900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003441 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.230 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.7 MB.
+System memory in use after: 116.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2448.
+Total: 18.220800 ms (FindLiveObjects: 0.278700 ms CreateObjectMapping: 0.081000 ms MarkObjects: 17.822300 ms  DeleteObjects: 0.036600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.033244 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.966 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 116.9 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2451.
+Total: 18.277300 ms (FindLiveObjects: 0.272900 ms CreateObjectMapping: 0.221900 ms MarkObjects: 17.743200 ms  DeleteObjects: 0.036900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005069 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.175 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 116.9 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2454.
+Total: 6.316200 ms (FindLiveObjects: 0.250000 ms CreateObjectMapping: 0.083800 ms MarkObjects: 5.907100 ms  DeleteObjects: 0.072100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004558 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.130 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 116.9 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2457.
+Total: 6.072300 ms (FindLiveObjects: 0.243600 ms CreateObjectMapping: 0.079800 ms MarkObjects: 5.718100 ms  DeleteObjects: 0.029000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 3736.715689 seconds.
+  path: Assets/Animations/Scary Zombie Pack/ZombyAnim.controller
+  artifactKey: Guid(e48bbf93a3dd1ac4bb1a3cb654fb2204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/ZombyAnim.controller using Guid(e48bbf93a3dd1ac4bb1a3cb654fb2204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc59dca2dec8ad07b42b8d4005fd460b') in 0.068401 seconds
+  Import took 0.073337 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003034 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.132 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.87 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 116.9 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2460.
+Total: 6.411500 ms (FindLiveObjects: 0.233500 ms CreateObjectMapping: 0.281500 ms MarkObjects: 5.868900 ms  DeleteObjects: 0.025900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002953 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.74 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.132 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.99 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 116.9 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2463.
+Total: 6.259600 ms (FindLiveObjects: 0.253000 ms CreateObjectMapping: 0.100800 ms MarkObjects: 5.871500 ms  DeleteObjects: 0.032500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004317 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.256 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 116.9 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2466.
+Total: 6.750300 ms (FindLiveObjects: 0.240100 ms CreateObjectMapping: 0.074600 ms MarkObjects: 6.403900 ms  DeleteObjects: 0.030100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 503.589411 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f563462dd885dd56723517d83ed3d9d') in 0.049760 seconds
+  Import took 0.053810 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.808283 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f563462dd885dd56723517d83ed3d9d') in 0.007044 seconds
+  Import took 0.010465 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 77.843843 seconds.
+  path: Assets/Animations/Scary Zombie Pack/running crawl.fbx
+  artifactKey: Guid(1e34af7131d88bc448ab7a514fb66367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/running crawl.fbx using Guid(1e34af7131d88bc448ab7a514fb66367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '483c234f26d28315197fa897d66cf888') in 0.007867 seconds
+  Import took 0.013195 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.014988 seconds.
+  path: Assets/Animations/Scary Zombie Pack/running crawl.fbx
+  artifactKey: Guid(1e34af7131d88bc448ab7a514fb66367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/running crawl.fbx using Guid(1e34af7131d88bc448ab7a514fb66367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '483c234f26d28315197fa897d66cf888') in 0.009302 seconds
+  Import took 0.015491 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003995 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.175 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 116.9 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2469.
+Total: 5.899400 ms (FindLiveObjects: 0.227600 ms CreateObjectMapping: 0.070600 ms MarkObjects: 5.570300 ms  DeleteObjects: 0.029600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.620229 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d533ec17cde86909998de2b4d599fe4') in 0.050014 seconds
+  Import took 0.053956 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.134829 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d533ec17cde86909998de2b4d599fe4') in 0.009483 seconds
+  Import took 0.012968 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002686 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.10 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.115 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 116.9 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2472.
+Total: 6.355600 ms (FindLiveObjects: 0.308000 ms CreateObjectMapping: 0.069900 ms MarkObjects: 5.946300 ms  DeleteObjects: 0.029800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004800 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.095 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 116.9 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2475.
+Total: 6.832100 ms (FindLiveObjects: 0.239100 ms CreateObjectMapping: 0.077300 ms MarkObjects: 6.449800 ms  DeleteObjects: 0.063400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002657 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.167 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.87 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 116.9 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2478.
+Total: 6.958100 ms (FindLiveObjects: 0.251900 ms CreateObjectMapping: 0.082600 ms MarkObjects: 6.587500 ms  DeleteObjects: 0.034200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003910 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.33 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.185 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 116.9 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2481.
+Total: 22.422200 ms (FindLiveObjects: 0.272900 ms CreateObjectMapping: 0.096800 ms MarkObjects: 22.013100 ms  DeleteObjects: 0.037300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002700 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.136 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.96 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 116.9 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2484.
+Total: 5.846500 ms (FindLiveObjects: 0.243000 ms CreateObjectMapping: 0.079900 ms MarkObjects: 5.488900 ms  DeleteObjects: 0.032800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003044 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.105 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 117.0 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2487.
+Total: 6.768900 ms (FindLiveObjects: 0.229400 ms CreateObjectMapping: 0.075000 ms MarkObjects: 6.432100 ms  DeleteObjects: 0.030900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003023 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.159 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 117.0 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2490.
+Total: 7.270100 ms (FindLiveObjects: 0.242600 ms CreateObjectMapping: 0.076900 ms MarkObjects: 6.890000 ms  DeleteObjects: 0.058500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002627 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.132 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.8 MB.
+System memory in use after: 117.0 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2493.
+Total: 6.534800 ms (FindLiveObjects: 0.254600 ms CreateObjectMapping: 0.079100 ms MarkObjects: 6.163400 ms  DeleteObjects: 0.036400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003777 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.208 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.9 MB.
+System memory in use after: 117.0 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2496.
+Total: 6.031200 ms (FindLiveObjects: 0.223000 ms CreateObjectMapping: 0.069400 ms MarkObjects: 5.706800 ms  DeleteObjects: 0.030600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003202 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.99 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.142 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.96 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.9 MB.
+System memory in use after: 117.0 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2499.
+Total: 6.766300 ms (FindLiveObjects: 0.251300 ms CreateObjectMapping: 0.083300 ms MarkObjects: 6.322800 ms  DeleteObjects: 0.107200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002766 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.09 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.097 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.9 MB.
+System memory in use after: 117.0 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2502.
+Total: 6.871200 ms (FindLiveObjects: 0.277700 ms CreateObjectMapping: 0.065800 ms MarkObjects: 6.498500 ms  DeleteObjects: 0.027300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 2649.842504 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '117bf6e17f2072781a66b2d2dbeb0071') in 0.064444 seconds
+  Import took 0.068215 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 175.623043 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd03f7003ea11d48df2b5bbbd431f469a') in 0.016133 seconds
+  Import took 0.020523 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 158.685908 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f052ab8d7e72ae2c146f90ee3503ad7') in 0.013948 seconds
+  Import took 0.017918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 224.315541 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Turn.fbx
+  artifactKey: Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Turn.fbx using Guid(aeec327f92e293849bfd2742122eb1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d9fc7a0c03762f3018f019badc9369d') in 0.010840 seconds
+  Import took 0.018078 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003402 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.239 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.9 MB.
+System memory in use after: 117.0 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2505.
+Total: 7.211800 ms (FindLiveObjects: 0.283600 ms CreateObjectMapping: 0.085800 ms MarkObjects: 6.809600 ms  DeleteObjects: 0.031100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005565 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.125 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.9 MB.
+System memory in use after: 117.0 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2508.
+Total: 7.034800 ms (FindLiveObjects: 0.294100 ms CreateObjectMapping: 0.094500 ms MarkObjects: 6.611200 ms  DeleteObjects: 0.033000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 4334.995218 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Walk Forward Arc Right.fbx
+  artifactKey: Guid(e1f795a2d74d9fa489086eaabdabb1b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Walk Forward Arc Right.fbx using Guid(e1f795a2d74d9fa489086eaabdabb1b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5550af15aacbcbd4e6b4cf2b605f60ec') in 1.831671 seconds
+  Import took 1.856006 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 104.173033 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Sad Walk.fbx
+  artifactKey: Guid(8c87d121a2b26f142bafb8149331a83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Sad Walk.fbx using Guid(8c87d121a2b26f142bafb8149331a83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18320e3c28bcb6252debf1922ffcb48e') in 0.014257 seconds
+  Import took 0.019976 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.032978 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Sad Walk.fbx
+  artifactKey: Guid(8c87d121a2b26f142bafb8149331a83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Sad Walk.fbx using Guid(8c87d121a2b26f142bafb8149331a83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18320e3c28bcb6252debf1922ffcb48e') in 0.009496 seconds
+  Import took 0.013117 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.049141 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Sad Walk.fbx
+  artifactKey: Guid(8c87d121a2b26f142bafb8149331a83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Sad Walk.fbx using Guid(8c87d121a2b26f142bafb8149331a83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6f15e2c3a087aa55b9bb1da715d0069') in 0.011688 seconds
+  Import took 0.016380 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003501 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Sad Walk.fbx
+  artifactKey: Guid(8c87d121a2b26f142bafb8149331a83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Sad Walk.fbx using Guid(8c87d121a2b26f142bafb8149331a83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6f15e2c3a087aa55b9bb1da715d0069') in 0.007707 seconds
+  Import took 0.012707 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 85.171754 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Sad Walk.fbx
+  artifactKey: Guid(8c87d121a2b26f142bafb8149331a83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Sad Walk.fbx using Guid(8c87d121a2b26f142bafb8149331a83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e223568adb169438f30f941e010cef9') in 0.014059 seconds
+  Import took 0.017684 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.027658 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Sad Walk.fbx
+  artifactKey: Guid(8c87d121a2b26f142bafb8149331a83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Sad Walk.fbx using Guid(8c87d121a2b26f142bafb8149331a83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e223568adb169438f30f941e010cef9') in 0.007498 seconds
+  Import took 0.012459 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005267 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.018 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.9 MB.
+System memory in use after: 117.0 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2512.
+Total: 21.262400 ms (FindLiveObjects: 0.384000 ms CreateObjectMapping: 0.114900 ms MarkObjects: 20.729900 ms  DeleteObjects: 0.031900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.770196 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Sad Walk.fbx
+  artifactKey: Guid(8c87d121a2b26f142bafb8149331a83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Sad Walk.fbx using Guid(8c87d121a2b26f142bafb8149331a83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ae5f916179536be66f8589275033450') in 0.096441 seconds
+  Import took 0.104313 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004822 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.05 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.120 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.9 MB.
+System memory in use after: 117.0 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2515.
+Total: 5.733700 ms (FindLiveObjects: 0.237400 ms CreateObjectMapping: 0.072500 ms MarkObjects: 5.395500 ms  DeleteObjects: 0.026600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1894.688668 seconds.
+  path: Assets/Animations/Male Injured Pack
+  artifactKey: Guid(cd94b5fa1bf6aec4b8fb4c60028fc69a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack using Guid(cd94b5fa1bf6aec4b8fb4c60028fc69a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5eb6c9df66b3a7db8307cd4b26ac7b1a') in 0.008828 seconds
+  Import took 0.012990 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.192901 seconds.
+  path: Assets/Animations/Male Injured Pack/injured backwards turn left.fbx
+  artifactKey: Guid(15556af697449344db6e2a0cf3345168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured backwards turn left.fbx using Guid(15556af697449344db6e2a0cf3345168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63af3fda49ee308b6e92f63558eef88c') in 0.055483 seconds
+  Import took 0.059865 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.035708 seconds.
+  path: Assets/Animations/Male Injured Pack/injured backwards turn left.fbx
+  artifactKey: Guid(15556af697449344db6e2a0cf3345168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured backwards turn left.fbx using Guid(15556af697449344db6e2a0cf3345168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63af3fda49ee308b6e92f63558eef88c') in 0.009214 seconds
+  Import took 0.012977 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.259018 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run backwards left turn.fbx
+  artifactKey: Guid(c0da0fb6d8f33664386b6ef98c22a5c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run backwards left turn.fbx using Guid(c0da0fb6d8f33664386b6ef98c22a5c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43f1d59a7afa6d81e51a8cc3b2c97dea') in 0.014603 seconds
+  Import took 0.018136 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.309740 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run backwards left turn.fbx
+  artifactKey: Guid(c0da0fb6d8f33664386b6ef98c22a5c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run backwards left turn.fbx using Guid(c0da0fb6d8f33664386b6ef98c22a5c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '932c6f26243a31eb162c6ec3b353808b') in 0.011229 seconds
+  Import took 0.017275 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.038418 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run backwards left turn.fbx
+  artifactKey: Guid(c0da0fb6d8f33664386b6ef98c22a5c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run backwards left turn.fbx using Guid(c0da0fb6d8f33664386b6ef98c22a5c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '932c6f26243a31eb162c6ec3b353808b') in 0.009513 seconds
+  Import took 0.014436 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.635784 seconds.
+  path: Assets/Animations/Male Injured Pack/injured backwards turn left.fbx
+  artifactKey: Guid(15556af697449344db6e2a0cf3345168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured backwards turn left.fbx using Guid(15556af697449344db6e2a0cf3345168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02d7668b75caa2b4349eda2a6d7f4f56') in 0.017665 seconds
+  Import took 0.022972 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.028825 seconds.
+  path: Assets/Animations/Male Injured Pack/injured backwards turn left.fbx
+  artifactKey: Guid(15556af697449344db6e2a0cf3345168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured backwards turn left.fbx using Guid(15556af697449344db6e2a0cf3345168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02d7668b75caa2b4349eda2a6d7f4f56') in 0.009025 seconds
+  Import took 0.012914 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.759326 seconds.
+  path: Assets/Animations/Male Injured Pack/injured idle.fbx
+  artifactKey: Guid(29a29055f7398a24cbe90f496121d3e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured idle.fbx using Guid(29a29055f7398a24cbe90f496121d3e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43aa9179d37a6e1f5b6667a3aab50f88') in 0.019282 seconds
+  Import took 0.023333 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.028768 seconds.
+  path: Assets/Animations/Male Injured Pack/injured idle.fbx
+  artifactKey: Guid(29a29055f7398a24cbe90f496121d3e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured idle.fbx using Guid(29a29055f7398a24cbe90f496121d3e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43aa9179d37a6e1f5b6667a3aab50f88') in 0.010184 seconds
+  Import took 0.014127 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.985436 seconds.
+  path: Assets/Animations/Male Injured Pack/injured idle.fbx
+  artifactKey: Guid(29a29055f7398a24cbe90f496121d3e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured idle.fbx using Guid(29a29055f7398a24cbe90f496121d3e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a4643a1a62306141229ae5a1e184d62') in 0.014668 seconds
+  Import took 0.019383 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.966861 seconds.
+  path: Assets/Animations/Male Injured Pack/injured hurting idle.fbx
+  artifactKey: Guid(cce506f84cca4cc4ca9539230ebdac55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured hurting idle.fbx using Guid(cce506f84cca4cc4ca9539230ebdac55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '474f169ee1761de28d412dafebd470e6') in 0.016138 seconds
+  Import took 0.027246 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018011 seconds.
+  path: Assets/Animations/Male Injured Pack/injured hurting idle.fbx
+  artifactKey: Guid(cce506f84cca4cc4ca9539230ebdac55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured hurting idle.fbx using Guid(cce506f84cca4cc4ca9539230ebdac55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '474f169ee1761de28d412dafebd470e6') in 0.012493 seconds
+  Import took 0.016026 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.728138 seconds.
+  path: Assets/Animations/Male Injured Pack/injured backwards turn right.fbx
+  artifactKey: Guid(0dd60693dedbb0145845931b0ab29d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured backwards turn right.fbx using Guid(0dd60693dedbb0145845931b0ab29d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f4588ae40576e4c2465ccbc4c5a98f3') in 0.015468 seconds
+  Import took 0.022455 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.021275 seconds.
+  path: Assets/Animations/Male Injured Pack/injured backwards turn right.fbx
+  artifactKey: Guid(0dd60693dedbb0145845931b0ab29d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured backwards turn right.fbx using Guid(0dd60693dedbb0145845931b0ab29d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f4588ae40576e4c2465ccbc4c5a98f3') in 0.010365 seconds
+  Import took 0.014140 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.463887 seconds.
+  path: Assets/Animations/Male Injured Pack/injured backwards turn left.fbx
+  artifactKey: Guid(15556af697449344db6e2a0cf3345168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured backwards turn left.fbx using Guid(15556af697449344db6e2a0cf3345168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e4d63891bde3dbc8d8e93513a50042d') in 0.015585 seconds
+  Import took 0.019966 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005151 seconds.
+  path: Assets/Animations/Male Injured Pack/injured backwards turn left.fbx
+  artifactKey: Guid(15556af697449344db6e2a0cf3345168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured backwards turn left.fbx using Guid(15556af697449344db6e2a0cf3345168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e4d63891bde3dbc8d8e93513a50042d') in 0.009917 seconds
+  Import took 0.014181 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 33.288365 seconds.
+  path: Assets/Animations/Male Injured Pack/injured backwards turn right.fbx
+  artifactKey: Guid(0dd60693dedbb0145845931b0ab29d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured backwards turn right.fbx using Guid(0dd60693dedbb0145845931b0ab29d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1e0c0a57c0835b89039035c27eeaad6') in 0.016628 seconds
+  Import took 0.020543 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.029895 seconds.
+  path: Assets/Animations/Male Injured Pack/injured backwards turn right.fbx
+  artifactKey: Guid(0dd60693dedbb0145845931b0ab29d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured backwards turn right.fbx using Guid(0dd60693dedbb0145845931b0ab29d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1e0c0a57c0835b89039035c27eeaad6') in 0.011201 seconds
+  Import took 0.014925 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.101402 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run backwards right turn.fbx
+  artifactKey: Guid(26d902798fb2ae248933e7308f151eaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run backwards right turn.fbx using Guid(26d902798fb2ae248933e7308f151eaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '094411c14bcd31f9d28e51e4b7bdfb7e') in 0.016099 seconds
+  Import took 0.021861 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.026567 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run backwards right turn.fbx
+  artifactKey: Guid(26d902798fb2ae248933e7308f151eaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run backwards right turn.fbx using Guid(26d902798fb2ae248933e7308f151eaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '094411c14bcd31f9d28e51e4b7bdfb7e') in 0.010825 seconds
+  Import took 0.015138 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.536349 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run left turn.fbx
+  artifactKey: Guid(31f8186b9486afe4fb359161f664c706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run left turn.fbx using Guid(31f8186b9486afe4fb359161f664c706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74065ed2f6b58f63783f9016191c4aec') in 0.020242 seconds
+  Import took 0.031176 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012559 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run left turn.fbx
+  artifactKey: Guid(31f8186b9486afe4fb359161f664c706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run left turn.fbx using Guid(31f8186b9486afe4fb359161f664c706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74065ed2f6b58f63783f9016191c4aec') in 0.008717 seconds
+  Import took 0.013214 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.640504 seconds.
+  path: Assets/Animations/Male Injured Pack/injured standing jump.fbx
+  artifactKey: Guid(578cefcfd29b20c44b43a71260a50656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured standing jump.fbx using Guid(578cefcfd29b20c44b43a71260a50656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f60419a2530cb0456271757d6646516') in 0.017763 seconds
+  Import took 0.022357 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.024672 seconds.
+  path: Assets/Animations/Male Injured Pack/injured standing jump.fbx
+  artifactKey: Guid(578cefcfd29b20c44b43a71260a50656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured standing jump.fbx using Guid(578cefcfd29b20c44b43a71260a50656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f60419a2530cb0456271757d6646516') in 0.010167 seconds
+  Import took 0.014385 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.352764 seconds.
+  path: Assets/Animations/Male Injured Pack/injured stumble idle.fbx
+  artifactKey: Guid(372bf656eee2bb046a88ba3163baf12f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured stumble idle.fbx using Guid(372bf656eee2bb046a88ba3163baf12f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb48884a2ff983aa9027b1c4cce9d8b6') in 0.018360 seconds
+  Import took 0.024200 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018521 seconds.
+  path: Assets/Animations/Male Injured Pack/injured stumble idle.fbx
+  artifactKey: Guid(372bf656eee2bb046a88ba3163baf12f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured stumble idle.fbx using Guid(372bf656eee2bb046a88ba3163baf12f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb48884a2ff983aa9027b1c4cce9d8b6') in 0.010583 seconds
+  Import took 0.014945 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.532603 seconds.
+  path: Assets/Animations/Male Injured Pack/injured turn left.fbx
+  artifactKey: Guid(c9ee13fa31b26c44e853da24fbc891d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured turn left.fbx using Guid(c9ee13fa31b26c44e853da24fbc891d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef118846649e51061a782c6a9b267f78') in 0.018325 seconds
+  Import took 0.025200 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.021797 seconds.
+  path: Assets/Animations/Male Injured Pack/injured turn left.fbx
+  artifactKey: Guid(c9ee13fa31b26c44e853da24fbc891d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured turn left.fbx using Guid(c9ee13fa31b26c44e853da24fbc891d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef118846649e51061a782c6a9b267f78') in 0.010595 seconds
+  Import took 0.014473 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.129104 seconds.
+  path: Assets/Animations/Male Injured Pack/injured turn right.fbx
+  artifactKey: Guid(268157654127b6844bcae3ac24ec9ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured turn right.fbx using Guid(268157654127b6844bcae3ac24ec9ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd40060520431950ebde04c8731a97e9a') in 0.013444 seconds
+  Import took 0.021953 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004807 seconds.
+  path: Assets/Animations/Male Injured Pack/injured turn right.fbx
+  artifactKey: Guid(268157654127b6844bcae3ac24ec9ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured turn right.fbx using Guid(268157654127b6844bcae3ac24ec9ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd40060520431950ebde04c8731a97e9a') in 0.010682 seconds
+  Import took 0.015531 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.684274 seconds.
+  path: Assets/Animations/Male Injured Pack/injured turn left.fbx
+  artifactKey: Guid(c9ee13fa31b26c44e853da24fbc891d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured turn left.fbx using Guid(c9ee13fa31b26c44e853da24fbc891d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '903adf76af0065d9addf0d3a11ca9c22') in 0.014319 seconds
+  Import took 0.022032 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.031479 seconds.
+  path: Assets/Animations/Male Injured Pack/injured turn left.fbx
+  artifactKey: Guid(c9ee13fa31b26c44e853da24fbc891d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured turn left.fbx using Guid(c9ee13fa31b26c44e853da24fbc891d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '903adf76af0065d9addf0d3a11ca9c22') in 0.008777 seconds
+  Import took 0.012916 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.089204 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk backwards.fbx
+  artifactKey: Guid(27e2992d001675e43a0fd22e657becc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk backwards.fbx using Guid(27e2992d001675e43a0fd22e657becc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79fbb9e0de9469da4c012fcf6a56fb2c') in 0.024158 seconds
+  Import took 0.061992 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.606726 seconds.
+  path: Assets/Animations/Male Injured Pack/injured turn right.fbx
+  artifactKey: Guid(268157654127b6844bcae3ac24ec9ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured turn right.fbx using Guid(268157654127b6844bcae3ac24ec9ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c70b5e07a3a269e54a653ed55922768f') in 0.014610 seconds
+  Import took 0.019108 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.032677 seconds.
+  path: Assets/Animations/Male Injured Pack/injured turn right.fbx
+  artifactKey: Guid(268157654127b6844bcae3ac24ec9ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured turn right.fbx using Guid(268157654127b6844bcae3ac24ec9ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c70b5e07a3a269e54a653ed55922768f') in 0.010793 seconds
+  Import took 0.014304 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.580475 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk left turn.fbx
+  artifactKey: Guid(b8b567f975266974b9e7c417e74b6d96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk left turn.fbx using Guid(b8b567f975266974b9e7c417e74b6d96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dcd29a8acff231feaa180839a79a9ec') in 0.016699 seconds
+  Import took 0.021797 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.026908 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk left turn.fbx
+  artifactKey: Guid(b8b567f975266974b9e7c417e74b6d96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk left turn.fbx using Guid(b8b567f975266974b9e7c417e74b6d96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dcd29a8acff231feaa180839a79a9ec') in 0.010434 seconds
+  Import took 0.014455 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.329097 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk right turn.fbx
+  artifactKey: Guid(4ef4e466b0a81c348b5349b38232e326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk right turn.fbx using Guid(4ef4e466b0a81c348b5349b38232e326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f108333b3b527b77ee8c91bd26422f64') in 0.014432 seconds
+  Import took 0.023439 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002404 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk right turn.fbx
+  artifactKey: Guid(4ef4e466b0a81c348b5349b38232e326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk right turn.fbx using Guid(4ef4e466b0a81c348b5349b38232e326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f108333b3b527b77ee8c91bd26422f64') in 0.012006 seconds
+  Import took 0.015863 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.769319 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk backwards.fbx
+  artifactKey: Guid(27e2992d001675e43a0fd22e657becc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk backwards.fbx using Guid(27e2992d001675e43a0fd22e657becc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '725be336ff1a88dfe223ed3c598b9203') in 0.017171 seconds
+  Import took 0.021897 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.028467 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk backwards.fbx
+  artifactKey: Guid(27e2992d001675e43a0fd22e657becc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk backwards.fbx using Guid(27e2992d001675e43a0fd22e657becc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '725be336ff1a88dfe223ed3c598b9203') in 0.010924 seconds
+  Import took 0.014941 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 43.185322 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk.fbx
+  artifactKey: Guid(2910dfdbe64a7cd4a9d1f41278c93803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk.fbx using Guid(2910dfdbe64a7cd4a9d1f41278c93803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f59235c78ee137bd42e00c68668e118d') in 0.015942 seconds
+  Import took 0.024542 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001738 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk.fbx
+  artifactKey: Guid(2910dfdbe64a7cd4a9d1f41278c93803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk.fbx using Guid(2910dfdbe64a7cd4a9d1f41278c93803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f59235c78ee137bd42e00c68668e118d') in 0.011173 seconds
+  Import took 0.015599 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.153083 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk right turn.fbx
+  artifactKey: Guid(4ef4e466b0a81c348b5349b38232e326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk right turn.fbx using Guid(4ef4e466b0a81c348b5349b38232e326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '733c0cdd7fbe736547dd5dfdd6a23a0d') in 0.016053 seconds
+  Import took 0.022545 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005467 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk right turn.fbx
+  artifactKey: Guid(4ef4e466b0a81c348b5349b38232e326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk right turn.fbx using Guid(4ef4e466b0a81c348b5349b38232e326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '733c0cdd7fbe736547dd5dfdd6a23a0d') in 0.012822 seconds
+  Import took 0.016963 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.578252 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk.fbx
+  artifactKey: Guid(2910dfdbe64a7cd4a9d1f41278c93803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk.fbx using Guid(2910dfdbe64a7cd4a9d1f41278c93803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1717d869109faf072ac27b262b731b04') in 0.018066 seconds
+  Import took 0.024038 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.026163 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk.fbx
+  artifactKey: Guid(2910dfdbe64a7cd4a9d1f41278c93803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk.fbx using Guid(2910dfdbe64a7cd4a9d1f41278c93803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1717d869109faf072ac27b262b731b04') in 0.011482 seconds
+  Import took 0.016537 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.234804 seconds.
+  path: Assets/Animations/Male Injured Pack/injured wave idle.fbx
+  artifactKey: Guid(6b8e638c1b80edf42b93c18cfea6fba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured wave idle.fbx using Guid(6b8e638c1b80edf42b93c18cfea6fba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '923424fae50585b59e6c9838b4799158') in 0.019471 seconds
+  Import took 0.025243 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.024381 seconds.
+  path: Assets/Animations/Male Injured Pack/injured wave idle.fbx
+  artifactKey: Guid(6b8e638c1b80edf42b93c18cfea6fba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured wave idle.fbx using Guid(6b8e638c1b80edf42b93c18cfea6fba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '923424fae50585b59e6c9838b4799158') in 0.010329 seconds
+  Import took 0.014293 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 178.698567 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk left turn.fbx
+  artifactKey: Guid(b8b567f975266974b9e7c417e74b6d96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk left turn.fbx using Guid(b8b567f975266974b9e7c417e74b6d96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7775548b1bf16d070913d8b0d1747b9') in 0.019613 seconds
+  Import took 0.025391 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003545 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.229 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 117.3 MB.
+System memory in use after: 117.4 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2518.
+Total: 5.821500 ms (FindLiveObjects: 0.235800 ms CreateObjectMapping: 0.075100 ms MarkObjects: 5.482300 ms  DeleteObjects: 0.026600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 155.609953 seconds.
+  path: Assets/Animations/Male Injured Pack/injured backwards turn left.fbx
+  artifactKey: Guid(15556af697449344db6e2a0cf3345168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured backwards turn left.fbx using Guid(15556af697449344db6e2a0cf3345168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '877648c7f1cc6b4348dcb2ed91ba28ea') in 0.054268 seconds
+  Import took 0.059364 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.364939 seconds.
+  path: Assets/Animations/Male Injured Pack/injured backwards turn right.fbx
+  artifactKey: Guid(0dd60693dedbb0145845931b0ab29d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured backwards turn right.fbx using Guid(0dd60693dedbb0145845931b0ab29d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6993fe0885bcf2b5d780d97498544c1') in 0.017814 seconds
+  Import took 0.022761 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000708 seconds.
+  path: Assets/Animations/Male Injured Pack/injured backwards turn right.fbx
+  artifactKey: Guid(0dd60693dedbb0145845931b0ab29d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured backwards turn right.fbx using Guid(0dd60693dedbb0145845931b0ab29d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6993fe0885bcf2b5d780d97498544c1') in 0.012990 seconds
+  Import took 0.016852 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.416266 seconds.
+  path: Assets/Animations/Male Injured Pack/injured idle.fbx
+  artifactKey: Guid(29a29055f7398a24cbe90f496121d3e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured idle.fbx using Guid(29a29055f7398a24cbe90f496121d3e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ad5157d5b2555d2945dc4f9a8e99369') in 0.019752 seconds
+  Import took 0.024760 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001954 seconds.
+  path: Assets/Animations/Male Injured Pack/injured idle.fbx
+  artifactKey: Guid(29a29055f7398a24cbe90f496121d3e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured idle.fbx using Guid(29a29055f7398a24cbe90f496121d3e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ad5157d5b2555d2945dc4f9a8e99369') in 0.013959 seconds
+  Import took 0.019791 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.139951 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run left turn.fbx
+  artifactKey: Guid(31f8186b9486afe4fb359161f664c706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run left turn.fbx using Guid(31f8186b9486afe4fb359161f664c706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '662346652cfc6636540829b52607b165') in 0.011866 seconds
+  Import took 0.020233 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004511 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run left turn.fbx
+  artifactKey: Guid(31f8186b9486afe4fb359161f664c706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run left turn.fbx using Guid(31f8186b9486afe4fb359161f664c706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '662346652cfc6636540829b52607b165') in 0.010553 seconds
+  Import took 0.014688 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.265703 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run right turn.fbx
+  artifactKey: Guid(ffda333a2fc438f46a8b69143f0368e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run right turn.fbx using Guid(ffda333a2fc438f46a8b69143f0368e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4fd95cec9103ca7da7470cd4c629f9e') in 0.019440 seconds
+  Import took 0.025397 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018600 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run right turn.fbx
+  artifactKey: Guid(ffda333a2fc438f46a8b69143f0368e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run right turn.fbx using Guid(ffda333a2fc438f46a8b69143f0368e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4fd95cec9103ca7da7470cd4c629f9e') in 0.008372 seconds
+  Import took 0.013347 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.725059 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run right turn.fbx
+  artifactKey: Guid(ffda333a2fc438f46a8b69143f0368e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run right turn.fbx using Guid(ffda333a2fc438f46a8b69143f0368e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c97a19506d088a8d3850188662914831') in 0.012932 seconds
+  Import took 0.019680 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003817 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run right turn.fbx
+  artifactKey: Guid(ffda333a2fc438f46a8b69143f0368e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run right turn.fbx using Guid(ffda333a2fc438f46a8b69143f0368e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c97a19506d088a8d3850188662914831') in 0.012276 seconds
+  Import took 0.017658 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.614209 seconds.
+  path: Assets/Animations/Male Injured Pack/injured turn left.fbx
+  artifactKey: Guid(c9ee13fa31b26c44e853da24fbc891d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured turn left.fbx using Guid(c9ee13fa31b26c44e853da24fbc891d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fffdb2f5b48712aede7f277f1c68e72f') in 0.018661 seconds
+  Import took 0.022863 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001501 seconds.
+  path: Assets/Animations/Male Injured Pack/injured turn left.fbx
+  artifactKey: Guid(c9ee13fa31b26c44e853da24fbc891d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured turn left.fbx using Guid(c9ee13fa31b26c44e853da24fbc891d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fffdb2f5b48712aede7f277f1c68e72f') in 0.011730 seconds
+  Import took 0.015855 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.952650 seconds.
+  path: Assets/Animations/Male Injured Pack/injured turn right.fbx
+  artifactKey: Guid(268157654127b6844bcae3ac24ec9ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured turn right.fbx using Guid(268157654127b6844bcae3ac24ec9ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d6d5d8011e1f174ea9557291830d8a7') in 0.016977 seconds
+  Import took 0.022225 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003482 seconds.
+  path: Assets/Animations/Male Injured Pack/injured turn right.fbx
+  artifactKey: Guid(268157654127b6844bcae3ac24ec9ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured turn right.fbx using Guid(268157654127b6844bcae3ac24ec9ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d6d5d8011e1f174ea9557291830d8a7') in 0.010958 seconds
+  Import took 0.015500 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.706312 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk backwards.fbx
+  artifactKey: Guid(27e2992d001675e43a0fd22e657becc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk backwards.fbx using Guid(27e2992d001675e43a0fd22e657becc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ed73f2ded990d4b7245a85c774ae413') in 0.015432 seconds
+  Import took 0.020737 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.487436 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk left turn.fbx
+  artifactKey: Guid(b8b567f975266974b9e7c417e74b6d96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk left turn.fbx using Guid(b8b567f975266974b9e7c417e74b6d96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e6471e62bdd7887cd8ed723c3eae424') in 0.019674 seconds
+  Import took 0.025592 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001823 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk left turn.fbx
+  artifactKey: Guid(b8b567f975266974b9e7c417e74b6d96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk left turn.fbx using Guid(b8b567f975266974b9e7c417e74b6d96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e6471e62bdd7887cd8ed723c3eae424') in 0.011894 seconds
+  Import took 0.016133 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.083920 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk right turn.fbx
+  artifactKey: Guid(4ef4e466b0a81c348b5349b38232e326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk right turn.fbx using Guid(4ef4e466b0a81c348b5349b38232e326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9585e06ccb4ed807d35111bbeeac88f3') in 0.016021 seconds
+  Import took 0.020814 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.579623 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk.fbx
+  artifactKey: Guid(2910dfdbe64a7cd4a9d1f41278c93803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk.fbx using Guid(2910dfdbe64a7cd4a9d1f41278c93803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64fe6fe1207648fb52dac5843494fab3') in 0.017343 seconds
+  Import took 0.022896 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002087 seconds.
+  path: Assets/Animations/Male Injured Pack/injured walk.fbx
+  artifactKey: Guid(2910dfdbe64a7cd4a9d1f41278c93803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured walk.fbx using Guid(2910dfdbe64a7cd4a9d1f41278c93803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64fe6fe1207648fb52dac5843494fab3') in 0.010640 seconds
+  Import took 0.014609 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007282 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.87 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.173 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 117.3 MB.
+System memory in use after: 117.4 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2521.
+Total: 23.515600 ms (FindLiveObjects: 2.333800 ms CreateObjectMapping: 0.218600 ms MarkObjects: 20.927800 ms  DeleteObjects: 0.031300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 541.005240 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run backwards.fbx
+  artifactKey: Guid(1203a6d5b5a67fe4aa8818abf54f80fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run backwards.fbx using Guid(1203a6d5b5a67fe4aa8818abf54f80fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7f2b136473ba39c8379613d13a05d06') in 0.215973 seconds
+  Import took 0.227212 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.498110 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run jump.fbx
+  artifactKey: Guid(6d1208a6abbe32e40a8c884fd681e5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run jump.fbx using Guid(6d1208a6abbe32e40a8c884fd681e5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '976e667281458711cf146e08d6d891b6') in 0.033915 seconds
+  Import took 0.047186 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.019976 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run jump.fbx
+  artifactKey: Guid(6d1208a6abbe32e40a8c884fd681e5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run jump.fbx using Guid(6d1208a6abbe32e40a8c884fd681e5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '976e667281458711cf146e08d6d891b6') in 0.028389 seconds
+  Import took 0.069366 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.027009 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run.fbx
+  artifactKey: Guid(c74229adcc95f15428b7aec7bfa6422a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run.fbx using Guid(c74229adcc95f15428b7aec7bfa6422a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f90f903a0b04160d39b61ed583a5d229') in 0.066122 seconds
+  Import took 0.069998 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000516 seconds.
+  path: Assets/Animations/Male Injured Pack/injured run.fbx
+  artifactKey: Guid(c74229adcc95f15428b7aec7bfa6422a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Injured Pack/injured run.fbx using Guid(c74229adcc95f15428b7aec7bfa6422a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f90f903a0b04160d39b61ed583a5d229') in 0.030807 seconds
+  Import took 0.087883 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.012550 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 3.26 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.291 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 6.73 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 117.3 MB.
+System memory in use after: 117.4 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2524.
+Total: 17.471500 ms (FindLiveObjects: 0.286000 ms CreateObjectMapping: 0.088900 ms MarkObjects: 17.025200 ms  DeleteObjects: 0.067000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002765 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.118 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1658 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 117.3 MB.
+System memory in use after: 117.4 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2527.
+Total: 6.163900 ms (FindLiveObjects: 0.269000 ms CreateObjectMapping: 0.072300 ms MarkObjects: 5.792700 ms  DeleteObjects: 0.028200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 650.916251 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Axe/Axe.fbx
+  artifactKey: Guid(a6d5e45425fcde944b7af507cfa4e04f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Axe/Axe.fbx using Guid(a6d5e45425fcde944b7af507cfa4e04f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f09da6b92b35c5786b3cbce50661ff98') in 0.141551 seconds
+  Import took 0.147314 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Barrel/Barrel LOD 1.fbx
+  artifactKey: Guid(70684f5c9d2ceca4e8c96c0a9fb606bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Barrel/Barrel LOD 1.fbx using Guid(70684f5c9d2ceca4e8c96c0a9fb606bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33eec5b68fe7b4558781932c67770673') in 0.164341 seconds
+  Import took 0.170060 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Box/Box.fbx
+  artifactKey: Guid(39363f00fbd9d1046a7d053529f529ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Box/Box.fbx using Guid(39363f00fbd9d1046a7d053529f529ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab8ba9490d0dc855c854a5f65a428970') in 0.031419 seconds
+  Import took 0.035904 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000357 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Rope/Rope.fbx
+  artifactKey: Guid(4d166d6e1e64c1647a01175068b9e314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Rope/Rope.fbx using Guid(4d166d6e1e64c1647a01175068b9e314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab037fef8f510a31f7d51ca063ddcf45') in 0.031655 seconds
+  Import took 0.035465 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Downloaded/Settlement/Courtyard and Entrance/Entry/Brick 1/Brick 1.fbx
+  artifactKey: Guid(176e1131abadced4dbfa2b5d475f0d30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Courtyard and Entrance/Entry/Brick 1/Brick 1.fbx using Guid(176e1131abadced4dbfa2b5d475f0d30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ecc8e7052295532ec7d781732fe3246') in 0.034610 seconds
+  Import took 0.038243 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 179.308724 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge Part/Bridge Part LOD 1.fbx
+  artifactKey: Guid(a753de0bfd95fb945905768c01ca0b41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge Part/Bridge Part LOD 1.fbx using Guid(a753de0bfd95fb945905768c01ca0b41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd98c5f44eaa55e6c4166d3f9dd7064d3') in 0.172035 seconds
+  Import took 0.180181 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Downloaded/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop.spm
+  artifactKey: Guid(c91c1eb85782d5748ace27eb4d7415bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop.spm using Guid(c91c1eb85782d5748ace27eb4d7415bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1b8fa72851c59ab1c525145b29b89c1') in 0.142436 seconds
+  Import took 0.147227 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000318 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge Part/Bridge Part LOD 3.fbx
+  artifactKey: Guid(b39d909098acdc6438b3fd6c0c4a27c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge Part/Bridge Part LOD 3.fbx using Guid(b39d909098acdc6438b3fd6c0c4a27c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f7d26ac869746392e8da4238114657f') in 0.069856 seconds
+  Import took 0.073815 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000423 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge Part/Bridge Part LOD 2.fbx
+  artifactKey: Guid(eca1804372c33cc4a8b7856bee80d1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge Part/Bridge Part LOD 2.fbx using Guid(eca1804372c33cc4a8b7856bee80d1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '880b069a8f61dc2a0c861fcb28431c9f') in 0.084291 seconds
+  Import took 0.089872 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.367647 seconds.
+  path: Assets/Downloaded/Environment/Water (Basic)/Models/WaterBasicPlane.fbx
+  artifactKey: Guid(ce8d79c79d11b8f9d00076e98d76c639) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Environment/Water (Basic)/Models/WaterBasicPlane.fbx using Guid(ce8d79c79d11b8f9d00076e98d76c639) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0944a0f7ad9842fa08437b29a5aea0ac') in 0.017041 seconds
+  Import took 0.021053 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000352 seconds.
+  path: Assets/Downloaded/Environment/Water/Water/Models/WaterPlane.fbx
+  artifactKey: Guid(ba6a41dc489914734857bb5924eb70ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Environment/Water/Water/Models/WaterPlane.fbx using Guid(ba6a41dc489914734857bb5924eb70ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b090013e73599832fe1f82cc30278f7b') in 0.019343 seconds
+  Import took 0.023061 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.869744 seconds.
+  path: Assets/Terrains/TerrainData_a1a26113-9d71-4e1b-91c6-fa310bb8ac6a.asset
+  artifactKey: Guid(62fff1387e83d404489aef011c51256f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrains/TerrainData_a1a26113-9d71-4e1b-91c6-fa310bb8ac6a.asset using Guid(62fff1387e83d404489aef011c51256f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f5cff5a2dac10ffa3ca10ba2d753ba3') in 0.138348 seconds
+  Import took 0.145017 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000447 seconds.
+  path: Assets/Terrains/TerrainData_a53f9125-9c4e-4d6d-9872-805113d123bb.asset
+  artifactKey: Guid(c01f2947e64fff5498d5dcd80b4ccbfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrains/TerrainData_a53f9125-9c4e-4d6d-9872-805113d123bb.asset using Guid(c01f2947e64fff5498d5dcd80b4ccbfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c5eea59421545c9e353c6842f3391c9') in 0.075109 seconds
+  Import took 0.080214 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000498 seconds.
+  path: Assets/Terrains/TerrainData_b677bea0-80b8-408c-9dde-7ada3092c17e.asset
+  artifactKey: Guid(5dd7e69da07884f4fb7ef34eecb74f97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrains/TerrainData_b677bea0-80b8-408c-9dde-7ada3092c17e.asset using Guid(5dd7e69da07884f4fb7ef34eecb74f97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '938bf66bfb525bdabf2059afa0b41e03') in 0.049104 seconds
+  Import took 0.054081 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.626384 seconds.
+  path: Assets/Prefabs/PlayerMY.prefab
+  artifactKey: Guid(1314799cab8eedc4eb865da89b7c76b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/PlayerMY.prefab using Guid(1314799cab8eedc4eb865da89b7c76b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a67238faa96a3e21a910431657e2d4da') in 0.023588 seconds
+  Import took 0.029088 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018125 seconds.
+  path: Assets/Prefabs/PlayerMY.prefab
+  artifactKey: Guid(1314799cab8eedc4eb865da89b7c76b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/PlayerMY.prefab using Guid(1314799cab8eedc4eb865da89b7c76b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a67238faa96a3e21a910431657e2d4da') in 0.013563 seconds
+  Import took 0.018221 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 204.971589 seconds.
+  path: Assets/Scripts/SoundTest.cs
+  artifactKey: Guid(5f9310abf4e800541b9d33d69a015803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SoundTest.cs using Guid(5f9310abf4e800541b9d33d69a015803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdb0054993f924be811c92fd04dd3051') in 0.012327 seconds
+  Import took 0.015900 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003605 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.145 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.86 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1659 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 117.6 MB.
+System memory in use after: 117.7 MB.
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2535.
+Total: 7.385000 ms (FindLiveObjects: 0.347700 ms CreateObjectMapping: 0.186300 ms MarkObjects: 6.813700 ms  DeleteObjects: 0.035600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002851 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.149 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.15 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1659 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 117.6 MB.
+System memory in use after: 117.7 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2538.
+Total: 7.128500 ms (FindLiveObjects: 0.335300 ms CreateObjectMapping: 0.092900 ms MarkObjects: 6.664700 ms  DeleteObjects: 0.033400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 494.676431 seconds.
+  path: Assets/Scripts/SoundTest.cs
+  artifactKey: Guid(5f9310abf4e800541b9d33d69a015803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SoundTest.cs using Guid(5f9310abf4e800541b9d33d69a015803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66ad530c104a88c45fa18035f666db40') in 0.006920 seconds
+  Import took 0.012276 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.028296 seconds.
+  path: Assets/Sounds
+  artifactKey: Guid(65921e76cc4bfbc429faaabb405a572f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds using Guid(65921e76cc4bfbc429faaabb405a572f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c4bfdbf0fde46467baeec402e4a1a00') in 0.005923 seconds
+  Import took 0.011427 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.108933 seconds.
+  path: Assets/Sounds/332719__sethlind__hiking.wav
+  artifactKey: Guid(6b296c1b0ad9fd74aa37f66ec44c5256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/332719__sethlind__hiking.wav using Guid(6b296c1b0ad9fd74aa37f66ec44c5256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c380078f366552cf32885d1f063002f6') in 0.071163 seconds
+  Import took 0.075372 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004817 seconds.
+  path: Assets/Sounds/332719__sethlind__hiking.wav
+  artifactKey: Guid(6b296c1b0ad9fd74aa37f66ec44c5256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/332719__sethlind__hiking.wav using Guid(6b296c1b0ad9fd74aa37f66ec44c5256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c380078f366552cf32885d1f063002f6') in 0.009204 seconds
+  Import took 0.013900 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 241.872873 seconds.
+  path: Assets/Sounds/332719_sethlind_hiking (mp3cut.net).wav
+  artifactKey: Guid(5f6de8df1c807d3469f71012e1980058) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/332719_sethlind_hiking (mp3cut.net).wav using Guid(5f6de8df1c807d3469f71012e1980058) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7901ebcbc8d17c17008ebd04c08b22b4') in 0.016478 seconds
+  Import took 0.020019 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 164.813418 seconds.
+  path: Assets/Downloaded/FirstPersonAsset/Sounds/playerSound/hit_sound.wav
+  artifactKey: Guid(fb54d3718f2698f4a894c26225dc3e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/FirstPersonAsset/Sounds/playerSound/hit_sound.wav using Guid(fb54d3718f2698f4a894c26225dc3e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52909c6827cbe1943af94c21a97abe65') in 0.014088 seconds
+  Import took 0.018099 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/Downloaded/FirstPersonAsset/Sounds/playerSound/run_sound 1.wav
+  artifactKey: Guid(258857b6c358d0644a339892e0212203) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/FirstPersonAsset/Sounds/playerSound/run_sound 1.wav using Guid(258857b6c358d0644a339892e0212203) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b9bea61329c5a6b23a87ef5a9b3e22b') in 0.013341 seconds
+  Import took 0.017345 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.969044 seconds.
+  path: Assets/Animations/Scary Zombie Pack/Male Injured Pack/injured walk backwards.fbx
+  artifactKey: Guid(27e2992d001675e43a0fd22e657becc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/Male Injured Pack/injured walk backwards.fbx using Guid(27e2992d001675e43a0fd22e657becc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69b84772135b5434d43e6c64ef47f42b') in 0.030672 seconds
+  Import took 0.037322 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006208 seconds.
+Callback registration failed. Increase kMaxCallback.
+
+Fatal Error! Callback registration failed. Increase kMaxCallback.
+
+Crash!!!
+SymInit: Symbol-SearchPath: 'C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/Mono;.;C:\Users\Public\Documents\Unity Projects\Zombo_Terrain;C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor;C:\WINDOWS;C:\WINDOWS\system32;SRV*C:\websymbols*http://msdl.microsoft.com/download/symbols;', symOptions: 534, UserName: 'Radis'
+OS-Version: 10.0.0
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\Unity.exe:Unity.exe (00007FF62C490000), size: 134955008 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2020.3.7.38898
+C:\WINDOWS\SYSTEM32\ntdll.dll:ntdll.dll (00007FFFA24F0000), size: 2052096 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\WINDOWS\System32\KERNEL32.DLL:KERNEL32.DLL (00007FFFA23C0000), size: 774144 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\WINDOWS\System32\KERNELBASE.dll:KERNELBASE.dll (00007FFFA00C0000), size: 2920448 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\WINDOWS\System32\CRYPT32.dll:CRYPT32.dll (00007FFF9FE30000), size: 1437696 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.844
+C:\WINDOWS\System32\ucrtbase.dll:ucrtbase.dll (00007FFF9FC90000), size: 1048576 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.789
+C:\WINDOWS\System32\USER32.dll:USER32.dll (00007FFFA20F0000), size: 1703936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\WINDOWS\System32\win32u.dll:win32u.dll (00007FFFA0500000), size: 139264 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\WINDOWS\System32\GDI32.dll:GDI32.dll (00007FFFA0CD0000), size: 172032 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\optix.6.0.0.dll:optix.6.0.0.dll (00007FFF776D0000), size: 208896 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6.0.0.0
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\libfbxsdk.dll:libfbxsdk.dll (00007FFF5F550000), size: 8974336 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2020.0.0.0
+C:\WINDOWS\System32\gdi32full.dll:gdi32full.dll (00007FFFA0390000), size: 1093632 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\WINDOWS\System32\msvcp_win.dll:msvcp_win.dll (00007FFF9FD90000), size: 643072 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.789
+C:\WINDOWS\System32\ADVAPI32.dll:ADVAPI32.dll (00007FFFA07C0000), size: 704512 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1052
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\OpenImageDenoise.dll:OpenImageDenoise.dll (00007FFF3CF10000), size: 43806720 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\msvcrt.dll:msvcrt.dll (00007FFFA0AA0000), size: 647168 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.0.19041.546
+C:\WINDOWS\System32\sechost.dll:sechost.dll (00007FFFA0D00000), size: 634880 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\WINDOWS\System32\RPCRT4.dll:RPCRT4.dll (00007FFFA2290000), size: 1220608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\umbraoptimizer64.dll:umbraoptimizer64.dll (00007FFF64C60000), size: 1306624 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\SHELL32.dll:SHELL32.dll (00007FFFA12C0000), size: 7598080 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\WINDOWS\System32\WS2_32.dll:WS2_32.dll (00007FFFA1F70000), size: 438272 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\System32\SHLWAPI.dll:SHLWAPI.dll (00007FFFA0A30000), size: 348160 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\FreeImage.dll:FreeImage.dll (0000000180000000), size: 6414336 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.18.0.0
+C:\WINDOWS\System32\WLDAP32.dll:WLDAP32.dll (00007FFFA1FE0000), size: 352256 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\System32\ole32.dll:ole32.dll (00007FFFA1190000), size: 1220608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\WINDOWS\System32\Normaliz.dll:Normaliz.dll (00007FFFA0720000), size: 32768 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\System32\combase.dll:combase.dll (00007FFFA0DA0000), size: 3493888 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\System32\IMM32.dll:IMM32.dll (00007FFFA1100000), size: 196608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\System32\SETUPAPI.dll:SETUPAPI.dll (00007FFFA1AE0000), size: 4624384 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.844
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\WinPixEventRuntime.dll:WinPixEventRuntime.dll (00007FFF850F0000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.0.1812.6001
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\ispc_texcomp.dll:ispc_texcomp.dll (00007FFF645A0000), size: 1609728 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\cfgmgr32.dll:cfgmgr32.dll (00007FFFA0070000), size: 319488 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\System32\bcrypt.dll:bcrypt.dll (00007FFFA0040000), size: 159744 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\WINDOWS\System32\OLEAUT32.dll:OLEAUT32.dll (00007FFFA0530000), size: 839680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.985
+C:\WINDOWS\System32\WINTRUST.dll:WINTRUST.dll (00007FFFA04A0000), size: 393216 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\WINDOWS\SYSTEM32\VCRUNTIME140.dll:VCRUNTIME140.dll (00007FFF81A70000), size: 102400 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.28.29334.0
+C:\WINDOWS\SYSTEM32\OPENGL32.dll:OPENGL32.dll (00007FFF70470000), size: 1200128 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\SYSTEM32\GLU32.dll:GLU32.dll (00007FFF70440000), size: 180224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL:IPHLPAPI.DLL (00007FFF9F070000), size: 241664 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\MSVCP140.dll:MSVCP140.dll (00007FFF81AA0000), size: 598016 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.28.29334.0
+C:\WINDOWS\SYSTEM32\HID.DLL:HID.DLL (00007FFF9E120000), size: 53248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\WINHTTP.dll:WINHTTP.dll (00007FFF87CF0000), size: 1089536 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\RadeonImageFilters.dll:RadeonImageFilters.dll (00007FFF63CE0000), size: 2535424 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.5.1.0
+C:\WINDOWS\SYSTEM32\WINMM.dll:WINMM.dll (00007FFF85710000), size: 159744 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\VERSION.dll:VERSION.dll (00007FFF96310000), size: 40960 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\WSOCK32.dll:WSOCK32.dll (00007FFF7F430000), size: 36864 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\SketchUpAPI.dll:SketchUpAPI.dll (00007FFF3C680000), size: 8978432 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 19.0.753.0
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\tbb.dll:tbb.dll (00007FFF64BF0000), size: 413696 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2017.0.2016.1004
+C:\WINDOWS\SYSTEM32\VCRUNTIME140_1.dll:VCRUNTIME140_1.dll (00007FFF81A60000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.28.29334.0
+C:\WINDOWS\SYSTEM32\CRYPTBASE.DLL:CRYPTBASE.DLL (00007FFF9F5B0000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\SketchUpCommonPreferences.dll:SketchUpCommonPreferences.dll (00007FFF64B70000), size: 483328 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 19.0.753.20342
+C:\WINDOWS\SYSTEM32\MSVCP120.dll:MSVCP120.dll (00007FFF64290000), size: 679936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 12.0.40649.5
+C:\WINDOWS\SYSTEM32\Secur32.dll:Secur32.dll (00007FFF81A90000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\MSVCR120.dll:MSVCR120.dll (00007FFF641A0000), size: 978944 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 12.0.40649.5
+C:\WINDOWS\SYSTEM32\SSPICLI.DLL:SSPICLI.DLL (00007FFF9FAC0000), size: 200704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\OpenRL.dll:OpenRL.dll (0000012B167A0000), size: 12779520 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.5.0.2907
+C:\WINDOWS\SYSTEM32\MSVCR100.dll:MSVCR100.dll (0000000075CC0000), size: 860160 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.40219.325
+C:\WINDOWS\SYSTEM32\MSVCP100.dll:MSVCP100.dll (0000000075DA0000), size: 622592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.40219.325
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\embree.dll:embree.dll (00007FFF3B690000), size: 16711680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.14.0.0
+C:\WINDOWS\SYSTEM32\MSWSOCK.DLL:MSWSOCK.DLL (00007FFF9F3D0000), size: 434176 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\OpenRL_pthread.dll:OpenRL_pthread.dll (0000012B16670000), size: 61440 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.9.0.0
+C:\WINDOWS\SYSTEM32\MSASN1.dll:MSASN1.dll (00007FFF9F7F0000), size: 73728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\kernel.appcore.dll:kernel.appcore.dll (00007FFF9E4F0000), size: 73728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\System32\bcryptPrimitives.dll:bcryptPrimitives.dll (00007FFF9FC00000), size: 536576 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\WINDOWS\system32\uxtheme.dll:uxtheme.dll (00007FFF9CFC0000), size: 647168 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\System32\shcore.dll:shcore.dll (00007FFFA2040000), size: 712704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\WINDOWS\SYSTEM32\windows.storage.dll:windows.storage.dll (00007FFF9D980000), size: 7933952 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\SYSTEM32\Wldp.dll:Wldp.dll (00007FFF9F670000), size: 180224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.662
+C:\WINDOWS\SYSTEM32\profapi.dll:profapi.dll (00007FFF9FB40000), size: 126976 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.844
+C:\WINDOWS\System32\clbcatq.dll:clbcatq.dll (00007FFFA0BA0000), size: 692224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2001.12.10941.16384
+C:\WINDOWS\System32\netprofm.dll:netprofm.dll (00007FFF9A150000), size: 253952 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\WINDOWS\System32\NSI.dll:NSI.dll (00007FFFA0A20000), size: 32768 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.610
+C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL:dhcpcsvc6.DLL (00007FFF9D1F0000), size: 94208 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL:dhcpcsvc.DLL (00007FFF9D1D0000), size: 118784 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\System32\npmproxy.dll:npmproxy.dll (00007FFF8DA10000), size: 65536 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\WINDOWS\SYSTEM32\DNSAPI.dll:DNSAPI.dll (00007FFF9F0C0000), size: 835584 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\WINDOWS\System32\fwpuclnt.dll:fwpuclnt.dll (00007FFF84C00000), size: 520192 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\System32\rasadhlp.dll:rasadhlp.dll (00007FFF83900000), size: 40960 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\d3d11.dll:d3d11.dll (00007FFF9AE10000), size: 2506752 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\WINDOWS\SYSTEM32\dxgi.dll:dxgi.dll (00007FFF9E530000), size: 999424 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.964
+C:\WINDOWS\System32\DriverStore\FileRepository\nvhm.inf_amd64_4bae2bfda6ecbdc0\nvldumdx.dll:nvldumdx.dll (00007FFF374C0000), size: 1069056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 27.21.14.6280
+C:\WINDOWS\SYSTEM32\cryptnet.dll:cryptnet.dll (00007FFF8E660000), size: 200704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\WINDOWS\System32\imagehlp.dll:imagehlp.dll (00007FFFA1F50000), size: 118784 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\CRYPTSP.dll:CRYPTSP.dll (00007FFF9F5C0000), size: 98304 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\system32\rsaenh.dll:rsaenh.dll (00007FFF9ED00000), size: 212992 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1052
+C:\WINDOWS\System32\DriverStore\FileRepository\nvhm.inf_amd64_4bae2bfda6ecbdc0\nvwgf2umx.dll:nvwgf2umx.dll (00007FFF32690000), size: 77426688 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 27.21.14.6280
+C:\WINDOWS\system32\nvspcap64.dll:nvspcap64.dll (00007FFF324B0000), size: 1949696 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.9.0.97
+C:\WINDOWS\System32\PSAPI.DLL:PSAPI.DLL (00007FFFA0A90000), size: 32768 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\WTSAPI32.dll:WTSAPI32.dll (00007FFF9C5B0000), size: 81920 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\system32\nvapi64.dll:nvapi64.dll (00007FFF88250000), size: 7286784 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 27.21.14.6280
+C:\WINDOWS\SYSTEM32\dxcore.dll:dxcore.dll (00007FFF9A3E0000), size: 241664 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\system32\wbem\wbemprox.dll:wbemprox.dll (00007FFF8DA40000), size: 69632 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\SYSTEM32\wbemcomn.dll:wbemcomn.dll (00007FFF94620000), size: 598016 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\system32\wbem\wbemsvc.dll:wbemsvc.dll (00007FFF8CA20000), size: 81920 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\system32\wbem\fastprox.dll:fastprox.dll (00007FFF8CA40000), size: 1093632 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\amsi.dll:amsi.dll (00007FFF84B30000), size: 102400 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\WINDOWS\SYSTEM32\USERENV.dll:USERENV.dll (00007FFF9FB00000), size: 188416 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.572
+C:\Program Files (x86)\Kaspersky Lab\Kaspersky Free 21.3\x64\antimalware_provider.dll:antimalware_provider.dll (00007FFF848F0000), size: 2277376 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 30.587.0.880
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\cudart64_90.dll:cudart64_90.dll (00007FFF38890000), size: 397312 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6.14.11.9000
+C:\WINDOWS\SYSTEM32\opencl.dll:opencl.dll (00007FFF32340000), size: 1462272 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.2.8.0
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\radeonrays.dll:radeonrays.dll (00007FFF38800000), size: 552960 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\Data\MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll:mono-2.0-bdwgc.dll (00007FFF31BD0000), size: 7790592 (result: 0), SymType: '-deferred-', PDB: ''
+C:\ProgramData\Microsoft\VisualStudio\Setup\x64\Microsoft.VisualStudio.Setup.Configuration.Native.dll:Microsoft.VisualStudio.Setup.Configuration.Native.dll (00007FFF3A510000), size: 327680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.7.3111.17308
+C:\WINDOWS\SYSTEM32\PROPSYS.dll:PROPSYS.dll (00007FFF9D460000), size: 1007616 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.0.19041.1023
+C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\comctl32.dll:comctl32.dll (00007FFF852B0000), size: 2727936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6.10.19041.1110
+C:\WINDOWS\SYSTEM32\WindowsCodecs.dll:WindowsCodecs.dll (00007FFF99DF0000), size: 1785856 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Windows\System32\MrmCoreR.dll:MrmCoreR.dll (00007FFF8C470000), size: 1003520 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Windows\System32\iertutil.dll:iertutil.dll (00007FFF8ACE0000), size: 2818048 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 11.0.19041.1081
+C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll:windows.staterepositorycore.dll (00007FFF8A7F0000), size: 69632 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.844
+C:\Windows\System32\thumbcache.dll:thumbcache.dll (00007FFF70970000), size: 417792 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\Windows\System32\bcp47mrm.dll:bcp47mrm.dll (00007FFF8C060000), size: 184320 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.867
+C:\Windows\System32\Windows.UI.dll:Windows.UI.dll (00007FFF8C320000), size: 1314816 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\Windows\System32\WindowManagementAPI.dll:WindowManagementAPI.dll (00007FFF999E0000), size: 659456 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Windows\System32\InputHost.dll:InputHost.dll (00007FFF8C0C0000), size: 1384448 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\Windows\System32\TextInputFramework.dll:TextInputFramework.dll (00007FFF8C220000), size: 1019904 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\SYSTEM32\wintypes.dll:wintypes.dll (00007FFF9B7C0000), size: 1392640 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\SYSTEM32\twinapi.appcore.dll:twinapi.appcore.dll (00007FFF994B0000), size: 2101248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.964
+C:\Windows\System32\CoreMessaging.dll:CoreMessaging.dll (00007FFF9C3F0000), size: 991232 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\Windows\System32\CoreUIComponents.dll:CoreUIComponents.dll (00007FFF9C090000), size: 3530752 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\ntmarta.dll:ntmarta.dll (00007FFF9E970000), size: 208896 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.1110_none_91a01826cc8bca4c\gdiplus.dll:gdiplus.dll (00007FFF85560000), size: 1740800 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\WINDOWS\System32\MSCTF.dll:MSCTF.dll (00007FFFA0600000), size: 1134592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\SYSTEM32\edputil.dll:edputil.dll (00007FFF70940000), size: 147456 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\System32\Windows.StateRepositoryPS.dll:Windows.StateRepositoryPS.dll (00007FFF845F0000), size: 1335296 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.844
+C:\WINDOWS\SYSTEM32\wkscli.dll:wkscli.dll (00007FFF9EE20000), size: 94208 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\netutils.dll:netutils.dll (00007FFF9F0B0000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\System32\provsvc.dll:provsvc.dll (00007FFF39D70000), size: 512000 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1
+C:\WINDOWS\SYSTEM32\apphelp.dll:apphelp.dll (00007FFF9C9C0000), size: 589824 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.928
+C:\Windows\System32\OneCoreUAPCommonProxyStub.dll:OneCoreUAPCommonProxyStub.dll (00007FFF97310000), size: 7958528 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\WINDOWS\SYSTEM32\policymanager.dll:policymanager.dll (00007FFF97270000), size: 655360 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\WINDOWS\SYSTEM32\msvcp110_win.dll:msvcp110_win.dll (00007FFF9ED90000), size: 565248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\dbghelp.dll:dbghelp.dll (00007FFF9E1F0000), size: 1982464 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.867
+
+========== OUTPUTTING STACK TRACE ==================
+
+0x00007FFFA00F4ED9 (KERNELBASE) RaiseException
+0x00007FF62EBC21FD (Unity) EditorMonoConsole::LogToConsoleImplementation
+0x00007FF62EBC314A (Unity) EditorMonoConsole::LogToConsoleImplementation
+0x00007FF63079207E (Unity) DebugStringToFilePostprocessedStacktrace
+0x00007FF63079162F (Unity) DebugStringToFile
+0x00007FF62C6F4313 (Unity) CallbackArraySubBase<void (__cdecl*)(MemoryManager::AllocationLogDetails const & __ptr64)>::Register
+0x00007FF62F393E49 (Unity) LoadDomainAndUserAssemblies
+0x00007FF62F3942FE (Unity) LoadUserAssemblies
+0x00007FF62F7FCAF8 (Unity) <lambda_32ff519d5c36f44c8f28c9876d6db935>::operator()
+0x00007FF62F8A06E2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007FF62F8A2840 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007FF62F8A5FCE (Unity) asio::io_service::run
+0x00007FF62F82967B (Unity) RunAssetImportWorkerClientV2
+0x00007FF62F8296D0 (Unity) RunAssetImporterV2
+0x00007FF62ED1B2A6 (Unity) Application::InitializeProject
+0x00007FF62F69E482 (Unity) WinMain
+0x00007FF6315267B6 (Unity) __scrt_common_main_seh
+0x00007FFFA23D7034 (KERNEL32) BaseThreadInitThunk
+0x00007FFFA2542651 (ntdll) RtlUserThreadStart
+
+========== END OF STACKTRACE ===========
+
+A crash has been intercepted by the crash handler. For call stack and other details, see the latest crash report generated in:
+ * C:/Users/Radis/AppData/Local/Temp/Unity/Editor/Crashes
