@@ -14,6 +14,7 @@ public class GUIwork : MonoBehaviour
     private float healthLengthMax;
     private float healthLength;
     private int currentHealth;
+
     private void Start()
     {
         healthLengthMax = 200;
@@ -21,6 +22,7 @@ public class GUIwork : MonoBehaviour
             currentHealth = Player.instance.PlayerHealth.CurrentHealth;
         deltaHealthLength = healthLengthMax / currentHealth;
     }
+
     void OnGUI()
     {
         if (Time.timeScale == 0)
@@ -61,6 +63,7 @@ public class GUIwork : MonoBehaviour
         rgba.a = LabelSlider(screenRect, rgba.a, 0f, 1f, "Alpha");
         return rgba;
     }
+
     float LabelSlider(Rect screenRect, float sliderValue, float sliderMinVal, float sliderMaxValue, string labelText)
     {
         GUI.Label(screenRect, labelText);

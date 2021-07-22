@@ -23,6 +23,12 @@ public class DailyCycle : MonoBehaviour
         DirLightRotation();
     }
 
+    public void DailyCycleTimeJump(Quaternion jump)
+    {
+        enteredDayTime = jump;
+        isOnSpeedRotation = true;
+    }
+
     private void DirLightRotation()
     {
         var rotationSpeed = dayRotationSpeed;
@@ -56,9 +62,4 @@ public class DailyCycle : MonoBehaviour
         transform.Rotate(Vector3.left * rotationSpeed * Time.fixedDeltaTime);
     }
 
-    public void DailyCycleTimeJump(Quaternion jump)
-    {
-        enteredDayTime = jump;
-        isOnSpeedRotation = true;
-    }
 }
