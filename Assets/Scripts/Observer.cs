@@ -13,7 +13,7 @@ public class Observer : MonoBehaviour
     }
     private void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag("Enemy"))
+        if (col.CompareTag("LookPoint"))
         {
             targets.Add(col.transform);
 
@@ -27,7 +27,7 @@ public class Observer : MonoBehaviour
 
     private void OnTriggerExit(Collider col)
     {
-        if (col.CompareTag("Enemy"))
+        if (col.CompareTag("LookPoint"))
         {
             targets.Remove(col.transform);
 

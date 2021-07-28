@@ -18,8 +18,10 @@ public class GUIwork : MonoBehaviour
     private void Start()
     {
         healthLengthMax = 200;
+
         if (Player.instance != null)
             currentHealth = Player.instance.PlayerHealth.CurrentHealth;
+
         deltaHealthLength = healthLengthMax / currentHealth;
     }
 

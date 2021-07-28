@@ -6,17 +6,17 @@ public class Health : MonoBehaviour
     [SerializeField] private int maxHealth;
     private UnityAction<int> updateHP;
     private UnityAction deathEntity;
-    private int currentHealth;
+    [SerializeField] private int currentHealth;
 
-    public UnityAction<int> UpdateHP { get { return updateHP; } set { updateHP = value; } }
-    public UnityAction DeathEntity { get { return deathEntity; } set { deathEntity = value; } }
+    public UnityAction<int> UpdateHP {get => updateHP;  set => updateHP = value;}
+    public UnityAction DeathEntity {get => deathEntity; set => deathEntity = value;}
     public int CurrentHealth => currentHealth;
-        
+
     private void Start()
     {
         GameManager.instance.HealthContainer.Add(gameObject, this);
         currentHealth = maxHealth;
-    }    
+    }  
 
     public void TakeDamage(int damage)
     {
