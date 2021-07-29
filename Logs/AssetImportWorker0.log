@@ -3112,3 +3112,635 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.012992 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.89 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.233 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2238ms)
+		BeginReloadAssembly (634ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (24ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (116ms)
+		EndReloadAssembly (1484ms)
+			LoadAssemblies (683ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (512ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (61ms)
+			SetupLoadedEditorAssemblies (459ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (108ms)
+				ProcessInitializeOnLoadAttributes (296ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.96 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1951 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.1 MB.
+System memory in use after: 100.2 MB.
+
+Unloading 49 unused Assets to reduce memory usage. Loaded Objects now: 2549.
+Total: 6.232000 ms (FindLiveObjects: 0.249300 ms CreateObjectMapping: 0.084400 ms MarkObjects: 5.826900 ms  DeleteObjects: 0.069700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 48345.225241 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Axe/Axe.fbx
+  artifactKey: Guid(a6d5e45425fcde944b7af507cfa4e04f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Axe/Axe.fbx using Guid(a6d5e45425fcde944b7af507cfa4e04f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ce32937752d64a8cf58b9bcc9cb00db') in 0.248136 seconds 
+  Import took 0.253303 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/Floor/Entry 2 Floor.fbx
+  artifactKey: Guid(99c4cd95d8141844484669984786a2a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/Floor/Entry 2 Floor.fbx using Guid(99c4cd95d8141844484669984786a2a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd825dd94d94d645000858b567f5c1563') in 0.127482 seconds 
+  Import took 0.131694 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Fence02_LOD2.obj
+  artifactKey: Guid(a27c3ce4243660f489148d09e87605cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Fence02_LOD2.obj using Guid(a27c3ce4243660f489148d09e87605cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5013885c053919f5b7423e25e78b72f') in 0.039266 seconds 
+  Import took 0.043686 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Complete/Entry 2.fbx
+  artifactKey: Guid(ee99d05c77f29844486a51fe333c21dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Complete/Entry 2.fbx using Guid(ee99d05c77f29844486a51fe333c21dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1358164dc13d8e32197c9241f4f6518e') in 0.710375 seconds 
+  Import took 0.727587 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Downloaded/Settlement/Courtyard and Entrance/Entry/Brick 3/Brick 3.fbx
+  artifactKey: Guid(4ff4742bf9eba93458de6796d1819b3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Courtyard and Entrance/Entry/Brick 3/Brick 3.fbx using Guid(4ff4742bf9eba93458de6796d1819b3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '642a6306ccf91c085d8061fe284a92f4') in 0.042024 seconds 
+  Import took 0.045922 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Coffin.obj
+  artifactKey: Guid(a465e761c2c66614197e8efced8f1b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Coffin.obj using Guid(a465e761c2c66614197e8efced8f1b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14112c44f7665f37571afb1e43a4b261') in 0.064205 seconds 
+  Import took 0.068665 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/Downloaded/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop.spm
+  artifactKey: Guid(c91c1eb85782d5748ace27eb4d7415bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop.spm using Guid(c91c1eb85782d5748ace27eb4d7415bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a69c44ae6aef93e54df8bee6d67165ad') in 0.221001 seconds 
+  Import took 0.226028 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Bucket/Bucket.fbx
+  artifactKey: Guid(f6de72f5d689055498c7aebc32a6f670) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Bucket/Bucket.fbx using Guid(f6de72f5d689055498c7aebc32a6f670) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7858a6cd92c0b2c6f518d0b82700611a') in 0.053266 seconds 
+  Import took 0.058414 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Crypt_LOD2.obj
+  artifactKey: Guid(1a364be455238744f9d783306574ca71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Crypt_LOD2.obj using Guid(1a364be455238744f9d783306574ca71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82bd2a60c11eff06108004cfdc1180f5') in 0.042330 seconds 
+  Import took 0.046329 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Fork/Fork.fbx
+  artifactKey: Guid(b96b7599d58898743b0432c8a4dc91bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Fork/Fork.fbx using Guid(b96b7599d58898743b0432c8a4dc91bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab5585ae51f80fbbcad88834d38bdf9a') in 0.077123 seconds 
+  Import took 0.082156 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000307 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk run backward.fbx
+  artifactKey: Guid(2ad267b8bb10f154e9162bafe5ad5a38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk run backward.fbx using Guid(2ad267b8bb10f154e9162bafe5ad5a38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3026ef93fb319fd2e357a5ac2c4922b1') in 0.019732 seconds 
+  Import took 0.025034 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Crypt.obj
+  artifactKey: Guid(ab8d16065f7125b458b2f1ad8132208d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Crypt.obj using Guid(ab8d16065f7125b458b2f1ad8132208d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41b165308f6aa7932bedb46476693d62') in 0.136997 seconds 
+  Import took 0.146189 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Fence01.obj
+  artifactKey: Guid(0539c40334b57a94d9a8ece102e89957) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Fence01.obj using Guid(0539c40334b57a94d9a8ece102e89957) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a13d9a6c2740c6cf760cac7fa3a5c688') in 0.055205 seconds 
+  Import took 0.060490 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000299 seconds.
+  path: Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/Walls/Entry 2 Wall 1.fbx
+  artifactKey: Guid(4043c5f8db544d946ad136d42f31afc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/Walls/Entry 2 Wall 1.fbx using Guid(4043c5f8db544d946ad136d42f31afc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d83a49e981ca950a417c080c20e3dd2') in 0.060315 seconds 
+  Import took 0.066458 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Crypt02.obj
+  artifactKey: Guid(b88d33d557e1ccc48a32aa5c0aa697eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Crypt02.obj using Guid(b88d33d557e1ccc48a32aa5c0aa697eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78aeb4945543d8dff6c08d510ebcb8f5') in 0.102314 seconds 
+  Import took 0.111385 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk idle.fbx
+  artifactKey: Guid(c9a0dd444557745489f011be65b1288b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk idle.fbx using Guid(c9a0dd444557745489f011be65b1288b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d574a1ad16bf7e9df28428576d003a1') in 0.020721 seconds 
+  Import took 0.025999 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Fence.obj
+  artifactKey: Guid(bb926967ab5d1a14fa109e48e19d3885) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Fence.obj using Guid(bb926967ab5d1a14fa109e48e19d3885) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acbaab6fbf2fbe633c5beac29c3285a2') in 0.056314 seconds 
+  Import took 0.061994 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Crypt02_LOD1.obj
+  artifactKey: Guid(99ec123b182a8114cb14a06366f8b900) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Crypt02_LOD1.obj using Guid(99ec123b182a8114cb14a06366f8b900) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4185d5262cfe525d37607fbce550561') in 0.029874 seconds 
+  Import took 0.034477 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Fence01_LOD2.obj
+  artifactKey: Guid(7348926e2094d1a44913b0c72490742d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Fence01_LOD2.obj using Guid(7348926e2094d1a44913b0c72490742d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71ec5d7bfe02fa47cdd4a83ec481b7b6') in 0.031735 seconds 
+  Import took 0.035737 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Fence02.obj
+  artifactKey: Guid(47a8bb2136b83324a99af9bd485d644c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Fence02.obj using Guid(47a8bb2136b83324a99af9bd485d644c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a60f22dec2f53ea15404c079ec8a7674') in 0.039351 seconds 
+  Import took 0.045334 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Fence_LOD2.obj
+  artifactKey: Guid(7cabc42778406634682b72c403c390f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Fence_LOD2.obj using Guid(7cabc42778406634682b72c403c390f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55b0d997aa125c410acb94b8bc6ff662') in 0.027668 seconds 
+  Import took 0.034690 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk idle variation (2).fbx
+  artifactKey: Guid(7c9f4a68383aa2a4e9a0370cac52ccea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk idle variation (2).fbx using Guid(7c9f4a68383aa2a4e9a0370cac52ccea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b59e4bc157976be984d30798a1af21e') in 0.015827 seconds 
+  Import took 0.021011 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge Part/Bridge Part LOD 2.fbx
+  artifactKey: Guid(eca1804372c33cc4a8b7856bee80d1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge Part/Bridge Part LOD 2.fbx using Guid(eca1804372c33cc4a8b7856bee80d1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f855fc23ec60c21c615a05c8f9e49b8d') in 0.167778 seconds 
+  Import took 0.172726 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Animations/Male Drunk Pack/backward walking turn.fbx
+  artifactKey: Guid(621eacb24c7964545af907fdee932b36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/backward walking turn.fbx using Guid(621eacb24c7964545af907fdee932b36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ca57b1c4a79ded50f48229d639470aa') in 0.015519 seconds 
+  Import took 0.020262 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Fences/Fence 5/Fence 5.fbx
+  artifactKey: Guid(4808050dc9321d64b908bf773a64da17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Fences/Fence 5/Fence 5.fbx using Guid(4808050dc9321d64b908bf773a64da17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56721daa0c5e265e6aec002994578c8b') in 0.031626 seconds 
+  Import took 0.036061 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000380 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Crypt02_LOD2.obj
+  artifactKey: Guid(10c95b43878c50a44bb3a2ecceac6781) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Crypt02_LOD2.obj using Guid(10c95b43878c50a44bb3a2ecceac6781) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '093d1e1421b87df06186b0cb8ca80528') in 0.028321 seconds 
+  Import took 0.034539 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk walking turn.fbx
+  artifactKey: Guid(79983d328b47fe1408017e39fbfbb4c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk walking turn.fbx using Guid(79983d328b47fe1408017e39fbfbb4c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cdcad85bd7e5951f04785f10b91b4c2') in 0.015758 seconds 
+  Import took 0.020100 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Fence01_LOD1.obj
+  artifactKey: Guid(c45df7fb666e56d489f17c2e33bfd7cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Fence01_LOD1.obj using Guid(c45df7fb666e56d489f17c2e33bfd7cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd58d89297a3438d8397c85de92642de4') in 0.025504 seconds 
+  Import took 0.030525 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Fences/Fence 3/Fence 3.fbx
+  artifactKey: Guid(8b85338f6252df444bcfab6df0b43de0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Fences/Fence 3/Fence 3.fbx using Guid(8b85338f6252df444bcfab6df0b43de0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46862ddb6a5c21adfb115c7007114ae1') in 0.035777 seconds 
+  Import took 0.041312 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/Downloaded/Settlement/Courtyard and Entrance/Entry/Brick 2/Brick 2.fbx
+  artifactKey: Guid(a5b0cd4710e466a4586cd85f78cd5587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Courtyard and Entrance/Entry/Brick 2/Brick 2.fbx using Guid(a5b0cd4710e466a4586cd85f78cd5587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cab0e823ef577fb9a394650819240e56') in 0.044633 seconds 
+  Import took 0.050091 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/Downloaded/Environment/SpeedTree/Broadleaf/Broadleaf_Mobile.spm
+  artifactKey: Guid(6aab193b7693b5e4c9741f1917d2987c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Environment/SpeedTree/Broadleaf/Broadleaf_Mobile.spm using Guid(6aab193b7693b5e4c9741f1917d2987c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53d476d2a5226c49064f269966b31be9') in 0.101782 seconds 
+  Import took 0.108063 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Fences/Fence 2/Fence 2.fbx
+  artifactKey: Guid(cf14853f411cb604a8edeff7c38ec97c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Fences/Fence 2/Fence 2.fbx using Guid(cf14853f411cb604a8edeff7c38ec97c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '137aeecfb82b4b999e6f981ecb7bca72') in 0.030964 seconds 
+  Import took 0.034947 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge first part/First Part Bridge LOD 3.fbx
+  artifactKey: Guid(5352a73505a82494bac1f8ff98debe04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge first part/First Part Bridge LOD 3.fbx using Guid(5352a73505a82494bac1f8ff98debe04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f74b3b364babf03a9796d3b4d315453d') in 0.171969 seconds 
+  Import took 0.179040 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/Big Wood/Entry 2 Big Wood.fbx
+  artifactKey: Guid(0347f8ddc7be4664193363080082c937) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/Big Wood/Entry 2 Big Wood.fbx using Guid(0347f8ddc7be4664193363080082c937) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2eb91314c8e8b2b1e293e268bbe3e98') in 0.048081 seconds 
+  Import took 0.052550 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/CandleStick/Entry 2 CandleStick.fbx
+  artifactKey: Guid(b03a8b547d1a469469ed51056f897871) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/CandleStick/Entry 2 CandleStick.fbx using Guid(b03a8b547d1a469469ed51056f897871) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb283a29413c5141da71f532dc2e1611') in 0.057453 seconds 
+  Import took 0.062606 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Barrel/Barrel LOD 1.fbx
+  artifactKey: Guid(70684f5c9d2ceca4e8c96c0a9fb606bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Barrel/Barrel LOD 1.fbx using Guid(70684f5c9d2ceca4e8c96c0a9fb606bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b086863371238a2588e094b4f2c1aae') in 0.164324 seconds 
+  Import took 0.169015 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk idle variation.fbx
+  artifactKey: Guid(27553c92958de1349845ae00978f2ab2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk idle variation.fbx using Guid(27553c92958de1349845ae00978f2ab2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89657addaa0767e9925de8ad20ec893e') in 0.014884 seconds 
+  Import took 0.019015 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000927 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Cels/Cels.fbx
+  artifactKey: Guid(1c21e8213d2d8264abdb357750d39b87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Cels/Cels.fbx using Guid(1c21e8213d2d8264abdb357750d39b87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ad227d28a289e7bd79247b5a49872d6') in 0.023026 seconds 
+  Import took 0.027506 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Crypt_LOD1.obj
+  artifactKey: Guid(3093fc030a358724593b973805772ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Crypt_LOD1.obj using Guid(3093fc030a358724593b973805772ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '235c8f756fdd286477bf7cb33b82629e') in 0.043056 seconds 
+  Import took 0.047615 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge first part/First Part Bridge LOD 2.fbx
+  artifactKey: Guid(add06ee81060c1545ade7dcb46bd187a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge first part/First Part Bridge LOD 2.fbx using Guid(add06ee81060c1545ade7dcb46bd187a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9fa64f1d353959147d773b6cf4611c0') in 0.136150 seconds 
+  Import took 0.143290 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000327 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk run forward.fbx
+  artifactKey: Guid(6975c145d2177434aae3c975c8eabafb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk run forward.fbx using Guid(6975c145d2177434aae3c975c8eabafb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec6988ba60c6f3cf311edc84163726bf') in 0.016455 seconds 
+  Import took 0.022174 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Box/Box.fbx
+  artifactKey: Guid(39363f00fbd9d1046a7d053529f529ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/Box/Box.fbx using Guid(39363f00fbd9d1046a7d053529f529ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d7dbf2ab67379f59664ed888e290421') in 0.036851 seconds 
+  Import took 0.041692 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Downloaded/Settlement/Courtyard and Entrance/Entry/Floor/Floor.fbx
+  artifactKey: Guid(752ea3c1908191a43971c175031f9012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Courtyard and Entrance/Entry/Floor/Floor.fbx using Guid(752ea3c1908191a43971c175031f9012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c7e8d77aba54ebb680eee23d3730eb1') in 0.104269 seconds 
+  Import took 0.111180 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Fence02_LOD1.obj
+  artifactKey: Guid(91e5f053fd88b7247bcbfe5760773a5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Fence02_LOD1.obj using Guid(91e5f053fd88b7247bcbfe5760773a5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2299b9707ab0a7f34f29ff41060fbd28') in 0.024630 seconds 
+  Import took 0.028724 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge Part/Bridge Part LOD 1.fbx
+  artifactKey: Guid(a753de0bfd95fb945905768c01ca0b41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge Part/Bridge Part LOD 1.fbx using Guid(a753de0bfd95fb945905768c01ca0b41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2f022514f54515b2c4020f5aa07bf10') in 0.085863 seconds 
+  Import took 0.089981 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Candle_LOD2.obj
+  artifactKey: Guid(365f4d97514c8b847a78802a6994e7f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Candle_LOD2.obj using Guid(365f4d97514c8b847a78802a6994e7f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6b68b9045a1655638f1e68a389d7e56') in 0.030361 seconds 
+  Import took 0.034656 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Downloaded/Settlement/Courtyard and Entrance/Entry/Brick 1/Brick 1.fbx
+  artifactKey: Guid(176e1131abadced4dbfa2b5d475f0d30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Courtyard and Entrance/Entry/Brick 1/Brick 1.fbx using Guid(176e1131abadced4dbfa2b5d475f0d30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7016b2fcef20021d077c55163d5fcad4') in 0.038767 seconds 
+  Import took 0.043176 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge Part/Bridge Part LOD 3.fbx
+  artifactKey: Guid(b39d909098acdc6438b3fd6c0c4a27c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge Part/Bridge Part LOD 3.fbx using Guid(b39d909098acdc6438b3fd6c0c4a27c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bc9ddbaecfd888c7015aa6cfbe67da5') in 0.069171 seconds 
+  Import took 0.074457 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk walk.fbx
+  artifactKey: Guid(6e9621e7b4ab2874cb012f16642b3d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk walk.fbx using Guid(6e9621e7b4ab2874cb012f16642b3d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e56b0dd534be005ceb364cca12bb759b') in 0.018031 seconds 
+  Import took 0.023205 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Fences/Fence 4/Fence 4.fbx
+  artifactKey: Guid(2b5ef699c18eaa948a7df05f3ef1d875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Fences/Fence 4/Fence 4.fbx using Guid(2b5ef699c18eaa948a7df05f3ef1d875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '576f347a42dbcaaeeafa34dc9beae495') in 0.030939 seconds 
+  Import took 0.036191 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Fences/Fence 1/Fence 1.fbx
+  artifactKey: Guid(4329a34f44759844484a2efd0b5b6106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Fences/Fence 1/Fence 1.fbx using Guid(4329a34f44759844484a2efd0b5b6106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5572b922376f14e1b51249dbf17d9af2') in 0.036487 seconds 
+  Import took 0.041468 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/SmallWood/Entry 2 Small Wood.fbx
+  artifactKey: Guid(a0e304a9f87bae544b9342774ed23ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/SmallWood/Entry 2 Small Wood.fbx using Guid(a0e304a9f87bae544b9342774ed23ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e06b7c8d6723bd6d09372d687b8f564') in 0.059441 seconds 
+  Import took 0.064508 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Candle.obj
+  artifactKey: Guid(22abfd5df7f3e6b499b99a1a210193d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Candle.obj using Guid(22abfd5df7f3e6b499b99a1a210193d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bf36fb59d11ac344f197ac0ca2d997a') in 0.049292 seconds 
+  Import took 0.054127 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk running left turn.fbx
+  artifactKey: Guid(caf1ac4406ca9dd48aa6bdaaddddf23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk running left turn.fbx using Guid(caf1ac4406ca9dd48aa6bdaaddddf23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd953af568ea2f4c3f2b08122be8f3b6') in 0.016020 seconds 
+  Import took 0.020468 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/Walls/Entry 2 Wall 4.fbx
+  artifactKey: Guid(a5d8b11276743b746a10a3a2591b5fd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/Walls/Entry 2 Wall 4.fbx using Guid(a5d8b11276743b746a10a3a2591b5fd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '006a338e3807bf0fde0520915b1dca27') in 0.050952 seconds 
+  Import took 0.054601 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Fence_LOD1.obj
+  artifactKey: Guid(04d931c2706d0924e8bb055b456abe27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Fence_LOD1.obj using Guid(04d931c2706d0924e8bb055b456abe27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f301caba28176f691ae98ac367be7c2c') in 0.039560 seconds 
+  Import took 0.058438 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Downloaded/Graveyard/Models/Candle_LOD1.obj
+  artifactKey: Guid(59266605bbf7eec48af326d34c3c7c44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Graveyard/Models/Candle_LOD1.obj using Guid(59266605bbf7eec48af326d34c3c7c44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc7a480b14f7deb251492c7bc722ee86') in 0.025126 seconds 
+  Import took 0.029950 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk turn.fbx
+  artifactKey: Guid(77b86b3cf2ec72144bc373f44751fd80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk turn.fbx using Guid(77b86b3cf2ec72144bc373f44751fd80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd726bd79d0baa68cad8cc4a8adc7c3b1') in 0.016355 seconds 
+  Import took 0.020469 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/Walls/Entry 2 Wall 3.fbx
+  artifactKey: Guid(daf6bd7816d163a47850e71a11530249) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/Walls/Entry 2 Wall 3.fbx using Guid(daf6bd7816d163a47850e71a11530249) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e4c29764fd9d3b24d602a4edb6fb268') in 0.050809 seconds 
+  Import took 0.056294 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge first part/First Part Bridge LOD 1.fbx
+  artifactKey: Guid(33ecff6e16ce3fc41ba433791852845a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Shed Bridge Tools and Fences/FreshModels/_Bridge/_Bridge first part/First Part Bridge LOD 1.fbx using Guid(33ecff6e16ce3fc41ba433791852845a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48942ff84238dd67ae861bcc6009f589') in 0.116536 seconds 
+  Import took 0.125384 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/Walls/Entry 2 Wall 2.fbx
+  artifactKey: Guid(0e16ae2873465cc44b0dcfd795cc9bf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/Walls/Entry 2 Wall 2.fbx using Guid(0e16ae2873465cc44b0dcfd795cc9bf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3855829e9fbdc34c904dcb12c7e9366') in 0.048217 seconds 
+  Import took 0.052435 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Animations/Male Drunk Pack/drunk walk backwards.fbx
+  artifactKey: Guid(6bf8ac153b91a39479ae71d5090aeb7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Male Drunk Pack/drunk walk backwards.fbx using Guid(6bf8ac153b91a39479ae71d5090aeb7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f72832dafbd9d8fc848d66dd2177cc89') in 0.015976 seconds 
+  Import took 0.021884 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/Pillar/Entry 2 Pillar.fbx
+  artifactKey: Guid(1c7e1b873bce64d429f33e255e13bafb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Settlement/Courtyard and Entrance/Entry 2/Entry 2 Modular FBX/Pillar/Entry 2 Pillar.fbx using Guid(1c7e1b873bce64d429f33e255e13bafb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67e83b5d7559e6facce752c4f6da5487') in 0.057511 seconds 
+  Import took 0.062703 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000354 seconds.
+  path: Assets/Downloaded/Environment/SpeedTree/Conifer/Conifer_Desktop.spm
+  artifactKey: Guid(469edab27ab6d004d84af2c4a851bd7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded/Environment/SpeedTree/Conifer/Conifer_Desktop.spm using Guid(469edab27ab6d004d84af2c4a851bd7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '974bf7db2ac3b23c3cb00770ffc05eb7') in 0.134367 seconds 
+  Import took 0.138809 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 56.650194 seconds.
+  path: Assets/Models/Girl/Materials/kachujin_MAT.mat
+  artifactKey: Guid(a8512fac41b54d248ad8e96a075de572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Girl/Materials/kachujin_MAT.mat using Guid(a8512fac41b54d248ad8e96a075de572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd072ab1c9adfaede42db700570b6939c') in 0.064643 seconds 
+  Import took 0.069628 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008413 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.45 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.353 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1354ms)
+		BeginReloadAssembly (147ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (45ms)
+		EndReloadAssembly (1130ms)
+			LoadAssemblies (133ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (361ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (455ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (149ms)
+				ProcessInitializeOnLoadAttributes (249ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.89 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1951 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 104.5 MB.
+System memory in use after: 104.7 MB.
+
+Unloading 50 unused Assets to reduce memory usage. Loaded Objects now: 2595.
+Total: 5.371100 ms (FindLiveObjects: 0.227400 ms CreateObjectMapping: 0.082600 ms MarkObjects: 5.026000 ms  DeleteObjects: 0.033700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
