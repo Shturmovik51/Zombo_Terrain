@@ -28,7 +28,7 @@ public class EffectController : MonoBehaviour
 
         var effects = new PostProcessEffectSettings[] { colorGrading, lensDistortion, depthOfField, autoExposure };
 
-        nuarEffectBtn.onClick.AddListener(() => ChangeEffect(nuarEffectBtn, effects[0]));;
+        nuarEffectBtn.onClick.AddListener(() => ChangeEffect(nuarEffectBtn, effects[0]));
         fishEyeEffectBtn.onClick.AddListener(() => ChangeEffect(fishEyeEffectBtn, effects[1]));
         eyeFocusEffectBtn.onClick.AddListener(() => ChangeEffect(eyeFocusEffectBtn, effects[2]));
         eyeAddictiveEffectBtn.onClick.AddListener(() => ChangeEffect(eyeAddictiveEffectBtn, effects[3]));
@@ -38,6 +38,14 @@ public class EffectController : MonoBehaviour
     {
         if (depthOfField.active == true)
             EyeFocusEffect();
+    }
+
+    private void OnDestroy()
+    {
+        nuarEffectBtn.onClick.RemoveAllListeners();
+        fishEyeEffectBtn.onClick.RemoveAllListeners();
+        eyeFocusEffectBtn.onClick.RemoveAllListeners();
+        eyeAddictiveEffectBtn.onClick.RemoveAllListeners();
     }
 
     private void ChangeEffect(Button button, PostProcessEffectSettings effect)
@@ -51,10 +59,8 @@ public class EffectController : MonoBehaviour
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0));
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-        {
-            eyeDistance = (hit.point - transform.position).magnitude;
-        }
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))        
+            eyeDistance = (hit.point - transform.position).magnitude;        
 
         depthOfField.focusDistance.value = eyeDistance;
     }

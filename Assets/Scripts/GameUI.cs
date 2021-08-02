@@ -28,7 +28,15 @@ public class GameUI : MonoBehaviour
                 ChangeStateGame(CursorLockMode.None, true, 0);
         }
     }
-    
+
+    private void OnDestroy()
+    {
+        DayBtn.onClick.RemoveAllListeners();
+        SunSetBtn.onClick.RemoveAllListeners();
+        NightBtn.onClick.RemoveAllListeners();
+        SunRiseBtn.onClick.RemoveAllListeners();
+    }
+
     private void ChangeStateGame(CursorLockMode cursorLockMode, bool isVisible, float timeScale)
     {
         pausePanel.gameObject.SetActive(isVisible);
