@@ -58,5 +58,4 @@ public class EffectController : MonoBehaviour
 
         depthOfField.focusDistance.value = eyeDistance;
     }
-
 }
