@@ -38,9 +38,7 @@ public class Player : MonoBehaviour
         isGrounded = false;
         xRotation = 0f;
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
-        
+        Cursor.visible = false;        
     }
 
     void Update()

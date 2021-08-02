@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2484058526188284235}
   - component: {fileID: 2484058526188284234}
   - component: {fileID: 6341167097359554929}
+  - component: {fileID: 893314375}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -64,7 +65,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -87,3 +88,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eccd64ca818a97468ebad42977d7398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraPosLerpSpeed: 8
+  cameraRotLerpSpeed: 4
+--- !u!81 &893314375
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2484058526188284087}
+  m_Enabled: 1
