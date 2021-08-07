@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject shootEffects;
     [SerializeField] private int hitImpulseForse;
 
-
     private Health playerHealth;
     public Health PlayerHealth => playerHealth;
 
@@ -63,7 +62,6 @@ public class Player : MonoBehaviour
             playerAnimator.SetBool("Reload", true);
         else
             playerAnimator.SetBool("Reload", false);
-
 
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -163,7 +161,6 @@ public class Player : MonoBehaviour
         isShootDelay = false;
         yield break;
     }
-
     private void PlayerDeath()
     {
         Debug.Log("Умер!");
