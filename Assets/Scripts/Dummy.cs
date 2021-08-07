@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator), typeof(Health))]
 public class Dummy : MonoBehaviour
 {
     private Animator dummyAnimator;
-    private CapsuleCollider dummyCollider;
     private Health dummyHealth;
 
     void Awake()
     {
         dummyAnimator = GetComponent<Animator>();
-        dummyCollider = GetComponent<CapsuleCollider>();
         dummyHealth = GetComponent<Health>();
     }
     private void Start()
@@ -21,8 +20,6 @@ public class Dummy : MonoBehaviour
 
     private void DummyDeath()
     {
-        dummyCollider.enabled = false;
         dummyAnimator.enabled = false;
-
     }    
 }

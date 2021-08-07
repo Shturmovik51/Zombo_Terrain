@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Zomby : MonoBehaviour
@@ -15,7 +13,6 @@ public class Zomby : MonoBehaviour
     [SerializeField] private int jumpForse;
     [SerializeField] private Transform cameraPos;
     [SerializeField] private Animator zombyAnimator;
-
 
     private Health zombyHealth;
     public Transform CameraPos => cameraPos;
@@ -47,7 +44,7 @@ public class Zomby : MonoBehaviour
 
     void Update()
     {
-        if (Time.timeScale == 0)
+        if (Mathf.Approximately(Time.timeScale, 0))
             return;
 
         ZombyMovement();

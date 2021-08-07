@@ -12,10 +12,14 @@ public class Health : MonoBehaviour
     public UnityAction DeathEntity {get => deathEntity; set => deathEntity = value;}
     public int CurrentHealth => currentHealth;
 
+    private void Awake()
+    {
+        currentHealth = maxHealth;        
+    }
+
     private void Start()
     {
         GameManager.instance.HealthContainer.Add(gameObject, this);
-        currentHealth = maxHealth;
     }  
 
     public void TakeDamage(int damage)

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -20,8 +18,6 @@ public class IKcontroller : MonoBehaviour
     private float headWeightValue;
     private float leftHandWeightValue;
     private float rightHandWeightValue;
-    
-    private Transform obstacleObj;
 
     public Transform TargetObject {get => targetObject; set => targetObject = value;}
    
