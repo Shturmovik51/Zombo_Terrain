@@ -9,6 +9,8 @@ public class GameUI : MonoBehaviour
     [SerializeField] private Button SunSetBtn;
     [SerializeField] private Button NightBtn;
     [SerializeField] private Button SunRiseBtn;
+    [SerializeField] private Button controlWSADBtn;
+    [SerializeField] private Button control8546Btn;
 
     private void Awake()
     {
@@ -16,8 +18,15 @@ public class GameUI : MonoBehaviour
         SunSetBtn.onClick.AddListener(OnClickSunSetBtn);
         NightBtn.onClick.AddListener(OnClickNightBtn);
         SunRiseBtn.onClick.AddListener(OnClickSunRiseBtn);
+        controlWSADBtn.onClick.AddListener(OnClickControlWSADBtn);
+        control8546Btn.onClick.AddListener(OnClickControl8546Btn);
     }
-    
+
+    private void Start()
+    {
+        OnClickControlWSADBtn();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -59,5 +68,17 @@ public class GameUI : MonoBehaviour
     private void OnClickSunRiseBtn()
     {
         dailyCycle.DailyCycleTimeJump(Quaternion.Euler(new Vector3(190, 0, 0)));       
+    }
+    private void OnClickControlWSADBtn()
+    {
+        Player.instance.SetWSADcontrol();
+        controlWSADBtn.image.color = Color.green;
+        control8546Btn.image.color = Color.white;
+    }
+    private void OnClickControl8546Btn()
+    {
+        Player.instance.Set8546control();
+        controlWSADBtn.image.color = Color.white;
+        control8546Btn.image.color = Color.green;
     }
 }

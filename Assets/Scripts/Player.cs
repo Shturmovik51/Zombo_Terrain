@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     private float xRotation;
     private bool isGrounded;
     private bool isShootDelay;
+    private IPlayerMove iplayerMove;
 
     private void Awake()
     {
@@ -37,19 +38,19 @@ public class Player : MonoBehaviour
         playerHealth.DeathEntity += PlayerDeath;
     }
     void Start()
-    {
+    {        
         isGrounded = false;
         xRotation = 0f;
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;        
+        Cursor.visible = false;
     }
 
     void Update()
     {
         if (Mathf.Approximately(Time.timeScale, 0))
             return;
-
-        PlayerMovement();
+        iplayerMove.PlayerMove();
+        PlayerJump();
         PlayerLook();
 
         if (Input.GetKeyDown(KeyCode.B))       
@@ -71,25 +72,19 @@ public class Player : MonoBehaviour
                 flashLight.enabled = false;
         }
     }
-    
-    private void PlayerMovement()
+
+    public void SetWSADcontrol()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        iplayerMove = GetComponent<PlayerMoveWSAD>();
+    }
+    public void Set8546control()
+    {
+        iplayerMove = GetComponent<PlayerMove8546>();
+    }
 
+    private void PlayerJump()
+    {
         isGrounded = Physics.CheckSphere(groundDetector.position, 0.3f, groundMask);
-
-        var moveDirection = (transform.right * x + transform.forward * z);
-
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            moveDirection *= 2;
-            playerAnimator.SetBool("Run", true);
-        }
-        else
-        {
-            playerAnimator.SetBool("Run", false);
-        }
 
         if (isGrounded)
         {
@@ -102,11 +97,8 @@ public class Player : MonoBehaviour
         }
 
         gravitation.y += gravityForse * Time.deltaTime;
-
-        charControl.Move(moveDirection * playerSpeed * Time.deltaTime);
-        charControl.Move(gravitation * Time.deltaTime);
-
-        playerAnimator.SetFloat("Movement", Mathf.Clamp01(moveDirection.magnitude));        
+      
+        charControl.Move(gravitation * Time.deltaTime);       
     }
 
     private void PlayerLook()
