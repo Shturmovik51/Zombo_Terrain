@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
     {
         if (Mathf.Approximately(Time.timeScale, 0))
             return;
-        iplayerMove.PlayerMove();
+        iplayerMove.PlayerMove(playerSpeed);
         PlayerJump();
         PlayerLook();
 

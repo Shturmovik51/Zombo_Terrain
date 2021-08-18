@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMoveWSAD : MonoBehaviour, IPlayerMove
-{
-    [SerializeField] private int playerSpeed;
+{   
     private Animator playerAnimator;
     private CharacterController charControl;
     private void Awake()
@@ -13,7 +12,7 @@ public class PlayerMoveWSAD : MonoBehaviour, IPlayerMove
         charControl = GetComponent<CharacterController>();
     }
 
-    public void PlayerMove()
+    public void PlayerMove(int speed)
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -30,7 +29,7 @@ public class PlayerMoveWSAD : MonoBehaviour, IPlayerMove
             playerAnimator.SetBool("Run", false);
         } 
 
-        charControl.Move(moveDirection * playerSpeed * Time.deltaTime);        
+        charControl.Move(moveDirection * speed * Time.deltaTime);        
 
         playerAnimator.SetFloat("Movement", Mathf.Clamp01(moveDirection.magnitude));
     }

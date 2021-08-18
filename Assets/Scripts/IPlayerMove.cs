@@ -1,4 +1,4 @@
 public interface IPlayerMove
 {
-    public void PlayerMove();
+    public void PlayerMove(int playerSpeed);
 }
