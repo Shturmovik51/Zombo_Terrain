@@ -24,8 +24,12 @@ public class Player : MonoBehaviour
     private Health playerHealth;
     public Health PlayerHealth => playerHealth;
 
+    private Coroutine shootDelay;
+    private Coroutine buffTimeDuration;
+    private int buffedSpeed = 0;
+    private int buffedJump = 0;
     private Vector3 gravitation;
-    private float xRotation;
+    private float xRotation = 0f;
     private bool isGrounded;
     private bool isShootDelay;
     private IPlayerMove iplayerMove;
@@ -40,7 +44,6 @@ public class Player : MonoBehaviour
     void Start()
     {        
         isGrounded = false;
-        xRotation = 0f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -49,7 +52,7 @@ public class Player : MonoBehaviour
     {
         if (Mathf.Approximately(Time.timeScale, 0))
             return;
-        iplayerMove.PlayerMove(playerSpeed);
+        iplayerMove.PlayerMove(playerSpeed + buffedSpeed);
         PlayerJump();
         PlayerLook();
 
@@ -93,7 +96,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetButton("Jump") && isGrounded)
         {
-            gravitation.y = Mathf.Sqrt(jumpForse * -2 * gravityForse);
+            gravitation.y = Mathf.Sqrt((jumpForse + buffedJump) * -2 * gravityForse);
         }
 
         gravitation.y += gravityForse * Time.deltaTime;
@@ -136,25 +139,49 @@ public class Player : MonoBehaviour
                 hitRigidBody.AddForce(transform.forward * hitImpulseForse, ForceMode.Impulse);
             }
 
-        playerAnimator.SetTrigger("Shoot");       
-        StartCoroutine(ShootWFXandDelay());
+        playerAnimator.SetBool("Shoot", true);       
+        
+        if(shootDelay == null)
+            StartCoroutine(ShootDelay());
     }
 
-    private IEnumerator ShootWFXandDelay()
+    private IEnumerator ShootDelay()
     {
-        var flasfRot = shootEffects.transform.localRotation;
-        flasfRot = Quaternion.Euler(flasfRot.x, flasfRot.y, Random.Range(0f, 360f));
-        shootEffects.transform.localRotation = flasfRot;
+        var flashRot = shootEffects.transform.localRotation;
+        flashRot = Quaternion.Euler(flashRot.x, flashRot.y, Random.Range(0f, 360f));
+        shootEffects.transform.localRotation = flashRot;
 
         shootEffects.SetActive(true);
 
         yield return new WaitForSeconds(shootDelayTime);
-        shootEffects.SetActive(false);
+        playerAnimator.SetBool("Shoot", false);
         isShootDelay = false;
+        shootEffects.SetActive(false);
         yield break;
     }
     private void PlayerDeath()
     {
         Debug.Log("Умер!");
     }
+
+    public void AddBuff(Buff buff)
+    {
+        if(buff.type == BuffType.Speed)
+        {
+            buffedSpeed += buff.additiveBonus;
+            buffTimeDuration = StartCoroutine(BuffTimeDuration(buff.duration, buffedSpeed));
+        }
+
+        if(buff.type == BuffType.Jump)
+        {
+            jumpForse += buff.multipleBonus;
+        }
+    }
+
+    private IEnumerator BuffTimeDuration(int time, int parameter)
+    {
+        yield return new WaitForSeconds(time);
+        parameter = 0;
+    }
+
 }
