@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     private Dictionary<GameObject, Health> healthContainer;       
     public Dictionary<GameObject, Health> HealthContainer {get => healthContainer;  set => healthContainer = value;}
 
-    private Dictionary<GameObject, Buff> buffContainer;
-    public Dictionary<GameObject, Buff> BuffContainer { get => buffContainer; set => buffContainer = value; }
+    //private Dictionary<GameObject, Buff> buffContainer;
+    //public Dictionary<GameObject, Buff> BuffContainer { get => buffContainer; set => buffContainer = value; }
 
     private void Awake()
     {
