@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -20,18 +21,28 @@ public class Player : MonoBehaviour
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private GameObject shootEffects;
     [SerializeField] private int hitImpulseForse;
+    [SerializeField] private int ammoCount;
+    [SerializeField] private int maxWeaponMagazineCount;
 
+
+    [SerializeField] private TextMeshProUGUI ammoText;
+    [SerializeField] private TextMeshProUGUI ammoMagazineText;
+
+    private AnimationClip reloadAnim;
     private Health playerHealth;
     public Health PlayerHealth => playerHealth;
 
     private Coroutine shootDelay;
-    private Coroutine buffTimeDuration;
+    private Coroutine speedBuffTimeDuration;
+    private Coroutine jumpBuffTimeDuration;
+    private int ammoMagazineCount;
     private int buffedSpeed = 0;
     private int buffedJump = 0;
     private Vector3 gravitation;
     private float xRotation = 0f;
     private bool isGrounded;
     private bool isShootDelay;
+    private bool isReloading;
     private IPlayerMove iplayerMove;
 
     private void Awake()
@@ -46,6 +57,16 @@ public class Player : MonoBehaviour
         isGrounded = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        var anims = playerAnimator.runtimeAnimatorController.animationClips;
+        foreach (var anim in anims)
+        {
+            if (anim.name == "Character_Reload")
+                reloadAnim = anim;
+        }
+
+        ammoMagazineCount = maxWeaponMagazineCount;
+        RefreshAmmoUI();
     }
 
     void Update()
@@ -59,13 +80,11 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))       
             playerHealth.TakeDamage(5);
 
-        if (Input.GetKey(KeyCode.Mouse0) && !isShootDelay)
+        if (Input.GetKey(KeyCode.Mouse0) && !isShootDelay && !isReloading)
             PlayerShoot();
 
-        if (Input.GetKeyDown(KeyCode.R))
-            playerAnimator.SetBool("Reload", true);
-        else
-            playerAnimator.SetBool("Reload", false);
+        if (Input.GetKeyDown(KeyCode.R) && !isReloading)
+            PlayerReload();
 
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -119,6 +138,16 @@ public class Player : MonoBehaviour
 
     private void PlayerShoot()
     {
+        ammoMagazineCount--;
+
+        if (ammoMagazineCount < 0)
+        {
+            ammoMagazineCount = 0;
+            PlayerReload();
+            return;
+        }
+
+        RefreshAmmoUI();
         isShootDelay = true;
 
         RaycastHit hit;
@@ -159,6 +188,43 @@ public class Player : MonoBehaviour
         shootEffects.SetActive(false);
         yield break;
     }
+
+    private void PlayerReload()
+    {
+        if (ammoCount == 0)
+            return;
+
+        isReloading = true;
+        playerAnimator.SetTrigger("Reload");
+        StartCoroutine(ReloadTimer());
+    }
+
+    private IEnumerator ReloadTimer()
+    {
+        yield return new WaitForSeconds(reloadAnim.length);
+
+        if (ammoCount < maxWeaponMagazineCount)
+        {
+            ammoMagazineCount = ammoCount;
+            ammoCount -= ammoMagazineCount;
+        }
+        else
+        {
+            var ammoNeeded = maxWeaponMagazineCount - ammoMagazineCount;
+            ammoMagazineCount = maxWeaponMagazineCount;
+            ammoCount -= ammoNeeded;
+        }
+
+        RefreshAmmoUI();
+        isReloading = false;
+    }
+
+    private void RefreshAmmoUI()
+    {
+        ammoText.text = ammoCount.ToString();
+        ammoMagazineText.text = ammoMagazineCount.ToString();
+    }
+
     private void PlayerDeath()
     {
         Debug.Log("Умер!");
@@ -168,20 +234,39 @@ public class Player : MonoBehaviour
     {
         if(buff.type == BuffType.Speed)
         {
-            buffedSpeed += buff.additiveBonus;
-            buffTimeDuration = StartCoroutine(BuffTimeDuration(buff.duration, buffedSpeed));
+            buffedSpeed += buff.additiveBonus;           
+            if (speedBuffTimeDuration == null)
+                speedBuffTimeDuration = StartCoroutine(BuffTimeDuration(buff));
         }
 
         if(buff.type == BuffType.Jump)
         {
-            jumpForse += buff.multipleBonus;
+            buffedJump += buff.additiveBonus;
+            if (jumpBuffTimeDuration == null)
+                jumpBuffTimeDuration = StartCoroutine(BuffTimeDuration(buff));
+        }
+
+        if(buff.type == BuffType.Health)        
+            playerHealth.HealthUp(buff.additiveBonus);
+        
+        if (buff.type == BuffType.Ammo)
+            ammoCount += buff.additiveBonus;
+    }
+
+    private IEnumerator BuffTimeDuration(Buff buff)
+    {
+        yield return new WaitForSeconds(buff.duration);
+        RemoveBuff(buff);
+    }
+    public void RemoveBuff(Buff buff)
+    {
+        if (buff.type == BuffType.Speed)
+        {
+            buffedSpeed = 0;
+        }
+        if (buff.type == BuffType.Jump)
+        {
+            buffedJump = 0;
         }
     }
-
-    private IEnumerator BuffTimeDuration(int time, int parameter)
-    {
-        yield return new WaitForSeconds(time);
-        parameter = 0;
-    }
-
 }
