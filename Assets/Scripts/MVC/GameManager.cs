@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int axeleration;
     [SerializeField] private int maxAmmoInMG;
 
+    [Header("Weapnos start parameters\n")]
     [SerializeField] private Transform BodyHitsContainer;
     [SerializeField] private Transform SandHitsContainer;
 
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int hitsCountInCollection;
     [SerializeField] private int shootDamage;
     [SerializeField] private int hitImpulseForce;
+    [SerializeField] private float weaponLightEffectsTime;
 
     private PlayerModel playerModel;
     private PlayerView playerView;
@@ -64,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        machineGun = new MachineGun(maxAmmoInMG, shootDamage, hitImpulseForce, wfxShootEffects);
+        machineGun = new MachineGun(maxAmmoInMG, shootDamage, hitImpulseForce, weaponLightEffectsTime, wfxShootEffects);
         //rifleGun
 
         weapon = machineGun;

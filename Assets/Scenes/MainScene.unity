@@ -36201,6 +36201,7 @@ MonoBehaviour:
   hitsCountInCollection: 100
   shootDamage: 5
   hitImpulseForce: 200
+  weaponLightEffectsTime: 0.1
 --- !u!4 &1078811275
 Transform:
   m_ObjectHideFlags: 0
@@ -78051,6 +78052,11 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3479147790115781700, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479147790608534883, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
         type: 3}
       propertyPath: m_IsActive
       value: 1
