@@ -10,8 +10,8 @@ public abstract class Weapon
     public int maxMagazineAmmo;
     public int ammoMagazineCount;
     public float shootDelayTime = 0.1f;
-
     public bool isShootDelay;
+    public Light flashLight;
     private Coroutine shootDelay;
 
     public virtual void Shoot(int ammoCount)
@@ -48,6 +48,11 @@ public abstract class Weapon
         weaponShoot?.Invoke(isShootDelay);
         shootDelay = null;
         yield break;
+    }
+
+    public void FlashLightOnOff()
+    {
+        flashLight.enabled = !flashLight.enabled;
     }
 
 

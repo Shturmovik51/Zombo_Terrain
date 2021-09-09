@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     private int buffedSpeed = 0;
     private int buffedJump = 0;
     private Vector3 gravitation;
-    private float xRotation = 0f;
+    private float verticalRotation = 0f;
     public bool isGrounded;
     private bool isShootDelay;
     private bool isReloading;
@@ -80,17 +80,16 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))       
             playerHealth.TakeDamage(5);
 
-        if (Input.GetKey(KeyCode.Mouse0) && !isShootDelay && !isReloading)
-            GameManager.instance.machineGun.Shoot(ammoCount);
-            //PlayerShoot();
+        //if (Input.GetKey(KeyCode.Mouse0) && !isShootDelay && !isReloading)
+        //    PlayerShoot();
 
         if (Input.GetKeyDown(KeyCode.R) && !isReloading)
             PlayerReload();
 
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            flashLight.enabled = !flashLight.enabled;
-        }
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    flashLight.enabled = !flashLight.enabled;
+        //}
     }
 
     public void SetWSADcontrol()
@@ -126,12 +125,12 @@ public class Player : MonoBehaviour
         var mouseLookX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         var mouseLookY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
         
-        xRotation -= mouseLookY;
-        xRotation = Mathf.Clamp(xRotation, -45f, 45f); 
+        verticalRotation -= mouseLookY;
+        verticalRotation = Mathf.Clamp(verticalRotation, -45f, 45f); 
 
         transform.Rotate(0f, mouseLookX, 0f); 
-        head.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        weapon.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        head.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
+        weapon.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
     }
 
     private void PlayerShoot()

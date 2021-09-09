@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerView : MonoBehaviour
 {
-
+    [SerializeField] private Transform head;
+    [SerializeField] private Transform arms;
     private CharacterController charController;
     private Animator playerAnimator;
 
@@ -18,6 +19,13 @@ public class PlayerView : MonoBehaviour
     {
         charController.Move(direction * speed * Time.deltaTime);
         playerAnimator.SetFloat("Movement", Mathf.Clamp01(direction.magnitude));
+    }
+
+    public void SetRotation(float mouseLookX, float verticalRotation)
+    {
+        transform.Rotate(0f, mouseLookX, 0f);
+        head.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
+        arms.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
     }
 
     public void StartRunAnim()
@@ -34,4 +42,10 @@ public class PlayerView : MonoBehaviour
     {
         playerAnimator.SetBool("Shoot", isShootDelay);
     }
+
+    public void Jump()
+    {
+
+    }
+
 }

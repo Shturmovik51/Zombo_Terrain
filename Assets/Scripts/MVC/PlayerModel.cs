@@ -6,8 +6,10 @@ using UnityEngine.Events;
 
 public class PlayerModel
 {
-    public UnityAction<int, int, Vector3> PositionChange;
+    public UnityAction<int, int, Vector3> PlayerMooving;
     public UnityAction<bool> PlayerShooting;
+    public UnityAction PlayerJumping;
+    public UnityAction PlayerLooking;
 
     private Weapon weapon;
     private int moveSpeed;
@@ -31,7 +33,7 @@ public class PlayerModel
         var moveDirection = (xMoveDir * xMovement + zMoveDir * zMovement);
         moveDirection *= axeleration;
         
-        PositionChange?.Invoke(moveSpeed, axeleration, moveDirection);
+        PlayerMooving?.Invoke(moveSpeed, axeleration, moveDirection);
     }
 
     public void PLayerShoot()
@@ -42,6 +44,16 @@ public class PlayerModel
     private void PLayerShootAnim(bool isShootDelay)
     {
         PlayerShooting?.Invoke(isShootDelay);
+    }
+
+    public void PlayerJump()
+    {
+
+    }
+
+    public void PlayerLook()
+    {
+
     }
 
 

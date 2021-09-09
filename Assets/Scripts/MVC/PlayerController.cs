@@ -15,13 +15,15 @@ public class PlayerController
 
     public void Enable()
     {
-        playerModel.PositionChange += PositionChange;
+        playerModel.PlayerMooving += PositionChange;
+        playerModel.PlayerLooking += DirectionChange;
         playerModel.PlayerShooting += PlayerShootAnim;
+        playerModel.PlayerJumping += PlayerJump;
 
     }
     public void Disable()
     {
-        playerModel.PositionChange -= PositionChange;
+        playerModel.PlayerMooving -= PositionChange;
         playerModel.PlayerShooting -= PlayerShootAnim;
     }
 
@@ -34,11 +36,21 @@ public class PlayerController
         else
             playerView.StopRunAnim();
     }
+    private void DirectionChange()
+    {
+
+    }
 
     private void PlayerShootAnim(bool isShootDelay)
     {
         playerView.ShootAnim(isShootDelay);
     }
+
+    private void PlayerJump()
+    {
+
+    }
+
 
 
 }

@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxAmmoInMG;
 
     [Header("Weapnos start parameters\n")]
+    [SerializeField] private GameObject machineGunObj;
     [SerializeField] private Transform BodyHitsContainer;
     [SerializeField] private Transform SandHitsContainer;
 
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int shootDamage;
     [SerializeField] private int hitImpulseForce;
     [SerializeField] private float weaponLightEffectsTime;
+    [SerializeField] private Light flashLight;
 
     private PlayerModel playerModel;
     private PlayerView playerView;
@@ -65,8 +67,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start()
-    {
-        machineGun = new MachineGun(maxAmmoInMG, shootDamage, hitImpulseForce, weaponLightEffectsTime, wfxShootEffects);
+    {        
+        machineGun = new MachineGun(maxAmmoInMG, shootDamage, hitImpulseForce, weaponLightEffectsTime, wfxShootEffects, flashLight);
         //rifleGun
 
         weapon = machineGun;
@@ -89,6 +91,9 @@ public class GameManager : MonoBehaviour
     {
         if (Mathf.Approximately(Time.timeScale, 0))
             return;
+
+        if (Input.GetKeyDown(KeyCode.F))
+            machineGun.FlashLightOnOff();
 
         if (Input.GetKey(KeyCode.Mouse0))
             playerModel.PLayerShoot();

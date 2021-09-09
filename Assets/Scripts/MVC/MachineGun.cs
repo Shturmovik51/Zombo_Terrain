@@ -10,13 +10,15 @@ public class MachineGun : Weapon
     private Coroutine wfxHitLifeTime;
     private GameObject shootEffects;
     private Coroutine lightEffectsDelay;
-    public MachineGun(int maxMagazineAmmo, int shootDamage, int hitImpulseForce, float lightEffectsDelayTime, GameObject shootEffects)
+    public MachineGun(int maxMagazineAmmo, int shootDamage, int hitImpulseForce, float lightEffectsDelayTime, 
+                        GameObject shootEffects, Light flashLight)
     {
         this.maxMagazineAmmo = maxMagazineAmmo;
         this.shootDamage = shootDamage;
         this.hitImpulseForce = hitImpulseForce;
         this.shootEffects = shootEffects;
         this.lightEffectsDelayTime = lightEffectsDelayTime;
+        this.flashLight = flashLight;
     }
     public override void Shoot(int ammoCount)
     {
