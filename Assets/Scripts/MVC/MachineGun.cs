@@ -7,17 +7,18 @@ public class MachineGun : Weapon
     private int shootDamage;
     private int hitImpulseForce;
     private float lightEffectsDelayTime;
-    private Coroutine wfxHitLifeTime;
     private GameObject shootEffects;
+    private Coroutine wfxHitLifeTime;
     private Coroutine lightEffectsDelay;
-    public MachineGun(int maxMagazineAmmo, int shootDamage, int hitImpulseForce, float lightEffectsDelayTime, 
+    public MachineGun(int maxMagazineAmmo, int shootDamage, int hitImpulseForce, float lightEffectsDelayTime, float reloadTime,
                         GameObject shootEffects, Light flashLight)
     {
         this.maxMagazineAmmo = maxMagazineAmmo;
         this.shootDamage = shootDamage;
         this.hitImpulseForce = hitImpulseForce;
-        this.shootEffects = shootEffects;
         this.lightEffectsDelayTime = lightEffectsDelayTime;
+        this.reloadTime = reloadTime;
+        this.shootEffects = shootEffects;
         this.flashLight = flashLight;
     }
     public override void Shoot(int ammoCount)
@@ -78,9 +79,7 @@ public class MachineGun : Weapon
     }
     private void LightEffectsOn()
     {
-        var flashRot = shootEffects.transform.localRotation;
-        flashRot = Quaternion.Euler(flashRot.x, flashRot.y, Random.Range(0f, 360f));
-        shootEffects.transform.localRotation = flashRot;
+        shootEffects.transform.Rotate(Vector3.forward, Random.Range(0f, 360f), Space.Self);        
         shootEffects.SetActive(true);
         
         lightEffectsDelay = GameManager.instance.StartCoroutine(LightEffectsDelay(lightEffectsDelayTime));

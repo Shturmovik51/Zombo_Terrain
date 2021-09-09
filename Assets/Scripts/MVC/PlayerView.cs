@@ -8,6 +8,7 @@ public class PlayerView : MonoBehaviour
     [SerializeField] private Transform arms;
     
     private CharacterController charController;
+    
     private Animator playerAnimator;
 
     private void Awake()
@@ -47,6 +48,17 @@ public class PlayerView : MonoBehaviour
     public void Jump(Vector3 gravitation)
     {
         
+    }
+
+    public void Reload()
+    {
+        playerAnimator.SetTrigger("Reload");
+    }
+
+    public void RefreshAmmoUI(int ammoCount, int ammoMagazineCount)
+    {
+        GameManager.instance.MainSceneUI.AmmoText.text = ammoCount.ToString();
+        GameManager.instance.MainSceneUI.AmmoMagazineText.text = ammoMagazineCount.ToString();
     }
 
 

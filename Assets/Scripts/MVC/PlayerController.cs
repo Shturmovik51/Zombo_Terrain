@@ -6,27 +6,31 @@ public class PlayerController
 {
     private PlayerView playerView;
     private PlayerModel playerModel;
-
-    public PlayerController(PlayerView view, PlayerModel model)
+   // private Weapon playerWeapon;
+    public PlayerController(PlayerView view, PlayerModel model) //, Weapon weapon)
     {
         playerView = view;
         playerModel = model;
+       // playerWeapon = weapon;
     }
 
     public void Enable()
     {
-        playerModel.PlayerMooving += PositionChange;
+        playerModel.PlayerMoving += PositionChange;
         playerModel.PlayerLooking += DirectionChange;
         playerModel.PlayerShooting += PlayerShootAnim;
         playerModel.PlayerJumping += PlayerJump;
-
+        playerModel.PlayerReloading += PlayerReloadAnim;
+        playerModel.AmmoChaging += RefreshAmmoUI;
     }
     public void Disable()
     {
-        playerModel.PlayerMooving -= PositionChange;
+        playerModel.PlayerMoving -= PositionChange;
         playerModel.PlayerLooking -= DirectionChange;
         playerModel.PlayerShooting -= PlayerShootAnim;
         playerModel.PlayerJumping -= PlayerJump;
+        playerModel.PlayerReloading -= PlayerReloadAnim;
+        playerModel.AmmoChaging -= RefreshAmmoUI;
     }
 
     private void PositionChange(int speed, int axeleration, Vector3 direction)
@@ -51,6 +55,16 @@ public class PlayerController
     private void PlayerJump()
     {
 
+    }
+
+    private void PlayerReloadAnim()
+    {
+        playerView.Reload();
+    }
+
+    private void RefreshAmmoUI(int ammoCount, int ammoMagazineCount)
+    {
+        playerView.RefreshAmmoUI(ammoCount, ammoMagazineCount);
     }
 
 

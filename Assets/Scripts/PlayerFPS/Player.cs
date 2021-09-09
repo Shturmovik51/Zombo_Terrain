@@ -83,8 +83,8 @@ public class Player : MonoBehaviour
         //if (Input.GetKey(KeyCode.Mouse0) && !isShootDelay && !isReloading)
         //    PlayerShoot();
 
-        if (Input.GetKeyDown(KeyCode.R) && !isReloading)
-            PlayerReload();
+        //if (Input.GetKeyDown(KeyCode.R) && !isReloading)
+        //    PlayerReload();
 
         //if (Input.GetKeyDown(KeyCode.F))
         //{

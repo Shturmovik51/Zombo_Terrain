@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [SerializeField] private GameUI mainSceneUI;
+    public GameUI MainSceneUI { get => mainSceneUI; set => mainSceneUI = value; }
 
     [Header("Player start parameters\n")]
     [SerializeField] private Transform playerStartPos;
@@ -12,6 +14,7 @@ public class GameManager : MonoBehaviour
     [Tooltip("Множитель скорости перемещения")]
     [SerializeField] private int axeleration;
     [SerializeField] private int maxAmmoInMG;
+    [SerializeField] private Animator playerAnimator;
 
     [Header("Weapnos start parameters\n")]
     [SerializeField] private GameObject machineGunObj;
@@ -32,6 +35,7 @@ public class GameManager : MonoBehaviour
     private PlayerView playerView;
     private PlayerController playerController;
     private Weapon weapon;
+    private float reloadTime;
 
 
 
@@ -67,10 +71,11 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start()
-    {        
-        machineGun = new MachineGun(maxAmmoInMG, shootDamage, hitImpulseForce, weaponLightEffectsTime, wfxShootEffects, flashLight);
-        //rifleGun
+    {
+        GetReloadTime();
 
+        machineGun = new MachineGun(maxAmmoInMG, shootDamage, hitImpulseForce, weaponLightEffectsTime, reloadTime, wfxShootEffects, flashLight);
+        //rifleGun
         weapon = machineGun;
 
         playerModel = new PlayerModel(palyerSpeed, weapon);
@@ -97,6 +102,9 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse0))
             playerModel.PLayerShoot();
+
+        if (Input.GetKeyDown(KeyCode.R))
+            playerModel.PLayerReloadWeapon();
 
         playerModel.PlayerLook(GetHorizontalAxis(), GetVerticalAxis());
         playerModel.PlayerMove(GetXAxis(), GetZAxis(), GetPlayerXDirection(), GetPlayerZDirection());
@@ -144,9 +152,18 @@ public class GameManager : MonoBehaviour
         return Input.GetAxis("Mouse X"); //mouseLookX
     }
 
-    private float GetVerticalAxis()    {
-        
+    private float GetVerticalAxis()    
+    {        
         return Input.GetAxis("Mouse Y"); //mouseLookY
     }
+    private void GetReloadTime()
+    {
+        var anims = playerAnimator.runtimeAnimatorController.animationClips;        
 
+        foreach (var anim in anims)
+        {
+            if (anim.name == "Character_Reload")
+               reloadTime = anim.length;              
+        }
+    }
 }

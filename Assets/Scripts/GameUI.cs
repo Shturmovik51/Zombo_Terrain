@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameUI : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class GameUI : MonoBehaviour
     [SerializeField] private Button SunRiseBtn;
     [SerializeField] private Button controlWSADBtn;
     [SerializeField] private Button control8546Btn;
+    [SerializeField] private TextMeshProUGUI ammoText;
+    [SerializeField] private TextMeshProUGUI ammoMagazineText;
+
+    public TextMeshProUGUI AmmoText { get => ammoText; set => ammoText = value; }
+    public TextMeshProUGUI AmmoMagazineText { get => ammoMagazineText; set => ammoMagazineText = value; }
 
     private void Awake()
     {

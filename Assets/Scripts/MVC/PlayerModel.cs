@@ -6,10 +6,12 @@ using UnityEngine.Events;
 
 public class PlayerModel
 {
-    public UnityAction<int, int, Vector3> PlayerMooving;
+    public UnityAction<int, int, Vector3> PlayerMoving;
     public UnityAction<bool> PlayerShooting;
     public UnityAction PlayerJumping;
     public UnityAction<float, float> PlayerLooking;
+    public UnityAction PlayerReloading;
+    public UnityAction<int, int> AmmoChaging;
 
     private Weapon weapon;
     private int moveSpeed;
@@ -27,6 +29,7 @@ public class PlayerModel
     public void InitWeapon()
     {
         weapon.weaponShoot += PLayerShootAnim;
+        weapon.ammoChange += AmmoCountChange;
     }
 
     public void PlayerMove(float xMoveDir, float zMoveDir, Vector3 xMovement, Vector3 zMovement)
@@ -34,7 +37,7 @@ public class PlayerModel
         var moveDirection = (xMoveDir * xMovement + zMoveDir * zMovement);
         moveDirection *= axeleration;
         
-        PlayerMooving?.Invoke(moveSpeed, axeleration, moveDirection);
+        PlayerMoving?.Invoke(moveSpeed, axeleration, moveDirection);
     }
 
     public void PLayerShoot()
@@ -57,6 +60,17 @@ public class PlayerModel
         verticalRotation -= mouseLookY;
         verticalRotation = Mathf.Clamp(verticalRotation, -45f, 45f);
         PlayerLooking?.Invoke(mouseLookX, verticalRotation);
+    }
+
+    public void PLayerReloadWeapon()
+    {
+        weapon.ReloadWeapon(ammoCount);
+        PlayerReloading?.Invoke();
+    }
+
+    private void AmmoCountChange(int ammoCount, int ammoMagazineCount)
+    {
+        AmmoChaging?.Invoke(ammoCount, ammoMagazineCount);
     }
 
 
