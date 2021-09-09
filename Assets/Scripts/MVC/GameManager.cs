@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0))
             playerModel.PLayerShoot();
 
+        playerModel.PlayerLook(GetHorizontalAxis(), GetVerticalAxis());
         playerModel.PlayerMove(GetXAxis(), GetZAxis(), GetPlayerXDirection(), GetPlayerZDirection());
         playerModel.Axeleration = Axeleration();
     }    
@@ -136,6 +137,16 @@ public class GameManager : MonoBehaviour
             return 2;           
         else
             return 1;         
+    }
+
+    private float GetHorizontalAxis()
+    {
+        return Input.GetAxis("Mouse X"); //mouseLookX
+    }
+
+    private float GetVerticalAxis()    {
+        
+        return Input.GetAxis("Mouse Y"); //mouseLookY
     }
 
 }

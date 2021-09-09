@@ -9,12 +9,13 @@ public class PlayerModel
     public UnityAction<int, int, Vector3> PlayerMooving;
     public UnityAction<bool> PlayerShooting;
     public UnityAction PlayerJumping;
-    public UnityAction PlayerLooking;
+    public UnityAction<float, float> PlayerLooking;
 
     private Weapon weapon;
     private int moveSpeed;
     private int axeleration;
     private int ammoCount = 100;
+    private float verticalRotation;
     public int Axeleration { get => axeleration; set => axeleration = value; }
 
     public PlayerModel(int moveSpeed, Weapon weapon)
@@ -51,9 +52,11 @@ public class PlayerModel
 
     }
 
-    public void PlayerLook()
+    public void PlayerLook(float mouseLookX, float mouseLookY)
     {
-
+        verticalRotation -= mouseLookY;
+        verticalRotation = Mathf.Clamp(verticalRotation, -45f, 45f);
+        PlayerLooking?.Invoke(mouseLookX, verticalRotation);
     }
 
 

@@ -6,6 +6,7 @@ public class PlayerView : MonoBehaviour
 {
     [SerializeField] private Transform head;
     [SerializeField] private Transform arms;
+    
     private CharacterController charController;
     private Animator playerAnimator;
 
@@ -43,9 +44,10 @@ public class PlayerView : MonoBehaviour
         playerAnimator.SetBool("Shoot", isShootDelay);
     }
 
-    public void Jump()
+    public void Jump(Vector3 gravitation)
     {
-
+        
     }
+
 
 }

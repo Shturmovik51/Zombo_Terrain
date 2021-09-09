@@ -24,7 +24,9 @@ public class PlayerController
     public void Disable()
     {
         playerModel.PlayerMooving -= PositionChange;
+        playerModel.PlayerLooking -= DirectionChange;
         playerModel.PlayerShooting -= PlayerShootAnim;
+        playerModel.PlayerJumping -= PlayerJump;
     }
 
     private void PositionChange(int speed, int axeleration, Vector3 direction)
@@ -36,9 +38,9 @@ public class PlayerController
         else
             playerView.StopRunAnim();
     }
-    private void DirectionChange()
+    private void DirectionChange(float mouseLookX, float verticalRotation)
     {
-
+        playerView.SetRotation(mouseLookX, verticalRotation);
     }
 
     private void PlayerShootAnim(bool isShootDelay)

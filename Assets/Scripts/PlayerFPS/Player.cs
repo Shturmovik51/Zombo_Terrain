@@ -73,9 +73,9 @@ public class Player : MonoBehaviour
     {
         //if (Mathf.Approximately(Time.timeScale, 0))
         //    return;
-        // iplayerMove.PlayerMove(playerSpeed + buffedSpeed);
-        PlayerJump();
-        PlayerLook();
+        //iplayerMove.PlayerMove(playerSpeed + buffedSpeed);
+        //PlayerJump();
+        //PlayerLook();
 
         if (Input.GetKeyDown(KeyCode.B))       
             playerHealth.TakeDamage(5);
