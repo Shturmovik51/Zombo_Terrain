@@ -11,7 +11,7 @@ public class PlayerModel
     public UnityAction PlayerJumping;
     public UnityAction<float, float> PlayerLooking;
     public UnityAction PlayerReloading;
-    public UnityAction<int, int> AmmoChaging;
+    public UnityAction<int, int> AmmoChanging;
 
     private Weapon weapon;
     private int moveSpeed;
@@ -30,6 +30,7 @@ public class PlayerModel
     {
         weapon.weaponShoot += PLayerShootAnim;
         weapon.ammoChange += AmmoCountChange;
+        weapon.emptyAmmo += PLayerReloadWeapon;
     }
 
     public void PlayerMove(float xMoveDir, float zMoveDir, Vector3 xMovement, Vector3 zMovement)
@@ -64,13 +65,16 @@ public class PlayerModel
 
     public void PLayerReloadWeapon()
     {
+        if (ammoCount == 0)
+            return;
         weapon.ReloadWeapon(ammoCount);
         PlayerReloading?.Invoke();
     }
 
     private void AmmoCountChange(int ammoCount, int ammoMagazineCount)
     {
-        AmmoChaging?.Invoke(ammoCount, ammoMagazineCount);
+        this.ammoCount = ammoCount;
+        AmmoChanging?.Invoke(ammoCount, ammoMagazineCount);
     }
 
 
