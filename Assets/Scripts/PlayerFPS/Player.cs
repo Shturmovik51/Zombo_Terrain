@@ -23,8 +23,8 @@ public class Player : MonoBehaviour
     [SerializeField] private int hitImpulseForse;
     [SerializeField] private int ammoCount;
     [SerializeField] private int maxWeaponMagazineCount;
-
-
+    [SerializeField] private GameObject wfxSandHit;
+    [SerializeField] private GameObject wfxBodyHit;
     [SerializeField] private TextMeshProUGUI ammoText;
     [SerializeField] private TextMeshProUGUI ammoMagazineText;
 
@@ -39,8 +39,8 @@ public class Player : MonoBehaviour
     private int buffedSpeed = 0;
     private int buffedJump = 0;
     private Vector3 gravitation;
-    private float xRotation = 0f;
-    private bool isGrounded;
+    private float verticalRotation = 0f;
+    public bool isGrounded;
     private bool isShootDelay;
     private bool isReloading;
     private IPlayerMove iplayerMove;
@@ -66,33 +66,30 @@ public class Player : MonoBehaviour
         }
 
         ammoMagazineCount = maxWeaponMagazineCount;
-        RefreshAmmoUI();
+        RefreshAmmoUI();        
     }
 
     void Update()
     {
-        if (Mathf.Approximately(Time.timeScale, 0))
-            return;
-        iplayerMove.PlayerMove(playerSpeed + buffedSpeed);
-        PlayerJump();
-        PlayerLook();
+        //if (Mathf.Approximately(Time.timeScale, 0))
+        //    return;
+        //iplayerMove.PlayerMove(playerSpeed + buffedSpeed);
+        //PlayerJump();
+        //PlayerLook();
 
         if (Input.GetKeyDown(KeyCode.B))       
             playerHealth.TakeDamage(5);
 
-        if (Input.GetKey(KeyCode.Mouse0) && !isShootDelay && !isReloading)
-            PlayerShoot();
+        //if (Input.GetKey(KeyCode.Mouse0) && !isShootDelay && !isReloading)
+        //    PlayerShoot();
 
-        if (Input.GetKeyDown(KeyCode.R) && !isReloading)
-            PlayerReload();
+        //if (Input.GetKeyDown(KeyCode.R) && !isReloading)
+        //    PlayerReload();
 
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (!flashLight.enabled)
-                flashLight.enabled = true;
-            else if (flashLight.enabled)
-                flashLight.enabled = false;
-        }
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    flashLight.enabled = !flashLight.enabled;
+        //}
     }
 
     public void SetWSADcontrol()
@@ -128,12 +125,12 @@ public class Player : MonoBehaviour
         var mouseLookX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         var mouseLookY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
         
-        xRotation -= mouseLookY;
-        xRotation = Mathf.Clamp(xRotation, -45f, 45f); 
+        verticalRotation -= mouseLookY;
+        verticalRotation = Mathf.Clamp(verticalRotation, -45f, 45f); 
 
         transform.Rotate(0f, mouseLookX, 0f); 
-        head.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        weapon.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        head.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
+        weapon.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
     }
 
     private void PlayerShoot()
@@ -164,8 +161,14 @@ public class Player : MonoBehaviour
                     targethealth.TakeDamage(shootDamage);
                 }
 
+                Instantiate(wfxBodyHit, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+
                 var hitRigidBody = hit.collider.GetComponent<Rigidbody>();
                 hitRigidBody.AddForce(transform.forward * hitImpulseForse, ForceMode.Impulse);
+            }
+            else
+            {                         
+                Instantiate(wfxSandHit, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
             }
 
         playerAnimator.SetBool("Shoot", true);       
