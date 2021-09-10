@@ -77955,11 +77955,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.508
       objectReference: {fileID: 0}
+    - target: {fileID: 1682411764060486416, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1682411764060486417, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
         type: 3}
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 2081611130}
+    - target: {fileID: 1682411764060486417, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1682411764060486417, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
         type: 3}
       propertyPath: wfxBodyHit

@@ -7,6 +7,7 @@ public abstract class Weapon
 {
     public UnityAction<bool> weaponShoot;
     public UnityAction<int, int> ammoChange;
+    public UnityAction emptyAmmo;
 
     public int maxMagazineAmmo;
     public int ammoMagazineCount;
@@ -15,23 +16,23 @@ public abstract class Weapon
     public bool isShootDelay;
     public Light flashLight;
     private Coroutine shootDelay;
-    private bool isReloading;
+    public bool isReloading;
     
 
     public virtual void Shoot(int ammoCount)
     {
-
         ammoMagazineCount--;
 
         if (ammoMagazineCount < 0)
         {
             ammoMagazineCount = 0;
-            ReloadWeapon(ammoCount);
+            emptyAmmo?.Invoke();
             return;
         }
 
         isShootDelay = true;
-        weaponShoot?.Invoke(isShootDelay);        
+        ammoChange?.Invoke(ammoCount, ammoMagazineCount);
+        weaponShoot?.Invoke(isShootDelay);
 
         if (shootDelay == null)
             shootDelay = GameManager.instance.StartCoroutine(ShootDelay(shootDelayTime));
@@ -49,18 +50,14 @@ public abstract class Weapon
     {
         yield return new WaitForSeconds(reloadTime);
 
-        if (ammoCount < maxMagazineAmmo)
-        {
-            ammoMagazineCount = ammoCount;
-            ammoCount -= ammoMagazineCount;
-        }
-        else
-        {
-            var ammoNeeded = maxMagazineAmmo - ammoMagazineCount;
-            ammoMagazineCount = maxMagazineAmmo;
-            ammoCount -= ammoNeeded;
-        }
+        var ammoNeeded = maxMagazineAmmo - ammoMagazineCount; 
 
+        if (ammoCount < ammoNeeded)   
+            ammoMagazineCount = ammoCount;         
+        else              
+            ammoMagazineCount = maxMagazineAmmo;
+
+        ammoCount -= ammoNeeded;
         ammoChange?.Invoke(ammoCount, ammoMagazineCount);
         isReloading = false;
     }

@@ -23,10 +23,13 @@ public class MachineGun : Weapon
     }
     public override void Shoot(int ammoCount)
     {
-        if (isShootDelay == true)
+        if (isShootDelay || isReloading)
             return;
 
         base.Shoot(ammoCount);
+
+        if (ammoMagazineCount == 0)
+            return;
 
         RaycastHit hit;        
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0));

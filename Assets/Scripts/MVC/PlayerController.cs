@@ -6,12 +6,10 @@ public class PlayerController
 {
     private PlayerView playerView;
     private PlayerModel playerModel;
-   // private Weapon playerWeapon;
-    public PlayerController(PlayerView view, PlayerModel model) //, Weapon weapon)
+    public PlayerController(PlayerView view, PlayerModel model)
     {
         playerView = view;
         playerModel = model;
-       // playerWeapon = weapon;
     }
 
     public void Enable()
@@ -21,8 +19,9 @@ public class PlayerController
         playerModel.PlayerShooting += PlayerShootAnim;
         playerModel.PlayerJumping += PlayerJump;
         playerModel.PlayerReloading += PlayerReloadAnim;
-        playerModel.AmmoChaging += RefreshAmmoUI;
+        playerModel.AmmoChanging += RefreshAmmoUI;
     }
+
     public void Disable()
     {
         playerModel.PlayerMoving -= PositionChange;
@@ -30,7 +29,7 @@ public class PlayerController
         playerModel.PlayerShooting -= PlayerShootAnim;
         playerModel.PlayerJumping -= PlayerJump;
         playerModel.PlayerReloading -= PlayerReloadAnim;
-        playerModel.AmmoChaging -= RefreshAmmoUI;
+        playerModel.AmmoChanging -= RefreshAmmoUI;
     }
 
     private void PositionChange(int speed, int axeleration, Vector3 direction)
@@ -42,6 +41,7 @@ public class PlayerController
         else
             playerView.StopRunAnim();
     }
+
     private void DirectionChange(float mouseLookX, float verticalRotation)
     {
         playerView.SetRotation(mouseLookX, verticalRotation);
