@@ -52,12 +52,17 @@ public abstract class Weapon
 
         var ammoNeeded = maxMagazineAmmo - ammoMagazineCount; 
 
-        if (ammoCount < ammoNeeded)   
-            ammoMagazineCount = ammoCount;         
-        else              
+        if (ammoCount <= ammoNeeded)
+        {
+            ammoMagazineCount = ammoCount;
+            ammoCount = 0;
+        }   
+        else
+        {
             ammoMagazineCount = maxMagazineAmmo;
-
-        ammoCount -= ammoNeeded;
+            ammoCount -= ammoNeeded;
+        }          
+        
         ammoChange?.Invoke(ammoCount, ammoMagazineCount);
         isReloading = false;
     }

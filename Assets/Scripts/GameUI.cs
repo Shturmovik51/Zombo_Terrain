@@ -77,13 +77,13 @@ public class GameUI : MonoBehaviour
     }
     private void OnClickControlWSADBtn()
     {
-        Player.instance.SetWSADcontrol();
+        GameManager.instance.GetControlWSAD();
         controlWSADBtn.image.color = Color.green;
         control8546Btn.image.color = Color.white;
     }
     private void OnClickControl8546Btn()
     {
-        Player.instance.Set8546control();
+        GameManager.instance.GetControl8546();
         controlWSADBtn.image.color = Color.white;
         control8546Btn.image.color = Color.green;
     }

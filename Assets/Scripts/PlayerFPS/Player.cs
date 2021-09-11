@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform weapon;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private Light flashLight;
-    [SerializeField] private float gravityForse;
+    [SerializeField] private float gravityForñe;
     [SerializeField] private int playerSpeed;
     [SerializeField] private int sensitivity;
     [SerializeField] private int jumpForse;
@@ -112,12 +112,12 @@ public class Player : MonoBehaviour
 
         if (Input.GetButton("Jump") && isGrounded)
         {
-            gravitation.y = Mathf.Sqrt((jumpForse + buffedJump) * -2 * gravityForse);
+            gravitation.y = Mathf.Sqrt((jumpForse + buffedJump) * -2 * gravityForñe);
         }
 
-        gravitation.y += gravityForse * Time.deltaTime;
+        gravitation.y += gravityForñe * Time.deltaTime;
       
-        charControl.Move(gravitation * Time.deltaTime);       
+        charControl.Move(gravitation * Time.deltaTime);       //âüþõà
     }
 
     private void PlayerLook()

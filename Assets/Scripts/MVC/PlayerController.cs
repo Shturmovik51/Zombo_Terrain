@@ -52,9 +52,9 @@ public class PlayerController
         playerView.ShootAnim(isShootDelay);
     }
 
-    private void PlayerJump()
+    private void PlayerJump(int jumpForce)
     {
-
+        //playerView.Jump(jumpForce);
     }
 
     private void PlayerReloadAnim()
