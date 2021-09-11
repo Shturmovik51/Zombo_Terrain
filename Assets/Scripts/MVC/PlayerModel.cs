@@ -8,7 +8,7 @@ public class PlayerModel
 {
     public UnityAction<int, int, Vector3> PlayerMoving;
     public UnityAction<bool> PlayerShooting;
-    public UnityAction PlayerJumping;
+    public UnityAction<int> PlayerJumping;
     public UnityAction<float, float> PlayerLooking;
     public UnityAction PlayerReloading;
     public UnityAction<int, int> AmmoChanging;
@@ -16,21 +16,28 @@ public class PlayerModel
     private Weapon weapon;
     private int moveSpeed;
     private int axeleration;
-    private int ammoCount = 100;
+    private int ammoCount = 150;
     private float verticalRotation;
+    private bool isGrounded;
+    private Transform groundDetector;
+    private LayerMask groundMask;
+    private int jumpForce;
     public int Axeleration { get => axeleration; set => axeleration = value; }
 
-    public PlayerModel(int moveSpeed, Weapon weapon)
+    public PlayerModel(int moveSpeed, int jumpForce, Weapon weapon, Transform groundDetector, LayerMask groundMask)
     {
         this.moveSpeed = moveSpeed;
+        this.jumpForce = jumpForce;
         this.weapon = weapon;
+        this.groundDetector = groundDetector;
+        this.groundMask = groundMask;
     }
 
     public void InitWeapon()
     {
         weapon.weaponShoot += PLayerShootAnim;
         weapon.ammoChange += AmmoCountChange;
-        weapon.emptyAmmo += PLayerReloadWeapon;
+        weapon.emptyAmmo += PLayerReloadWeapon;        
     }
 
     public void PlayerMove(float xMoveDir, float zMoveDir, Vector3 xMovement, Vector3 zMovement)
@@ -46,6 +53,11 @@ public class PlayerModel
         weapon.Shoot(ammoCount);
     }
 
+    public void GroundDetection()
+    {
+        isGrounded = Physics.CheckSphere(groundDetector.position, 0.3f, groundMask);
+    }
+
     private void PLayerShootAnim(bool isShootDelay)
     {
         PlayerShooting?.Invoke(isShootDelay);
@@ -53,7 +65,10 @@ public class PlayerModel
 
     public void PlayerJump()
     {
+        if (!isGrounded)
+            return;
 
+        PlayerJumping?.Invoke(jumpForce);
     }
 
     public void PlayerLook(float mouseLookX, float mouseLookY)
@@ -77,5 +92,6 @@ public class PlayerModel
         AmmoChanging?.Invoke(ammoCount, ammoMagazineCount);
     }
 
+    
 
 }

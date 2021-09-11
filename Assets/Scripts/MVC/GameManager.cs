@@ -5,6 +5,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public delegate float GetXAxis();
+    public delegate float GetZAxis();
+    private GetXAxis xControl;
+    private GetZAxis zControl;
+
     [SerializeField] private GameUI mainSceneUI;
     public GameUI MainSceneUI { get => mainSceneUI; set => mainSceneUI = value; }
 
@@ -15,6 +20,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int axeleration;
     [SerializeField] private int maxAmmoInMG;
     [SerializeField] private Animator playerAnimator;
+    [SerializeField] private int jumpForce;
+    [SerializeField] Transform groundDetector;
+    [SerializeField] private LayerMask groundMask;
+    private float xAxisValue;
+    private float zAxisValue;
 
     [Header("Weapnos start parameters\n")]
     [SerializeField] private GameObject machineGunObj;
@@ -75,13 +85,13 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        GetReloadTime();
+        GetReloadTime();        
 
         machineGun = new MachineGun(maxAmmoInMG, shootDamage, hitImpulseForce, weaponLightEffectsTime, reloadTime, wfxShootEffects, flashLight);
         //rifleGun
         weapon = machineGun;
 
-        playerModel = new PlayerModel(palyerSpeed, weapon);
+        playerModel = new PlayerModel(palyerSpeed, jumpForce, weapon, groundDetector, groundMask);
         playerModel.InitWeapon();
         playerView = Player.instance.GetComponent<PlayerView>();
         playerController = new PlayerController(playerView, playerModel);
@@ -110,7 +120,7 @@ public class GameManager : MonoBehaviour
             playerModel.PLayerReloadWeapon();
 
         playerModel.PlayerLook(GetHorizontalAxis(), GetVerticalAxis());
-        playerModel.PlayerMove(GetXAxis(), GetZAxis(), GetPlayerXDirection(), GetPlayerZDirection());
+        playerModel.PlayerMove(xControl(), zControl(), GetPlayerXDirection(), GetPlayerZDirection());
         playerModel.Axeleration = Axeleration();
     }    
 
@@ -132,14 +142,36 @@ public class GameManager : MonoBehaviour
         return playerView.transform.forward;
     }
 
-    private float GetXAxis()
+    public static float GetXControlWSAD()
     {
         return Input.GetAxis("Horizontal");
     }
 
-    private float GetZAxis()
-    {
+    public static float GetZControlWSAD()
+    {        
         return Input.GetAxis("Vertical");
+    }
+
+    public static float GetXAltControlWSAD()
+    {
+        return Input.GetAxis("AltHorizontal");
+    }
+
+    public static float GetZAltControlWSAD()
+    {
+        return Input.GetAxis("AltVertical");
+    }
+
+    public void GetControlWSAD()
+    {
+        xControl = GetXControlWSAD;
+        zControl = GetZControlWSAD;
+    }
+
+    public void GetControl8546()
+    {
+        xControl = GetXAltControlWSAD;
+        zControl = GetZAltControlWSAD;
     }
 
     private int Axeleration()
