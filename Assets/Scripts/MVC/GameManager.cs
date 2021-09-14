@@ -132,7 +132,6 @@ public class GameManager : MonoBehaviour
         hit.SetActive(false);
         hitCollection.Add(hit);
     }
-    
 
     private Vector3 GetPlayerXDirection()
     {

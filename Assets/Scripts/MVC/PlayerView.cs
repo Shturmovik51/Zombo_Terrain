@@ -44,7 +44,7 @@ public class PlayerView : MonoBehaviour
 
         if (isGrounded)
             gravitation = Vector3.down;
-    }
+    }    
 
     public void SetPosition(int speed, Vector3 direction)
     {
