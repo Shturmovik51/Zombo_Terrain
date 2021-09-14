@@ -117,7 +117,7 @@ public class Player : MonoBehaviour
 
         gravitation.y += gravityForñe * Time.deltaTime;
       
-        charControl.Move(gravitation * Time.deltaTime);       //âüþõà
+        charControl.Move(gravitation * Time.deltaTime);       
     }
 
     private void PlayerLook()

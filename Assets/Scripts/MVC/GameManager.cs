@@ -21,8 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxAmmoInMG;
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private int jumpForce;
-    [SerializeField] Transform groundDetector;
-    [SerializeField] private LayerMask groundMask;
+    
     private float xAxisValue;
     private float zAxisValue;
 
@@ -91,11 +90,11 @@ public class GameManager : MonoBehaviour
         //rifleGun
         weapon = machineGun;
 
-        playerModel = new PlayerModel(palyerSpeed, jumpForce, weapon, groundDetector, groundMask);
-        playerModel.InitWeapon();
+        playerModel = new PlayerModel(palyerSpeed, jumpForce, weapon);
         playerView = Player.instance.GetComponent<PlayerView>();
         playerController = new PlayerController(playerView, playerModel);
         playerController.Enable();
+        playerModel.EnableModel(playerController);
 
 
         for (int i = 0; i < hitsCountInCollection; i++)
@@ -118,6 +117,9 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
             playerModel.PLayerReloadWeapon();
+
+        if (Input.GetButton("Jump"))
+            playerModel.PlayerJump();
 
         playerModel.PlayerLook(GetHorizontalAxis(), GetVerticalAxis());
         playerModel.PlayerMove(xControl(), zControl(), GetPlayerXDirection(), GetPlayerZDirection());

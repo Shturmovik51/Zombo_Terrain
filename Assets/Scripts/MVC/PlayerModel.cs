@@ -19,25 +19,26 @@ public class PlayerModel
     private int ammoCount = 150;
     private float verticalRotation;
     private bool isGrounded;
-    private Transform groundDetector;
-    private LayerMask groundMask;
     private int jumpForce;
+    private PlayerController playerController;
     public int Axeleration { get => axeleration; set => axeleration = value; }
 
-    public PlayerModel(int moveSpeed, int jumpForce, Weapon weapon, Transform groundDetector, LayerMask groundMask)
+    public PlayerModel(int moveSpeed, int jumpForce, Weapon weapon)
     {
         this.moveSpeed = moveSpeed;
         this.jumpForce = jumpForce;
-        this.weapon = weapon;
-        this.groundDetector = groundDetector;
-        this.groundMask = groundMask;
+        this.weapon = weapon;        
     }
 
-    public void InitWeapon()
+    public void EnableModel(PlayerController playerController)
     {
+        this.playerController = playerController;
+        playerController.OnGroundedStateChange += GroundDetectionStateReseiver;
+
         weapon.weaponShoot += PLayerShootAnim;
         weapon.ammoChange += AmmoCountChange;
-        weapon.emptyAmmo += PLayerReloadWeapon;        
+        weapon.emptyAmmo += PLayerReloadWeapon;  
+        
     }
 
     public void PlayerMove(float xMoveDir, float zMoveDir, Vector3 xMovement, Vector3 zMovement)
@@ -51,12 +52,7 @@ public class PlayerModel
     public void PLayerShoot()
     {  
         weapon.Shoot(ammoCount);
-    }
-
-    public void GroundDetection()
-    {
-        isGrounded = Physics.CheckSphere(groundDetector.position, 0.3f, groundMask);
-    }
+    }   
 
     private void PLayerShootAnim(bool isShootDelay)
     {
@@ -92,6 +88,10 @@ public class PlayerModel
         AmmoChanging?.Invoke(ammoCount, ammoMagazineCount);
     }
 
+    private void GroundDetectionStateReseiver(bool isGrounded)
+    {
+        this.isGrounded = isGrounded;
+    }
     
 
 }

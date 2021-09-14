@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
     [SerializeField] private int maxHealth;
     private UnityAction<int> updateHP;
     private UnityAction deathEntity;
-    [SerializeField] private int currentHealth;
+    private int currentHealth;
 
     public UnityAction<int> UpdateHP {get => updateHP;  set => updateHP = value;}
     public UnityAction DeathEntity {get => deathEntity; set => deathEntity = value;}

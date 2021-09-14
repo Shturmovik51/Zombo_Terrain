@@ -1,21 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerView : MonoBehaviour
 {
     [SerializeField] private Transform head;
     [SerializeField] private Transform arms;
-    
-    private CharacterController charController;
-    
+    [SerializeField] private Transform groundDetector;
+    [SerializeField] private LayerMask groundMask;
+    [SerializeField] private float gravityForñe;
+
+
+    public UnityAction<bool> OnGroundDetectionState;
+    private CharacterController charController;    
     private Animator playerAnimator;
+    private Vector3 gravitation;
+    private bool isGrounded;
 
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
         playerAnimator = GetComponentInChildren<Animator>();
-    } 
+    }
+
+    private void Update()
+    {
+        GroundDetectionStateProvider();
+        Gravitation();
+    }
+
+    public void GroundDetectionStateProvider()
+    {
+        isGrounded = Physics.CheckSphere(groundDetector.position, 0.3f, groundMask);
+        OnGroundDetectionState?.Invoke(isGrounded);
+    }
+
+    public void Gravitation()
+    {
+        gravitation.y += gravityForñe * Time.deltaTime;
+
+        charController.Move(gravitation * Time.deltaTime);
+
+        if (isGrounded)
+            gravitation = Vector3.down;
+    }
 
     public void SetPosition(int speed, Vector3 direction)
     {
@@ -45,9 +74,9 @@ public class PlayerView : MonoBehaviour
         playerAnimator.SetBool("Shoot", isShootDelay);
     }
 
-    public void Jump(Vector3 gravitation)
+    public void Jump(int jumpForce)
     {
-        
+        gravitation.y = Mathf.Sqrt((jumpForce) * -2 * gravityForñe);
     }
 
     public void Reload()
