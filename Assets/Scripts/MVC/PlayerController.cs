@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController
 {
     private PlayerView playerView;
     private PlayerModel playerModel;
+
+    public UnityAction<bool> OnGroundedStateChange;
     public PlayerController(PlayerView view, PlayerModel model)
     {
         playerView = view;
@@ -20,6 +23,8 @@ public class PlayerController
         playerModel.PlayerJumping += PlayerJump;
         playerModel.PlayerReloading += PlayerReloadAnim;
         playerModel.AmmoChanging += RefreshAmmoUI;
+
+        playerView.OnGroundDetectionState += GroundDetector;
     }
 
     public void Disable()
@@ -30,6 +35,8 @@ public class PlayerController
         playerModel.PlayerJumping -= PlayerJump;
         playerModel.PlayerReloading -= PlayerReloadAnim;
         playerModel.AmmoChanging -= RefreshAmmoUI;
+
+
     }
 
     private void PositionChange(int speed, int axeleration, Vector3 direction)
@@ -54,7 +61,7 @@ public class PlayerController
 
     private void PlayerJump(int jumpForce)
     {
-        //playerView.Jump(jumpForce);
+        playerView.Jump(jumpForce);
     }
 
     private void PlayerReloadAnim()
@@ -67,6 +74,10 @@ public class PlayerController
         playerView.RefreshAmmoUI(ammoCount, ammoMagazineCount);
     }
 
+    private void GroundDetector(bool isGrounded)
+    {
+        OnGroundedStateChange?.Invoke(isGrounded);
+    }
 
 
 }
