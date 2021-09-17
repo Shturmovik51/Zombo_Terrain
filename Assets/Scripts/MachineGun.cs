@@ -11,7 +11,7 @@ public class MachineGun : Weapon
     private Coroutine wfxHitLifeTime;
     private Coroutine lightEffectsDelay;
     public MachineGun(int maxMagazineAmmo, int shootDamage, int hitImpulseForce, float lightEffectsDelayTime, float reloadTime,
-                        GameObject shootEffects, Light flashLight)
+                        GameObject shootEffects, Light flashLight, GameManager gameManager)
     {
         this.maxMagazineAmmo = maxMagazineAmmo;
         this.shootDamage = shootDamage;
@@ -20,6 +20,7 @@ public class MachineGun : Weapon
         this.reloadTime = reloadTime;
         this.shootEffects = shootEffects;
         this.flashLight = flashLight;
+        this.gameManager = gameManager;
     }
     public override void Shoot(int ammoCount)
     {
@@ -39,20 +40,20 @@ public class MachineGun : Weapon
             {
                 var hitedGO = hit.collider.transform.root.gameObject;
 
-                if (GameManager.instance.HealthContainer.ContainsKey(hitedGO))
-                {
-                    var targethealth = GameManager.instance.HealthContainer[hitedGO];
-                    targethealth.TakeDamage(shootDamage);
-                }
+                //if (GameManager.instance.HealthContainer.ContainsKey(hitedGO))
+                //{
+                //    var targethealth = GameManager.instance.HealthContainer[hitedGO];
+                //    targethealth.TakeDamage(shootDamage);
+                //}
 
-                TakeWFXhitFromPool(GameManager.instance.WfxBodyHits, hit);
+                //TakeWFXhitFromPool(GameManager.instance.WfxBodyHits, hit);
 
                 var hitRigidBody = hit.collider.GetComponent<Rigidbody>();
                 hitRigidBody.AddForce(Camera.main.transform.forward * hitImpulseForce, ForceMode.Impulse);
             }
             else
             {
-                TakeWFXhitFromPool(GameManager.instance.WfxSandHits, hit);
+                //TakeWFXhitFromPool(GameManager.instance.WfxSandHits, hit);
             }
 
         LightEffectsOn();
@@ -65,7 +66,7 @@ public class MachineGun : Weapon
         wfxHit.transform.position = hit.point;
         wfxHit.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
         wfxHit.SetActive(true);
-        wfxHitLifeTime = GameManager.instance.StartCoroutine(WFXhitLifeTime(wfxPool, wfxHit));
+        wfxHitLifeTime = gameManager.StartCoroutine(WFXhitLifeTime(wfxPool, wfxHit));
     }
 
     private void ReturnWFXhitToPool(List<GameObject> wfxPool, GameObject wfxHit)
@@ -85,7 +86,7 @@ public class MachineGun : Weapon
         shootEffects.transform.Rotate(Vector3.forward, Random.Range(0f, 360f), Space.Self);        
         shootEffects.SetActive(true);
         
-        lightEffectsDelay = GameManager.instance.StartCoroutine(LightEffectsDelay(lightEffectsDelayTime));
+        lightEffectsDelay = gameManager.StartCoroutine(LightEffectsDelay(lightEffectsDelayTime));
     }
     public IEnumerator LightEffectsDelay(float delayTime)
     {

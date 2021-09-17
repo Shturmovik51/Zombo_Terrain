@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerController
+public class PlayerController : IDisposable
 {
     private PlayerView playerView;
     private PlayerModel playerModel;
@@ -27,7 +28,7 @@ public class PlayerController
         playerView.OnGroundDetectionState += GroundDetector;
     }
 
-    public void Disable()
+    public void Dispose()
     {
         playerModel.PlayerMoving -= PositionChange;
         playerModel.PlayerLooking -= DirectionChange;
@@ -35,8 +36,6 @@ public class PlayerController
         playerModel.PlayerJumping -= PlayerJump;
         playerModel.PlayerReloading -= PlayerReloadAnim;
         playerModel.AmmoChanging -= RefreshAmmoUI;
-
-
     }
 
     private void PositionChange(int speed, int axeleration, Vector3 direction)
@@ -44,7 +43,7 @@ public class PlayerController
         playerView.SetPosition(speed, direction);
 
         if (axeleration != 1)
-            playerView.StartRunAnim();        
+            playerView.StartRunAnim();
         else
             playerView.StopRunAnim();
     }
@@ -79,5 +78,8 @@ public class PlayerController
         OnGroundedStateChange?.Invoke(isGrounded);
     }
 
-
+    private void PlayerDeath()
+    {
+        Dispose();
+    }
 }

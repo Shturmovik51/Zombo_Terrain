@@ -27,7 +27,7 @@ public class PlayerModel
     {
         this.moveSpeed = moveSpeed;
         this.jumpForce = jumpForce;
-        this.weapon = weapon;        
+        this.weapon = weapon;       
     }
 
     public void EnableModel(PlayerController playerController)

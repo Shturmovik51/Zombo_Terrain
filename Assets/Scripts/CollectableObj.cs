@@ -10,7 +10,6 @@ public class CollectableObj: MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Player.instance.AddBuff(buff);
             Destroy(gameObject);
         }
     }

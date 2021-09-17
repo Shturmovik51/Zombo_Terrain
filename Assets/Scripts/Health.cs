@@ -19,7 +19,7 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        GameManager.instance.HealthContainer.Add(gameObject, this);
+        //GameManager.instance.HealthContainer.Add(gameObject, this);
     }  
 
     public void TakeDamage(int damage)
@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0f)
         {
-            GameManager.instance.HealthContainer.Remove(gameObject);
+            //GameManager.instance.HealthContainer.Remove(gameObject);
             deathEntity?.Invoke();
             //Destroy(this);
         }

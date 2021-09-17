@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-
     public delegate float GetXAxis();
     public delegate float GetZAxis();
     private GetXAxis xControl;
@@ -14,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameUI MainSceneUI { get => mainSceneUI; set => mainSceneUI = value; }
 
     [Header("Player start parameters\n")]
+    [SerializeField] private GameObject player;
     [SerializeField] private Transform playerStartPos;
     [SerializeField] private int palyerSpeed;
     [Tooltip("Множитель скорости перемещения")]
@@ -71,13 +70,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
-       
         healthContainer = new Dictionary<GameObject, Health>();
         WfxBodyHits = new List<GameObject>();
         WfxSandHits = new List<GameObject>();
-    }
+    }        
 
     private void Start()
     {
@@ -86,15 +82,16 @@ public class GameManager : MonoBehaviour
 
         GetReloadTime();        
 
-        machineGun = new MachineGun(maxAmmoInMG, shootDamage, hitImpulseForce, weaponLightEffectsTime, reloadTime, wfxShootEffects, flashLight);
+        machineGun = new MachineGun(maxAmmoInMG, shootDamage, hitImpulseForce, weaponLightEffectsTime, reloadTime, wfxShootEffects, flashLight, this);
         //rifleGun
         weapon = machineGun;
 
         playerModel = new PlayerModel(palyerSpeed, jumpForce, weapon);
-        playerView = Player.instance.GetComponent<PlayerView>();
+        playerView = player.GetComponent<PlayerView>();
         playerController = new PlayerController(playerView, playerModel);
         playerController.Enable();
         playerModel.EnableModel(playerController);
+        playerView.gameManager = this;
 
 
         for (int i = 0; i < hitsCountInCollection; i++)

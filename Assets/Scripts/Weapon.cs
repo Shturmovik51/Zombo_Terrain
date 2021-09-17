@@ -17,7 +17,8 @@ public abstract class Weapon
     public Light flashLight;
     private Coroutine shootDelay;
     public bool isReloading;
-    
+
+    public GameManager gameManager;
 
     public virtual void Shoot(int ammoCount)
     {
@@ -35,7 +36,7 @@ public abstract class Weapon
         weaponShoot?.Invoke(isShootDelay);
 
         if (shootDelay == null)
-            shootDelay = GameManager.instance.StartCoroutine(ShootDelay(shootDelayTime));
+            shootDelay = gameManager.StartCoroutine(ShootDelay(shootDelayTime));
     }
 
     public void ReloadWeapon(int ammoCount)
@@ -43,7 +44,7 @@ public abstract class Weapon
         if (ammoCount == 0)
             return;
         isReloading = true;
-        GameManager.instance.StartCoroutine(ReloadTimer(ammoCount));
+        gameManager.StartCoroutine(ReloadTimer(ammoCount));
     }
 
     private IEnumerator ReloadTimer(int ammoCount)

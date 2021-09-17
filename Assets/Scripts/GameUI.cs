@@ -12,6 +12,7 @@ public class GameUI : MonoBehaviour
     [SerializeField] private Button SunRiseBtn;
     [SerializeField] private Button controlWSADBtn;
     [SerializeField] private Button control8546Btn;
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private TextMeshProUGUI ammoText;
     [SerializeField] private TextMeshProUGUI ammoMagazineText;
 
@@ -77,13 +78,13 @@ public class GameUI : MonoBehaviour
     }
     private void OnClickControlWSADBtn()
     {
-        GameManager.instance.GetControlWSAD();
+        gameManager.GetControlWSAD();
         controlWSADBtn.image.color = Color.green;
         control8546Btn.image.color = Color.white;
     }
     private void OnClickControl8546Btn()
     {
-        GameManager.instance.GetControl8546();
+        gameManager.GetControl8546();
         controlWSADBtn.image.color = Color.white;
         control8546Btn.image.color = Color.green;
     }

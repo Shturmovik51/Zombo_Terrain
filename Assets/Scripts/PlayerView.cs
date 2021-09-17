@@ -11,9 +11,10 @@ public class PlayerView : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float gravityForñe;
 
+    [HideInInspector] public GameManager gameManager;
 
     public UnityAction<bool> OnGroundDetectionState;
-    private CharacterController charController;    
+    private CharacterController charController;
     private Animator playerAnimator;
     private Vector3 gravitation;
     private bool isGrounded;
@@ -86,8 +87,8 @@ public class PlayerView : MonoBehaviour
 
     public void RefreshAmmoUI(int ammoCount, int ammoMagazineCount)
     {
-        GameManager.instance.MainSceneUI.AmmoText.text = ammoCount.ToString();
-        GameManager.instance.MainSceneUI.AmmoMagazineText.text = ammoMagazineCount.ToString();
+        gameManager.MainSceneUI.AmmoText.text = ammoCount.ToString();
+        gameManager.MainSceneUI.AmmoMagazineText.text = ammoMagazineCount.ToString();
     }
 
 
