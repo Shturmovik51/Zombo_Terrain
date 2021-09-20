@@ -3,62 +3,53 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public delegate float GetXAxis();
-    public delegate float GetZAxis();
-    private GetXAxis xControl;
-    private GetZAxis zControl;
-
     [SerializeField] private GameUI mainSceneUI;
     public GameUI MainSceneUI { get => mainSceneUI; set => mainSceneUI = value; }
 
-    [Header("Player start parameters\n")]
-    [SerializeField] private GameObject player;
-    [SerializeField] private Transform playerStartPos;
-    [SerializeField] private int palyerSpeed;
-    [Tooltip("Множитель скорости перемещения")]
-    [SerializeField] private int axeleration;
-    [SerializeField] private int maxAmmoInMG;
-    [SerializeField] private Animator playerAnimator;
-    [SerializeField] private int jumpForce;
+    [Header("\nPlayer start parameters\n")]
+    [SerializeField] private int _palyerSpeed;
+    [SerializeField] private int _axeleration;
+    [SerializeField] private int _maxAmmoInMachineGun;
+    [SerializeField] private int _jumpForce;
+    [SerializeField] private int _startAmmoCount;
+    [SerializeField] private Animator _playerAnimator;
+    [SerializeField] private Transform _playerStartPosition;
+    [SerializeField] private GameObject _player;
     
-    private float xAxisValue;
-    private float zAxisValue;
-
-    [Header("Weapnos start parameters\n")]
-    [SerializeField] private GameObject machineGunObj;
-    [SerializeField] private Transform BodyHitsContainer;
-    [SerializeField] private Transform SandHitsContainer;
-
-    [SerializeField] private GameObject wfxBodyHit;
-    [SerializeField] private GameObject wfxSandHit;
-    [SerializeField] private GameObject wfxShootEffects;
-
-    [SerializeField] private int hitsCountInCollection;
-    [SerializeField] private int shootDamage;
-    [SerializeField] private int hitImpulseForce;
-    [SerializeField] private float weaponLightEffectsTime;
-    [SerializeField] private Light flashLight;
-
-    private PlayerModel playerModel;
-    private PlayerView playerView;
-    private PlayerController playerController;
-    private Weapon weapon;
-    private float reloadTime;
+    [Header("\nWeapnos start parameters\n")]
+    [SerializeField] private int _hitsCountInCollection;
+    [SerializeField] private int _shootDamage;
+    [SerializeField] private int _hitImpulseForce;
+    [SerializeField] private float _weaponLightEffectsTime;
+    [SerializeField] private Light _flashLight;
+    [SerializeField] private Transform _bodyHitsContainer;
+    [SerializeField] private Transform _sandHitsContainer;
+    [SerializeField] private GameObject _bodyHitEffect;
+    [SerializeField] private GameObject _sandHitEffect;
+    [SerializeField] private GameObject _shootEffect;
 
 
+    [Header("\nDayCycle parameters\n")]
+    [SerializeField] private float _dayRotationSpeed;
+    [SerializeField] private float _timeJumpSpeed;
+    [SerializeField] private float _cloudColorChangeSpeed;
+    [SerializeField] private Color _sunSetCloudColor;
+    [SerializeField] private Color _dayCloudColor;
+    [SerializeField] private Material _cloudsMaterial;
+    [SerializeField] private Transform _directionalLight;
 
 
+    [HideInInspector] public DailyCycle dailyCycle;
+    [HideInInspector] public MachineGun _machineGun;
+    //[HideInInspector] public RifleGun rifleGun;
 
-    public MachineGun machineGun;
-    //public RifleGun rifleGun;
+    private Weapon _weapon;
+    private float _reloadTime;
+    private PlayerModel _playerModel;
+    private PlayerView _playerView;
+    private PlayerController _playerController;
 
-
-
-
-    #region Collections
-
-    private Dictionary<GameObject, Health> healthContainer;       
-    public Dictionary<GameObject, Health> HealthContainer {get => healthContainer;  set => healthContainer = value;}
+    #region Collections       
 
     private List<GameObject> wfxBodyHits;
     public List<GameObject> WfxBodyHits { get => wfxBodyHits; set => wfxBodyHits = value; }
@@ -69,10 +60,11 @@ public class GameManager : MonoBehaviour
     #endregion
 
     private void Awake()
-    {
-        healthContainer = new Dictionary<GameObject, Health>();
+    {       
         WfxBodyHits = new List<GameObject>();
         WfxSandHits = new List<GameObject>();
+        dailyCycle = new DailyCycle(_dayRotationSpeed, _timeJumpSpeed, _cloudColorChangeSpeed, _dayCloudColor, 
+                                    _sunSetCloudColor, _cloudsMaterial, _directionalLight);
     }        
 
     private void Start()
@@ -82,22 +74,21 @@ public class GameManager : MonoBehaviour
 
         GetReloadTime();        
 
-        machineGun = new MachineGun(maxAmmoInMG, shootDamage, hitImpulseForce, weaponLightEffectsTime, reloadTime, wfxShootEffects, flashLight, this);
+        _machineGun = new MachineGun(_maxAmmoInMachineGun, _shootDamage, _hitImpulseForce, _weaponLightEffectsTime, _reloadTime, 
+                                    _shootEffect, _flashLight, this);
         //rifleGun
-        weapon = machineGun;
+        _weapon = _machineGun;
 
-        playerModel = new PlayerModel(palyerSpeed, jumpForce, weapon);
-        playerView = player.GetComponent<PlayerView>();
-        playerController = new PlayerController(playerView, playerModel);
-        playerController.Enable();
-        playerModel.EnableModel(playerController);
-        playerView.gameManager = this;
+        _playerModel = new PlayerModel(_palyerSpeed, _jumpForce, _weapon, _startAmmoCount, _axeleration);
+        _playerView = _player.GetComponent<PlayerView>();
+        _playerController = new PlayerController(_playerView, _playerModel);
+        _playerController.Enable();
 
 
-        for (int i = 0; i < hitsCountInCollection; i++)
+        for (int i = 0; i < _hitsCountInCollection; i++)
         {
-            InitHitCollection(wfxBodyHit, WfxBodyHits, BodyHitsContainer);
-            InitHitCollection(wfxSandHit, WfxSandHits, SandHitsContainer);
+            InitHitCollection(_bodyHitEffect, WfxBodyHits, _bodyHitsContainer);
+            InitHitCollection(_sandHitEffect, WfxSandHits, _sandHitsContainer);
         }
     }
 
@@ -107,21 +98,24 @@ public class GameManager : MonoBehaviour
             return;
 
         if (Input.GetKeyDown(KeyCode.F))
-            machineGun.FlashLightOnOff();
+            _machineGun.FlashLightOnOff();
 
         if (Input.GetKey(KeyCode.Mouse0))
-            playerModel.PLayerShoot();
+            _playerController.PLayerShoot();
 
         if (Input.GetKeyDown(KeyCode.R))
-            playerModel.PLayerReloadWeapon();
+            _playerController.PLayerReloadWeapon();
 
         if (Input.GetButton("Jump"))
-            playerModel.PlayerJump();
+            _playerController.PlayerJump();
 
-        playerModel.PlayerLook(GetHorizontalAxis(), GetVerticalAxis());
-        playerModel.PlayerMove(xControl(), zControl(), GetPlayerXDirection(), GetPlayerZDirection());
-        playerModel.Axeleration = Axeleration();
-    }    
+        _playerController.PlayerLook(GetHorizontalAxis(), GetVerticalAxis());
+        _playerController.PlayerMove(GetInputAxis(), GetPlayerXDirection(), Axeleration());
+    }
+    private void FixedUpdate()
+    {
+        dailyCycle.DirectionLightRotation();
+    }
 
     private void InitHitCollection(GameObject wfxHit, List<GameObject> hitCollection, Transform hitContainer)
     {
@@ -130,55 +124,19 @@ public class GameManager : MonoBehaviour
         hitCollection.Add(hit);
     }
     
-
-    private Vector3 GetPlayerXDirection()
+    private (float, float) GetInputAxis()
     {
-        return playerView.transform.right;
+        return (Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
     }
 
-    private Vector3 GetPlayerZDirection()
+    private (Vector3, Vector3) GetPlayerXDirection()
     {
-        return playerView.transform.forward;
+        return (_playerView.transform.right, _playerView.transform.forward);
     }
-
-    public static float GetXControlWSAD()
+    
+    private bool Axeleration()
     {
-        return Input.GetAxis("Horizontal");
-    }
-
-    public static float GetZControlWSAD()
-    {        
-        return Input.GetAxis("Vertical");
-    }
-
-    public static float GetXAltControlWSAD()
-    {
-        return Input.GetAxis("AltHorizontal");
-    }
-
-    public static float GetZAltControlWSAD()
-    {
-        return Input.GetAxis("AltVertical");
-    }
-
-    public void GetControlWSAD()
-    {
-        xControl = GetXControlWSAD;
-        zControl = GetZControlWSAD;
-    }
-
-    public void GetControl8546()
-    {
-        xControl = GetXAltControlWSAD;
-        zControl = GetZAltControlWSAD;
-    }
-
-    private int Axeleration()
-    {
-        if (Input.GetKey(KeyCode.LeftShift)) 
-            return 2;           
-        else
-            return 1;         
+        return Input.GetKey(KeyCode.LeftShift);        
     }
 
     private float GetHorizontalAxis()
@@ -192,12 +150,12 @@ public class GameManager : MonoBehaviour
     }
     private void GetReloadTime()
     {
-        var anims = playerAnimator.runtimeAnimatorController.animationClips;        
+        var anims = _playerAnimator.runtimeAnimatorController.animationClips;        
 
         foreach (var anim in anims)
         {
             if (anim.name == "Character_Reload")
-               reloadTime = anim.length;              
+               _reloadTime = anim.length;              
         }
     }
 }

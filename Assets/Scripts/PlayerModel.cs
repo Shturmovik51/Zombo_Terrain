@@ -4,94 +4,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerModel
-{
-    public UnityAction<int, int, Vector3> PlayerMoving;
-    public UnityAction<bool> PlayerShooting;
-    public UnityAction<int> PlayerJumping;
-    public UnityAction<float, float> PlayerLooking;
-    public UnityAction PlayerReloading;
-    public UnityAction<int, int> AmmoChanging;
+public class PlayerModel : ILiveEntity
+{    
+    private Weapon _playerWeapon;
+    private int _moveSpeed;
+    private int _axeleration;
+    private int _ammoCount;
+    private float _verticalRotation;    
+    private int _jumpForce;
+    private int _health;
 
-    private Weapon weapon;
-    private int moveSpeed;
-    private int axeleration;
-    private int ammoCount = 150;
-    private float verticalRotation;
-    private bool isGrounded;
-    private int jumpForce;
-    private PlayerController playerController;
-    public int Axeleration { get => axeleration; set => axeleration = value; }
+    public int Axeleration { get => _axeleration; set => _axeleration = value; }
+    public int MoveSpeed { get => _moveSpeed; set => _moveSpeed = value; }
+    public int AmmoCount { get => _ammoCount; set => _ammoCount = value; }
+    public Weapon PlayerWeapon { get => _playerWeapon; set => _playerWeapon = value; }    
+    public int JumpForce { get => _jumpForce; set => _jumpForce = value; }
+    public float VerticalRotation { get => _verticalRotation; set => _verticalRotation = value; }
+    public int Health { get => _health; set => _health = value; }
 
-    public PlayerModel(int moveSpeed, int jumpForce, Weapon weapon)
+    public PlayerModel(int moveSpeed, int jumpForce, Weapon weapon, int ammoCount, int axeleration)
     {
-        this.moveSpeed = moveSpeed;
-        this.jumpForce = jumpForce;
-        this.weapon = weapon;       
+        _moveSpeed = moveSpeed;
+        _jumpForce = jumpForce;
+        _playerWeapon = weapon;
+        _ammoCount = ammoCount;
+        _axeleration = axeleration;
     }
-
-    public void EnableModel(PlayerController playerController)
-    {
-        this.playerController = playerController;
-        playerController.OnGroundedStateChange += GroundDetectionStateReseiver;
-
-        weapon.weaponShoot += PLayerShootAnim;
-        weapon.ammoChange += AmmoCountChange;
-        weapon.emptyAmmo += PLayerReloadWeapon;  
-        
-    }
-
-    public void PlayerMove(float xMoveDir, float zMoveDir, Vector3 xMovement, Vector3 zMovement)
-    {   
-        var moveDirection = (xMoveDir * xMovement + zMoveDir * zMovement);
-        moveDirection *= axeleration;
-        
-        PlayerMoving?.Invoke(moveSpeed, axeleration, moveDirection);
-    }
-
-    public void PLayerShoot()
-    {  
-        weapon.Shoot(ammoCount);
-    }   
-
-    private void PLayerShootAnim(bool isShootDelay)
-    {
-        PlayerShooting?.Invoke(isShootDelay);
-    }
-
-    public void PlayerJump()
-    {
-        if (!isGrounded)
-            return;
-
-        PlayerJumping?.Invoke(jumpForce);
-    }
-
-    public void PlayerLook(float mouseLookX, float mouseLookY)
-    {
-        verticalRotation -= mouseLookY;
-        verticalRotation = Mathf.Clamp(verticalRotation, -45f, 45f);
-        PlayerLooking?.Invoke(mouseLookX, verticalRotation);
-    }
-
-    public void PLayerReloadWeapon()
-    {
-        if (ammoCount == 0)
-            return;
-        weapon.ReloadWeapon(ammoCount);
-        PlayerReloading?.Invoke();
-    }
-
-    private void AmmoCountChange(int ammoCount, int ammoMagazineCount)
-    {
-        this.ammoCount = ammoCount;
-        AmmoChanging?.Invoke(ammoCount, ammoMagazineCount);
-    }
-
-    private void GroundDetectionStateReseiver(bool isGrounded)
-    {
-        this.isGrounded = isGrounded;
-    }
-    
 
 }

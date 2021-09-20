@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BuffTimers : MonoBehaviour
+public class BuffTimer
 {
-    private IEnumerator BuffTimeDuration(int time, int parameter)
+    public IEnumerator BuffTimeDuration(int time, int parameter)
     {
         yield return new WaitForSeconds(time);
         parameter = 0;

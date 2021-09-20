@@ -9343,6 +9343,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3479147789494553862}
   m_PrefabAsset: {fileID: 0}
+--- !u!143 &256526398 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 1682411764060486419, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+    type: 3}
+  m_PrefabInstance: {fileID: 3479147789494553862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &257075608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4450152921918124, guid: 668cce22823cba14a8df15d76a34f652,
@@ -19250,6 +19256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403cbb93caf53354c8d2f1854a31827a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 0
   spawnPoint: {fileID: 0}
 --- !u!114 &550358068
 MonoBehaviour:
@@ -21091,7 +21098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &615028060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21104,11 +21111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0bcf4398bff8fb48bc2f40f0cf6bad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff:
-    type: 0
-    additiveBonus: 6
-    multipleBonus: 0
-    duration: 5
+  _buffType: 0
+  _bonusValue: 4
+  _duration: 10
 --- !u!135 &615028061
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -24095,7 +24100,6 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
-  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -24179,22 +24183,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 70.52, y: 0, z: 0}
---- !u!114 &705507996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705507993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a15ae2857a15dbd42adbc81b768a0cb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dayRotationSpeed: 0.1
-  timeJump: 600
-  cloudsMaterial: {fileID: 1505535738}
-  sunSetCloudColor: {r: 0.5754717, g: 0.42563188, b: 0.42563188, a: 0.16470589}
 --- !u!1001 &707030528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36541,6 +36529,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1511623784}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1047938943 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8006301122014042303, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+    type: 3}
+  m_PrefabInstance: {fileID: 3479147789494553862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1049497036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4627556295074294, guid: f8e9db31e19e1d2408e32f7544a76ae8,
@@ -37963,6 +37957,7 @@ MonoBehaviour:
   maxAmmoInMG: 30
   playerAnimator: {fileID: 1997022806}
   jumpForce: 3
+  startAmmoCount: 300
   machineGunObj: {fileID: 1522816389}
   BodyHitsContainer: {fileID: 4220501}
   SandHitsContainer: {fileID: 261077227}
@@ -37976,6 +37971,13 @@ MonoBehaviour:
   hitImpulseForce: 200
   weaponLightEffectsTime: 0.1
   flashLight: {fileID: 404385697}
+  _dayRotationSpeed: 1
+  _timeJumpSpeed: 20
+  _cloudColorChangeSpeed: 0.1
+  _sunSetCloudColor: {r: 0.9622642, g: 0.62184054, b: 0.62184054, a: 0.2}
+  _dayCloudColor: {r: 1, g: 1, b: 1, a: 0.2}
+  _cloudsMaterial: {fileID: 2100000, guid: ed85fec01193dd44a9892728c8305419, type: 2}
+  _directionalLight: {fileID: 705507995}
 --- !u!4 &1078811275
 Transform:
   m_ObjectHideFlags: 0
@@ -38599,6 +38601,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4240234205284746, guid: 0918ec5b71c613b42972ddba63eab479,
     type: 3}
   m_PrefabInstance: {fileID: 278693534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1095043072 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1682411762823040817, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+    type: 3}
+  m_PrefabInstance: {fileID: 3479147789494553862}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1095219829 stripped
 Transform:
@@ -39976,6 +39984,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322bfa056f47d3540bca9daae3e38a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  a: 6
+  b: 17
 --- !u!4 &1128341480
 Transform:
   m_ObjectHideFlags: 0
@@ -45105,6 +45115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403cbb93caf53354c8d2f1854a31827a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 0
   spawnPoint: {fileID: 0}
 --- !u!114 &1255268257
 MonoBehaviour:
@@ -52028,6 +52039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403cbb93caf53354c8d2f1854a31827a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 0
   spawnPoint: {fileID: 0}
 --- !u!114 &1431396007
 MonoBehaviour:
@@ -54856,12 +54868,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 861637428}
   m_PrefabAsset: {fileID: 0}
---- !u!199 &1505535738 stripped
-ParticleSystemRenderer:
-  m_CorrespondingSourceObject: {fileID: 199741287350489100, guid: 3dd7d5f8e4829f543aa2fdb3492859e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 861637428}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1507143734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4824098251744632, guid: 70d34ee47b6de58419ff1750a82d2adf,
@@ -55418,11 +55424,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0bcf4398bff8fb48bc2f40f0cf6bad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff:
-    type: 1
-    additiveBonus: 6
-    multipleBonus: 0
-    duration: 4
+  _buffType: 0
+  _bonusValue: 0
+  _duration: 0
 --- !u!135 &1519081619
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -59865,7 +59869,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 1674128321}
-  dailyCycle: {fileID: 705507996}
   DayBtn: {fileID: 1909143245}
   SunSetBtn: {fileID: 903321975}
   NightBtn: {fileID: 108426164}
@@ -60178,6 +60181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403cbb93caf53354c8d2f1854a31827a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 10
   spawnPoint: {fileID: 1371682818}
 --- !u!114 &1671342357
 MonoBehaviour:
@@ -60186,7 +60190,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671342355}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3dd65dc4ef64da742942b23e9c55efaa, type: 3}
   m_Name: 
@@ -65722,6 +65726,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4063622810316754, guid: ddf4f45c150785f4685630ead1bdbe25,
     type: 3}
   m_PrefabInstance: {fileID: 1808876740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1809447200 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1682411763065596879, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+    type: 3}
+  m_PrefabInstance: {fileID: 3479147789494553862}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1811282580 stripped
 Transform:
@@ -76543,11 +76553,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0bcf4398bff8fb48bc2f40f0cf6bad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff:
-    type: 3
-    additiveBonus: 50
-    multipleBonus: 0
-    duration: 0
+  _buffType: 0
+  _bonusValue: 0
+  _duration: 0
 --- !u!54 &1036968358145239
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -76988,11 +76996,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0bcf4398bff8fb48bc2f40f0cf6bad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff:
-    type: 2
-    additiveBonus: 100
-    multipleBonus: 0
-    duration: 0
+  _buffType: 2
+  _bonusValue: 100
+  _duration: 0
 --- !u!54 &1728620629288796
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -80798,6 +80804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403cbb93caf53354c8d2f1854a31827a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 0
   spawnPoint: {fileID: 0}
 --- !u!114 &2513888315771515587
 MonoBehaviour:
@@ -81195,6 +81202,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1682411764060486431, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+        type: 3}
+      propertyPath: _arms
+      value: 
+      objectReference: {fileID: 1047938943}
+    - target: {fileID: 1682411764060486431, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+        type: 3}
+      propertyPath: _head
+      value: 
+      objectReference: {fileID: 1809447200}
+    - target: {fileID: 1682411764060486431, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+        type: 3}
+      propertyPath: _gameManager
+      value: 
+      objectReference: {fileID: 1078811274}
+    - target: {fileID: 1682411764060486431, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+        type: 3}
+      propertyPath: "_gravityFor\u0441e"
+      value: -19.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682411764060486431, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+        type: 3}
+      propertyPath: _groundDetector
+      value: 
+      objectReference: {fileID: 1095043072}
+    - target: {fileID: 1682411764060486431, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+        type: 3}
+      propertyPath: _playerAnimator
+      value: 
+      objectReference: {fileID: 1997022806}
+    - target: {fileID: 1682411764060486431, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+        type: 3}
+      propertyPath: _groundMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682411764060486431, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+        type: 3}
+      propertyPath: _characterController
+      value: 
+      objectReference: {fileID: 256526398}
     - target: {fileID: 3479147789304082758, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
         type: 3}
       propertyPath: nuarEffectBtn
@@ -81285,6 +81332,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1576984616}
     m_Modifications:
+    - target: {fileID: 3556189408203863231, guid: 1d3f646b72c0cad4eb5fbc7c72a9fcee,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ed85fec01193dd44a9892728c8305419, type: 2}
     - target: {fileID: 3715102934742388275, guid: 1d3f646b72c0cad4eb5fbc7c72a9fcee,
         type: 3}
       propertyPath: m_RootOrder
@@ -81344,6 +81396,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718624152170680163, guid: 1d3f646b72c0cad4eb5fbc7c72a9fcee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d3f646b72c0cad4eb5fbc7c72a9fcee, type: 3}

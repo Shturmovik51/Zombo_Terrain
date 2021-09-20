@@ -1,85 +1,150 @@
 using System.Collections;
-using System.Collections.Generic;
-using System;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class PlayerController : IDisposable
+public class PlayerController
 {
-    private PlayerView playerView;
-    private PlayerModel playerModel;
+    private PlayerView _playerView;
+    private PlayerModel _playerModel;
 
-    public UnityAction<bool> OnGroundedStateChange;
     public PlayerController(PlayerView view, PlayerModel model)
     {
-        playerView = view;
-        playerModel = model;
+        _playerView = view;
+        _playerModel = model;
     }
 
     public void Enable()
     {
-        playerModel.PlayerMoving += PositionChange;
-        playerModel.PlayerLooking += DirectionChange;
-        playerModel.PlayerShooting += PlayerShootAnim;
-        playerModel.PlayerJumping += PlayerJump;
-        playerModel.PlayerReloading += PlayerReloadAnim;
-        playerModel.AmmoChanging += RefreshAmmoUI;
-
-        playerView.OnGroundDetectionState += GroundDetector;
+        _playerModel.PlayerWeapon.OnAmmoChange += AmmoCountChange;
+        _playerModel.PlayerWeapon.OnWeaponShoot += WeaponRecoil;
+        _playerModel.PlayerWeapon.OnEmptyAmmo += PLayerReloadWeapon;
+        _playerView.OnRecieveBuff += AddBuff;
     }
 
-    public void Dispose()
+    public void Disable()
     {
-        playerModel.PlayerMoving -= PositionChange;
-        playerModel.PlayerLooking -= DirectionChange;
-        playerModel.PlayerShooting -= PlayerShootAnim;
-        playerModel.PlayerJumping -= PlayerJump;
-        playerModel.PlayerReloading -= PlayerReloadAnim;
-        playerModel.AmmoChanging -= RefreshAmmoUI;
+        _playerModel.PlayerWeapon.OnAmmoChange -= AmmoCountChange;
+        _playerModel.PlayerWeapon.OnWeaponShoot -= WeaponRecoil;
+        _playerModel.PlayerWeapon.OnEmptyAmmo -= PLayerReloadWeapon;
     }
-
-    private void PositionChange(int speed, int axeleration, Vector3 direction)
+    //float xMoveDir, float zMoveDir, Vector3 xMovement, Vector3 zMovement, bool isRun
+    public void PlayerMove((float x,float z)step, (Vector3 x, Vector3 z)direction, bool isRun)
     {
-        playerView.SetPosition(speed, direction);
+        var moveDirection = (direction.x * step.x + direction.z * step.z);
+        moveDirection *= _playerModel.MoveSpeed;
 
-        if (axeleration != 1)
-            playerView.StartRunAnim();
+        if (isRun)
+        {
+            moveDirection *= _playerModel.Axeleration;
+            _playerView.StartRunAnim();
+        }
         else
-            playerView.StopRunAnim();
+            _playerView.StopRunAnim();
+
+        _playerView.SetPosition(moveDirection);
     }
 
-    private void DirectionChange(float mouseLookX, float verticalRotation)
+    public void PLayerShoot()
     {
-        playerView.SetRotation(mouseLookX, verticalRotation);
+        _playerModel.PlayerWeapon.Shoot(_playerModel.AmmoCount);
     }
 
-    private void PlayerShootAnim(bool isShootDelay)
+    private void WeaponRecoil(bool isShootDelay)
     {
-        playerView.ShootAnim(isShootDelay);
+        _playerView.ShootAnim(isShootDelay);
     }
 
-    private void PlayerJump(int jumpForce)
+    public void PlayerJump()
     {
-        playerView.Jump(jumpForce);
+        if (!_playerView.IsGrounded())
+            return;
+
+        _playerView.Jump(_playerModel.JumpForce);
     }
 
-    private void PlayerReloadAnim()
+    public void PlayerLook(float mouseLookX, float mouseLookY)
     {
-        playerView.Reload();
+        _playerModel.VerticalRotation -= mouseLookY;
+        _playerModel.VerticalRotation = Mathf.Clamp(_playerModel.VerticalRotation, -45f, 45f);
+
+        _playerView.SetRotation(mouseLookX, _playerModel.VerticalRotation);
     }
 
-    private void RefreshAmmoUI(int ammoCount, int ammoMagazineCount)
+    private void AmmoCountChange(int ammoCount, int ammoMagazineCount)
     {
-        playerView.RefreshAmmoUI(ammoCount, ammoMagazineCount);
+        _playerModel.AmmoCount = ammoCount;
+
+        RefreshAmmoCount();
+        RefreshAmmoMagazineCount(ammoMagazineCount);
     }
 
-    private void GroundDetector(bool isGrounded)
+    private void RefreshAmmoCount()
     {
-        OnGroundedStateChange?.Invoke(isGrounded);
+        _playerView.RefreshAmmoCountUI(_playerModel.AmmoCount);
+    }
+
+    private void RefreshAmmoMagazineCount(int ammoMagazineCount)
+    {
+        _playerView.RefreshAmmoMagazineCountUI(ammoMagazineCount);
+    }
+
+    public void PLayerReloadWeapon()
+    {
+        if (_playerModel.AmmoCount == 0)
+            return;
+
+        _playerModel.PlayerWeapon.ReloadWeapon(_playerModel.AmmoCount);
+        _playerView.ReloadAnimation();
+    }
+
+    private void AddBuff(Buff buff)
+    {
+        if (buff.type == BuffType.Ammo)
+        {
+            _playerModel.AmmoCount += buff.bonusValue;
+            RefreshAmmoCount();
+        }
+        if (buff.type == BuffType.Health)
+        {
+            _playerModel.Health += buff.bonusValue;
+            RefreshHealthBar();
+        }
+        if (buff.type == BuffType.Speed)
+        {
+            _playerModel.MoveSpeed += buff.bonusValue;
+            _playerView.StartCoroutine(BuffTimeDuration(buff));
+        }
+        if (buff.type == BuffType.Speed)
+        {
+            _playerModel.JumpForce += buff.bonusValue;
+            _playerView.StartCoroutine(BuffTimeDuration(buff));
+        }
+    }
+
+    public void RemoveBuff(Buff buff)
+    {
+        if (buff.type == BuffType.Speed)
+        {
+            _playerModel.MoveSpeed -= buff.bonusValue;
+        }
+        if (buff.type == BuffType.Jump)
+        {
+            _playerModel.JumpForce -= buff.bonusValue;
+        }
     }
 
     private void PlayerDeath()
     {
-        Dispose();
+        Disable();
+    }
+
+    private void RefreshHealthBar()
+    {
+        //soon in update
+    }
+
+    private IEnumerator BuffTimeDuration(Buff buff)
+    {
+        yield return new WaitForSeconds(buff.duration);
+        RemoveBuff(buff);
     }
 }

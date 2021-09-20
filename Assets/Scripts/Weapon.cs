@@ -5,9 +5,9 @@ using UnityEngine.Events;
 
 public abstract class Weapon
 {
-    public UnityAction<bool> weaponShoot;
-    public UnityAction<int, int> ammoChange;
-    public UnityAction emptyAmmo;
+    public UnityAction<bool> OnWeaponShoot;
+    public UnityAction<int, int> OnAmmoChange;
+    public UnityAction OnEmptyAmmo;
 
     public int maxMagazineAmmo;
     public int ammoMagazineCount;
@@ -15,7 +15,7 @@ public abstract class Weapon
     public float reloadTime;
     public bool isShootDelay;
     public Light flashLight;
-    private Coroutine shootDelay;
+    private Coroutine _shootDelay;
     public bool isReloading;
 
     public GameManager gameManager;
@@ -27,16 +27,16 @@ public abstract class Weapon
         if (ammoMagazineCount < 0)
         {
             ammoMagazineCount = 0;
-            emptyAmmo?.Invoke();
+            OnEmptyAmmo?.Invoke();
             return;
         }
 
         isShootDelay = true;
-        ammoChange?.Invoke(ammoCount, ammoMagazineCount);
-        weaponShoot?.Invoke(isShootDelay);
+        OnAmmoChange?.Invoke(ammoCount, ammoMagazineCount);
+        OnWeaponShoot?.Invoke(isShootDelay);
 
-        if (shootDelay == null)
-            shootDelay = gameManager.StartCoroutine(ShootDelay(shootDelayTime));
+        if (_shootDelay == null)
+            _shootDelay = gameManager.StartCoroutine(ShootDelay(shootDelayTime));
     }
 
     public void ReloadWeapon(int ammoCount)
@@ -64,7 +64,7 @@ public abstract class Weapon
             ammoCount -= ammoNeeded;
         }          
         
-        ammoChange?.Invoke(ammoCount, ammoMagazineCount);
+        OnAmmoChange?.Invoke(ammoCount, ammoMagazineCount);
         isReloading = false;
     }
 
@@ -72,8 +72,8 @@ public abstract class Weapon
     {
         yield return new WaitForSeconds(shootDelayTime);       
         isShootDelay = false;
-        weaponShoot?.Invoke(isShootDelay);
-        shootDelay = null;
+        OnWeaponShoot?.Invoke(isShootDelay);
+        _shootDelay = null;
         yield break;
     }
 
@@ -81,6 +81,4 @@ public abstract class Weapon
     {
         flashLight.enabled = !flashLight.enabled;
     }
-
-
 }

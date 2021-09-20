@@ -5,8 +5,8 @@ using static UnityEngine.Debug;
 
 public class HW2 : MonoBehaviour
 {
-    private int a = 5;
-    private int b = 10;
+    [SerializeField] private int a;
+    [SerializeField] private int b;
 
     private void Start()
     {

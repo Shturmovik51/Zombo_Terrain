@@ -1,23 +1,33 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(Health))]
-
-public class ZombieEnemy : MonoBehaviour, ICloneable
-{
-    private Health zombieEnemyHealth;
-    private Rigidbody[] dollRGBodys;
+public class ZombieEnemy : MonoBehaviour, ILiveEntity, ITakeDamage, ICloneable
+{    
+    private Rigidbody[] _dollRigidBodys;
     private Animator zombieEnemyAnimator;
-    private LayerMask layerMask;
-    [SerializeField] private Transform spawnPoint;
+    private LayerMask _layerMask;
+    private bool _isDead;
+
+    [SerializeField] private int _health;
+    [SerializeField] private Transform _spawnPoint;
+
+    public int Health { get => _health; }
+
+    public void AddDamage(int damageValue)
+    {
+        _health -= damageValue;
+
+        if (_health <= 0 && !_isDead)
+            DeathZombieEnemy();
+    }
 
     public object Clone()
     {   
-        var pointInSphere = UnityEngine.Random.insideUnitSphere * 6 + spawnPoint.position;
-        var pointInSurface = new Vector3(pointInSphere.x, spawnPoint.position.y, pointInSphere.z);
+        var pointInSphere = UnityEngine.Random.insideUnitSphere * 6 + _spawnPoint.position;
+        var pointInSurface = new Vector3(pointInSphere.x, _spawnPoint.position.y, pointInSphere.z);
 
         Ray ray = new Ray(pointInSurface, Vector3.down);
-        if (Physics.Raycast(ray, out var hit, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(ray, out var hit, Mathf.Infinity, _layerMask))
         {
             pointInSurface = hit.point;
         }
@@ -26,14 +36,12 @@ public class ZombieEnemy : MonoBehaviour, ICloneable
     }
 
     private void Awake()
-    {
-        zombieEnemyHealth = GetComponent<Health>();
-        dollRGBodys = GetComponentsInChildren<Rigidbody>();
+    {        
+        _dollRigidBodys = GetComponentsInChildren<Rigidbody>();
         zombieEnemyAnimator = GetComponent<Animator>();
-        zombieEnemyHealth.DeathEntity += DeathZombieEnemy;
-        layerMask = LayerMask.GetMask("Ground");
+        _layerMask = LayerMask.GetMask("Ground");
 
-        foreach (var rgBody in dollRGBodys)
+        foreach (var rgBody in _dollRigidBodys)
         {
             rgBody.tag = "Enemy";
             rgBody.isKinematic = true;
@@ -42,9 +50,11 @@ public class ZombieEnemy : MonoBehaviour, ICloneable
 
     private void DeathZombieEnemy()
     {
-        if (spawnPoint != null)
-            Clone();        
-        foreach (var rgBody in dollRGBodys) rgBody.isKinematic = false;
+        _isDead = true;    
+        foreach (var rgBody in _dollRigidBodys) rgBody.isKinematic = false;
         zombieEnemyAnimator.enabled = false;
+
+        if (_spawnPoint != null)
+            Clone();
     }    
 }

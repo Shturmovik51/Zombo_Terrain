@@ -427,7 +427,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1682411764060486418}
   - component: {fileID: 1682411764060486419}
-  - component: {fileID: 1682411764060486416}
   - component: {fileID: 1682411764060486431}
   m_Layer: 0
   m_Name: Player
@@ -472,19 +471,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 2, z: 0}
---- !u!114 &1682411764060486416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682411764060486420}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dd65dc4ef64da742942b23e9c55efaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 150
 --- !u!114 &1682411764060486431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,6 +490,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   "gravityFor\u0441e": -19.8
+  gameManager: {fileID: 0}
 --- !u!1 &1682411764408543388
 GameObject:
   m_ObjectHideFlags: 0
