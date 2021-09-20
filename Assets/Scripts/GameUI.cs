@@ -4,40 +4,36 @@ using TMPro;
 
 public class GameUI : MonoBehaviour
 {
-    [SerializeField] private GameObject pausePanel;
-    [SerializeField] private DailyCycle dailyCycle;   
-    [SerializeField] private Button DayBtn;
-    [SerializeField] private Button SunSetBtn;
-    [SerializeField] private Button NightBtn;
-    [SerializeField] private Button SunRiseBtn;
-    [SerializeField] private Button controlWSADBtn;
-    [SerializeField] private Button control8546Btn;
-    [SerializeField] private TextMeshProUGUI ammoText;
-    [SerializeField] private TextMeshProUGUI ammoMagazineText;
+    [SerializeField] private GameObject _pausePanel; 
+    [SerializeField] private Button _dayButton;
+    [SerializeField] private Button _sunSetButton;
+    [SerializeField] private Button _nightButton;
+    [SerializeField] private Button _sunRiseButton;
+    [SerializeField] private GameManager _gameManager;
+    [SerializeField] private TextMeshProUGUI _ammoText;
+    [SerializeField] private TextMeshProUGUI _ammoMagazineText;
 
-    public TextMeshProUGUI AmmoText { get => ammoText; set => ammoText = value; }
-    public TextMeshProUGUI AmmoMagazineText { get => ammoMagazineText; set => ammoMagazineText = value; }
+    private Vector3 _daySunPosition = new Vector3(80, 0, 0);
+    private Vector3 _nightSunPosition = new Vector3(-90, 0, 0);
+    private Vector3 _sunSetSunPosition = new Vector3(-5, 0, 0);
+    private Vector3 _sunRiseSunPosition = new Vector3(190, 0, 0);
+
+    public TextMeshProUGUI AmmoText { get => _ammoText; set => _ammoText = value; }
+    public TextMeshProUGUI AmmoMagazineText { get => _ammoMagazineText; set => _ammoMagazineText = value; }
 
     private void Awake()
     {
-        DayBtn.onClick.AddListener(OnClickDayBtn);
-        SunSetBtn.onClick.AddListener(OnClickSunSetBtn);
-        NightBtn.onClick.AddListener(OnClickNightBtn);
-        SunRiseBtn.onClick.AddListener(OnClickSunRiseBtn);
-        controlWSADBtn.onClick.AddListener(OnClickControlWSADBtn);
-        control8546Btn.onClick.AddListener(OnClickControl8546Btn);
-    }
-
-    private void Start()
-    {
-        OnClickControlWSADBtn();
+        _dayButton.onClick.AddListener(OnClickDayBtn);
+        _sunSetButton.onClick.AddListener(OnClickSunSetBtn);
+        _nightButton.onClick.AddListener(OnClickNightBtn);
+        _sunRiseButton.onClick.AddListener(OnClickSunRiseBtn);
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (pausePanel.activeInHierarchy)
+            if (_pausePanel.activeInHierarchy)
                 ChangeStateGame(CursorLockMode.Locked, false, 1);
             else
                 ChangeStateGame(CursorLockMode.None, true, 0);
@@ -46,45 +42,33 @@ public class GameUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        DayBtn.onClick.RemoveAllListeners();
-        SunSetBtn.onClick.RemoveAllListeners();
-        NightBtn.onClick.RemoveAllListeners();
-        SunRiseBtn.onClick.RemoveAllListeners();
+        _dayButton.onClick.RemoveAllListeners();
+        _sunSetButton.onClick.RemoveAllListeners();
+        _nightButton.onClick.RemoveAllListeners();
+        _sunRiseButton.onClick.RemoveAllListeners();
     }
 
     private void ChangeStateGame(CursorLockMode cursorLockMode, bool isVisible, float timeScale)
     {
-        pausePanel.gameObject.SetActive(isVisible);
+        _pausePanel.gameObject.SetActive(isVisible);
         Cursor.visible = isVisible;
         Cursor.lockState = cursorLockMode;
         Time.timeScale = timeScale;
     }
     private void OnClickDayBtn()
     {
-        dailyCycle.DailyCycleTimeJump(Quaternion.Euler(new Vector3(80, 0, 0)));       
+        _gameManager.dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_daySunPosition));       
     }
     private void OnClickSunSetBtn()
     {
-        dailyCycle.DailyCycleTimeJump(Quaternion.Euler(new Vector3(-5, 0, 0)));       
+        _gameManager.dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_sunSetSunPosition));       
     }
     private void OnClickNightBtn()
     {
-        dailyCycle.DailyCycleTimeJump(Quaternion.Euler(new Vector3(-90, 0, 0)));       
+        _gameManager.dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_nightSunPosition));       
     }
     private void OnClickSunRiseBtn()
     {
-        dailyCycle.DailyCycleTimeJump(Quaternion.Euler(new Vector3(190, 0, 0)));       
-    }
-    private void OnClickControlWSADBtn()
-    {
-        GameManager.instance.GetControlWSAD();
-        controlWSADBtn.image.color = Color.green;
-        control8546Btn.image.color = Color.white;
-    }
-    private void OnClickControl8546Btn()
-    {
-        GameManager.instance.GetControl8546();
-        controlWSADBtn.image.color = Color.white;
-        control8546Btn.image.color = Color.green;
-    }
+        _gameManager.dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_sunRiseSunPosition));       
+    }   
 }
