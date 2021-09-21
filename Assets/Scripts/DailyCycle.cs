@@ -50,6 +50,7 @@ public class DailyCycle
             }
         }
 
+        #region не успел запилить внутриигровой таймер, поэтому это не работает
         //if (angle < 15 || angle > 345 || angle > 165 && angle < 195)
         //{
         //    var dayToNightColor = Color.red;
@@ -67,15 +68,9 @@ public class DailyCycle
         //    _cloudsMaterial.SetColor("_TintColor", nightToDayColor);
         //    Debug.Log("Da");
         //}
+        #endregion
 
         _directionalLight.Rotate(Vector3.left * rotationSpeed * Time.fixedDeltaTime);
     }
-
-    //private void CloudsColor(Color currentCloudsColor)
-    //{
-
-
-    //    _cloudsMaterial.SetColor("_TintColor", dayToNightColor);
-    //}
 
 }
