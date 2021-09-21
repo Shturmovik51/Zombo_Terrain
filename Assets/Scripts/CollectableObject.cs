@@ -18,6 +18,6 @@ public class CollectableObject: MonoBehaviour, ICollectable
 
     public void SpecialDestroy()
     {
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }

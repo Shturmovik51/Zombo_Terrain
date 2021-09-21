@@ -20847,7 +20847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buffType: 0
   _bonusValue: 4
-  _duration: 10
+  _duration: 5
 --- !u!135 &615028061
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -37625,6 +37625,7 @@ MonoBehaviour:
   _sandHitEffect: {fileID: 447243716218371865, guid: 68817ddd8ddb9e74d823185e855c8501,
     type: 3}
   _shootEffect: {fileID: 2041188619}
+  _mainCamera: {fileID: 1599160512}
   _dayRotationSpeed: 1
   _timeJumpSpeed: 20
   _cloudColorChangeSpeed: 0.1
@@ -55059,7 +55060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1519081618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55072,9 +55073,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0bcf4398bff8fb48bc2f40f0cf6bad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buffType: 0
-  _bonusValue: 0
-  _duration: 0
+  _buffType: 1
+  _bonusValue: 6
+  _duration: 6
 --- !u!135 &1519081619
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -57422,6 +57423,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4627556295074294, guid: f8e9db31e19e1d2408e32f7544a76ae8,
     type: 3}
   m_PrefabInstance: {fileID: 2117716462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1599160512 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1682411763367321012, guid: b6c9c2f43ef9d8e4c9cb9543d8378f22,
+    type: 3}
+  m_PrefabInstance: {fileID: 3479147789494553862}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1600040370
 GameObject:

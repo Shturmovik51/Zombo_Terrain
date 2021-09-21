@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _bodyHitEffect;
     [SerializeField] private GameObject _sandHitEffect;
     [SerializeField] private GameObject _shootEffect;
-
+    [SerializeField] private Camera _mainCamera;
 
     [Header("\nDayCycle parameters\n")]
     [SerializeField] private float _dayRotationSpeed;
@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         GetReloadTime();        
 
         _machineGun = new MachineGun(_maxAmmoInMachineGun, _shootDamage, _hitImpulseForce, _weaponLightEffectsTime, _reloadTime, 
-                                    _shootEffect, _flashLight, this);
+                                    _shootEffect, _flashLight, this, _mainCamera);
         //rifleGun
         _weapon = _machineGun;
 

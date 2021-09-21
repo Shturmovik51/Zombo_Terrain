@@ -113,7 +113,7 @@ public class PlayerController
             _playerModel.MoveSpeed += buff.bonusValue;
             _playerView.StartCoroutine(BuffTimeDuration(buff));
         }
-        if (buff.type == BuffType.Speed)
+        if (buff.type == BuffType.Jump)
         {
             _playerModel.JumpForce += buff.bonusValue;
             _playerView.StartCoroutine(BuffTimeDuration(buff));
