@@ -5,20 +5,21 @@ using UnityEngine.Events;
 
 public abstract class Weapon
 {
+    public int maxMagazineAmmo;
+    public int ammoMagazineCount;
+    public bool isShootDelay;
+    public bool isReloading;
+    public float shootDelayTime = 0.1f;
+    public float reloadTime;
+    public Light flashLight;
+    public Camera mainCamera;
+    public GameManager gameManager;
+
     public UnityAction<bool> OnWeaponShoot;
     public UnityAction<int, int> OnAmmoChange;
     public UnityAction OnEmptyAmmo;
 
-    public int maxMagazineAmmo;
-    public int ammoMagazineCount;
-    public float shootDelayTime = 0.1f;
-    public float reloadTime;
-    public bool isShootDelay;
-    public Light flashLight;
     private Coroutine _shootDelay;
-    public bool isReloading;
-
-    public GameManager gameManager;
 
     public virtual void Shoot(int ammoCount)
     {

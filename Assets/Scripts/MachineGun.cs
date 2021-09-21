@@ -12,7 +12,7 @@ public class MachineGun : Weapon
     private Coroutine _lightEffectsDelay;
 
     public MachineGun(int maxMagazineAmmo, int shootDamage, int hitImpulseForce, float lightEffectsDelayTime, float reloadTime,
-                        GameObject shootEffects, Light flashLight, GameManager gameManager)
+                        GameObject shootEffects, Light flashLight, GameManager gameManager, Camera mainCamera)
     {
         this.maxMagazineAmmo = maxMagazineAmmo;
         _shootDamage = shootDamage;
@@ -22,6 +22,7 @@ public class MachineGun : Weapon
         _shootEffects = shootEffects;
         this.flashLight = flashLight;
         this.gameManager = gameManager;
+        this.mainCamera = mainCamera;
     }
     public override void Shoot(int ammoCount)
     {
@@ -34,7 +35,7 @@ public class MachineGun : Weapon
             return;
 
         RaycastHit hit;        
-        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0));
+        Ray ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0));
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
