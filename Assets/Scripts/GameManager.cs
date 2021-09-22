@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -41,6 +43,10 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public DailyCycle dailyCycle;
     [HideInInspector] public MachineGun _machineGun;
+
+    [SerializeField] private TextMeshProUGUI _timerText;
+    [SerializeField] private float _timerSpeed;
+    public InGameTimer GameTimer;
     //[HideInInspector] public RifleGun rifleGun;
 
     private Weapon _weapon;
@@ -60,7 +66,8 @@ public class GameManager : MonoBehaviour
     #endregion
 
     private void Awake()
-    {       
+    {
+        GameTimer = new InGameTimer(_timerText, _timerSpeed);
         WfxBodyHits = new List<GameObject>();
         WfxSandHits = new List<GameObject>();
         dailyCycle = new DailyCycle(_dayRotationSpeed, _timeJumpSpeed, _cloudColorChangeSpeed, _dayCloudColor, 
@@ -72,7 +79,8 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        GetReloadTime();        
+        GetReloadTime();
+
 
         _machineGun = new MachineGun(_maxAmmoInMachineGun, _shootDamage, _hitImpulseForce, _weaponLightEffectsTime, _reloadTime, 
                                     _shootEffect, _flashLight, this, _mainCamera);
@@ -90,10 +98,14 @@ public class GameManager : MonoBehaviour
             InitHitCollection(_bodyHitEffect, WfxBodyHits, _bodyHitsContainer);
             InitHitCollection(_sandHitEffect, WfxSandHits, _sandHitsContainer);
         }
+
+        if (_reloadTime <= 0) throw new Exception("Wrong ReloadTimer value determination in GetReloadTime()");
     }
 
     private void Update()
     {
+        GameTimer.TimeCountDown();
+
         if (Mathf.Approximately(Time.timeScale, 0))
             return;
 
@@ -155,7 +167,9 @@ public class GameManager : MonoBehaviour
         foreach (var anim in anims)
         {
             if (anim.name == "Character_Reload")
-               _reloadTime = anim.length;              
+            {
+                _reloadTime = anim.length;
+            }
         }
     }
 }
