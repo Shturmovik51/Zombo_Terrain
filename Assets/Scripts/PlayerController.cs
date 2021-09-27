@@ -5,11 +5,13 @@ public class PlayerController
 {
     private PlayerView _playerView;
     private PlayerModel _playerModel;
+   // private BuffTimerController _buffTimerController;
 
-    public PlayerController(PlayerView view, PlayerModel model)
+    public PlayerController(PlayerView view, PlayerModel model /*BuffTimerController buffTimerController*/)
     {
         _playerView = view;
         _playerModel = model;
+       // _buffTimerController = buffTimerController;
     }
 
     public void Enable()
@@ -18,6 +20,7 @@ public class PlayerController
         _playerModel.PlayerWeapon.OnWeaponShoot += WeaponRecoil;
         _playerModel.PlayerWeapon.OnEmptyAmmo += PLayerReloadWeapon;
         _playerView.OnRecieveBuff += AddBuff;
+        //_buffTimerController.BuffTimerView.OnRemoveBuff += RemoveBuff;
     }
 
     public void Disable()
@@ -98,37 +101,38 @@ public class PlayerController
 
     private void AddBuff(Buff buff)
     {
-        if (buff.type == BuffType.Ammo)
+        if (buff.Type == BuffType.Ammo)
         {
-            _playerModel.AmmoCount += buff.bonusValue;
+            _playerModel.AmmoCount += buff.BonusValue;
             RefreshAmmoCount();
         }
-        if (buff.type == BuffType.Health)
+        if (buff.Type == BuffType.Health)
         {
-            _playerModel.Health += buff.bonusValue;
+            _playerModel.Health += buff.BonusValue;
             RefreshHealthBar();
         }
-        if (buff.type == BuffType.Speed)
+        if (buff.Type == BuffType.Speed)
         {
-            _playerModel.MoveSpeed += buff.bonusValue;
+            _playerModel.MoveSpeed += buff.BonusValue;
             _playerView.StartCoroutine(BuffTimeDuration(buff));
+            buff.Duration = 0;
         }
-        if (buff.type == BuffType.Jump)
+        if (buff.Type == BuffType.Jump)
         {
-            _playerModel.JumpForce += buff.bonusValue;
+            _playerModel.JumpForce += buff.BonusValue;
             _playerView.StartCoroutine(BuffTimeDuration(buff));
         }
     }
 
     public void RemoveBuff(Buff buff)
     {
-        if (buff.type == BuffType.Speed)
+        if (buff.Type == BuffType.Speed)
         {
-            _playerModel.MoveSpeed -= buff.bonusValue;
+            _playerModel.MoveSpeed -= buff.BonusValue;
         }
-        if (buff.type == BuffType.Jump)
+        if (buff.Type == BuffType.Jump)
         {
-            _playerModel.JumpForce -= buff.bonusValue;
+            _playerModel.JumpForce -= buff.BonusValue;
         }
     }
 
@@ -144,7 +148,7 @@ public class PlayerController
 
     private IEnumerator BuffTimeDuration(Buff buff)
     {
-        yield return new WaitForSeconds(buff.duration);
+        yield return new WaitForSeconds(buff.Duration);
         RemoveBuff(buff);
     }
 }

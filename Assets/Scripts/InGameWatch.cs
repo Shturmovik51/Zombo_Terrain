@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class InGameTimer
+public class InGameWatch
 {
     private TextMeshProUGUI _timerText;
     private float _countDownSpeed;
 
-    public InGameTimer(TextMeshProUGUI timerText, float countDownSpeed)
+    public InGameWatch(TextMeshProUGUI timerText, float countDownSpeed)
     {
         _timerText = timerText;
         _countDownSpeed = countDownSpeed;
@@ -22,7 +22,7 @@ public class InGameTimer
     private int _minutRightNumber;
     private int _hourLeftNumber;
     private int _hourRightNumber;
-
+       
     public void TimeCountDown()
     {
         _countDown += Time.deltaTime;
@@ -67,7 +67,7 @@ public class InGameTimer
                 }
             }
         } 
-        
+
         _timerText.text = $"{_hourLeftNumber}{_hourRightNumber} : {_minutLeftNumber}{_minutRightNumber}";
     }
 }

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameUI mainSceneUI;
-    public GameUI MainSceneUI { get => mainSceneUI; set => mainSceneUI = value; }
+    [SerializeField] private GameUI _mainSceneUI;
+    public GameUI MainSceneUI { get => _mainSceneUI; set => _mainSceneUI = value; }
 
     [Header("\nPlayer start parameters\n")]
     [SerializeField] private int _palyerSpeed;
@@ -46,7 +46,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _timerText;
     [SerializeField] private float _timerSpeed;
-    public InGameTimer GameTimer;
+    [SerializeField] private int _killsCountToWin;
+    public InGameWatch GameWatch;
     //[HideInInspector] public RifleGun rifleGun;
 
     private Weapon _weapon;
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        GameTimer = new InGameTimer(_timerText, _timerSpeed);
+        GameWatch = new InGameWatch(_timerText, _timerSpeed);
         WfxBodyHits = new List<GameObject>();
         WfxSandHits = new List<GameObject>();
         dailyCycle = new DailyCycle(_dayRotationSpeed, _timeJumpSpeed, _cloudColorChangeSpeed, _dayCloudColor, 
@@ -79,8 +80,7 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        GetReloadTime();
-
+        GetReloadTime();        
 
         _machineGun = new MachineGun(_maxAmmoInMachineGun, _shootDamage, _hitImpulseForce, _weaponLightEffectsTime, _reloadTime, 
                                     _shootEffect, _flashLight, this, _mainCamera);
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        GameTimer.TimeCountDown();
+        GameWatch.TimeCountDown();
 
         if (Mathf.Approximately(Time.timeScale, 0))
             return;
@@ -170,6 +170,16 @@ public class GameManager : MonoBehaviour
             {
                 _reloadTime = anim.length;
             }
+        }
+    }
+
+    public void KillsCountDown()
+    {
+        _killsCountToWin--;
+
+        if(_killsCountToWin == 0)
+        {
+            _mainSceneUI.StartEndGameScreen();
         }
     }
 }

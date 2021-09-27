@@ -1,13 +1,16 @@
-public class Buff
-{
-    public readonly BuffType type;
-    public readonly int bonusValue;
-    public readonly int duration;
+using UnityEngine;
 
-    public Buff(BuffType type, int bonusValue, int duration)
-    {
-        this.type = type;
-        this.bonusValue = bonusValue;
-        this.duration = duration;
-    }
+[System.Serializable]
+public struct Buff
+{
+    [SerializeField] private int _id;
+    [SerializeField] private int _bonusValue;
+    [SerializeField] private int _duration;
+    [SerializeField] private BuffType _type; 
+
+    public int ID => _id;
+    public int BonusValue => _bonusValue;
+    public BuffType Type => _type;
+
+    public int Duration { get => _duration; set => _duration = value; }
 }

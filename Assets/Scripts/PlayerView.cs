@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,23 +13,21 @@ public class PlayerView : MonoBehaviour
     [SerializeField] private Animator _playerAnimator;
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private CharacterController _characterController;
+    //[SerializeField] private BuffTimerController _buffTimerController;
 
     private Vector3 _gravitation;
-    public BuffTimer buffTimer;
     public UnityAction<Buff> OnRecieveBuff;
-   
+    public UnityAction<Buff> OnRemoveBuff;
+
     private static readonly int Run = Animator.StringToHash("Run");
     private static readonly int Shoot = Animator.StringToHash("Shoot");
     private static readonly int Reload = Animator.StringToHash("Reload");
     private static readonly int Movement = Animator.StringToHash("Movement");
-    private void Start()
-    {
-        buffTimer = new BuffTimer();
-    }
-
+    
     private void Update()
     {       
         Gravitation();
+        //BuffTimerCountDown();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -101,5 +100,21 @@ public class PlayerView : MonoBehaviour
     {
         _gameManager.MainSceneUI.AmmoMagazineText.text = ammoMagazineCount.ToString();
     }
+
+    //private void BuffTimerCountDown()
+    //{
+    //    if (buffTimers.Count > 0)
+    //    {
+    //        foreach (var timer in buffTimers)
+    //        {
+    //            timer.TimeCountDown();
+
+    //            if( timer.TimerValue < 0)
+    //            {
+    //                buffTimers.
+    //            }
+    //        }
+    //    }
+    //}
 
 }

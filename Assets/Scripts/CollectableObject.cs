@@ -4,20 +4,30 @@ using UnityEngine;
 
 public class CollectableObject: MonoBehaviour, ICollectable
 {
-    [SerializeField] private BuffType _buffType;
-    [SerializeField] private int _bonusValue;
-    [SerializeField] private int _duration;
+    [SerializeField] private int _buffID;
 
-    private Buff _buff;
-    public Buff Buff => _buff;
+    private Buff _buff;    
+    private List<Buff> _buffCollection;
 
-    private void Start()
+    public Buff Buff { get => _buff; }
+
+    private void Awake()
     {
-        _buff = new Buff(_buffType, _bonusValue, _duration);
-    }
+        _buffCollection = Resources.Load<BuffBase>("DataBase/Buff Database").Buffs;
+
+        for (int i = 0; i < _buffCollection.Count; i++)
+        {
+            if (_buffCollection[i].ID == _buffID)
+            {                
+                _buff = _buffCollection[i]; // добавить новый класс
+            }
+        }
+    }    
 
     public void SpecialDestroy()
     {
+
         Destroy(this.gameObject);
     }
+    
 }
