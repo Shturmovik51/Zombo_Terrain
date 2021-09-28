@@ -1,25 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class BGSound : MonoBehaviour
 {
-    [SerializeField] private AudioClip[] audioClips;
-    private AudioSource audioSource;
-    private AudioClip currentClip;
+    [SerializeField] private AudioClip[] _audioClips;
+    private AudioSource _audioSource;
+    private AudioClip _currentClip;
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-        if (!audioSource.isPlaying)
+        if (!_audioSource.isPlaying)
         {
-            currentClip = audioClips[Random.Range(0, audioClips.Length)];
-            audioSource.clip = currentClip;
-            audioSource.Play();
+            _currentClip = _audioClips[Random.Range(0, _audioClips.Length)];
+            _audioSource.clip = _currentClip;
+            _audioSource.Play();
         }
     }
 }
