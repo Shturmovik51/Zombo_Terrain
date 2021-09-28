@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameUI mainSceneUI;
-    public GameUI MainSceneUI { get => mainSceneUI; set => mainSceneUI = value; }
+    [SerializeField] private GameUI _mainSceneUI;
+    public GameUI MainSceneUI { get => _mainSceneUI; set => _mainSceneUI = value; }
 
     [Header("\nPlayer start parameters\n")]
     [SerializeField] private int _palyerSpeed;
@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Animator _playerAnimator;
     [SerializeField] private Transform _playerStartPosition;
     [SerializeField] private GameObject _player;
+    private PlayerModel _playerModel;
+    private PlayerView _playerView;
+    private PlayerController _playerController;
     
     [Header("\nWeapnos start parameters\n")]
     [SerializeField] private int _hitsCountInCollection;
@@ -30,6 +33,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _sandHitEffect;
     [SerializeField] private GameObject _shootEffect;
     [SerializeField] private Camera _mainCamera;
+    //[HideInInspector] public RifleGun rifleGun;
+    [HideInInspector] public MachineGun _machineGun;
+    private Weapon _weapon;
+    private float _reloadTime;
 
     [Header("\nDayCycle parameters\n")]
     [SerializeField] private float _dayRotationSpeed;
@@ -40,71 +47,69 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Material _cloudsMaterial;
     [SerializeField] private Transform _directionalLight;
 
-
-    [HideInInspector] public DailyCycle dailyCycle;
-    [HideInInspector] public MachineGun _machineGun;
-
+    [Header("\nBuffTimer parameters\n")]
     [SerializeField] private TextMeshProUGUI _timerText;
-    [SerializeField] private float _timerSpeed;
-    public InGameTimer GameTimer;
-    //[HideInInspector] public RifleGun rifleGun;
+    [SerializeField] private float _timeSpeed;
+    private BuffTimerController _buffTimerController;
+    private BuffTimerModel _buffTimerModel;
+    private BuffTimerView _buffTimerView;
 
-    private Weapon _weapon;
-    private float _reloadTime;
-    private PlayerModel _playerModel;
-    private PlayerView _playerView;
-    private PlayerController _playerController;
+    [Header("\nOther\n")]
+    [SerializeField] private int _killsCountToWin;
+    private DailyCycle _dailyCycle;
+    private InGameWatch _gameWatch;
+    private float _deltaTime;
 
     #region Collections       
 
-    private List<GameObject> wfxBodyHits;
-    public List<GameObject> WfxBodyHits { get => wfxBodyHits; set => wfxBodyHits = value; }
-
-    private List<GameObject> wfxSandHits;
-    public List<GameObject> WfxSandHits { get => wfxSandHits; set => wfxSandHits = value; }
+    [HideInInspector] public List<GameObject> BodyHitEffects;
+    [HideInInspector] public List<GameObject> SandHitEffects;
 
     #endregion
 
     private void Awake()
-    {
-        GameTimer = new InGameTimer(_timerText, _timerSpeed);
-        WfxBodyHits = new List<GameObject>();
-        WfxSandHits = new List<GameObject>();
-        dailyCycle = new DailyCycle(_dayRotationSpeed, _timeJumpSpeed, _cloudColorChangeSpeed, _dayCloudColor, 
-                                    _sunSetCloudColor, _cloudsMaterial, _directionalLight);
+    {      
+        _gameWatch = new InGameWatch(_timerText, _timeSpeed);
+        BodyHitEffects = new List<GameObject>();
+        SandHitEffects = new List<GameObject>();
+        _dailyCycle = new DailyCycle(_timeJumpSpeed, _cloudColorChangeSpeed, _dayCloudColor, 
+                                    _sunSetCloudColor, _cloudsMaterial, _directionalLight, _gameWatch);
     }        
 
     private void Start()
     {
+        _buffTimerModel = new BuffTimerModel();
+        _buffTimerView = new BuffTimerView();
+        _buffTimerController = new BuffTimerController(_buffTimerModel, _buffTimerView);
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        GetReloadTime();
-
+        GetReloadTime();        
 
         _machineGun = new MachineGun(_maxAmmoInMachineGun, _shootDamage, _hitImpulseForce, _weaponLightEffectsTime, _reloadTime, 
                                     _shootEffect, _flashLight, this, _mainCamera);
         //rifleGun
+
         _weapon = _machineGun;
 
         _playerModel = new PlayerModel(_palyerSpeed, _jumpForce, _weapon, _startAmmoCount, _axeleration);
         _playerView = _player.GetComponent<PlayerView>();
-        _playerController = new PlayerController(_playerView, _playerModel);
+        _playerController = new PlayerController(_playerView, _playerModel, _buffTimerController);
         _playerController.Enable();
-
+        _dailyCycle.Enable();
 
         for (int i = 0; i < _hitsCountInCollection; i++)
         {
-            InitHitCollection(_bodyHitEffect, WfxBodyHits, _bodyHitsContainer);
-            InitHitCollection(_sandHitEffect, WfxSandHits, _sandHitsContainer);
+            InitHitCollection(_bodyHitEffect, BodyHitEffects, _bodyHitsContainer);
+            InitHitCollection(_sandHitEffect, SandHitEffects, _sandHitsContainer);
         }
-
-        if (_reloadTime <= 0) throw new Exception("Wrong ReloadTimer value determination in GetReloadTime()");
     }
 
     private void Update()
     {
-        GameTimer.TimeCountDown();
+        _gameWatch.TimeCountDown();
+        _buffTimerController.LocalUpdate();
 
         if (Mathf.Approximately(Time.timeScale, 0))
             return;
@@ -118,16 +123,12 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
             _playerController.PLayerReloadWeapon();
 
-        if (Input.GetButton("Jump"))
+        if (Input.GetButton(AxisManager.Jump))
             _playerController.PlayerJump();
 
-        _playerController.PlayerLook(GetHorizontalAxis(), GetVerticalAxis());
+        _playerController.PlayerLook(GetAxis());
         _playerController.PlayerMove(GetInputAxis(), GetPlayerXDirection(), Axeleration());
-    }
-    private void FixedUpdate()
-    {
-        dailyCycle.DirectionLightRotation();
-    }
+    }    
 
     private void InitHitCollection(GameObject wfxHit, List<GameObject> hitCollection, Transform hitContainer)
     {
@@ -138,7 +139,7 @@ public class GameManager : MonoBehaviour
     
     private (float, float) GetInputAxis()
     {
-        return (Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        return (Input.GetAxis(AxisManager.Horizontal), Input.GetAxis(AxisManager.Vertical));
     }
 
     private (Vector3, Vector3) GetPlayerXDirection()
@@ -151,15 +152,11 @@ public class GameManager : MonoBehaviour
         return Input.GetKey(KeyCode.LeftShift);        
     }
 
-    private float GetHorizontalAxis()
+    private (float, float) GetAxis()
     {
-        return Input.GetAxis("Mouse X"); //mouseLookX
+        return (Input.GetAxis(AxisManager.MouseX), Input.GetAxis(AxisManager.MouseY));
     }
 
-    private float GetVerticalAxis()    
-    {        
-        return Input.GetAxis("Mouse Y"); //mouseLookY
-    }
     private void GetReloadTime()
     {
         var anims = _playerAnimator.runtimeAnimatorController.animationClips;        
@@ -170,6 +167,18 @@ public class GameManager : MonoBehaviour
             {
                 _reloadTime = anim.length;
             }
+        }
+
+        if (_reloadTime <= 0) throw new Exception("Wrong ReloadTimer value determination in GetReloadTime()");
+    }
+
+    public void KillsCountDown()
+    {
+        _killsCountToWin--;
+
+        if(_killsCountToWin == 0)
+        {
+            _mainSceneUI.StartEndGameScreen();
         }
     }
 }

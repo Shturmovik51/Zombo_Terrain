@@ -10,6 +10,7 @@ public class ZombieEnemy : MonoBehaviour, ILiveEntity, ITakeDamage, ICloneable
 
     [SerializeField] private int _health;
     [SerializeField] private Transform _spawnPoint;
+    [SerializeField] private GameManager _gameManager;
 
     public int Health { get => _health; }
 
@@ -50,11 +51,14 @@ public class ZombieEnemy : MonoBehaviour, ILiveEntity, ITakeDamage, ICloneable
 
     private void DeathZombieEnemy()
     {
-        _isDead = true;    
-        foreach (var rgBody in _dollRigidBodys) rgBody.isKinematic = false;
-        zombieEnemyAnimator.enabled = false;
+        _isDead = true;
+        _gameManager.KillsCountDown();
 
         if (_spawnPoint != null)
             Clone();
+
+        foreach (var rgBody in _dollRigidBodys) rgBody.isKinematic = false;
+        zombieEnemyAnimator.enabled = false;
+
     }    
 }

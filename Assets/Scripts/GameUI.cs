@@ -1,14 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
-    [SerializeField] private GameObject _pausePanel; 
+    [SerializeField] private GameObject _pausePanel;
+    [SerializeField] private GameObject _endGameScreen;
     [SerializeField] private Button _dayButton;
     [SerializeField] private Button _sunSetButton;
     [SerializeField] private Button _nightButton;
     [SerializeField] private Button _sunRiseButton;
+    [SerializeField] private Button _restartGameButtonInPause;
+    [SerializeField] private Button _restartGameButtonInEndScreen;
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private TextMeshProUGUI _ammoText;
     [SerializeField] private TextMeshProUGUI _ammoMagazineText;
@@ -23,10 +27,12 @@ public class GameUI : MonoBehaviour
 
     private void Awake()
     {
-        _dayButton.onClick.AddListener(OnClickDayBtn);
-        _sunSetButton.onClick.AddListener(OnClickSunSetBtn);
-        _nightButton.onClick.AddListener(OnClickNightBtn);
-        _sunRiseButton.onClick.AddListener(OnClickSunRiseBtn);
+        _dayButton.onClick.AddListener(OnClickDayButton);
+        _sunSetButton.onClick.AddListener(OnClickSunSetButton);
+        _nightButton.onClick.AddListener(OnClickNightButton);
+        _sunRiseButton.onClick.AddListener(OnClickSunRiseButton);
+        _restartGameButtonInPause.onClick.AddListener(OnClickRestartGameButton);
+        _restartGameButtonInEndScreen.onClick.AddListener(OnClickRestartGameButton);
     }
 
     private void Update()
@@ -34,9 +40,9 @@ public class GameUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (_pausePanel.activeInHierarchy)
-                ChangeStateGame(CursorLockMode.Locked, false, 1);
+                PausePanelOnOff(CursorLockMode.Locked, false, 1);          
             else
-                ChangeStateGame(CursorLockMode.None, true, 0);
+                PausePanelOnOff(CursorLockMode.None, true, 0);                      
         }
     }
 
@@ -48,27 +54,45 @@ public class GameUI : MonoBehaviour
         _sunRiseButton.onClick.RemoveAllListeners();
     }
 
-    private void ChangeStateGame(CursorLockMode cursorLockMode, bool isVisible, float timeScale)
+    private void PausePanelOnOff(CursorLockMode cursorLockMode, bool isVisible, float timeScale)
     {
         _pausePanel.gameObject.SetActive(isVisible);
+        ChangeGameTimeAndCorsor(cursorLockMode, isVisible, timeScale);
+    }
+
+    private void ChangeGameTimeAndCorsor(CursorLockMode cursorLockMode, bool isVisible, float timeScale)
+    {        
         Cursor.visible = isVisible;
         Cursor.lockState = cursorLockMode;
         Time.timeScale = timeScale;
     }
-    private void OnClickDayBtn()
+
+    private void OnClickDayButton()
     {
-        _gameManager.dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_daySunPosition));       
+        //_gameManager._dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_daySunPosition));       
     }
-    private void OnClickSunSetBtn()
+    private void OnClickSunSetButton()
     {
-        _gameManager.dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_sunSetSunPosition));       
+        //_gameManager._dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_sunSetSunPosition));       
     }
-    private void OnClickNightBtn()
+    private void OnClickNightButton()
     {
-        _gameManager.dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_nightSunPosition));       
+        //_gameManager._dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_nightSunPosition));       
     }
-    private void OnClickSunRiseBtn()
+    private void OnClickSunRiseButton()
     {
-        _gameManager.dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_sunRiseSunPosition));       
+        //_gameManager._dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_sunRiseSunPosition));       
     }   
+
+    private void OnClickRestartGameButton()
+    {
+        SceneManager.LoadScene(0);
+        ChangeGameTimeAndCorsor(CursorLockMode.Locked, false, 1);
+    }
+
+    public void StartEndGameScreen()
+    {
+        _endGameScreen.SetActive(true);
+        ChangeGameTimeAndCorsor(CursorLockMode.None, true, 0);
+    }
 }
