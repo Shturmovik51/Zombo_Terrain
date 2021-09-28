@@ -1,17 +1,16 @@
-using System.Collections;
 using UnityEngine;
 
 public class PlayerController
 {
     private PlayerView _playerView;
     private PlayerModel _playerModel;
-   // private BuffTimerController _buffTimerController;
+    private BuffTimerController _buffTimerController;
 
-    public PlayerController(PlayerView view, PlayerModel model /*BuffTimerController buffTimerController*/)
+    public PlayerController(PlayerView view, PlayerModel model, BuffTimerController buffTimerController)
     {
         _playerView = view;
         _playerModel = model;
-       // _buffTimerController = buffTimerController;
+        _buffTimerController = buffTimerController;
     }
 
     public void Enable()
@@ -19,8 +18,8 @@ public class PlayerController
         _playerModel.PlayerWeapon.OnAmmoChange += AmmoCountChange;
         _playerModel.PlayerWeapon.OnWeaponShoot += WeaponRecoil;
         _playerModel.PlayerWeapon.OnEmptyAmmo += PLayerReloadWeapon;
+        _buffTimerController.OnRemoveBuff += RemoveBuff;
         _playerView.OnRecieveBuff += AddBuff;
-        //_buffTimerController.BuffTimerView.OnRemoveBuff += RemoveBuff;
     }
 
     public void Disable()
@@ -28,8 +27,10 @@ public class PlayerController
         _playerModel.PlayerWeapon.OnAmmoChange -= AmmoCountChange;
         _playerModel.PlayerWeapon.OnWeaponShoot -= WeaponRecoil;
         _playerModel.PlayerWeapon.OnEmptyAmmo -= PLayerReloadWeapon;
+        _buffTimerController.OnRemoveBuff -= RemoveBuff;
+        _playerView.OnRecieveBuff -= AddBuff;
     }
-    //float xMoveDir, float zMoveDir, Vector3 xMovement, Vector3 zMovement, bool isRun
+
     public void PlayerMove((float x,float z)step, (Vector3 x, Vector3 z)direction, bool isRun)
     {
         var moveDirection = (direction.x * step.x + direction.z * step.z);
@@ -64,12 +65,12 @@ public class PlayerController
         _playerView.Jump(_playerModel.JumpForce);
     }
 
-    public void PlayerLook(float mouseLookX, float mouseLookY)
+    public void PlayerLook((float X, float Y)mouseLook)
     {
-        _playerModel.VerticalRotation -= mouseLookY;
+        _playerModel.VerticalRotation -= mouseLook.Y;
         _playerModel.VerticalRotation = Mathf.Clamp(_playerModel.VerticalRotation, -45f, 45f);
 
-        _playerView.SetRotation(mouseLookX, _playerModel.VerticalRotation);
+        _playerView.SetRotation(mouseLook.X, _playerModel.VerticalRotation);
     }
 
     private void AmmoCountChange(int ammoCount, int ammoMagazineCount)
@@ -114,13 +115,12 @@ public class PlayerController
         if (buff.Type == BuffType.Speed)
         {
             _playerModel.MoveSpeed += buff.BonusValue;
-            _playerView.StartCoroutine(BuffTimeDuration(buff));
-            buff.Duration = 0;
+            _buffTimerController.AddBuffToTimer(buff);
         }
         if (buff.Type == BuffType.Jump)
         {
             _playerModel.JumpForce += buff.BonusValue;
-            _playerView.StartCoroutine(BuffTimeDuration(buff));
+            _buffTimerController.AddBuffToTimer(buff);
         }
     }
 
@@ -144,11 +144,5 @@ public class PlayerController
     private void RefreshHealthBar()
     {
         //soon in update
-    }
-
-    private IEnumerator BuffTimeDuration(Buff buff)
-    {
-        yield return new WaitForSeconds(buff.Duration);
-        RemoveBuff(buff);
     }
 }

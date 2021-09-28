@@ -1,29 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DailyCycle
-{
-    private float _dayRotationSpeed;
+{    
     private float _timeJumpSpeed;
     private float _cloudColorChangeSpeed;
     private Color _sunSetCloudColor;
     private Color _dayCloudColor;
     private Material _cloudsMaterial;
     private Transform _directionalLight;
+    private InGameWatch _inGameWatch;
+    private const float _sunRotationPerMinute = 0.25f;
 
     private bool _isOnSpeedRotation;
     private Quaternion _sunPosition;
-    public DailyCycle(float dayRotationSpeed, float timeJumpSpeed, float cloudColorChangeSpeed, Color sunSetCloudColor,
-                        Color dayCloudColor, Material cloudsMaterial, Transform directionalLight)
-    {
-        _dayRotationSpeed = dayRotationSpeed;
+    public DailyCycle(float timeJumpSpeed, float cloudColorChangeSpeed, Color sunSetCloudColor, Color dayCloudColor,
+                         Material cloudsMaterial, Transform directionalLight, InGameWatch inGameWatch)
+    {     
         _timeJumpSpeed = timeJumpSpeed;
         _cloudColorChangeSpeed = cloudColorChangeSpeed;
         _sunSetCloudColor = sunSetCloudColor;
         _dayCloudColor = dayCloudColor;
         _cloudsMaterial = cloudsMaterial;
         _directionalLight = directionalLight;
+        _inGameWatch = inGameWatch;
     }
 
     public void DailyCycleTimeJump(Quaternion sunPosition)
@@ -31,24 +30,23 @@ public class DailyCycle
         _sunPosition = sunPosition;
         _isOnSpeedRotation = true;
     }
-
-    public void DirectionLightRotation()
+    public void Enable()
     {
-        var rotationSpeed = _dayRotationSpeed;
-        float angle;
-        Vector3 axis;
+        _inGameWatch.OnSunRotation += SunRotation;
+    }
 
-        _directionalLight.rotation.ToAngleAxis(out angle, out axis);
+    public void SunRotation()
+    {
+        #region Cloud Color Change soon in Update
+        //if (_isOnSpeedRotation)
+        //{
+        //    rotationSpeed *= _timeJumpSpeed;
 
-        if (_isOnSpeedRotation)
-        {
-            rotationSpeed *= _timeJumpSpeed;
-
-            if (Quaternion.Angle(_directionalLight.rotation, _sunPosition) < 1f)
-            {               
-                _isOnSpeedRotation = false;
-            }
-        }
+        //    if (Quaternion.Angle(_directionalLight.rotation, _sunPosition) < 1f)
+        //    {               
+        //        _isOnSpeedRotation = false;
+        //    }
+        //}
 
         //if (angle < 15 || angle > 345 || angle > 165 && angle < 195)
         //{
@@ -67,15 +65,8 @@ public class DailyCycle
         //    _cloudsMaterial.SetColor("_TintColor", nightToDayColor);
         //    Debug.Log("Da");
         //}
+        #endregion
 
-        _directionalLight.Rotate(Vector3.left * rotationSpeed * Time.fixedDeltaTime);
+        _directionalLight.Rotate(Vector3.left * _sunRotationPerMinute);
     }
-
-    //private void CloudsColor(Color currentCloudsColor)
-    //{
-
-
-    //    _cloudsMaterial.SetColor("_TintColor", dayToNightColor);
-    //}
-
 }

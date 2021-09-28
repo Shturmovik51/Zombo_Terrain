@@ -6,53 +6,53 @@ using UnityEngine;
 
 public class BuffBase : ScriptableObject
 {
-    [SerializeField, HideInInspector] private List<Buff> _buffs;
-    [SerializeField] private Buff _currentBuff;
+    [SerializeField, HideInInspector] private List<BuffSample> _buffSamples;
+    [SerializeField] private BuffSample _currentBuffSample;
     private int _currentNumberInArray;
 
-    public List<Buff> Buffs { get => _buffs; }
+    public List<BuffSample> BuffSamples { get => _buffSamples; }
 
     public void CreateItem()
     {
-        if (_buffs == null)
-            _buffs = new List<Buff>();
-        Buff buff = new Buff();
-        _buffs.Add(buff);
-        _currentBuff = buff;
-        _currentNumberInArray = _buffs.Count - 1;
+        if (_buffSamples == null)
+            _buffSamples = new List<BuffSample>();
+        BuffSample buffSample = new BuffSample();
+        _buffSamples.Add(buffSample);
+        _currentBuffSample = buffSample;
+        _currentNumberInArray = _buffSamples.Count - 1;
     }
 
     public void RemoveItem()
     {
-        if (_buffs == null)
+        if (_buffSamples == null)
             return;
         //if (_currentBuff == null)
         //    return;
-        if (_buffs.Count > 1)
+        if (_buffSamples.Count > 1)
         {
-            _buffs.Remove(_currentBuff);
+            _buffSamples.Remove(_currentBuffSample);
 
             if (_currentNumberInArray > 0)
                 _currentNumberInArray--;
             else
                 _currentNumberInArray = 0;
 
-            _currentBuff = _buffs[_currentNumberInArray];
+            _currentBuffSample = _buffSamples[_currentNumberInArray];
         }
 
         else
         {
-            _buffs.Remove(_currentBuff);
+            _buffSamples.Remove(_currentBuffSample);
             CreateItem();
         }
     }
 
     public void NextItem()
     {
-        if (_buffs.Count > _currentNumberInArray + 1)
+        if (_buffSamples.Count > _currentNumberInArray + 1)
         {
             _currentNumberInArray++;
-            _currentBuff = _buffs[_currentNumberInArray];
+            _currentBuffSample = _buffSamples[_currentNumberInArray];
         }
     }
 
@@ -62,13 +62,13 @@ public class BuffBase : ScriptableObject
         if (_currentNumberInArray > 0)
         {
             _currentNumberInArray--;
-            _currentBuff = _buffs[_currentNumberInArray];
+            _currentBuffSample = _buffSamples[_currentNumberInArray];
         }
     }
 
-    public Buff GetItemOfID(int id)
+    public BuffSample GetItemOfID(int id)
     {
-        return _buffs.Find(buff => buff.ID == id);
+        return _buffSamples.Find(buff => buff.ID == id);
     }
 
 }

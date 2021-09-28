@@ -7,19 +7,19 @@ public class CollectableObject: MonoBehaviour, ICollectable
     [SerializeField] private int _buffID;
 
     private Buff _buff;    
-    private List<Buff> _buffCollection;
+    private List<BuffSample> _buffCollection;
 
     public Buff Buff { get => _buff; }
 
     private void Awake()
     {
-        _buffCollection = Resources.Load<BuffBase>("DataBase/Buff Database").Buffs;
+        _buffCollection = Resources.Load<BuffBase>("DataBase/Buff Database").BuffSamples;
 
         for (int i = 0; i < _buffCollection.Count; i++)
         {
             if (_buffCollection[i].ID == _buffID)
-            {                
-                _buff = _buffCollection[i]; // добавить новый класс
+            {
+                _buff = new Buff(_buffCollection[i].ID, _buffCollection[i].BonusValue, _buffCollection[i].Duration, _buffCollection[i].Type);                
             }
         }
     }    

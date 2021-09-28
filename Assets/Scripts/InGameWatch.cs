@@ -1,13 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InGameWatch
 {
     private TextMeshProUGUI _timerText;
     private float _countDownSpeed;
+    public UnityAction OnSunRotation;    
 
     public InGameWatch(TextMeshProUGUI timerText, float countDownSpeed)
     {
@@ -15,9 +14,8 @@ public class InGameWatch
         _countDownSpeed = countDownSpeed;
     }
 
-    private float _countDown;
+    private float _timeCountDown;
 
-    private float _seconds;
     private int _minutLeftNumber;
     private int _minutRightNumber;
     private int _hourLeftNumber;
@@ -25,48 +23,44 @@ public class InGameWatch
        
     public void TimeCountDown()
     {
-        _countDown += Time.deltaTime;
+        _timeCountDown += Time.deltaTime;
 
-        if(_countDown >= _countDownSpeed)
+        if (_timeCountDown >= _countDownSpeed)
         {
-            _seconds++;
-            _countDown = 0;
+            _minutRightNumber++;
+            OnSunRotation?.Invoke();
+            _timeCountDown-= _countDownSpeed;
 
-            if (_seconds == 60)
+            if (_minutRightNumber > 9)
             {
-                _minutRightNumber++;
-                _seconds = 0;
+                _minutLeftNumber++;
+                _minutRightNumber = 0;
 
-                if (_minutRightNumber > 9)
+                if (_minutLeftNumber > 5)
                 {
-                    _minutLeftNumber++;
-                    _minutRightNumber = 0;
+                    _hourRightNumber++;
+                    _minutLeftNumber = 0;
 
-                    if (_minutLeftNumber > 5)
+                    if (_hourLeftNumber < 2)
                     {
-                        _hourRightNumber++;
-                        _minutLeftNumber = 0;
-
-                        if(_hourLeftNumber < 2)
+                        if (_hourRightNumber > 9)
                         {
-                            if (_hourRightNumber > 9)
-                            {
-                                _hourLeftNumber++;
-                                _hourRightNumber = 0;
-                            }
+                            _hourLeftNumber++;
+                            _hourRightNumber = 0;
                         }
-                        else
+                    }
+                    else
+                    {
+                        if (_hourRightNumber > 3)
                         {
-                            if (_hourRightNumber > 3)
-                            {
-                                _hourLeftNumber = 0;
-                                _hourRightNumber = 0;
-                            }
+                            _hourLeftNumber = 0;
+                            _hourRightNumber = 0;
                         }
                     }
                 }
             }
-        } 
+        }
+         
 
         _timerText.text = $"{_hourLeftNumber}{_hourRightNumber} : {_minutLeftNumber}{_minutRightNumber}";
     }

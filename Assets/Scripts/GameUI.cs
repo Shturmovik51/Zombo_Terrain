@@ -69,19 +69,19 @@ public class GameUI : MonoBehaviour
 
     private void OnClickDayButton()
     {
-        _gameManager.dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_daySunPosition));       
+        //_gameManager._dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_daySunPosition));       
     }
     private void OnClickSunSetButton()
     {
-        _gameManager.dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_sunSetSunPosition));       
+        //_gameManager._dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_sunSetSunPosition));       
     }
     private void OnClickNightButton()
     {
-        _gameManager.dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_nightSunPosition));       
+        //_gameManager._dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_nightSunPosition));       
     }
     private void OnClickSunRiseButton()
     {
-        _gameManager.dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_sunRiseSunPosition));       
+        //_gameManager._dailyCycle.DailyCycleTimeJump(Quaternion.Euler(_sunRiseSunPosition));       
     }   
 
     private void OnClickRestartGameButton()

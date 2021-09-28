@@ -48,14 +48,14 @@ public class MachineGun : Weapon
                     enemy.AddDamage(_shootDamage);
                 }
 
-                TakeHitEffectFromPool(gameManager.WfxBodyHits, hit);
+                TakeHitEffectFromPool(gameManager.BodyHitEffects, hit);
 
                 var hitRigidBody = hit.collider.GetComponent<Rigidbody>();
                 hitRigidBody.AddForce(Camera.main.transform.forward * _hitImpulseForce, ForceMode.Impulse);
             }
             else
             {
-                TakeHitEffectFromPool(gameManager.WfxSandHits, hit);
+                TakeHitEffectFromPool(gameManager.SandHitEffects, hit);
             }
         }        
 

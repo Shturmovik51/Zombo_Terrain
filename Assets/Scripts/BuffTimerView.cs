@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BuffTimerView : MonoBehaviour
+public class BuffTimerView
 {
-    public UnityAction<Buff> OnRemoveBuff;
+    
 }
