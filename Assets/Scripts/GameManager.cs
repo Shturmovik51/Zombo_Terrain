@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameUI MainSceneUI { get => _mainSceneUI; set => _mainSceneUI = value; }
 
     [Header("\nPlayer start parameters\n")]
+    [SerializeField] private int _palyerHealth;
     [SerializeField] private int _palyerSpeed;
     [SerializeField] private int _axeleration;
     [SerializeField] private int _maxAmmoInMachineGun;
@@ -59,11 +60,13 @@ public class GameManager : MonoBehaviour
     private DailyCycle _dailyCycle;
     private InGameWatch _gameWatch;
     private float _deltaTime;
+    public BuffBehavior _buffBehavior;
 
     #region Collections       
 
     [HideInInspector] public List<GameObject> BodyHitEffects;
     [HideInInspector] public List<GameObject> SandHitEffects;
+    private CollectableObject[] _collectableObjects;
 
     #endregion
 
@@ -74,6 +77,10 @@ public class GameManager : MonoBehaviour
         SandHitEffects = new List<GameObject>();
         _dailyCycle = new DailyCycle(_timeJumpSpeed, _cloudColorChangeSpeed, _dayCloudColor, 
                                     _sunSetCloudColor, _cloudsMaterial, _directionalLight, _gameWatch);
+                
+        _collectableObjects = FindObjectsOfType<CollectableObject>();
+
+
     }        
 
     private void Start()
@@ -81,6 +88,10 @@ public class GameManager : MonoBehaviour
         _buffTimerModel = new BuffTimerModel();
         _buffTimerView = new BuffTimerView();
         _buffTimerController = new BuffTimerController(_buffTimerModel, _buffTimerView);
+
+
+
+
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -93,9 +104,13 @@ public class GameManager : MonoBehaviour
 
         _weapon = _machineGun;
 
-        _playerModel = new PlayerModel(_palyerSpeed, _jumpForce, _weapon, _startAmmoCount, _axeleration);
+        _playerModel = new PlayerModel(_palyerHealth, _palyerSpeed, _jumpForce, _weapon, _startAmmoCount, _axeleration);
         _playerView = _player.GetComponent<PlayerView>();
-        _playerController = new PlayerController(_playerView, _playerModel, _buffTimerController);
+        _playerController = new PlayerController(_playerView, _playerModel);
+        _buffBehavior = new BuffBehavior(_playerController, _collectableObjects, _buffTimerController);
+
+
+        _buffBehavior.Enable();
         _playerController.Enable();
         _dailyCycle.Enable();
 
@@ -103,7 +118,7 @@ public class GameManager : MonoBehaviour
         {
             InitHitCollection(_bodyHitEffect, BodyHitEffects, _bodyHitsContainer);
             InitHitCollection(_sandHitEffect, SandHitEffects, _sandHitsContainer);
-        }
+        }        
     }
 
     private void Update()
