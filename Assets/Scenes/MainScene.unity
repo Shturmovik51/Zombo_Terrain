@@ -36849,6 +36849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainSceneUI: {fileID: 1659159290}
+  _palyerHealth: 0
   _palyerSpeed: 6
   _axeleration: 2
   _maxAmmoInMachineGun: 30

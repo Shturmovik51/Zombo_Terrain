@@ -30,14 +30,14 @@ public class PlayerView : MonoBehaviour
         //BuffTimerCountDown();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent(out CollectableObject currentObject))
-        {
-            OnRecieveBuff?.Invoke(currentObject.Buff);
-            currentObject.SpecialDestroy();
-        }   
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.TryGetComponent(out CollectableObject currentObject))
+    //    {
+    //        OnRecieveBuff?.Invoke(currentObject.Buff);
+    //        currentObject.SpecialDestroy();
+    //    }   
+    //}
 
     public bool IsGrounded()
     {       

@@ -17,8 +17,7 @@ public class Buff
     }
 
     public int ID => _id;
-    public int BonusValue => _bonusValue;
     public BuffType Type => _type;
-
+    public int BonusValue { get => _bonusValue; set => _bonusValue = value; }
     public float Duration { get => _duration; set => _duration = value; }
 }
