@@ -26,6 +26,8 @@ namespace HomeWork
         string Name2 = "Car";
         string Name3 = "Car";
 
+
+        // фрагмент из методички
         private void Start()
         {
             Log(_message.HowMuchChars());
@@ -35,6 +37,21 @@ namespace HomeWork
             Log(_objectList.HowMuchParameters());
 
             _objectList.LogElementsCount();
+
+
+            Dictionary<string, int> dict = new Dictionary<string, int>()
+            {
+                {"four",4 },
+                {"two",2 },
+                { "one",1 },
+                {"three",3 },
+            };
+
+            //var d = dict.OrderBy(delegate (KeyValuePair<string, int> pair) { return pair.Value; });
+            var d = dict.OrderBy(pair => pair.Value);
+
+            foreach (var pair in d)
+                Debug.Log($"{pair.Key} - {pair.Value}");
         }
     }
 

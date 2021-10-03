@@ -96,11 +96,6 @@ public class PlayerController
         _playerModel.JumpForce += buff.BonusValue;
     }
 
-
-
-
-
-
     public void PLayerReloadWeapon()
     {
         if (_playerModel.AmmoCount == 0)

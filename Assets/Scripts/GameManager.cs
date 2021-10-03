@@ -79,8 +79,6 @@ public class GameManager : MonoBehaviour
                                     _sunSetCloudColor, _cloudsMaterial, _directionalLight, _gameWatch);
                 
         _collectableObjects = FindObjectsOfType<CollectableObject>();
-
-
     }        
 
     private void Start()
@@ -88,10 +86,6 @@ public class GameManager : MonoBehaviour
         _buffTimerModel = new BuffTimerModel();
         _buffTimerView = new BuffTimerView();
         _buffTimerController = new BuffTimerController(_buffTimerModel, _buffTimerView);
-
-
-
-
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
