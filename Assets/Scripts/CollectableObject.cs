@@ -19,7 +19,8 @@ public class CollectableObject: MonoBehaviour, ICollectable
         {
             if (_buffCollection[i].ID == _buffID)
             {
-                _buff = new Buff(_buffCollection[i].ID, _buffCollection[i].BonusValue, _buffCollection[i].Duration, _buffCollection[i].Type);
+                _buff = new Buff(_buffCollection[i].ID, _buffCollection[i].BonusValue, _buffCollection[i].Duration, 
+                                    _buffCollection[i].Type);
             }
         }
     }

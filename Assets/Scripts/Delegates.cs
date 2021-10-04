@@ -1,2 +1,2 @@
 
-public delegate void BuffMethods(Buff buff);
+public delegate void BuffMethods(int value);

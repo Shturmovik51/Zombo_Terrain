@@ -30,12 +30,14 @@ public sealed class BuffBehavior
 
     private void ApplyBuff(Buff buff)
     {
-        ChangePlayerParameter(buff);
-        _buffTimerController.AddBuffToTimer(buff, _buffMethods);
+        buff.Method = _buffMethods[buff.Type];
+        //ChangePlayerParameter(buff);
+        buff.Method(buff.BonusValue);
+        _buffTimerController.AddBuffToTimer(buff);
     }
 
     public void ChangePlayerParameter(Buff buff)
     {
-        _buffMethods[buff.Type](buff);
+       // _buffMethods[buff.Type](buff);
     }
 }

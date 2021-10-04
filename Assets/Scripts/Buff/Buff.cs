@@ -1,19 +1,20 @@
 using UnityEngine;
 
-[System.Serializable]
 public class Buff
 {
-    [SerializeField] private int _id;
-    [SerializeField] private int _bonusValue;
-    [SerializeField] private float _duration;
-    [SerializeField] private BuffType _type; 
+    private int _id;
+    private int _bonusValue;
+    private float _duration;
+    private BuffType _type;
+    public BuffMethods Method;
 
-    public Buff(int id, int bonusValue, float duration, BuffType type)
+    public Buff(int id, int bonusValue, float duration, BuffType type /*BuffMethods method*/)
     {
         _id = id;
         _bonusValue = bonusValue;
         _duration = duration;
         _type = type;
+        //_method = method;
     }
 
     public int ID => _id;

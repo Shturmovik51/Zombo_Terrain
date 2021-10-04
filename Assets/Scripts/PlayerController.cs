@@ -86,14 +86,14 @@ public class PlayerController
         _playerView.RefreshAmmoMagazineCountUI(ammoMagazineCount);
     }
 
-    public void ChangeMoveSpeed(Buff buff)
+    public void ChangeMoveSpeed(int value)
     {
-        Debug.Log(buff.BonusValue);
-        _playerModel.MoveSpeed += buff.BonusValue;
+        Debug.Log(value);
+        _playerModel.MoveSpeed += value;
     }
-    public void ChangeJumpForce(Buff buff)
+    public void ChangeJumpForce(int value)
     {
-        _playerModel.JumpForce += buff.BonusValue;
+        _playerModel.JumpForce += value;
     }
 
 
