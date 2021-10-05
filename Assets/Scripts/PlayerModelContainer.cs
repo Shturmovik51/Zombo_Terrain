@@ -11,7 +11,6 @@ public class PlayerModelContainer : ScriptableObject
     [SerializeField] private int _ammoCount;
     [SerializeField] private int _axeleration;
     [SerializeField] private int _jumpForce;
-    [SerializeField] private float _verticalRotation;
     [SerializeField] private Weapon _playerWeapon;
 
     public int Health => _health;
@@ -19,6 +18,5 @@ public class PlayerModelContainer : ScriptableObject
     public int AmmoCount => _ammoCount;
     public int Axeleration => _axeleration;
     public int JumpForce => _jumpForce;
-    public float VerticalRotation => _verticalRotation;
     public Weapon PlayerWeapon => _playerWeapon;
 }

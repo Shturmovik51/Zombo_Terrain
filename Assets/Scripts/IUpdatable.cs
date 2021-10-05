@@ -1,5 +1,5 @@
 
 public interface IUpdatable
 {
-    void LocalUpdate();
+    void LocalUpdate(float deltatime);
 }
