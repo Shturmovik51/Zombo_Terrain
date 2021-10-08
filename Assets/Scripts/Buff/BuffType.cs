@@ -1,9 +1,12 @@
-﻿public enum BuffType
+﻿namespace ZomboTerrain
 {
-    Speed = 0,
-    Jump = 1,
-    Ammo = 2,
-    Health = 3,
-    Slow = 4,
-    FastReload = 5
+    public enum BuffType
+    {
+        Speed = 0,
+        Jump = 1,
+        Ammo = 2,
+        Health = 3,
+        Slow = 4,
+        FastReload = 5
+    }
 }

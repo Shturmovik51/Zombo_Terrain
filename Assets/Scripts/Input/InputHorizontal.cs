@@ -1,12 +1,12 @@
-using System;
 using UnityEngine;
 
-public sealed class InputHorizontal : IUserInput
+namespace ZomboTerrain
 {
-    public event Action<float> OnChangeAxis;
-
-    public void GetAxis()
+    public sealed class InputHorizontal : IUserInput
     {
-        OnChangeAxis.Invoke(Input.GetAxis(AxisManager.Horizontal));
+        public float GetAxis()
+        {
+           return Input.GetAxis(AxisManager.Horizontal);
+        }
     }
 }

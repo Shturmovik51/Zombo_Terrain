@@ -1,79 +1,52 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BuffTimerController
+namespace ZomboTerrain
 {
-    public UnityAction<Buff> OnRemoveBuff;
-    private BuffTimerModel _buffTimerModel;
-    private BuffTimerView _buffTimerView;
-    public BuffTimerController(BuffTimerModel buffTimerModel, BuffTimerView buffTimerView)
+    public class BuffTimerController : IUpdatable, IController
     {
-        _buffTimerModel = buffTimerModel;
-        _buffTimerView = buffTimerView;
-    }
-
-    public void LocalUpdate()
-    {
-        if (_buffTimerModel.IsActive)
+        public UnityAction<Buff> OnRemoveBuff;
+        private BuffTimerModel _buffTimerModel;
+        private BuffTimerView _buffTimerView;
+        public BuffTimerController(BuffTimerModel buffTimerModel, BuffTimerView buffTimerView)
         {
-            var activeBuffs = _buffTimerModel.ActiveBuffs;
+            _buffTimerModel = buffTimerModel;
+            _buffTimerView = buffTimerView;
+        }
 
-            for (int i = 0; i < activeBuffs.Count; i++)
+        public void LocalUpdate(float deltaTime)
+        {
+            if (_buffTimerModel.IsActive)
             {
-                activeBuffs[i].Duration -= Time.deltaTime;
+                var activeBuffs = _buffTimerModel.ActiveBuffs;
 
-                if(activeBuffs[i].Duration <= 0)
+                for (int i = 0; i < activeBuffs.Count; i++)
                 {
-                    activeBuffs[i].Method(-activeBuffs[i].BonusValue);
-                    activeBuffs.Remove(activeBuffs[i]);
+                    activeBuffs[i].Duration -= deltaTime;
+
+                    if (activeBuffs[i].Duration <= 0)
+                    {
+                        activeBuffs[i].Method(-activeBuffs[i].BonusValue);
+                        activeBuffs.Remove(activeBuffs[i]);
+                    }
                 }
+
+                if (activeBuffs.Count == 0)
+                    _buffTimerModel.IsActive = false;
             }
+        }
 
-            if (activeBuffs.Count == 0)
-                _buffTimerModel.IsActive = false;
+        public void AddBuffToTimer(Buff buff)
+        {            
+            if (_buffTimerModel.ActiveBuffs == null)
+                _buffTimerModel.ActiveBuffs = new List<Buff>();
 
-            //var activeBuffs = _buffTimerModel.ActiveBuffs;
-            //var buffsToDelete = _buffTimerModel.BuffsToDelete;
+            _buffTimerModel.ActiveBuffs.Add(buff);
 
-            //if (activeBuffs.Count == 0)
-            //{
-            //    _buffTimerModel.IsActive = false;
-            //    return;
-            //}
+            _buffTimerModel.IsActive = true;
 
-            //foreach (var buff in activeBuffs)
-            //{
-            //    buff.Key.Duration -= Time.deltaTime;
-
-            //    if(buff.Key.Duration <= 0)
-            //    {
-            //        buff.Key.BonusValue = -buff.Key.BonusValue;
-            //        buff.Value[buff.Key.Type](buff.Key);
-            //        buffsToDelete.Add(buff.Key);
-            //    }
-            //}
-
-            //foreach (var buff in buffsToDelete)
-            //{
-            //    activeBuffs.Remove(buff);
-            //}
-        } 
-    }   
-
-    public void AddBuffToTimer(Buff buff)
-    {
-        //if (_buffTimerModel.ActiveBuffs == null)
-        //    _buffTimerModel.ActiveBuffs = new Dictionary<Buff, Dictionary<BuffType, BuffMethods>>();
-
-        if (_buffTimerModel.ActiveBuffs == null)
-            _buffTimerModel.ActiveBuffs = new List<Buff>();
-
-        _buffTimerModel.ActiveBuffs.Add(buff);
-
-        _buffTimerModel.IsActive = true;
-
-        Debug.Log("Add");
+            Debug.Log("Add");
+        }
     }
 }

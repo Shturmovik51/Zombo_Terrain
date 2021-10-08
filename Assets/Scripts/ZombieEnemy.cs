@@ -1,64 +1,66 @@
 using System;
 using UnityEngine;
 
-public class ZombieEnemy : MonoBehaviour, ILiveEntity, ITakeDamage, ICloneable
-{    
-    private Rigidbody[] _dollRigidBodys;
-    private Animator zombieEnemyAnimator;
-    private LayerMask _layerMask;
-    private bool _isDead;
-
-    [SerializeField] private int _health;
-    [SerializeField] private Transform _spawnPoint;
-    [SerializeField] private GameManager _gameManager;
-
-    public int Health { get => _health; }
-
-    public void AddDamage(int damageValue)
+namespace ZomboTerrain
+{
+    public class ZombieEnemy : MonoBehaviour, ILiveEntity, ITakeDamage, ICloneable
     {
-        _health -= damageValue;
+        private Rigidbody[] _dollRigidBodys;
+        private Animator zombieEnemyAnimator;
+        private LayerMask _layerMask;
+        private bool _isDead;
 
-        if (_health <= 0 && !_isDead)
-            DeathZombieEnemy();
-    }
+        [SerializeField] private int _health;
+        [SerializeField] private Transform _spawnPoint;
+        [SerializeField] private GameManager _gameManager;
 
-    public object Clone()
-    {   
-        var pointInSphere = UnityEngine.Random.insideUnitSphere * 6 + _spawnPoint.position;
-        var pointInSurface = new Vector3(pointInSphere.x, _spawnPoint.position.y, pointInSphere.z);
+        public int Health { get => _health; }
 
-        Ray ray = new Ray(pointInSurface, Vector3.down);
-        if (Physics.Raycast(ray, out var hit, Mathf.Infinity, _layerMask))
+        public void AddDamage(int damageValue)
         {
-            pointInSurface = hit.point;
+            _health -= damageValue;
+
+            if (_health <= 0 && !_isDead)
+                DeathZombieEnemy();
         }
 
-        return Instantiate(this, pointInSurface, transform.rotation);
-    }
-
-    private void Awake()
-    {        
-        _dollRigidBodys = GetComponentsInChildren<Rigidbody>();
-        zombieEnemyAnimator = GetComponent<Animator>();
-        _layerMask = LayerMask.GetMask("Ground");
-
-        foreach (var rgBody in _dollRigidBodys)
+        public object Clone()
         {
-            rgBody.tag = "Enemy";
-            rgBody.isKinematic = true;
+            var pointInSphere = UnityEngine.Random.insideUnitSphere * 6 + _spawnPoint.position;
+            var pointInSurface = new Vector3(pointInSphere.x, _spawnPoint.position.y, pointInSphere.z);
+
+            Ray ray = new Ray(pointInSurface, Vector3.down);
+            if (Physics.Raycast(ray, out var hit, Mathf.Infinity, _layerMask))
+            {
+                pointInSurface = hit.point;
+            }
+
+            return Instantiate(this, pointInSurface, transform.rotation);
+        }
+
+        private void Awake()
+        {
+            _dollRigidBodys = GetComponentsInChildren<Rigidbody>();
+            zombieEnemyAnimator = GetComponent<Animator>();
+            _layerMask = LayerMask.GetMask("Ground");
+
+            foreach (var rgBody in _dollRigidBodys)
+            {
+                rgBody.tag = "Enemy";
+                rgBody.isKinematic = true;
+            }
+        }
+
+        private void DeathZombieEnemy()
+        {
+            _isDead = true;
+            _gameManager.KillsCountDown();
+
+            if (_spawnPoint != null)
+                Clone();
+
+            foreach (var rgBody in _dollRigidBodys) rgBody.isKinematic = false;
+            zombieEnemyAnimator.enabled = false;
         }
     }
-
-    private void DeathZombieEnemy()
-    {
-        _isDead = true;
-        _gameManager.KillsCountDown();
-
-        if (_spawnPoint != null)
-            Clone();
-
-        foreach (var rgBody in _dollRigidBodys) rgBody.isKinematic = false;
-        zombieEnemyAnimator.enabled = false;
-
-    }    
 }

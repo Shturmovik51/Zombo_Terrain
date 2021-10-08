@@ -4,7 +4,6 @@ using UnityEngine;
 using System.Linq;
 using static UnityEngine.Debug;
 
-
 namespace HomeWork
 {
     public class HW7 : MonoBehaviour

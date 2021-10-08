@@ -1,13 +1,15 @@
-
-public sealed class Damage : ITakeDamage
-{    
-    public int Health { get; private set; }
-
-    public void AddDamage(int damageValue)
+namespace ZomboTerrain
+{
+    public sealed class Damage : ITakeDamage
     {
-        Health -= damageValue;
+        public int Health { get; private set; }
 
-        if (Health < 0) 
-            Health = 0;
+        public void AddDamage(int damageValue)
+        {
+            Health -= damageValue;
+
+            if (Health < 0)
+                Health = 0;
+        }
     }
 }

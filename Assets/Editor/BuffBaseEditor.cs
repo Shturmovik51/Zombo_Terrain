@@ -1,46 +1,40 @@
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(BuffBase))]
-public class DataBaseEditor : Editor
+namespace ZomboTerrain
 {
-    private BuffBase _buffBase;
-    private int _buffsInBase;
-
-    private void Awake()
+    [CustomEditor(typeof(BuffBase))]
+    public class DataBaseEditor : Editor
     {
-        _buffBase = (BuffBase)target;
-    }
+        private BuffBase _buffBase;
 
-    public override void OnInspectorGUI()
-    {
-        GUILayout.BeginHorizontal();
-
-        if (GUILayout.Button("New Item"))
+        private void Awake()
         {
-            _buffBase.CreateItem();
-            _buffsInBase++;
+            _buffBase = (BuffBase)target;
         }
 
-        if (GUILayout.Button("<="))
-            _buffBase.PrevItem();
-        if (GUILayout.Button("=>"))
-            _buffBase.NextItem();
-        if (GUILayout.Button("Remove"))
+        public override void OnInspectorGUI()
         {
-            _buffBase.RemoveItem();
-            _buffsInBase--;
+            GUILayout.BeginHorizontal();
 
-            if (_buffsInBase < 0)
-                _buffsInBase = 0;
+            if (GUILayout.Button("New Item"))
+            {
+                _buffBase.CreateItem();
+            }
+
+            if (GUILayout.Button("<="))
+                _buffBase.PrevItem();
+            if (GUILayout.Button("=>"))
+                _buffBase.NextItem();
+            if (GUILayout.Button("Remove"))
+                _buffBase.RemoveItem();
+             
+
+            GUILayout.EndHorizontal();
+
+            GUILayout.Label($"Buffs In Base {_buffBase.BuffSamples.Count}");
+
+            base.OnInspectorGUI();
         }
-
-        GUILayout.EndHorizontal();
-                
-        GUILayout.Label($"Buffs In Base   {_buffsInBase}");
-
-        base.OnInspectorGUI();
     }
-
-
 }

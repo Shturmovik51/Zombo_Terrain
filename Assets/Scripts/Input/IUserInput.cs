@@ -1,7 +1,9 @@
 using System;
 
-public interface IUserInput
+namespace ZomboTerrain
 {
-    event Action<float> OnChangeAxis;
-    void GetAxis();    
+    public interface IUserInput
+    {
+        float GetAxis();
+    }
 }

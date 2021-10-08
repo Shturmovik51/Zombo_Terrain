@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
 
-public sealed class InputVertical : IUserInput
+namespace ZomboTerrain
 {
-    public event Action<float> OnChangeAxis = delegate { };
-
-    public void GetAxis()
+    public sealed class InputVertical : IUserInput
     {
-        OnChangeAxis.Invoke(Input.GetAxis(AxisManager.Vertical));
+        public float GetAxis()
+        {
+            return Input.GetAxis(AxisManager.Vertical);
+        }
     }
 }
