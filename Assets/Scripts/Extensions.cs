@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System.Collections;
 
-namespace HomeWork
+namespace ZomboTerrain
 {
     public static class Extensions
     {
@@ -27,6 +28,13 @@ namespace HomeWork
             {
                 Debug.Log($"{item.Key} - встречается {item.count} раз(а)");
             }
+        }
+
+        public static void StartThisCoroutine(this IEnumerator self)
+        {
+            var platform = Object.Instantiate(new GameObject()).AddComponent<MonoBehaviour>();
+            platform.StartCoroutine(self);
+
         }
     }
 }

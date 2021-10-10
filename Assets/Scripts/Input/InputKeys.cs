@@ -1,47 +1,48 @@
+using System;
 using UnityEngine;
 
 namespace ZomboTerrain
 {
-    public class InputKeys: IUserInput
+    public class InputKeys
     {
-        public bool GetKeyShoot(InputKeysData _inputKeysData)
+        public void GetKeyShoot(InputKeysData _inputKeysData, Action action)
         {
-            return Input.GetKey(_inputKeysData.Shoot);
+            if (Input.GetKey(_inputKeysData.Shoot)) action.Invoke();
         }
 
-        public bool GetKeyRunDown(InputKeysData _inputKeysData)
+        public void GetKeyRunDown(InputKeysData _inputKeysData, Action<bool> action)
         {
-            return Input.GetKeyDown(_inputKeysData.Run);
+            if (Input.GetKeyDown(_inputKeysData.Run)) action.Invoke(true);
         }
 
-        public bool GetKeyRunUp(InputKeysData _inputKeysData)
+        public void GetKeyRunUp(InputKeysData _inputKeysData, Action<bool> action)
         {
-            return Input.GetKeyUp(_inputKeysData.Run);
+            if (Input.GetKeyUp(_inputKeysData.Run)) action.Invoke(false);
         }
 
-        public bool GetKeyJump(InputKeysData _inputKeysData)
+        public void GetKeyJump(InputKeysData _inputKeysData, Action action)
         {
-            return Input.GetKey(_inputKeysData.Jump);
+            if (Input.GetKey(_inputKeysData.Jump)) action.Invoke();
         }
 
-        public bool GetKeyReload(InputKeysData _inputKeysData)
+        public void GetKeyReload(InputKeysData _inputKeysData, Action action)
         {
-            return Input.GetKey(_inputKeysData.Reload);
+            if (Input.GetKey(_inputKeysData.Reload)) action?.Invoke();
         }
 
-        public float GetAxis()
+        public void GetKeySaveGame(InputKeysData _inputKeysData, Action action)
         {
-            throw new System.NotImplementedException();
+            if (Input.GetKeyDown(_inputKeysData.SaveGame)) action?.Invoke();
         }
 
-        public bool GetKeySave(InputKeysData _inputKeysData)
+        public void GetKeyLoadGame(InputKeysData _inputKeysData, Action action)
         {
-            return Input.GetKey(_inputKeysData.SaveGame);
+            if (Input.GetKeyDown(_inputKeysData.LoadGame)) action?.Invoke();
         }
 
-        public bool GetKeyLoad(InputKeysData _inputKeysData)
+        public void GetKeyFlashLight(InputKeysData _inputKeysData, Action action)
         {
-            return Input.GetKey(_inputKeysData.LoadGame);
+            if (Input.GetKeyDown(_inputKeysData.FlashLight)) action?.Invoke();
         }
     }
 }

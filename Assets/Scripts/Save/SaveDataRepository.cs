@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using UnityEngine;
@@ -9,13 +10,15 @@ namespace ZomboTerrain
         private IData<SavedData> _data;
         private string _path;
         private InputController _inputController;
+        private List<IOnSceneObject> _onSceneObjects;
 
         private const string _folderName = "dataSave";
         private const string _fileName = "data.bat";
 
-        public SaveDataRepository(InputController inputController)
+        public SaveDataRepository(InputController inputController, OnSceneObjectsController onSceneObjectsController)
         {
             _inputController = inputController;
+            _onSceneObjects = onSceneObjectsController.OnSceneObjects;
         }
 
         public void Initialization()
@@ -32,30 +35,41 @@ namespace ZomboTerrain
             {
                 Directory.CreateDirectory(_path);
             }
-            var savePlayer = new SavedData
-            {
-                //Position = player.transform.position,
-                Name = "Roman",
-                IsEnabled = true
-            };
+            
+            var objectsActiveCondition = new List<bool>(_onSceneObjects.Count);
 
-            _data.Save(savePlayer, Path.Combine(_path, _fileName));
+            for (int i = 0; i < _onSceneObjects.Count; i++)
+            {
+                objectsActiveCondition.Add(_onSceneObjects[i].IsActive);
+            }
+
+            var saveObjects = new SavedData()
+            {
+                ObjectsActiveCondition = objectsActiveCondition
+            };            
+
+            _data.Save(saveObjects, Path.Combine(_path, _fileName));
             Debug.Log("Save");
         }
 
         public void Load()
         {
             var file = Path.Combine(_path, _fileName);
+
             if (!File.Exists(file))
             {
                 throw new DataException($"File {file} not found");
             }
-            var newPlayerModel = _data.Load(file);
-           // playerModel.transform.position = newPlayerModel.Position;
-           // playerModel.name = newPlayerModel.Name;
-           //playerModel.gameObject.SetActive(newPlayerModel.IsEnabled);
 
-            Debug.Log(newPlayerModel);
+            var savedObjects = _data.Load(file).ObjectsActiveCondition;
+
+            for (int i = 0; i < savedObjects.Count; i++)
+            {
+                if (_onSceneObjects[i].IsActive != savedObjects[i])
+                    _onSceneObjects[i].ObjectActivation(savedObjects[i]);
+            }
+
+            Debug.Log("Load");
         }
     }
 }

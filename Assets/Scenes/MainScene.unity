@@ -30938,6 +30938,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 691724799}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &916821481 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6674653632485250426, guid: a37b8e1f0381baf44b427da12e685d70,
+    type: 3}
+  m_PrefabInstance: {fileID: 6674653631329292653}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &917190705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36940,6 +36946,7 @@ MonoBehaviour:
   _weaponPosition: {fileID: 1728097632}
   _flashLightPosition: {fileID: 1707900431}
   _shootEffectPosition: {fileID: 1055013223}
+  _shootEffects: {fileID: 916821481}
   _directionalLight: {fileID: 705507995}
   _playerView: {fileID: 2815113631823033881}
   _data: {fileID: 11400000, guid: 69a580b630b14c1498a8fb7c7cadd545, type: 2}
@@ -81159,7 +81166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ebd955555a2964a9d2bde354bdcd2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ico: {fileID: 6014745556994806794, guid: b69d8e10326d6a64ebae1a4e9f3bd9bf, type: 3}
 --- !u!4 &2537014718138240863
 Transform:
   m_ObjectHideFlags: 0

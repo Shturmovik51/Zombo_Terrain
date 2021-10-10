@@ -1,1 +1,1 @@
-{"Name":"Roman","IsEnabled":true}
+{"ObjectsActiveCondition":[true,true,true]}

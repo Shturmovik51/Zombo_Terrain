@@ -18,6 +18,7 @@ namespace ZomboTerrain
         [SerializeField] private Transform _weaponPosition;
         [SerializeField] private Transform _flashLightPosition;
         [SerializeField] private Transform _shootEffectPosition;
+        [SerializeField] private GameObject _shootEffects;
         [SerializeField] private Transform _directionalLight;
         [SerializeField] private PlayerView _playerView;
         [SerializeField] private Data _data;
@@ -29,13 +30,13 @@ namespace ZomboTerrain
         private float _reloadTime;
         private void Start()
         {
-            //Resources.Load<GameObject>("RadarView");
+            _onSceneObjects = FindObjectsOfType<MonoBehaviour>().OfType<IOnSceneObject>().ToList();
 
-            _onSceneObjects = FindObjectsOfType<MonoBehaviour>().OfType<IOnSceneObject>().ToList();           
             _controllersManager = new ControllersManager();
 
             new GameInitializator(_controllersManager, _data, _playerView, _onSceneObjects, _gameUIController, _timeSpeed, 
-                                    _directionalLight, transform, _hitCollectionSize, _postProcessVolume, _radarPosition);
+                                    _directionalLight, this, _hitCollectionSize, _postProcessVolume, _radarPosition,
+                                        _shootEffects, _reloadTime);
 
             _controllersManager.Initialization();
 

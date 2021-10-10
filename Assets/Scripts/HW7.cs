@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 using static UnityEngine.Debug;
 
-namespace HomeWork
+namespace ZomboTerrain
 {
     public class HW7 : MonoBehaviour
     {

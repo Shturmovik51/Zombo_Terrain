@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace ZomboTerrain
 {
-    public abstract class Weapon
+    public abstract class Weapon : IWeapon
     {
         public int maxMagazineAmmo;
         public int ammoMagazineCount;
@@ -86,6 +86,11 @@ namespace ZomboTerrain
         public void FlashLightOnOff()
         {
             flashLight.enabled = !flashLight.enabled;
+        }
+
+        public void M2()
+        {
+
         }
     }
 }

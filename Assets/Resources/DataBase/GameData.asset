@@ -15,5 +15,6 @@ MonoBehaviour:
   _playerData: {fileID: 11400000, guid: c0258d5de21591245b32c9f94752c33f, type: 2}
   _inputKeysData: {fileID: 11400000, guid: 8bff0c4b0975ed649b88a0b8cb9c55b6, type: 2}
   _dailyCycleData: {fileID: 11400000, guid: c6a09e39d4b45df419c116630e5355ea, type: 2}
-  _weaponModelData: {fileID: 11400000, guid: 9d5caad010ea12a4094c6ba2268290be, type: 2}
+  _weaponModelsData:
+  - {fileID: 11400000, guid: 9d5caad010ea12a4094c6ba2268290be, type: 2}
   _hitEffectsData: {fileID: 11400000, guid: be93d64c1590fe046a12d37d7771f3c4, type: 2}
