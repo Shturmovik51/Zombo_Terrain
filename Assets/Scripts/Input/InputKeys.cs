@@ -33,5 +33,15 @@ namespace ZomboTerrain
         {
             throw new System.NotImplementedException();
         }
+
+        public bool GetKeySave(InputKeysData _inputKeysData)
+        {
+            return Input.GetKey(_inputKeysData.SaveGame);
+        }
+
+        public bool GetKeyLoad(InputKeysData _inputKeysData)
+        {
+            return Input.GetKey(_inputKeysData.LoadGame);
+        }
     }
 }

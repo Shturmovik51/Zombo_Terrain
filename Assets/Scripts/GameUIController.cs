@@ -19,7 +19,14 @@ namespace ZomboTerrain
         [SerializeField] private TextMeshProUGUI _ammoText;
         [SerializeField] private TextMeshProUGUI _ammoMagazineText;
         [SerializeField] private TextMeshProUGUI _timeText;
-
+        [SerializeField] private Button _nuarEffectButton;
+        [SerializeField] private Button _fishEyeEffectButton;
+        [SerializeField] private Button _eyeFocusEffectButton;
+        [SerializeField] private Button _eyeAddictiveEffectButton;
+        public Button NuarEffectButton => _nuarEffectButton;
+        public Button FishEyeEffectButton => _fishEyeEffectButton;
+        public Button EyeFocusEffectButton => _eyeFocusEffectButton;
+        public Button EyeAddictiveEffectButton => _eyeAddictiveEffectButton;
 
         //private Vector3 _daySunPosition = new Vector3(80, 0, 0);
         //private Vector3 _nightSunPosition = new Vector3(-90, 0, 0);

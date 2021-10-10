@@ -5,14 +5,14 @@ namespace ZomboTerrain
     public sealed class BuffBehavior : IInitialisible, IController
     {
         private PlayerController _playerController;
-        private CollectableObject[] _collectableObjects;
+        private List<IOnSceneObject> _onSceneObjects;
         private BuffTimerController _buffTimerController;
         private Dictionary<BuffType, BuffMethods> _buffMethods;
 
-        public BuffBehavior(PlayerController playerController, CollectableObject[] collectableObjects, BuffTimerController buffTimerController)
+        public BuffBehavior(PlayerController playerController, List<IOnSceneObject> onSceneObjects, BuffTimerController buffTimerController)
         {
             _playerController = playerController;
-            _collectableObjects = collectableObjects;
+            _onSceneObjects = onSceneObjects;
             _buffTimerController = buffTimerController;
         }
 
@@ -24,7 +24,7 @@ namespace ZomboTerrain
                 [BuffType.Jump] = _playerController.ChangeJumpForce
             };
 
-            foreach (var collectableObject in _collectableObjects)
+            foreach (CollectableObject collectableObject in _onSceneObjects)
             {
                 collectableObject.OnApplyBuff += ApplyBuff;
             }

@@ -2,6 +2,6 @@ namespace ZomboTerrain
 {
     public interface IUpdatable
     {
-        void LocalUpdate(float deltatime);
+        void LocalUpdate(float deltaTime);
     }
 }

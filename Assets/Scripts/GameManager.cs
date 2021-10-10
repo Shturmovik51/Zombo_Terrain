@@ -1,7 +1,9 @@
 using System;
-using System.Collections.Generic;
 using TMPro;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
+using System.Collections.Generic;
 
 namespace ZomboTerrain
 {
@@ -9,9 +11,9 @@ namespace ZomboTerrain
     {
         [SerializeField] private GameUIController _gameUIController;
         [SerializeField] private Animator _playerAnimator;
-        [SerializeField] private int _hitCollectionSize;   
+        [SerializeField] private int _hitCollectionSize;
         [SerializeField] private TextMeshProUGUI _timerText;
-        [SerializeField] private float _timeSpeed;        
+        [SerializeField] private float _timeSpeed;
         [SerializeField] private int _killsCountToWin;
         [SerializeField] private Transform _weaponPosition;
         [SerializeField] private Transform _flashLightPosition;
@@ -19,17 +21,21 @@ namespace ZomboTerrain
         [SerializeField] private Transform _directionalLight;
         [SerializeField] private PlayerView _playerView;
         [SerializeField] private Data _data;
+        [SerializeField] private PostProcessVolume _postProcessVolume;
+        [SerializeField] private Transform _radarPosition;
 
-        private CollectableObject[] _collectableObjects;
+        private List<IOnSceneObject> _onSceneObjects;
         private ControllersManager _controllersManager;
         private float _reloadTime;
         private void Start()
         {
-            _collectableObjects = FindObjectsOfType<CollectableObject>();
+            //Resources.Load<GameObject>("RadarView");
+
+            _onSceneObjects = FindObjectsOfType<MonoBehaviour>().OfType<IOnSceneObject>().ToList();           
             _controllersManager = new ControllersManager();
 
-            new GameInitializator(_controllersManager, _data, _playerView, _collectableObjects, _gameUIController, _timeSpeed, 
-                                    _directionalLight, transform, _hitCollectionSize);
+            new GameInitializator(_controllersManager, _data, _playerView, _onSceneObjects, _gameUIController, _timeSpeed, 
+                                    _directionalLight, transform, _hitCollectionSize, _postProcessVolume, _radarPosition);
 
             _controllersManager.Initialization();
 
