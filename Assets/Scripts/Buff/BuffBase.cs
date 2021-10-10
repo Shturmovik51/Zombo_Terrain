@@ -1,74 +1,74 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Buff Database", menuName = "Database / Buffs")]
-
-public class BuffBase : ScriptableObject
+namespace ZomboTerrain
 {
-    [SerializeField, HideInInspector] private List<BuffSample> _buffSamples;
-    [SerializeField] private BuffSample _currentBuffSample;
-    private int _currentNumberInArray;
+    [CreateAssetMenu(fileName = "New Buff Database", menuName = "Database / Buffs")]
 
-    public List<BuffSample> BuffSamples { get => _buffSamples; }
-
-    public void CreateItem()
+    public class BuffBase : ScriptableObject
     {
-        if (_buffSamples == null)
-            _buffSamples = new List<BuffSample>();
-        BuffSample buffSample = new BuffSample();
-        _buffSamples.Add(buffSample);
-        _currentBuffSample = buffSample;
-        _currentNumberInArray = _buffSamples.Count - 1;
-    }
+        [SerializeField, HideInInspector] private List<BuffSample> _buffSamples;
+        [SerializeField] private BuffSample _currentBuffSample;
+        private int _currentNumberInArray;
 
-    public void RemoveItem()
-    {
-        if (_buffSamples == null)
-            return;
-        //if (_currentBuff == null)
-        //    return;
-        if (_buffSamples.Count > 1)
+        public List<BuffSample> BuffSamples => _buffSamples;
+
+        public void CreateItem()
         {
-            _buffSamples.Remove(_currentBuffSample);
+            if (_buffSamples == null)
+                _buffSamples = new List<BuffSample>();
+            BuffSample buffSample = new BuffSample();
+            _buffSamples.Add(buffSample);
+            _currentBuffSample = buffSample;
+            _currentNumberInArray = _buffSamples.Count - 1;
+        }
 
-            if (_currentNumberInArray > 0)
-                _currentNumberInArray--;
+        public void RemoveItem()
+        {
+            if (_buffSamples == null)
+                return;
+            if (_buffSamples.Count > 1)
+            {
+                _buffSamples.Remove(_currentBuffSample);
+
+                if (_currentNumberInArray > 0)
+                    _currentNumberInArray--;
+                else
+                    _currentNumberInArray = 0;
+
+                _currentBuffSample = _buffSamples[_currentNumberInArray];
+            }
+
             else
-                _currentNumberInArray = 0;
-
-            _currentBuffSample = _buffSamples[_currentNumberInArray];
+            {
+                _buffSamples.Remove(_currentBuffSample);
+                CreateItem();
+            }
         }
 
-        else
+        public void NextItem()
         {
-            _buffSamples.Remove(_currentBuffSample);
-            CreateItem();
+            if (_buffSamples.Count > _currentNumberInArray + 1)
+            {
+                _currentNumberInArray++;
+                _currentBuffSample = _buffSamples[_currentNumberInArray];
+            }
         }
-    }
 
-    public void NextItem()
-    {
-        if (_buffSamples.Count > _currentNumberInArray + 1)
+
+        public void PrevItem()
         {
-            _currentNumberInArray++;
-            _currentBuffSample = _buffSamples[_currentNumberInArray];
+            if (_currentNumberInArray > 0)
+            {
+                _currentNumberInArray--;
+                _currentBuffSample = _buffSamples[_currentNumberInArray];
+            }
         }
-    }
 
-
-    public void PrevItem()
-    {
-        if (_currentNumberInArray > 0)
+        public BuffSample GetItemOfID(int id)
         {
-            _currentNumberInArray--;
-            _currentBuffSample = _buffSamples[_currentNumberInArray];
+            return _buffSamples.Find(buff => buff.ID == id);
         }
-    }
 
-    public BuffSample GetItemOfID(int id)
-    {
-        return _buffSamples.Find(buff => buff.ID == id);
     }
-
 }

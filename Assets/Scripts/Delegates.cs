@@ -1,2 +1,4 @@
-
-public delegate void BuffMethods(int value);
+namespace ZomboTerrain
+{
+    public delegate void BuffMethods(int value);
+}

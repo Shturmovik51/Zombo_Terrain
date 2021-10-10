@@ -1,43 +1,45 @@
 using System.Collections.Generic;
 
-public sealed class BuffBehavior
+namespace ZomboTerrain
 {
-    private PlayerController _playerController;
-    private CollectableObject[] _collectableObjects;
-    private BuffTimerController _buffTimerController;
-    private Dictionary<BuffType, BuffMethods> _buffMethods;
-
-    public BuffBehavior(PlayerController playerController, CollectableObject[] collectableObjects, BuffTimerController buffTimerController)
+    public sealed class BuffBehavior : IInitialisible, IController
     {
-        _playerController = playerController;
-        _collectableObjects = collectableObjects;
-        _buffTimerController = buffTimerController;
-    }
+        private PlayerController _playerController;
+        private List<IOnSceneObject> _onSceneObjects;
+        private BuffTimerController _buffTimerController;
+        private Dictionary<BuffType, BuffMethods> _buffMethods;
 
-    public void Enable()
-    {
-        _buffMethods = new Dictionary<BuffType, BuffMethods>            //Designed By Aleksey Skvortsov
+        public BuffBehavior(PlayerController playerController, List<IOnSceneObject> onSceneObjects, BuffTimerController buffTimerController)
         {
-            [BuffType.Speed] = _playerController.ChangeMoveSpeed,
-            [BuffType.Jump] = _playerController.ChangeJumpForce
-        };
-
-        foreach (var collectableObject in _collectableObjects)
-        {
-            collectableObject.OnApplyBuff += ApplyBuff;
+            _playerController = playerController;
+            _onSceneObjects = onSceneObjects;
+            _buffTimerController = buffTimerController;
         }
-    }
 
-    private void ApplyBuff(Buff buff)
-    {
-        buff.Method = _buffMethods[buff.Type];
-        //ChangePlayerParameter(buff);
-        buff.Method(buff.BonusValue);
-        _buffTimerController.AddBuffToTimer(buff);
-    }
+        public void Initialization()
+        {
+            _buffMethods = new Dictionary<BuffType, BuffMethods>            //Designed By Aleksey Skvortsov
+            {
+                [BuffType.Speed] = _playerController.ChangeMoveSpeed,
+                [BuffType.Jump] = _playerController.ChangeJumpForce
+            };
 
-    public void ChangePlayerParameter(Buff buff)
-    {
-       // _buffMethods[buff.Type](buff);
+            foreach (CollectableObject collectableObject in _onSceneObjects)
+            {
+                collectableObject.OnApplyBuff += ApplyBuff;
+            }
+        }
+
+        private void ApplyBuff(Buff buff)
+        {
+            buff.Method = _buffMethods[buff.Type];
+            buff.Method(buff.BonusValue);
+            _buffTimerController.AddBuffToTimer(buff);
+        }
+
+        //public void ChangePlayerParameter(Buff buff)
+        //{
+        //     _buffMethods[buff.Type](buff);
+        //}
     }
 }

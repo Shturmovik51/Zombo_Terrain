@@ -13,20 +13,16 @@ MonoBehaviour:
   m_Name: Buff Database
   m_EditorClassIdentifier: 
   _buffSamples:
-  - _id: 0
-    _bonusValue: 0
-    _duration: 0
-    _type: 0
   - _id: 1
     _bonusValue: 5
-    _duration: 6
+    _duration: 4
     _type: 0
   - _id: 2
-    _bonusValue: 5
-    _duration: 10
+    _bonusValue: 6
+    _duration: 6
     _type: 1
   _currentBuffSample:
     _id: 2
-    _bonusValue: 5
-    _duration: 10
+    _bonusValue: 6
+    _duration: 6
     _type: 1
