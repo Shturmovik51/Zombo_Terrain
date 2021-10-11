@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ZomboTerrain
 {
-    public class PlayerController : IInitialisible, IUpdatable, IController
+    public class PlayerController : IInitialisible, IUpdatable, ICleanable, IController
     {
         private PlayerView _playerView;
         private PlayerModel _playerModel;
@@ -16,19 +16,18 @@ namespace ZomboTerrain
 
         public void Initialization()
         {
-            //_playerModel.PlayerWeapon.OnAmmoChange += AmmoCountChange;
-            //_playerModel.PlayerWeapon.OnWeaponShoot += WeaponRecoil;
-            //_playerModel.PlayerWeapon.OnEmptyAmmo += PLayerReloadWeapon;
+            _playerModel.PlayerWeapon.OnAmmoChange += AmmoCountChange;
+            _playerModel.PlayerWeapon.OnWeaponShoot += WeaponRecoil;
+            _playerModel.PlayerWeapon.OnEmptyAmmo += PLayerReloadWeapon;
             _inputController.OnChangeLookAxis += PlayerLook;
             _inputController.OnChangeMoveAxis += PlayerMove;
             _inputController.OnClickShootButton += PLayerShoot;
             _inputController.OnClickRunButton += Axeleration;
             _inputController.OnClickJumpButton += PlayerJump;
             _inputController.OnClickReloadButton += PLayerReloadWeapon;
-            Debug.Log("Da");
         }
 
-        public void Disable()
+        public void CleanUp()
         {
             _playerModel.PlayerWeapon.OnAmmoChange -= AmmoCountChange;
             _playerModel.PlayerWeapon.OnWeaponShoot -= WeaponRecoil;
@@ -118,12 +117,7 @@ namespace ZomboTerrain
 
             _playerModel.PlayerWeapon.ReloadWeapon(_playerModel.AmmoCount);
             _playerView.ReloadAnimation();
-        }        
-
-        private void PlayerDeath()
-        {
-            Disable();
-        }
+        } 
 
         private void RefreshHealthBar()
         {

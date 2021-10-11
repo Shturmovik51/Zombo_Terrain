@@ -15167,6 +15167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 448271801}
+  - component: {fileID: 448271802}
   m_Layer: 5
   m_Name: Radarposition
   m_TagString: Untagged
@@ -15193,6 +15194,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &448271802
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448271800}
+  m_CullTransparentMesh: 1
 --- !u!1001 &449134251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23916,7 +23925,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -22.198, y: 0}
+  m_AnchoredPosition: {x: -22.197998, y: 0}
   m_SizeDelta: {x: 40.5739, y: 50}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &725231688
@@ -30938,6 +30947,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 691724799}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &916821481 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6674653632485250426, guid: a37b8e1f0381baf44b427da12e685d70,
+    type: 3}
+  m_PrefabInstance: {fileID: 6674653631329292653}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &917190705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36940,6 +36955,7 @@ MonoBehaviour:
   _weaponPosition: {fileID: 1728097632}
   _flashLightPosition: {fileID: 1707900431}
   _shootEffectPosition: {fileID: 1055013223}
+  _shootEffects: {fileID: 916821481}
   _directionalLight: {fileID: 705507995}
   _playerView: {fileID: 2815113631823033881}
   _data: {fileID: 11400000, guid: 69a580b630b14c1498a8fb7c7cadd545, type: 2}
@@ -42915,6 +42931,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fog (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1434148053766088, guid: 130b0daaa07311c47a14b9a26ea0912e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4793265040408954, guid: 130b0daaa07311c47a14b9a26ea0912e, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -44310,7 +44330,7 @@ GameObject:
   - component: {fileID: 1263977297}
   - component: {fileID: 1263977296}
   - component: {fileID: 1263977295}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(100.0, 0.0, -100.0)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -58412,7 +58432,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 2815113632182571186}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -59046,7 +59066,7 @@ GameObject:
   - component: {fileID: 1675379284}
   - component: {fileID: 1675379283}
   - component: {fileID: 1675379282}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(-100.0, 0.0, 100.0)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -65900,26 +65920,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1801835357}
   - component: {fileID: 1801835356}
-  - component: {fileID: 1801835355}
   m_Layer: 0
   m_Name: RadarCamera
-  m_TagString: Untagged
+  m_TagString: RadarBackGroundCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1801835355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801835354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61f83585456a27c44b383aa5296c93ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &1801835356
 Camera:
   m_ObjectHideFlags: 0
@@ -65927,7 +65934,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801835354}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -65951,10 +65958,10 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 72
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -65971,7 +65978,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801835354}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 44.3, y: 232.8, z: 45.54}
+  m_LocalPosition: {x: 50, y: 619.5, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81159,7 +81166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ebd955555a2964a9d2bde354bdcd2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ico: {fileID: 6014745556994806794, guid: b69d8e10326d6a64ebae1a4e9f3bd9bf, type: 3}
 --- !u!4 &2537014718138240863
 Transform:
   m_ObjectHideFlags: 0
@@ -81563,7 +81569,7 @@ GameObject:
   - component: {fileID: 392608830}
   - component: {fileID: 392608831}
   m_Layer: 9
-  m_Name: Main Camera
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81600,7 +81606,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1023
+    m_Bits: 4294967295
   m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ZomboTerrain
@@ -12,10 +11,11 @@ namespace ZomboTerrain
         private GameObject _shootEffects;
         private Coroutine _hitEffectLifeTime;
         private Coroutine _lightEffectsDelay;
-
-        public MachineGun(int maxMagazineAmmo, int shootDamage, int hitImpulseForce, float lightEffectsDelayTime, float reloadTime,
-                            GameObject shootEffects, Light flashLight, GameManager gameManager, Camera mainCamera, 
-                            Transform weaponPosition, Transform flashLightPosition, Transform shootEffectPosition)
+        private HitEffectsController _hitEffectsController;
+        public MachineGun(int maxMagazineAmmo, int shootDamage, int hitImpulseForce, float lightEffectsDelayTime, 
+                    float reloadTime, GameObject shootEffects, Light flashLight, GameManager gameManager, 
+                    Camera mainCamera, HitEffectsController hitEffectsController
+                           /* Transform weaponPosition, Transform flashLightPosition, Transform shootEffectPosition*/)
         {
             this.maxMagazineAmmo = maxMagazineAmmo;
             _shootDamage = shootDamage;
@@ -26,6 +26,7 @@ namespace ZomboTerrain
             this.flashLight = flashLight;
             this.gameManager = gameManager;
             this.mainCamera = mainCamera;
+            _hitEffectsController = hitEffectsController;
         }
         public override void Shoot(int ammoCount)
         {
@@ -51,42 +52,26 @@ namespace ZomboTerrain
                         enemy.AddDamage(_shootDamage);
                     }
 
-                    //TakeHitEffectFromPool(gameManager.BodyHitEffects, hit);
+                    ApplyHitEffect(_hitEffectsController.GetBodyHitEffectFromPool(), hit);
 
                     var hitRigidBody = hit.collider.GetComponent<Rigidbody>();
                     hitRigidBody.AddForce(Camera.main.transform.forward * _hitImpulseForce, ForceMode.Impulse);
                 }
                 else
                 {
-                    //TakeHitEffectFromPool(gameManager.SandHitEffects, hit);
+                    ApplyHitEffect(_hitEffectsController.GetSandHitEffectFromPool(), hit);
                 }
             }
 
             LightEffectsOn();
         }
 
-        private void TakeHitEffectFromPool(List<GameObject> wfxPool, RaycastHit hit)
-        {
-            var wfxHit = wfxPool[0];
-            wfxPool.Remove(wfxHit);
-            wfxHit.transform.position = hit.point;
-            wfxHit.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-            wfxHit.SetActive(true);
-            _hitEffectLifeTime = gameManager.StartCoroutine(WFXhitLifeTime(wfxPool, wfxHit));
-        }
-
-        private void ReturnWFXhitToPool(List<GameObject> wfxPool, GameObject wfxHit)
-        {
-            wfxHit.SetActive(false);
-            wfxHit.transform.rotation = Quaternion.identity;
-            wfxPool.Add(wfxHit);
-        }
-
-        private IEnumerator WFXhitLifeTime(List<GameObject> wfxPool, GameObject wfxHit)
-        {
-            yield return new WaitForSeconds(10);
-            ReturnWFXhitToPool(wfxPool, wfxHit);
-        }
+        private void ApplyHitEffect(GameObject hitEffect, RaycastHit hit)
+        {        
+            hitEffect.transform.position = hit.point;
+            hitEffect.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+            hitEffect.SetActive(true);
+        }        
         private void LightEffectsOn()
         {
             _shootEffects.transform.Rotate(Vector3.forward, Random.Range(0f, 360f), Space.Self);
@@ -99,6 +84,10 @@ namespace ZomboTerrain
             yield return new WaitForSeconds(delayTime);
             _shootEffects.SetActive(false);
             yield break;
+        }
+        public void M1()
+        {
+
         }
     }
 }

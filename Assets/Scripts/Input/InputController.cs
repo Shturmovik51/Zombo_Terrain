@@ -10,15 +10,16 @@ namespace ZomboTerrain
         public event Action OnClickShootButton = delegate { };
         public event Action<bool> OnClickRunButton = delegate { };
         public event Action OnClickJumpButton = delegate { };
-        public event Action OnClickReloadButton = delegate { };
+        public event Action OnClickReloadButton;
         public event Action OnClickSaveGameButton;
         public event Action OnClickLoadGameButton;
+        public event Action OnClickFlashLightButton;
 
 
-        private readonly IUserInput _inputHorizontal;
-        private readonly IUserInput _inputVertical;
-        private readonly IUserInput _inputMouseX;
-        private readonly IUserInput _inputMouseY;
+        private readonly IUserAxisInput _inputHorizontal;
+        private readonly IUserAxisInput _inputVertical;
+        private readonly IUserAxisInput _inputMouseX;
+        private readonly IUserAxisInput _inputMouseY;
         private readonly InputKeys _inputKeys;
         private InputKeysData _inputKeysData;
 
@@ -35,62 +36,16 @@ namespace ZomboTerrain
 
         public void LocalUpdate(float deltaTime)
         {
-            GetMoveInput();
-            GetMouseInput();
-            ShootButton();
-            RunButton();
-            JumpButton();
-            ReloadButton();
-            SaveGameButton();
-            LoadGameButton();
-           // OnClickJumpButton.Invoke(_inputKeys.GetKeyJump());
-        }
-
-        public void GetMoveInput()
-        {            
-             OnChangeMoveAxis.Invoke((_inputVertical.GetAxis(), _inputHorizontal.GetAxis()));
-        }
-
-        private void GetMouseInput()
-        {
+            OnChangeMoveAxis.Invoke((_inputVertical.GetAxis(), _inputHorizontal.GetAxis()));
             OnChangeLookAxis.Invoke((_inputMouseX.GetAxis(), _inputMouseY.GetAxis()));
-        }
-
-        private void ShootButton()
-        {
-            if (_inputKeys.GetKeyShoot(_inputKeysData))
-                OnClickShootButton.Invoke();
-        }
-        private void RunButton()
-        {
-            if (_inputKeys.GetKeyRunDown(_inputKeysData))
-                OnClickRunButton.Invoke(true);
-            if (_inputKeys.GetKeyRunUp(_inputKeysData))
-                OnClickRunButton.Invoke(false);
-        }
-        private void JumpButton()
-        {
-            if (_inputKeys.GetKeyJump(_inputKeysData))
-                OnClickJumpButton.Invoke();
-        }
-        private void ReloadButton()
-        {
-            if (_inputKeys.GetKeyReload(_inputKeysData))
-                OnClickReloadButton.Invoke();
-        }
-        private void SaveGameButton()
-        {
-            if (_inputKeys.GetKeySave(_inputKeysData))
-                OnClickSaveGameButton.Invoke();
-        }
-        private void LoadGameButton()
-        {
-            if (_inputKeys.GetKeyLoad(_inputKeysData))
-                OnClickLoadGameButton.Invoke();
-        }
-
-
-
-
+            _inputKeys.GetKeyShoot(_inputKeysData, OnClickShootButton);
+            _inputKeys.GetKeyRunDown(_inputKeysData, OnClickRunButton);
+            _inputKeys.GetKeyRunUp(_inputKeysData, OnClickRunButton);
+            _inputKeys.GetKeyJump(_inputKeysData, OnClickJumpButton);
+            _inputKeys.GetKeyReload(_inputKeysData, OnClickReloadButton);
+            _inputKeys.GetKeySaveGame(_inputKeysData, OnClickSaveGameButton);
+            _inputKeys.GetKeyLoadGame(_inputKeysData, OnClickLoadGameButton);
+            _inputKeys.GetKeyFlashLight(_inputKeysData, OnClickFlashLightButton);
+        }        
     }
 }

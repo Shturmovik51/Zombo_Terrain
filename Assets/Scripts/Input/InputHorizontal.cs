@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ZomboTerrain
 {
-    public sealed class InputHorizontal : IUserInput
+    public sealed class InputHorizontal : IUserAxisInput
     {
         public float GetAxis()
         {

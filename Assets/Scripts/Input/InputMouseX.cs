@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ZomboTerrain
 {
-    public sealed class InputMouseX : IUserInput
+    public sealed class InputMouseX : IUserAxisInput
     {
         public float GetAxis()
         {

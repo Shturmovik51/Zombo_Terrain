@@ -18,24 +18,26 @@ namespace ZomboTerrain
         [SerializeField] private Transform _weaponPosition;
         [SerializeField] private Transform _flashLightPosition;
         [SerializeField] private Transform _shootEffectPosition;
+        [SerializeField] private GameObject _shootEffects;
         [SerializeField] private Transform _directionalLight;
         [SerializeField] private PlayerView _playerView;
         [SerializeField] private Data _data;
         [SerializeField] private PostProcessVolume _postProcessVolume;
         [SerializeField] private Transform _radarPosition;
 
+        private Camera[] _cameras;
         private List<IOnSceneObject> _onSceneObjects;
         private ControllersManager _controllersManager;
         private float _reloadTime;
         private void Start()
         {
-            //Resources.Load<GameObject>("RadarView");
-
-            _onSceneObjects = FindObjectsOfType<MonoBehaviour>().OfType<IOnSceneObject>().ToList();           
+            _onSceneObjects = FindObjectsOfType<MonoBehaviour>().OfType<IOnSceneObject>().ToList();
+            _cameras = FindObjectsOfType<Camera>();
             _controllersManager = new ControllersManager();
 
             new GameInitializator(_controllersManager, _data, _playerView, _onSceneObjects, _gameUIController, _timeSpeed, 
-                                    _directionalLight, transform, _hitCollectionSize, _postProcessVolume, _radarPosition);
+                                    _directionalLight, this, _hitCollectionSize, _postProcessVolume, _radarPosition,
+                                        _shootEffects, _reloadTime, _cameras);
 
             _controllersManager.Initialization();
 
@@ -47,8 +49,8 @@ namespace ZomboTerrain
 
         private void Update()
         {
-            if (Mathf.Approximately(Time.timeScale, 0))
-                return;
+            //if (Mathf.Approximately(Time.timeScale, 0))
+            //    return;
 
             var deltaTime = Time.deltaTime;
             _controllersManager.LocalUpdate(deltaTime); 

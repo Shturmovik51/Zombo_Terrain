@@ -8,18 +8,17 @@ namespace ZomboTerrain
         public int Axeleration { get; set; }
         public int JumpForce { get; set; }
         public Weapon PlayerWeapon { get; set; }
-
         public float VerticalRotation { get; set; }
         public bool IsRun;
 
-        public PlayerModel(int health, int moveSpeed, int jumpForce, Weapon weapon, int ammoCount, int axeleration)
+        public PlayerModel(int health, int moveSpeed, int jumpForce, /*Weapon weapon, */int ammoCount, int axeleration)
         {
             Health = health;
             MoveSpeed = moveSpeed;
             AmmoCount = ammoCount;
             Axeleration = axeleration;
             JumpForce = jumpForce;
-            PlayerWeapon = weapon;
+            //PlayerWeapon = weapon;
         }
 
     }

@@ -11,7 +11,7 @@ namespace ZomboTerrain
 
         public PlayerModel CreatePlayerModel()
         {
-            return new PlayerModel(_playerData.Health, _playerData.MoveSpeed, _playerData.JumpForce, _playerData.PlayerWeapon,
+            return new PlayerModel(_playerData.Health, _playerData.MoveSpeed, _playerData.JumpForce, /*_playerData.PlayerWeapon,*/
                                     _playerData.AmmoCount, _playerData.Axeleration);
         }
     }

@@ -15,9 +15,9 @@ namespace ZomboTerrain
         private List<GameObject> _bodyHitEffects;
         private List<GameObject> _sandHitEffects;
 
-        public HitEffectsController(HitEffectsData hitEffectsData, int collectionSize, Transform parent)
+        public HitEffectsController(HitEffectsData hitEffectsData, int collectionSize, GameManager parent)
         {
-            _parent = parent;
+            _parent = parent.transform;
             _collectionSize = collectionSize;
             _bodyHitEffect = hitEffectsData.BodyHitEffect;
             _sandHitEffect = hitEffectsData.SandHitEffect;
@@ -46,6 +46,34 @@ namespace ZomboTerrain
             var hit = Object.Instantiate(hitEffect, hitContainer.transform);
             hit.SetActive(false);
             hitCollection.Add(hit);
+        }
+
+        public GameObject GetBodyHitEffectFromPool()
+        {
+            var effect = _bodyHitEffects[0];
+            _bodyHitEffects.Remove(effect);
+            //EffectTimer(effect, _bodyHitEffects).StartThisCoroutine();
+            return effect;
+        }
+
+        public GameObject GetSandHitEffectFromPool()
+        {
+            var effect = _sandHitEffects[0];
+            _sandHitEffects.Remove(effect);
+            //EffectTimer(effect, _sandHitEffects).StartThisCoroutine();
+            return effect;
+        }
+
+        private IEnumerator EffectTimer(GameObject effect, List<GameObject> effectPool)
+        {
+            yield return new WaitForSeconds(5);
+            ReturnHitEffectToPool(effect, effectPool);
+        }
+
+        private void ReturnHitEffectToPool(GameObject effect, List<GameObject> effectPool)
+        {
+            effect.transform.parent = _parent;
+            effectPool.Add(effect);
         }
     }
 }

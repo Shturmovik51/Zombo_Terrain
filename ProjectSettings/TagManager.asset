@@ -10,6 +10,7 @@ TagManager:
   - LookPoint
   - SecondCamera
   - BulletSpawn
+  - RadarBackGroundCamera
   layers:
   - Default
   - TransparentFX
