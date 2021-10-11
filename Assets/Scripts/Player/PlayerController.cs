@@ -25,7 +25,6 @@ namespace ZomboTerrain
             _inputController.OnClickRunButton += Axeleration;
             _inputController.OnClickJumpButton += PlayerJump;
             _inputController.OnClickReloadButton += PLayerReloadWeapon;
-            Debug.Log("Da");
         }
 
         public void CleanUp()

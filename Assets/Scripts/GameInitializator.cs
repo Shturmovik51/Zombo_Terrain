@@ -9,10 +9,12 @@ namespace ZomboTerrain
         public GameInitializator(ControllersManager controllers, Data data, PlayerView playerView, List<IOnSceneObject> _onSceneObjects, 
                         GameUIController gameUIController, float timeSpeed, Transform directionalLight, GameManager gameManager,
                         int hitCollectionSize, PostProcessVolume postProcessVolume, Transform radarPosition, GameObject shootEffects,
-                        float reloadTime)
+                        float reloadTime, Camera[] cameras)
         {
             Camera camera = Camera.main;
+
             var radarController = new RadarController(camera, radarPosition);
+            var screenSaverController = new ScreenSaverController(cameras);
             var onSceneObjectInitializator = new OnSceneObjectInitializator(_onSceneObjects, radarController);
             var onSceneObjectController = new OnSceneObjectsController(onSceneObjectInitializator.InitObjects());
             var inputController = new InputController(data);
@@ -32,6 +34,7 @@ namespace ZomboTerrain
             var saveDataRepository = new SaveDataRepository(inputController, onSceneObjectController);
 
 
+            controllers.Add(screenSaverController);
             controllers.Add(radarController);
             controllers.Add(onSceneObjectController);
             controllers.Add(inputController);

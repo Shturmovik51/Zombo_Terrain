@@ -25,18 +25,19 @@ namespace ZomboTerrain
         [SerializeField] private PostProcessVolume _postProcessVolume;
         [SerializeField] private Transform _radarPosition;
 
+        private Camera[] _cameras;
         private List<IOnSceneObject> _onSceneObjects;
         private ControllersManager _controllersManager;
         private float _reloadTime;
         private void Start()
         {
             _onSceneObjects = FindObjectsOfType<MonoBehaviour>().OfType<IOnSceneObject>().ToList();
-
+            _cameras = FindObjectsOfType<Camera>();
             _controllersManager = new ControllersManager();
 
             new GameInitializator(_controllersManager, _data, _playerView, _onSceneObjects, _gameUIController, _timeSpeed, 
                                     _directionalLight, this, _hitCollectionSize, _postProcessVolume, _radarPosition,
-                                        _shootEffects, _reloadTime);
+                                        _shootEffects, _reloadTime, _cameras);
 
             _controllersManager.Initialization();
 
@@ -48,8 +49,8 @@ namespace ZomboTerrain
 
         private void Update()
         {
-            if (Mathf.Approximately(Time.timeScale, 0))
-                return;
+            //if (Mathf.Approximately(Time.timeScale, 0))
+            //    return;
 
             var deltaTime = Time.deltaTime;
             _controllersManager.LocalUpdate(deltaTime); 

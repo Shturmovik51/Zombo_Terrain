@@ -30,11 +30,10 @@ namespace ZomboTerrain
             }
         }
 
-        public static void StartThisCoroutine(this IEnumerator self)
+        public static void SaimonSaidStartCoroutine(this IEnumerator self)
         {
-            var platform = Object.Instantiate(new GameObject()).AddComponent<MonoBehaviour>();
+            var platform = new GameObject(name:"Coroutine").AddComponent<CoroutineMonobeh>();
             platform.StartCoroutine(self);
-
         }
     }
 }
