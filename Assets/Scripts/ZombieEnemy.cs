@@ -1,32 +1,66 @@
+using System;
 using UnityEngine;
 
-[RequireComponent(typeof(Health))]
-
-public class ZombieEnemy : MonoBehaviour
+namespace ZomboTerrain
 {
-    private Health zombieEnemyHealth;
-    private Rigidbody[] dollRGBodys;
-    private Animator zombieEnemyAnimator;
-
-    private void Awake()
+    public class ZombieEnemy : MonoBehaviour, ILiveEntity, ITakeDamage, ICloneable
     {
-        zombieEnemyHealth = GetComponent<Health>();
-        dollRGBodys = GetComponentsInChildren<Rigidbody>();
-        zombieEnemyAnimator = GetComponent<Animator>();
-        zombieEnemyHealth.DeathEntity += DeathZombieEnemy;
+        private Rigidbody[] _dollRigidBodys;
+        private Animator zombieEnemyAnimator;
+        private LayerMask _layerMask;
+        private bool _isDead;
 
-        foreach (var rgBody in dollRGBodys)
+        [SerializeField] private int _health;
+        [SerializeField] private Transform _spawnPoint;
+        [SerializeField] private GameManager _gameManager;
+
+        public int Health { get => _health; }
+
+        public void AddDamage(int damageValue)
         {
-            rgBody.tag = "Enemy";
-            rgBody.isKinematic = true;
+            _health -= damageValue;
+
+            if (_health <= 0 && !_isDead)
+                DeathZombieEnemy();
+        }
+
+        public object Clone()
+        {
+            var pointInSphere = UnityEngine.Random.insideUnitSphere * 6 + _spawnPoint.position;
+            var pointInSurface = new Vector3(pointInSphere.x, _spawnPoint.position.y, pointInSphere.z);
+
+            Ray ray = new Ray(pointInSurface, Vector3.down);
+            if (Physics.Raycast(ray, out var hit, Mathf.Infinity, _layerMask))
+            {
+                pointInSurface = hit.point;
+            }
+
+            return Instantiate(this, pointInSurface, transform.rotation);
+        }
+
+        private void Awake()
+        {
+            _dollRigidBodys = GetComponentsInChildren<Rigidbody>();
+            zombieEnemyAnimator = GetComponent<Animator>();
+            _layerMask = LayerMask.GetMask("Ground");
+
+            foreach (var rgBody in _dollRigidBodys)
+            {
+                rgBody.tag = "Enemy";
+                rgBody.isKinematic = true;
+            }
+        }
+
+        private void DeathZombieEnemy()
+        {
+            _isDead = true;
+            _gameManager.KillsCountDown();
+
+            if (_spawnPoint != null)
+                Clone();
+
+            foreach (var rgBody in _dollRigidBodys) rgBody.isKinematic = false;
+            zombieEnemyAnimator.enabled = false;
         }
     }
-
-    private void DeathZombieEnemy()
-    {
-        foreach (var rgBody in dollRGBodys) rgBody.isKinematic = false;
-        zombieEnemyAnimator.enabled = false;
-    }
-
-    
 }
