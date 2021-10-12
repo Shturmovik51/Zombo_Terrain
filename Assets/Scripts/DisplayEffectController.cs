@@ -4,19 +4,19 @@ using UnityEngine.Rendering.PostProcessing;
 
 namespace ZomboTerrain
 {
-    public class DisplayEffectController: IInitialisible, IUpdatable, ICleanable, IController
+    public sealed class DisplayEffectController: IInitialisible, IUpdatable, ICleanable, IController
     {        
-        private PostProcessVolume _postProcessVolume;
+        private readonly PostProcessVolume _postProcessVolume;
 
-        private Button _nuarEffectButton;
-        private Button _fishEyeEffectButton;
-        private Button _eyeFocusEffectButton;
-        private Button _eyeAddictiveEffectButton;
+        private readonly Button _nuarEffectButton;
+        private readonly Button _fishEyeEffectButton;
+        private readonly Button _eyeFocusEffectButton;
+        private readonly Button _eyeAddictiveEffectButton;
+        private readonly Camera _mainCamera;
         private ColorGrading _colorGrading;
         private LensDistortion _lensDistortion;
         private DepthOfField _depthOfField;
         private AutoExposure _autoExposure;
-        private Camera _mainCamera;
         private float _eyeDistance;
 
         public DisplayEffectController(Camera mainCamera, GameUIController gameUIController, PostProcessVolume postProcessVolume)
@@ -60,16 +60,15 @@ namespace ZomboTerrain
 
         private void ChangeEffect(Button button, PostProcessEffectSettings effect)
         {
-            effect.active = (effect.active == false) ? true : false;
+            effect.active = !effect.active;
             button.image.color = effect.active ? Color.green : Color.white;
         }
 
         private void EyeFocusEffect()
         {
-            RaycastHit hit;
             Ray ray = _mainCamera.ScreenPointToRay(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0));
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
                 _eyeDistance = (hit.point - _mainCamera.transform.position).magnitude;
 
             _depthOfField.focusDistance.value = _eyeDistance;

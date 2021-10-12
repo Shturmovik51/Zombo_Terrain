@@ -3,7 +3,7 @@ using UnityEngine;
 namespace ZomboTerrain
 {
     [CreateAssetMenu(fileName = "DailyCycle Model", menuName = "Database / DailyCycle")]
-    public class DailyCycleData : ScriptableObject
+    public sealed class DailyCycleData : ScriptableObject
     {
         [SerializeField] private float _cloudColorChangeSpeed;
         [SerializeField] private Color _sunSetCloudColor;

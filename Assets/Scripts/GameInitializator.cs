@@ -9,7 +9,7 @@ namespace ZomboTerrain
         public GameInitializator(ControllersManager controllers, Data data, PlayerView playerView, List<IOnSceneObject> _onSceneObjects, 
                         GameUIController gameUIController, float timeSpeed, Transform directionalLight, GameManager gameManager,
                         int hitCollectionSize, PostProcessVolume postProcessVolume, Transform radarPosition, GameObject shootEffects,
-                        float reloadTime, Camera[] cameras)
+                        float reloadTime, Camera[] cameras, int killsToWin, ZombieEnemy[] enemies)
         {
             Camera camera = Camera.main;
 
@@ -32,7 +32,8 @@ namespace ZomboTerrain
             var dailyCycleController = new DailyCycleController(dailyCucleModel, gameWatchController, directionalLight);
             var displayEffectController = new DisplayEffectController(camera, gameUIController, postProcessVolume);
             var saveDataRepository = new SaveDataRepository(inputController, onSceneObjectController);
-
+            var endScreenController = new EndScreenController(gameUIController, killsToWin);
+            var enemyController = new EnemyController(enemies, endScreenController);
 
             controllers.Add(screenSaverController);
             controllers.Add(radarController);
@@ -48,6 +49,8 @@ namespace ZomboTerrain
             controllers.Add(dailyCycleController);
             controllers.Add(saveDataRepository);
             controllers.Add(displayEffectController);
+            controllers.Add(endScreenController);
+            controllers.Add(enemyController);
         }
     }
 }

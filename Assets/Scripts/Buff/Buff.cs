@@ -1,6 +1,6 @@
 namespace ZomboTerrain
 {
-    public class Buff
+    public sealed class Buff
     {
         private int _id;
         private int _bonusValue;

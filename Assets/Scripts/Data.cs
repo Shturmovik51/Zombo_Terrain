@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ZomboTerrain
 {
     [CreateAssetMenu(fileName = "New Data", menuName = "Database / Data")]
-    public class Data : ScriptableObject
+    public sealed class Data : ScriptableObject
     {
         [SerializeField] private PlayerData _playerData;
         [SerializeField] private InputKeysData _inputKeysData;

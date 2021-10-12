@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace ZomboTerrain
 {
-    public class BuffTimerModel
+    public sealed class BuffTimerModel
     {
         public bool IsActive { get; set; }
 

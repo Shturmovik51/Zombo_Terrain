@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ZomboTerrain
 {
-    public class DailyCycleModel : IDailyCycleModel
+    public sealed class DailyCycleModel : IDailyCycleModel
     {
         public float CloudColorChangeSpeed { get; }
         public Color SunSetCloudColor { get; }

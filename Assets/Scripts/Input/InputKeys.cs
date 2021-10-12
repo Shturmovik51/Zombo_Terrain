@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ZomboTerrain
 {
-    public class InputKeys
+    public sealed class InputKeys
     {
         public void GetKeyShoot(InputKeysData _inputKeysData, Action action)
         {

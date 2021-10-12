@@ -5,7 +5,7 @@ namespace ZomboTerrain
 {
     [CreateAssetMenu(fileName = "New Buff Database", menuName = "Database / Buffs")]
 
-    public class BuffBase : ScriptableObject
+    public sealed class BuffBase : ScriptableObject
     {
         [SerializeField, HideInInspector] private List<BuffSample> _buffSamples;
         [SerializeField] private BuffSample _currentBuffSample;

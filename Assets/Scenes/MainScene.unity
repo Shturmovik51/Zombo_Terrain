@@ -36946,21 +36946,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20fdd1ae3dc09d49aab38092e6dcbee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameUIController: {fileID: 1659159290}
-  _playerAnimator: {fileID: 1737900818}
   _hitCollectionSize: 100
-  _timerText: {fileID: 1711644148}
-  _timeSpeed: 0.1
   _killsCountToWin: 5
+  _timeSpeed: 0.1
+  _data: {fileID: 11400000, guid: 69a580b630b14c1498a8fb7c7cadd545, type: 2}
+  _playerAnimator: {fileID: 1737900818}
   _weaponPosition: {fileID: 1728097632}
   _flashLightPosition: {fileID: 1707900431}
   _shootEffectPosition: {fileID: 1055013223}
-  _shootEffects: {fileID: 916821481}
   _directionalLight: {fileID: 705507995}
-  _playerView: {fileID: 2815113631823033881}
-  _data: {fileID: 11400000, guid: 69a580b630b14c1498a8fb7c7cadd545, type: 2}
-  _postProcessVolume: {fileID: 392608830}
   _radarPosition: {fileID: 448271801}
+  _shootEffects: {fileID: 916821481}
+  _playerView: {fileID: 2815113631823033881}
+  _gameUIController: {fileID: 1659159290}
+  _timerText: {fileID: 1711644148}
+  _postProcessVolume: {fileID: 392608830}
 --- !u!4 &1078811275
 Transform:
   m_ObjectHideFlags: 0
@@ -58480,21 +58480,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad4e54f4477b05440924b98f73fa36d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pausePanel: {fileID: 1674128321}
-  _endGameScreen: {fileID: 88741048}
   _dayButton: {fileID: 1909143245}
   _sunSetButton: {fileID: 903321975}
   _nightButton: {fileID: 108426164}
   _sunRiseButton: {fileID: 1642218293}
   _restartGameButtonInPause: {fileID: 2093451298}
   _restartGameButtonInEndScreen: {fileID: 10562032}
-  _ammoText: {fileID: 2081611130}
-  _ammoMagazineText: {fileID: 725231688}
-  _timeText: {fileID: 1711644148}
   _nuarEffectButton: {fileID: 985454909}
   _fishEyeEffectButton: {fileID: 1461704633}
   _eyeFocusEffectButton: {fileID: 622395697}
   _eyeAddictiveEffectButton: {fileID: 637445905}
+  _pausePanel: {fileID: 1674128321}
+  _endGameScreen: {fileID: 88741048}
+  _ammoText: {fileID: 2081611130}
+  _ammoMagazineText: {fileID: 725231688}
+  _timeText: {fileID: 1711644148}
 --- !u!1001 &1659714616
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace ZomboTerrain
 {
-    public class OnSceneObjectsController : IInitialisible, IController
+    public sealed class OnSceneObjectsController : IInitialisible, IController
     {
         public List<IOnSceneObject> OnSceneObjects;
 

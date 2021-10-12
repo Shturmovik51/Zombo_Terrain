@@ -1,27 +1,24 @@
 using System;
-using UnityEngine.Events;
 
 namespace ZomboTerrain
 {
-    public class GameWatchController : IUpdatable, IInitialisible, IController
+    public sealed class GameWatchController : IUpdatable, IInitialisible, IController
     {
-        private GameUIController _gameUIController;
-        private float _countDownSpeed;
-        public Action OnSunRotation;
+        public event Action OnSunRotation;
         private event Action<string> OnChangeTimeText = delegate { };
+        private float _countDownSpeed;
+        private float _timeCountDown;
+        private int _minutLeftNumber;
+        private int _minutRightNumber;
+        private int _hourLeftNumber;
+        private int _hourRightNumber;
+        private GameUIController _gameUIController;
 
         public GameWatchController(GameUIController gameUIController, float countDownSpeed)
         {
             _gameUIController = gameUIController;
             _countDownSpeed = countDownSpeed;
         }
-
-        private float _timeCountDown;
-
-        private int _minutLeftNumber;
-        private int _minutRightNumber;
-        private int _hourLeftNumber;
-        private int _hourRightNumber;
 
         public void Initialization()
         {
@@ -74,7 +71,6 @@ namespace ZomboTerrain
             }
 
             ChangeTimeText($"{_hourLeftNumber}{_hourRightNumber} : {_minutLeftNumber}{_minutRightNumber}");
-
         }
 
         private void ChangeTimeText(string text)
