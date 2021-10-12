@@ -1,10 +1,9 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace ZomboTerrain
 {
-    public class PlayerView : MonoBehaviour
+    public sealed class PlayerView : MonoBehaviour
     {
         [SerializeField] private float _gravityForñe;
         [SerializeField] private float _gravityDetectorSpherRadius;
@@ -17,8 +16,8 @@ namespace ZomboTerrain
         [SerializeField] private CharacterController _characterController;
 
         private Vector3 _gravitation;
-        public UnityAction<Buff> OnRecieveBuff;
-        public UnityAction<Buff> OnRemoveBuff;
+        public event Action<Buff> OnRecieveBuff;
+        public event Action<Buff> OnRemoveBuff;
 
         private static readonly int Run = Animator.StringToHash("Run");
         private static readonly int Shoot = Animator.StringToHash("Shoot");

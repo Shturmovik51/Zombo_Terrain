@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ZomboTerrain
 {
-    public class DailyCycleController : IInitialisible, IController
+    public sealed class DailyCycleController : IInitialisible, IController
     {       
         private Transform _directionalLight;
         private DailyCycleModel _dailyCycleModel;

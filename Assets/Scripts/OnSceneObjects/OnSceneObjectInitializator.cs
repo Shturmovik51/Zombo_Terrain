@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace ZomboTerrain
 {
-    public class OnSceneObjectInitializator
+    public sealed class OnSceneObjectInitializator
     {
         private List<IOnSceneObject> _onSceneObjects;      
         private List<BuffSample> _buffCollection;

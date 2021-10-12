@@ -3,7 +3,7 @@ using UnityEngine;
 namespace ZomboTerrain
 {
     [System.Serializable]
-    public class BuffSample
+    public sealed class BuffSample
     {
         [SerializeField] private int _id;
         [SerializeField] private int _bonusValue;

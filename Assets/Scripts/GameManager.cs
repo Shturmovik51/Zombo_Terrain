@@ -9,49 +9,48 @@ namespace ZomboTerrain
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private GameUIController _gameUIController;
-        [SerializeField] private Animator _playerAnimator;
         [SerializeField] private int _hitCollectionSize;
-        [SerializeField] private TextMeshProUGUI _timerText;
-        [SerializeField] private float _timeSpeed;
         [SerializeField] private int _killsCountToWin;
+        [SerializeField] private float _timeSpeed;
+        [SerializeField] private Data _data;
+        [SerializeField] private Animator _playerAnimator;
         [SerializeField] private Transform _weaponPosition;
         [SerializeField] private Transform _flashLightPosition;
         [SerializeField] private Transform _shootEffectPosition;
-        [SerializeField] private GameObject _shootEffects;
         [SerializeField] private Transform _directionalLight;
-        [SerializeField] private PlayerView _playerView;
-        [SerializeField] private Data _data;
-        [SerializeField] private PostProcessVolume _postProcessVolume;
         [SerializeField] private Transform _radarPosition;
+        [SerializeField] private GameObject _shootEffects;
+        [SerializeField] private PlayerView _playerView;
+        [SerializeField] private GameUIController _gameUIController;
+        [SerializeField] private TextMeshProUGUI _timerText;
+        [SerializeField] private PostProcessVolume _postProcessVolume;
 
-        private Camera[] _cameras;
-        private List<IOnSceneObject> _onSceneObjects;
-        private ControllersManager _controllersManager;
         private float _reloadTime;
+        private Camera[] _cameras;
+        private ZombieEnemy[] _enemies;
+        private ControllersManager _controllersManager;
+        private List<IOnSceneObject> _onSceneObjects;
         private void Start()
         {
-            _onSceneObjects = FindObjectsOfType<MonoBehaviour>().OfType<IOnSceneObject>().ToList();
-            _cameras = FindObjectsOfType<Camera>();
-            _controllersManager = new ControllersManager();
-
-            new GameInitializator(_controllersManager, _data, _playerView, _onSceneObjects, _gameUIController, _timeSpeed, 
-                                    _directionalLight, this, _hitCollectionSize, _postProcessVolume, _radarPosition,
-                                        _shootEffects, _reloadTime, _cameras);
-
-            _controllersManager.Initialization();
-
             GetReloadTime();
+
+            _cameras = FindObjectsOfType<Camera>();
+            _enemies = FindObjectsOfType<ZombieEnemy>();
+            _controllersManager = new ControllersManager();
+            _onSceneObjects = FindObjectsOfType<MonoBehaviour>().OfType<IOnSceneObject>().ToList();
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
+            new GameInitializator(_controllersManager, _data, _playerView, _onSceneObjects, _gameUIController, _timeSpeed, 
+                                    _directionalLight, this, _hitCollectionSize, _postProcessVolume, _radarPosition,
+                                        _shootEffects, _reloadTime, _cameras, _killsCountToWin, _enemies);
+
+            _controllersManager.Initialization();
         }
 
         private void Update()
         {
-            //if (Mathf.Approximately(Time.timeScale, 0))
-            //    return;
-
             var deltaTime = Time.deltaTime;
             _controllersManager.LocalUpdate(deltaTime); 
         }
@@ -86,16 +85,6 @@ namespace ZomboTerrain
             }
 
             if (_reloadTime <= 0) throw new Exception("Wrong ReloadTimer value determination in GetReloadTime()");
-        }
-
-        public void KillsCountDown()
-        {
-            _killsCountToWin--;
-
-            if (_killsCountToWin == 0)
-            {
-                _gameUIController.StartEndGameScreen();
-            }
-        }
+        }        
     }
 }

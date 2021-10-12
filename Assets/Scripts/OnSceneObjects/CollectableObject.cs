@@ -4,17 +4,18 @@ using UnityEngine.UI;
 
 namespace ZomboTerrain
 {
-    public class CollectableObject : MonoBehaviour, ICollectable, IObservableObject, IOnSceneObject, IBuff
+    public sealed class CollectableObject : MonoBehaviour, ICollectable, IObservableObject, IOnSceneObject, IBuff
     {
         [SerializeField] private int _buffID;
+        public event Action<Buff> OnApplyBuff;
+        public Image RadarIcon { get; set; }
+        public Buff ObjectBuff { get; set; }
+
         private bool _isActive;
         public bool IsActive => _isActive;
         public RadarController ObjectRadarController { get; set; }
         public int BuffID => _buffID;
         
-        public Action<Buff> OnApplyBuff;
-        public Image RadarIcon { get; set; }
-        public Buff ObjectBuff { get; set; }
         private void Awake()
         {
             _isActive = true;

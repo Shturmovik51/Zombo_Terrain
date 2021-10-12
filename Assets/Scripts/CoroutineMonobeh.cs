@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CoroutineMonobeh : MonoBehaviour
+public sealed class CoroutineMonobeh : MonoBehaviour
 {
 }

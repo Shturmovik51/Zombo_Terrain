@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ZomboTerrain
 {
-    public class ScreenSaverController: IInitialisible, IController
+    public sealed class ScreenSaverController : IInitialisible, IController
     {
         private Camera[] _cameras;
         private string _path;

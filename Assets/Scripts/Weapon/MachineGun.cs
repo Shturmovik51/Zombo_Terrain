@@ -8,38 +8,36 @@ namespace ZomboTerrain
         private int _shootDamage;
         private int _hitImpulseForce;
         private float _lightEffectsDelayTime;
-        private GameObject _shootEffects;
-        private Coroutine _hitEffectLifeTime;
         private Coroutine _lightEffectsDelay;
+        private GameObject _shootEffects;
         private HitEffectsController _hitEffectsController;
         public MachineGun(int maxMagazineAmmo, int shootDamage, int hitImpulseForce, float lightEffectsDelayTime, 
                     float reloadTime, GameObject shootEffects, Light flashLight, GameManager gameManager, 
-                    Camera mainCamera, HitEffectsController hitEffectsController
-                           /* Transform weaponPosition, Transform flashLightPosition, Transform shootEffectPosition*/)
+                    Camera mainCamera, HitEffectsController hitEffectsController)
         {
-            this.maxMagazineAmmo = maxMagazineAmmo;
+            _maxMagazineAmmo = maxMagazineAmmo;
             _shootDamage = shootDamage;
             _hitImpulseForce = hitImpulseForce;
             _lightEffectsDelayTime = lightEffectsDelayTime;
-            this.reloadTime = reloadTime;
+            _reloadTime = reloadTime;
             _shootEffects = shootEffects;
-            this.flashLight = flashLight;
-            this.gameManager = gameManager;
-            this.mainCamera = mainCamera;
+            _flashLight = flashLight;
+            _gameManager = gameManager;
+            _mainCamera = mainCamera;
             _hitEffectsController = hitEffectsController;
         }
         public override void Shoot(int ammoCount)
         {
-            if (isShootDelay || isReloading)
+            if (_isShootDelay || _isReloading)
                 return;
 
             base.Shoot(ammoCount);
 
-            if (ammoMagazineCount == 0)
+            if (_ammoMagazineCount == 0)
                 return;
 
             RaycastHit hit;
-            Ray ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0));
+            Ray ray = _mainCamera.ScreenPointToRay(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0));
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
@@ -52,14 +50,14 @@ namespace ZomboTerrain
                         enemy.AddDamage(_shootDamage);
                     }
 
-                    ApplyHitEffect(_hitEffectsController.GetBodyHitEffectFromPool(), hit);
+                    ApplyHitEffect(_hitEffectsController.GetBodyHitEffect(), hit);
 
                     var hitRigidBody = hit.collider.GetComponent<Rigidbody>();
                     hitRigidBody.AddForce(Camera.main.transform.forward * _hitImpulseForce, ForceMode.Impulse);
                 }
                 else
                 {
-                    ApplyHitEffect(_hitEffectsController.GetSandHitEffectFromPool(), hit);
+                    ApplyHitEffect(_hitEffectsController.GetSandHitEffect(), hit);
                 }
             }
 
@@ -77,17 +75,13 @@ namespace ZomboTerrain
             _shootEffects.transform.Rotate(Vector3.forward, Random.Range(0f, 360f), Space.Self);
             _shootEffects.SetActive(true);
 
-            _lightEffectsDelay = gameManager.StartCoroutine(LightEffectsDelay(_lightEffectsDelayTime));
+            _lightEffectsDelay = _gameManager.StartCoroutine(LightEffectsDelay(_lightEffectsDelayTime));
         }
         public IEnumerator LightEffectsDelay(float delayTime)
         {
             yield return new WaitForSeconds(delayTime);
             _shootEffects.SetActive(false);
             yield break;
-        }
-        public void M1()
-        {
-
         }
     }
 }

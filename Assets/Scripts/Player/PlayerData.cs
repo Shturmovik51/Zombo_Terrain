@@ -3,7 +3,7 @@ using UnityEngine;
 namespace ZomboTerrain
 {
     [CreateAssetMenu(fileName = "Player Model", menuName = "Database / Model")]
-    public class PlayerData : ScriptableObject
+    public sealed class PlayerData : ScriptableObject
     {
         [SerializeField] private int _health;
         [SerializeField] private int _moveSpeed;

@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace ZomboTerrain
 {
-    public class BuffTimerController : IUpdatable, IController
+    public sealed class BuffTimerController : IUpdatable, IController
     {
         public UnityAction<Buff> OnRemoveBuff;
         private BuffTimerModel _buffTimerModel;

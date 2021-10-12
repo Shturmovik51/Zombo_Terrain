@@ -3,16 +3,18 @@ using UnityEngine;
 
 namespace ZomboTerrain
 {
-    public class ZombieEnemy : MonoBehaviour, ILiveEntity, ITakeDamage, ICloneable
+    public sealed class ZombieEnemy : MonoBehaviour, ILiveEntity, ITakeDamage, ICloneable
     {
-        private Rigidbody[] _dollRigidBodys;
-        private Animator zombieEnemyAnimator;
-        private LayerMask _layerMask;
-        private bool _isDead;
-
         [SerializeField] private int _health;
         [SerializeField] private Transform _spawnPoint;
         [SerializeField] private GameManager _gameManager;
+
+        private bool _isDead;
+        private LayerMask _layerMask;
+        public event Action OnEnemyDeath;
+        private Rigidbody[] _dollRigidBodys;
+        private Animator zombieEnemyAnimator;
+
 
         public int Health { get => _health; }
 
@@ -54,7 +56,7 @@ namespace ZomboTerrain
         private void DeathZombieEnemy()
         {
             _isDead = true;
-            _gameManager.KillsCountDown();
+            OnEnemyDeath?.Invoke();
 
             if (_spawnPoint != null)
                 Clone();

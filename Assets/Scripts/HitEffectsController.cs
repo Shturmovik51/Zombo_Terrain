@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ZomboTerrain
 {
-    public class HitEffectsController : IInitialisible, IController
+    public sealed class HitEffectsController : IInitialisible, IController
     {
         private int _collectionSize;
         private Transform _parent;
@@ -48,31 +48,34 @@ namespace ZomboTerrain
             hitCollection.Add(hit);
         }
 
-        public GameObject GetBodyHitEffectFromPool()
+        public GameObject GetBodyHitEffect()
         {
-            var effect = _bodyHitEffects[0];
-            _bodyHitEffects.Remove(effect);
-            //EffectTimer(effect, _bodyHitEffects).StartThisCoroutine();
+            return GetEffect(_bodyHitEffects, _bodyHitsContainer);
+        }
+
+        public GameObject GetSandHitEffect()
+        {
+            return GetEffect(_sandHitEffects, _sandHitsContainer);
+        }
+
+        private GameObject GetEffect(List<GameObject> effectPool, Transform container)
+        {
+            var effect = effectPool[0];
+            effectPool.Remove(effect);
+            EffectTimer(effect, effectPool, container).SaimonSaidStartCoroutine();
             return effect;
         }
 
-        public GameObject GetSandHitEffectFromPool()
-        {
-            var effect = _sandHitEffects[0];
-            _sandHitEffects.Remove(effect);
-            //EffectTimer(effect, _sandHitEffects).StartThisCoroutine();
-            return effect;
-        }
-
-        private IEnumerator EffectTimer(GameObject effect, List<GameObject> effectPool)
+        private IEnumerator EffectTimer(GameObject effect, List<GameObject> effectPool, Transform container)
         {
             yield return new WaitForSeconds(5);
-            ReturnHitEffectToPool(effect, effectPool);
+            ReturnHitEffectToPool(effect, effectPool, container);
         }
 
-        private void ReturnHitEffectToPool(GameObject effect, List<GameObject> effectPool)
+        private void ReturnHitEffectToPool(GameObject effect, List<GameObject> effectPool, Transform container)
         {
-            effect.transform.parent = _parent;
+            effect.SetActive(false);
+            //effect.transform.parent = container;
             effectPool.Add(effect);
         }
     }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ZomboTerrain
 {
-    public class PlayerController : IInitialisible, IUpdatable, ICleanable, IController
+    public sealed class PlayerController : IInitialisible, IUpdatable, ICleanable, IController
     {
         private PlayerView _playerView;
         private PlayerModel _playerModel;

@@ -7,12 +7,12 @@ namespace ZomboTerrain
     public class WeaponInitializator
     {
         private Data _data;
-        private List<Weapon> _weapons;
         private float _reloadTime;
         private GameManager _gameManager;
         private Camera _camera;
-        HitEffectsController _hitEffectsController;
-        GameObject _shootEffects;
+        private HitEffectsController _hitEffectsController;
+        private GameObject _shootEffects;
+        //private List<Weapon> _weapons;
         public WeaponInitializator(Data data, float reloadTime, GameManager gameManager, Camera camera, 
                                     HitEffectsController hitEffectsController, GameObject shootEffects) 
         {
@@ -27,8 +27,9 @@ namespace ZomboTerrain
         {
             WeaponModelData machineGunModel = _data.WeaponModelsData[0];
             Weapon machineGun = new MachineGun(machineGunModel.MaxMagazineAmmoCount, machineGunModel.ShootDamage,
-                   machineGunModel.HitImpulseForce, machineGunModel.ShootFlashTime, _reloadTime, _shootEffects,
-                   machineGunModel.FlashLight, _gameManager, _camera, _hitEffectsController);
+                    machineGunModel.HitImpulseForce, machineGunModel.ShootFlashTime, _reloadTime, _shootEffects,
+                    machineGunModel.FlashLight, _gameManager, _camera, _hitEffectsController);
+
             return machineGun;
         }
     }
