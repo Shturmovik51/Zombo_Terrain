@@ -6,5 +6,6 @@ namespace ZomboTerrain
     {
         public bool IsActive { get; }
         public List<Buff> ActiveBuffs { get; }
+
     }
 }
