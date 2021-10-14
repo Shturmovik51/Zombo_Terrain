@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: DailyCycle Model 1
   m_EditorClassIdentifier: 
   _cloudColorChangeSpeed: 0.1
-  _sunSetCloudColor: {r: 1, g: 0.6556604, b: 0.6556604, a: 1}
-  _dayCloudColor: {r: 1, g: 1, b: 1, a: 1}
+  _sunSetCloudColor: {r: 1, g: 0.7688679, b: 0.7688679, a: 0.14901961}
+  _dayCloudColor: {r: 1, g: 1, b: 1, a: 0.14901961}
+  _nightCloudColor: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 0.14901961}
+  _sunRiseCloudColor: {r: 1, g: 0.759434, b: 0.759434, a: 0.14901961}
   _cloudsMaterial: {fileID: 2100000, guid: ed85fec01193dd44a9892728c8305419, type: 2}

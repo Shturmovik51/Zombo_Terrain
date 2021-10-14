@@ -6,14 +6,9 @@ using UnityEngine;
 namespace ZomboTerrain
 {
     public sealed class ScreenSaverController : IInitialisible, IController
-    {
-        private Camera[] _cameras;
+    {        
         private string _path;
         private int _resolution = 5;
-        public ScreenSaverController(Camera[] cameras)
-        {
-            _cameras = cameras;          
-        }
 
         [SerializeField] private Camera _camera;
         public void Initialization()
@@ -24,14 +19,6 @@ namespace ZomboTerrain
         }
         public IEnumerator DoTapExampleAsync()
         {
-            foreach (var camera in _cameras)
-            {
-                if (camera.CompareTag("RadarBackGroundCamera"))
-                    camera.enabled = true;
-                else
-                    camera.enabled = false;
-            }
-
             var sw = Screen.width;
             var sh = Screen.height;
             yield return new WaitForEndOfFrame();
@@ -41,15 +28,6 @@ namespace ZomboTerrain
             var filename = "RadarBG.png";    /*String.Format("{0:ddMMyyyy_HHmmssfff}.png", DateTime.Now)*/
             File.WriteAllBytes(Path.Combine(_path, filename), bytes);
             yield return new WaitForSeconds(2.3f);
-
-
-            foreach (var camera in _cameras)
-            {
-                if (camera.CompareTag("RadarBackGroundCamera"))
-                    camera.enabled = false;
-                else
-                    camera.enabled = true;
-            }
         }
 
         private void Photo()

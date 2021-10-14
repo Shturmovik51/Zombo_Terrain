@@ -7,6 +7,8 @@ namespace ZomboTerrain
     public sealed class CollectableObject : MonoBehaviour, ICollectable, IObservableObject, IOnSceneObject, IBuff
     {
         [SerializeField] private int _buffID;
+        
+
         public event Action<Buff> OnApplyBuff;
         public Image RadarIcon { get; set; }
         public Buff ObjectBuff { get; set; }
@@ -15,11 +17,17 @@ namespace ZomboTerrain
         public bool IsActive => _isActive;
         public RadarController ObjectRadarController { get; set; }
         public int BuffID => _buffID;
-        
-        private void Awake()
+
+        private void OnEnable()
         {
-            _isActive = true;
+            _isActive = gameObject.activeInHierarchy;
         }
+
+        private void OnDisable()
+        {
+            RemoveObjectFromRadar();
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             OnApplyBuff?.Invoke(ObjectBuff);

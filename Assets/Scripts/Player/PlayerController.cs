@@ -24,7 +24,7 @@ namespace ZomboTerrain
             _inputController.OnClickShootButton += PLayerShoot;
             _inputController.OnClickRunButton += Axeleration;
             _inputController.OnClickJumpButton += PlayerJump;
-            _inputController.OnClickReloadButton += PLayerReloadWeapon;
+            _inputController.OnClickReloadButton += PLayerReloadWeapon;            
         }
 
         public void CleanUp()
@@ -32,6 +32,12 @@ namespace ZomboTerrain
             _playerModel.PlayerWeapon.OnAmmoChange -= AmmoCountChange;
             _playerModel.PlayerWeapon.OnWeaponShoot -= WeaponRecoil;
             _playerModel.PlayerWeapon.OnEmptyAmmo -= PLayerReloadWeapon;
+            _inputController.OnChangeLookAxis -= PlayerLook;
+            _inputController.OnChangeMoveAxis -= PlayerMove;
+            _inputController.OnClickShootButton -= PLayerShoot;
+            _inputController.OnClickRunButton -= Axeleration;
+            _inputController.OnClickJumpButton -= PlayerJump;
+            _inputController.OnClickReloadButton -= PLayerReloadWeapon;            
         }
 
         private void Axeleration(bool value)
@@ -65,7 +71,7 @@ namespace ZomboTerrain
 
         public void PLayerShoot()
         {
-            _playerModel.PlayerWeapon.Shoot(_playerModel.AmmoCount);
+            _playerModel.PlayerWeapon.Shoot();
         }
 
         private void WeaponRecoil(bool isShootDelay)
@@ -82,23 +88,10 @@ namespace ZomboTerrain
         }
 
 
-        private void AmmoCountChange(int ammoCount, int ammoMagazineCount)
+        private void AmmoCountChange(int ammoCount)
         {
             _playerModel.AmmoCount = ammoCount;
-
-            RefreshAmmoCount();
-            RefreshAmmoMagazineCount(ammoMagazineCount);
-        }
-
-        private void RefreshAmmoCount()
-        {
-            _playerView.RefreshAmmoCountUI(_playerModel.AmmoCount);
-        }
-
-        private void RefreshAmmoMagazineCount(int ammoMagazineCount)
-        {
-            _playerView.RefreshAmmoMagazineCountUI(ammoMagazineCount);
-        }
+        }        
 
         public void ChangeMoveSpeed(int value)
         {
@@ -126,7 +119,7 @@ namespace ZomboTerrain
 
         public void LocalUpdate(float deltatime)
         {
-
+            _playerView.Gravitation();
         }
     }
 }

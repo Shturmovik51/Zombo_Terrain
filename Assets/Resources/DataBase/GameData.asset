@@ -18,3 +18,4 @@ MonoBehaviour:
   _weaponModelsData:
   - {fileID: 11400000, guid: 9d5caad010ea12a4094c6ba2268290be, type: 2}
   _hitEffectsData: {fileID: 11400000, guid: be93d64c1590fe046a12d37d7771f3c4, type: 2}
+  _userInterfaceElementsData: {fileID: 0}

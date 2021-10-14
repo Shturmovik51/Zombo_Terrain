@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ZomboTerrain
@@ -12,23 +10,30 @@ namespace ZomboTerrain
         private Camera _camera;
         private HitEffectsController _hitEffectsController;
         private GameObject _shootEffects;
+        private Light _flashLight;
+        private InputController _inputController;
         //private List<Weapon> _weapons;
-        public WeaponInitializator(Data data, float reloadTime, GameManager gameManager, Camera camera, 
-                                    HitEffectsController hitEffectsController, GameObject shootEffects) 
+        public WeaponInitializator(Data data, float reloadTime, GameManager gameManager, Camera camera,
+                                    HitEffectsController hitEffectsController, WeaponElements weaponElements,
+                                        InputController inputController) 
         {
             _data = data;
             _reloadTime = reloadTime;
             _gameManager = gameManager;
             _camera = camera;
             _hitEffectsController = hitEffectsController;
-            _shootEffects = shootEffects;
+            _inputController = inputController;
+            _shootEffects = weaponElements.ShootEffects;
+            _flashLight = weaponElements.FlashLight;
         }
         public Weapon InitWeapon()
         {
             WeaponModelData machineGunModel = _data.WeaponModelsData[0];
             Weapon machineGun = new MachineGun(machineGunModel.MaxMagazineAmmoCount, machineGunModel.ShootDamage,
                     machineGunModel.HitImpulseForce, machineGunModel.ShootFlashTime, _reloadTime, _shootEffects,
-                    machineGunModel.FlashLight, _gameManager, _camera, _hitEffectsController);
+                    _flashLight, _gameManager, _camera, _hitEffectsController);
+
+            _inputController.OnClickFlashLightButton += machineGun.FlashLightOnOff;
 
             return machineGun;
         }

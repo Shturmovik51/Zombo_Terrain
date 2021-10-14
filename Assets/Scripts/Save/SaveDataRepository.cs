@@ -10,15 +10,14 @@ namespace ZomboTerrain
         private IData<SavedData> _data;
         private string _path;
         private InputController _inputController;
-        private List<IOnSceneObject> _onSceneObjects;
-
+        private OnSceneObjectsController _onSceneObjectsController;
         private const string _folderName = "dataSave";
         private const string _fileName = "data.bat";
 
         public SaveDataRepository(InputController inputController, OnSceneObjectsController onSceneObjectsController)
         {
             _inputController = inputController;
-            _onSceneObjects = onSceneObjectsController.OnSceneObjects;
+            _onSceneObjectsController = onSceneObjectsController;
         }
 
         public void Initialization()
@@ -36,11 +35,12 @@ namespace ZomboTerrain
                 Directory.CreateDirectory(_path);
             }
             
-            var objectsActiveCondition = new List<bool>(_onSceneObjects.Count);
+            var onSceneObjects = _onSceneObjectsController.OnSceneObjects;
+            var objectsActiveCondition = new List<bool>(onSceneObjects.Count);
 
-            for (int i = 0; i < _onSceneObjects.Count; i++)
+            for (int i = 0; i < onSceneObjects.Count; i++)
             {
-                objectsActiveCondition.Add(_onSceneObjects[i].IsActive);
+                objectsActiveCondition.Add(onSceneObjects[i].IsActive);
             }
 
             var saveObjects = new SavedData()
@@ -61,12 +61,15 @@ namespace ZomboTerrain
                 throw new DataException($"File {file} not found");
             }
 
+            var onSceneObjects = _onSceneObjectsController.OnSceneObjects;
             var savedObjects = _data.Load(file).ObjectsActiveCondition;
 
             for (int i = 0; i < savedObjects.Count; i++)
             {
-                if (_onSceneObjects[i].IsActive != savedObjects[i])
-                    _onSceneObjects[i].ObjectActivation(savedObjects[i]);
+                if (onSceneObjects[i].IsActive != savedObjects[i])
+                    onSceneObjects[i].ObjectActivation(savedObjects[i]);
+
+                _onSceneObjectsController.Initialization();
             }
 
             Debug.Log("Load");

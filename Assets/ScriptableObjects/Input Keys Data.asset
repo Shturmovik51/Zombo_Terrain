@@ -19,3 +19,4 @@ MonoBehaviour:
   _saveGame: 286
   _loadGame: 290
   _flashLight: 102
+  _pause: 27

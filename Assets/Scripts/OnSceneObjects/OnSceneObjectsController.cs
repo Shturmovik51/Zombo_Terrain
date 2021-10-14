@@ -4,15 +4,17 @@ namespace ZomboTerrain
 {
     public sealed class OnSceneObjectsController : IInitialisible, IController
     {
+        public OnSceneObjectInitializator _onSceneObjectInitializator;
         public List<IOnSceneObject> OnSceneObjects;
 
-        public OnSceneObjectsController(List<IOnSceneObject> onSceneObjects)
+        public OnSceneObjectsController(OnSceneObjectInitializator onSceneObjectInitializator)
         {
-            OnSceneObjects = onSceneObjects;
+            _onSceneObjectInitializator = onSceneObjectInitializator;
         }       
 
         public void Initialization()
         {
+            OnSceneObjects = _onSceneObjectInitializator.InitObjects();
             AddRadarObjectsToRadar();
         }
 
@@ -23,6 +25,5 @@ namespace ZomboTerrain
                 observableObject.AddObjectToRadar();
             }
         }
-
     }
 }

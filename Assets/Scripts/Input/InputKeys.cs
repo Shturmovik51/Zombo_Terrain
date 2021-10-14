@@ -25,24 +25,29 @@ namespace ZomboTerrain
             if (Input.GetKey(_inputKeysData.Jump)) action.Invoke();
         }
 
-        public void GetKeyReload(InputKeysData _inputKeysData, Action action)
+        public void GetKeyReloadDown(InputKeysData _inputKeysData, Action action)
         {
-            if (Input.GetKey(_inputKeysData.Reload)) action?.Invoke();
+            if (Input.GetKeyDown(_inputKeysData.Reload)) action?.Invoke();
         }
 
-        public void GetKeySaveGame(InputKeysData _inputKeysData, Action action)
+        public void GetKeySaveGameDown(InputKeysData _inputKeysData, Action action)
         {
             if (Input.GetKeyDown(_inputKeysData.SaveGame)) action?.Invoke();
         }
 
-        public void GetKeyLoadGame(InputKeysData _inputKeysData, Action action)
+        public void GetKeyLoadGameDown(InputKeysData _inputKeysData, Action action)
         {
             if (Input.GetKeyDown(_inputKeysData.LoadGame)) action?.Invoke();
         }
 
-        public void GetKeyFlashLight(InputKeysData _inputKeysData, Action action)
+        public void GetKeyFlashLightDown(InputKeysData _inputKeysData, Action action)
         {
             if (Input.GetKeyDown(_inputKeysData.FlashLight)) action?.Invoke();
+        }
+
+        public void GetKeyPauseDown(InputKeysData _inputKeysData, Action action)
+        {
+            if (Input.GetKeyDown(_inputKeysData.Pause)) action?.Invoke();
         }
     }
 }

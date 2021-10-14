@@ -10,7 +10,6 @@ public class WeaponModelData : ScriptableObject
     [SerializeField] private int _hitImpulseForce;
     [SerializeField] private int _maxMagazineAmmoCount;
     [SerializeField] private float _shootFlashTime;
-    [SerializeField] private Light _flashLight;
     [SerializeField] private GameObject _weaponPrefab;
     [SerializeField] private GameObject _bodyHitEffect;
     [SerializeField] private GameObject _sandHitEffect;
@@ -21,7 +20,6 @@ public class WeaponModelData : ScriptableObject
     public int HitImpulseForce => _hitImpulseForce;
     public int MaxMagazineAmmoCount => _maxMagazineAmmoCount;
     public float ShootFlashTime => _shootFlashTime;
-    public Light FlashLight => _flashLight;
     public GameObject WeaponPrefab => _weaponPrefab;
     public GameObject BodyHitEffect => _bodyHitEffect;
     public GameObject SandHitEffect => _sandHitEffect;

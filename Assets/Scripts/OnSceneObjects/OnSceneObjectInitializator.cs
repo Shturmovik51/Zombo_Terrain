@@ -9,6 +9,7 @@ namespace ZomboTerrain
         private List<IOnSceneObject> _onSceneObjects;      
         private List<BuffSample> _buffCollection;
         private RadarController _radarController;
+        private static readonly string _buffRadarObject = "BuffRadarObject";
         public OnSceneObjectInitializator(List<IOnSceneObject> onSceneObjects, RadarController radarController)
         {
             _onSceneObjects = onSceneObjects;
@@ -47,7 +48,7 @@ namespace ZomboTerrain
             foreach (IObservableObject observableObject in _onSceneObjects)
             {
                 if (observableObject is IBuff)
-                    observableObject.RadarIcon = Resources.Load<Image>("BuffRadarObject");
+                    observableObject.RadarIcon = Resources.Load<Image>(_buffRadarObject);
             }
         }
     }

@@ -7,7 +7,8 @@ namespace ZomboTerrain
     public class Weapon : IWeapon
     {
         public event Action<bool> OnWeaponShoot;
-        public event Action<int, int> OnAmmoChange;
+        public event Action<int> OnAmmoChange;
+        public event Action<int> OnAmmoMagazineChange;
         public event Action OnEmptyAmmo;
 
         protected int _maxMagazineAmmo;
@@ -25,7 +26,7 @@ namespace ZomboTerrain
 
         private Coroutine _shootDelay;
 
-        public virtual void Shoot(int ammoCount)
+        public virtual void Shoot()
         {
             _ammoMagazineCount--;
 
@@ -37,7 +38,7 @@ namespace ZomboTerrain
             }
 
             _isShootDelay = true;
-            OnAmmoChange?.Invoke(ammoCount, _ammoMagazineCount);
+            OnAmmoMagazineChange?.Invoke(_ammoMagazineCount);
             OnWeaponShoot?.Invoke(_isShootDelay);
 
             if (_shootDelay == null)
@@ -69,7 +70,8 @@ namespace ZomboTerrain
                 ammoCount -= ammoNeeded;
             }
 
-            OnAmmoChange?.Invoke(ammoCount, _ammoMagazineCount);
+            OnAmmoChange?.Invoke(ammoCount);
+            OnAmmoMagazineChange?.Invoke(_ammoMagazineCount);
             _isReloading = false;
         }
 
