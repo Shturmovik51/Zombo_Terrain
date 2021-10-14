@@ -3,13 +3,14 @@ using UnityEngine;
 
 namespace ZomboTerrain
 {
-    public class MachineGun : Weapon
+    public class MachineGun : Weapon, IController
     {
         private int _shootDamage;
         private int _hitImpulseForce;
         private float _lightEffectsDelayTime;
         private Coroutine _lightEffectsDelay;
         private GameObject _shootEffects;
+        private float _shootDistanse = 40f;
         private HitEffectsController _hitEffectsController;
         public MachineGun(int maxMagazineAmmo, int shootDamage, int hitImpulseForce, float lightEffectsDelayTime, 
                     float reloadTime, GameObject shootEffects, Light flashLight, GameManager gameManager, 
@@ -26,12 +27,12 @@ namespace ZomboTerrain
             _mainCamera = mainCamera;
             _hitEffectsController = hitEffectsController;
         }
-        public override void Shoot(int ammoCount)
+        public override void Shoot()
         {
             if (_isShootDelay || _isReloading)
                 return;
 
-            base.Shoot(ammoCount);
+            base.Shoot();
 
             if (_ammoMagazineCount == 0)
                 return;
@@ -39,7 +40,7 @@ namespace ZomboTerrain
             RaycastHit hit;
             Ray ray = _mainCamera.ScreenPointToRay(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0));
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            if (Physics.Raycast(ray, out hit, _shootDistanse))
             {
                 var MainGO = hit.collider.transform.root.gameObject;
 

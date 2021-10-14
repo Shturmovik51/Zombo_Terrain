@@ -5,18 +5,32 @@ namespace ZomboTerrain
 {
     public sealed class ZombieEnemy : MonoBehaviour, ILiveEntity, ITakeDamage, ICloneable
     {
-        [SerializeField] private int _health;
+        [SerializeField] private int _healthValue;
         [SerializeField] private Transform _spawnPoint;
-        [SerializeField] private GameManager _gameManager;
-
+        
+        private int _health;
         private bool _isDead;
         private LayerMask _layerMask;
         public event Action OnEnemyDeath;
         private Rigidbody[] _dollRigidBodys;
-        private Animator zombieEnemyAnimator;
-
+        private Animator _zombieEnemyAnimator;
 
         public int Health { get => _health; }
+
+        private void Awake()
+        {
+            _dollRigidBodys = GetComponentsInChildren<Rigidbody>();
+            _zombieEnemyAnimator = GetComponent<Animator>();
+            _layerMask = LayerMask.GetMask("Ground");
+            _isDead = false;
+            _health = _healthValue;
+
+            foreach (var rgBody in _dollRigidBodys)
+            {
+                rgBody.tag = "Enemy";
+                rgBody.isKinematic = true;
+            }
+        }
 
         public void AddDamage(int damageValue)
         {
@@ -40,29 +54,17 @@ namespace ZomboTerrain
             return Instantiate(this, pointInSurface, transform.rotation);
         }
 
-        private void Awake()
-        {
-            _dollRigidBodys = GetComponentsInChildren<Rigidbody>();
-            zombieEnemyAnimator = GetComponent<Animator>();
-            _layerMask = LayerMask.GetMask("Ground");
-
-            foreach (var rgBody in _dollRigidBodys)
-            {
-                rgBody.tag = "Enemy";
-                rgBody.isKinematic = true;
-            }
-        }
 
         private void DeathZombieEnemy()
-        {
+        {            
             _isDead = true;
             OnEnemyDeath?.Invoke();
 
             if (_spawnPoint != null)
-                Clone();
+                //Clone();
 
             foreach (var rgBody in _dollRigidBodys) rgBody.isKinematic = false;
-            zombieEnemyAnimator.enabled = false;
+            _zombieEnemyAnimator.enabled = false;
         }
     }
 }

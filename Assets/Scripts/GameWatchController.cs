@@ -1,28 +1,43 @@
 using System;
+using UnityEngine;
 
 namespace ZomboTerrain
 {
-    public sealed class GameWatchController : IUpdatable, IInitialisible, IController
+    public sealed class GameWatchController : IUpdatable, IInitialisible, ICleanable, IController
     {
         public event Action OnSunRotation;
-        private event Action<string> OnChangeTimeText = delegate { };
-        private float _countDownSpeed;
+        private event Action<string> _onChangeTimeText = delegate { };
+        private float _timeSpeed;
+        private float _timeJumpSpeed;
+        private float _currentTimeSpeed;
         private float _timeCountDown;
         private int _minutLeftNumber;
         private int _minutRightNumber;
         private int _hourLeftNumber;
         private int _hourRightNumber;
-        private GameUIController _gameUIController;
+        public int MinutLeft => _minutLeftNumber;
+        public int MinutRight => _minutRightNumber;
+        public int HourLeft => _hourLeftNumber;
+        public int HourRight => _hourRightNumber;
 
-        public GameWatchController(GameUIController gameUIController, float countDownSpeed)
+        private GamePanelController _gamePanelController;
+
+        public GameWatchController(float countDownSpeed, float timeJumpSpeed, GamePanelController gamePanelController)
         {
-            _gameUIController = gameUIController;
-            _countDownSpeed = countDownSpeed;
+            _gamePanelController = gamePanelController;
+            _timeSpeed = countDownSpeed;
+            _timeJumpSpeed = timeJumpSpeed;
         }
 
         public void Initialization()
         {
-            OnChangeTimeText += _gameUIController.ChangeTimeText;
+            _onChangeTimeText += _gamePanelController.ChangeTimeText;
+            _currentTimeSpeed = _timeSpeed;
+        }
+
+        public void CleanUp()
+        {
+            _onChangeTimeText -= _gamePanelController.ChangeTimeText;
         }
 
         public void LocalUpdate(float deltaTime)
@@ -34,11 +49,11 @@ namespace ZomboTerrain
         {
             _timeCountDown += deltaTime;
 
-            if (_timeCountDown >= _countDownSpeed)
+            if (_timeCountDown >= _currentTimeSpeed)
             {
                 _minutRightNumber++;
                 OnSunRotation?.Invoke();
-                _timeCountDown -= _countDownSpeed;
+                _timeCountDown -= _currentTimeSpeed;
 
                 if (_minutRightNumber > 9)
                 {
@@ -75,7 +90,18 @@ namespace ZomboTerrain
 
         private void ChangeTimeText(string text)
         {
-            OnChangeTimeText.Invoke(text);
+            _onChangeTimeText.Invoke(text);
         }
+
+        public void SetTimeJump()
+        {
+            _currentTimeSpeed = _timeJumpSpeed;
+        }
+        public void SetNormalTime()
+        {
+            _currentTimeSpeed = _timeSpeed;
+            Debug.Log(_currentTimeSpeed);
+        }
+
     }
 }

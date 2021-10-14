@@ -14,6 +14,7 @@ namespace ZomboTerrain
         public event Action OnClickSaveGameButton;
         public event Action OnClickLoadGameButton;
         public event Action OnClickFlashLightButton;
+        public event Action OnClickPauseButton;
 
 
         private readonly IUserAxisInput _inputHorizontal;
@@ -42,10 +43,11 @@ namespace ZomboTerrain
             _inputKeys.GetKeyRunDown(_inputKeysData, OnClickRunButton);
             _inputKeys.GetKeyRunUp(_inputKeysData, OnClickRunButton);
             _inputKeys.GetKeyJump(_inputKeysData, OnClickJumpButton);
-            _inputKeys.GetKeyReload(_inputKeysData, OnClickReloadButton);
-            _inputKeys.GetKeySaveGame(_inputKeysData, OnClickSaveGameButton);
-            _inputKeys.GetKeyLoadGame(_inputKeysData, OnClickLoadGameButton);
-            _inputKeys.GetKeyFlashLight(_inputKeysData, OnClickFlashLightButton);
+            _inputKeys.GetKeyReloadDown(_inputKeysData, OnClickReloadButton);
+            _inputKeys.GetKeySaveGameDown(_inputKeysData, OnClickSaveGameButton);
+            _inputKeys.GetKeyLoadGameDown(_inputKeysData, OnClickLoadGameButton);
+            _inputKeys.GetKeyFlashLightDown(_inputKeysData, OnClickFlashLightButton);
+            _inputKeys.GetKeyPauseDown(_inputKeysData, OnClickPauseButton);
         }        
     }
 }

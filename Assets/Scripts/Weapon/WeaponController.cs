@@ -4,6 +4,7 @@ namespace ZomboTerrain
     {
         private PlayerModel _playerModel;
         private Weapon _weapon;
+        public Weapon Weapon => _weapon;
 
         public WeaponController(PlayerModel playerModel, Weapon weapon)
         {

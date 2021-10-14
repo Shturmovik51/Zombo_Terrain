@@ -19,14 +19,15 @@ namespace ZomboTerrain
         private AutoExposure _autoExposure;
         private float _eyeDistance;
 
-        public DisplayEffectController(Camera mainCamera, GameUIController gameUIController, PostProcessVolume postProcessVolume)
+        public DisplayEffectController(Camera mainCamera, PausePanelController pausePanelController, 
+                                        PostProcessVolume postProcessVolume)
         {
             _mainCamera = mainCamera;
             _postProcessVolume = postProcessVolume;
-            _nuarEffectButton = gameUIController.NuarEffectButton;
-            _fishEyeEffectButton = gameUIController.FishEyeEffectButton;
-            _eyeFocusEffectButton = gameUIController.EyeFocusEffectButton;
-            _eyeAddictiveEffectButton = gameUIController.EyeAddictiveEffectButton; 
+            _nuarEffectButton = pausePanelController.NuarEffectButton;
+            _fishEyeEffectButton = pausePanelController.FishEyeEffectButton;
+            _eyeFocusEffectButton = pausePanelController.EyeFocusEffectButton;
+            _eyeAddictiveEffectButton = pausePanelController.EyeAddictiveEffectButton; 
         }
 
         public void Initialization()
