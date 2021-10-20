@@ -36,8 +36,14 @@ namespace ZomboTerrain
                     {
                         if (_buffCollection[i].ID == buffObject.BuffID)
                         {
-                            buffObject.ObjectBuff = new Buff(_buffCollection[i].ID, _buffCollection[i].BonusValue,
+                            buffObject.ThisObjectBuff = new Buff(_buffCollection[i].ID, _buffCollection[i].BonusValue,
                                                                     _buffCollection[i].Duration, _buffCollection[i].Type);
+                            if (!buffObject.IsVisualised)
+                            { 
+                                Object.Destroy(buffObject.ObjectRenderer);
+                                Object.Instantiate(_buffCollection[i].BuffEffect, buffObject.ObjectTransform);
+                                buffObject.IsVisualised = true;
+                            }
                         }
                     }
                 }

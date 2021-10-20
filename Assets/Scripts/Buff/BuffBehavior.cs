@@ -36,10 +36,5 @@ namespace ZomboTerrain
             buff.Method(buff.BonusValue);
             _buffTimerController.AddBuffToTimer(buff);
         }
-
-        //public void ChangePlayerParameter(Buff buff)
-        //{
-        //     _buffMethods[buff.Type](buff);
-        //}
     }
 }

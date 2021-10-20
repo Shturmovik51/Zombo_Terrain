@@ -1,1 +1,1 @@
-{"ObjectsActiveCondition":[false,true,true]}
+{"ObjectsActiveCondition":[false,true,true,true,false,true]}
