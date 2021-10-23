@@ -8,8 +8,8 @@ namespace ZomboTerrain
     {
         public event Action<bool> OnWeaponShoot;
         public event Action<int> OnAmmoChange;
-        public event Action<int> OnAmmoMagazineChange;
         public event Action OnEmptyAmmo;
+        public event Action<int> OnAmmoMagazineChange;
 
         protected int _maxMagazineAmmo;
         protected int _ammoMagazineCount;
@@ -24,7 +24,7 @@ namespace ZomboTerrain
         protected Transform _flashLightPosition;
         protected Transform _shootEffectPosition;
 
-        private Coroutine _shootDelay;
+        private Coroutine _shootDelay;        
 
         public virtual void Shoot()
         {
@@ -38,7 +38,7 @@ namespace ZomboTerrain
             }
 
             _isShootDelay = true;
-            OnAmmoMagazineChange?.Invoke(_ammoMagazineCount);
+            RefreshAmmoMagazineText();
             OnWeaponShoot?.Invoke(_isShootDelay);
 
             if (_shootDelay == null)
@@ -71,7 +71,7 @@ namespace ZomboTerrain
             }
 
             OnAmmoChange?.Invoke(ammoCount);
-            OnAmmoMagazineChange?.Invoke(_ammoMagazineCount);
+            RefreshAmmoMagazineText();
             _isReloading = false;
         }
 
@@ -82,6 +82,11 @@ namespace ZomboTerrain
             OnWeaponShoot?.Invoke(_isShootDelay);
             _shootDelay = null;
             yield break;
+        }
+
+        public void RefreshAmmoMagazineText()
+        {
+            OnAmmoMagazineChange?.Invoke(_ammoMagazineCount);
         }
 
         public void FlashLightOnOff()

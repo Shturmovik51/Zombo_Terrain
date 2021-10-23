@@ -17,7 +17,6 @@ namespace ZomboTerrain
 
         private Vector3 _gravitation;
         public Action<int> OnChangeAmmo;
-        public Action<int> OnChangeMagazineAmmo;
         public Action<Transform> OnChangeRotation = delegate { };
 
         private static readonly int Run = Animator.StringToHash("Run");
@@ -78,5 +77,10 @@ namespace ZomboTerrain
         {
             _playerAnimator.SetTrigger(Reload);
         }     
+
+        public void RefreshAmmoCount(int count)
+        {
+            OnChangeAmmo?.Invoke(count);
+        }
     }
 }

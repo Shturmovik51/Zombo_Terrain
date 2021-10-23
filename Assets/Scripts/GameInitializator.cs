@@ -47,6 +47,7 @@ namespace ZomboTerrain
             controllers.Add(onSceneObjectController);
             controllers.Add(inputController);
             controllers.Add(hitEffectsController);
+            controllers.Add(gamePanelController);
             controllers.Add(weaponController);
             controllers.Add(playerController);
             controllers.Add(buffTimerController);
@@ -58,7 +59,6 @@ namespace ZomboTerrain
             controllers.Add(displayEffectController);
             controllers.Add(endScreenController);
             controllers.Add(enemyController);
-            controllers.Add(gamePanelController);
         }
     }
 }

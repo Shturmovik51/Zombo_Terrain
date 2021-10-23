@@ -48,9 +48,6 @@ namespace ZomboTerrain
 
         private void Update()
         {
-            if (Time.timeScale == Mathf.Round(0))
-                return;
-
             var deltaTime = Time.deltaTime;
             _controllersManager.LocalUpdate(deltaTime); 
         }

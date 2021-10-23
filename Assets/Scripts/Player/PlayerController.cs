@@ -24,7 +24,9 @@ namespace ZomboTerrain
             _inputController.OnClickShootButton += PLayerShoot;
             _inputController.OnClickRunButton += Axeleration;
             _inputController.OnClickJumpButton += PlayerJump;
-            _inputController.OnClickReloadButton += PLayerReloadWeapon;            
+            _inputController.OnClickReloadButton += PLayerReloadWeapon;
+
+            _playerView.RefreshAmmoCount(_playerModel.AmmoCount);
         }
 
         public void CleanUp()
@@ -87,10 +89,10 @@ namespace ZomboTerrain
             _playerView.Jump(_playerModel.JumpForce);
         }
 
-
         private void AmmoCountChange(int ammoCount)
         {
             _playerModel.AmmoCount = ammoCount;
+            _playerView.RefreshAmmoCount(ammoCount);
         }        
 
         public void ChangeMoveSpeed(int value)

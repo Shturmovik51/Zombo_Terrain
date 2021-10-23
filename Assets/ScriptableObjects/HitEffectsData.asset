@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2736d7d75a9c26141990d5184bb6c529, type: 3}
-  m_Name: Hit Effects Data
+  m_Name: HitEffectsData
   m_EditorClassIdentifier: 
   _bodyHitEffect: {fileID: 3627414604217563028, guid: 1e76b06685a34934e9675a435d28589f,
     type: 3}

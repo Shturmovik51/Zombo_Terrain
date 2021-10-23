@@ -26,7 +26,8 @@ namespace ZomboTerrain
             _gameManager = gameManager;
             _mainCamera = mainCamera;
             _hitEffectsController = hitEffectsController;
-        }
+        }       
+
         public override void Shoot()
         {
             if (_isShootDelay || _isReloading)

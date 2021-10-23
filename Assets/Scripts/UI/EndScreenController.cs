@@ -26,6 +26,7 @@ namespace ZomboTerrain
         {
             _restartGameButtonInEndScreen.onClick.AddListener(OnClickRestartGameButton);
             _continueGameButtonInEndScreen.onClick.AddListener(OnClickContinueGameButton);
+            OnChangeKillsCount?.Invoke(_killsCountToWin);
         }
 
         public void CleanUp()

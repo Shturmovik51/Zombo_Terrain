@@ -15,6 +15,7 @@ namespace ZomboTerrain
         public void Initialization()
         {
             _playerModel.PlayerWeapon = _weapon;
+            _weapon.RefreshAmmoMagazineText();
         }
     }
 }

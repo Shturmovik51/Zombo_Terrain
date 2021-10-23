@@ -37,6 +37,10 @@ namespace ZomboTerrain
 
         public void LocalUpdate(float deltaTime)
         {
+            _inputKeys.GetKeyPauseDown(_inputKeysData, OnClickPauseButton);
+
+            if (Time.timeScale == Mathf.Round(0)) return;
+
             OnChangeMoveAxis.Invoke((_inputVertical.GetAxis(), _inputHorizontal.GetAxis()));
             OnChangeLookAxis.Invoke((_inputMouseX.GetAxis(), _inputMouseY.GetAxis()));
             _inputKeys.GetKeyShoot(_inputKeysData, OnClickShootButton);
@@ -47,7 +51,6 @@ namespace ZomboTerrain
             _inputKeys.GetKeySaveGameDown(_inputKeysData, OnClickSaveGameButton);
             _inputKeys.GetKeyLoadGameDown(_inputKeysData, OnClickLoadGameButton);
             _inputKeys.GetKeyFlashLightDown(_inputKeysData, OnClickFlashLightButton);
-            _inputKeys.GetKeyPauseDown(_inputKeysData, OnClickPauseButton);
         }        
     }
 }

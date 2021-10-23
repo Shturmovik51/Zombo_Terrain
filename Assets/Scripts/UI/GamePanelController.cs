@@ -8,7 +8,7 @@ namespace ZomboTerrain
         private TextMeshProUGUI _timeText;
         private TextMeshProUGUI _ammoMagazineText;
         private TextMeshProUGUI _killsText;
-        EndScreenController _endScreenController;
+        private EndScreenController _endScreenController;
         private PlayerView _playerView;
         private Weapon _weapon;
         public GamePanelController(UIFields uIFields, PlayerView playerView, WeaponController weaponController,
@@ -25,14 +25,14 @@ namespace ZomboTerrain
 
         public void Initialization()
         {
-            _weapon.OnAmmoChange += ChangeAmmoText;
+            _playerView.OnChangeAmmo += ChangeAmmoText;
             _weapon.OnAmmoMagazineChange += ChangeAmmoMagazineText;
             _endScreenController.OnChangeKillsCount += ChangeKillsCountText;
         }
 
         public void CleanUp()
         {
-            _weapon.OnAmmoChange -= ChangeAmmoText;
+            _playerView.OnChangeAmmo -= ChangeAmmoText;
             _weapon.OnAmmoMagazineChange -= ChangeAmmoMagazineText;
             _endScreenController.OnChangeKillsCount -= ChangeKillsCountText;
         }

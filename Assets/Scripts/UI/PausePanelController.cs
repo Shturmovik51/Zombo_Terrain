@@ -44,7 +44,7 @@ namespace ZomboTerrain
 
         public void Initialization()
         {            
-            _inputController.OnClickPauseButton += PausePanelOn;
+            _inputController.OnClickPauseButton += PausePanelOnOff;
             _restartGameButtonInPause.onClick.AddListener(OnClickRestartGameButton);
             _continueGameButtonInPause.onClick.AddListener(OnClickContinueGameButton);
             _dayButton.onClick.AddListener(() => _dailyCycleController.SetDayTime(_dayButton));
@@ -55,7 +55,7 @@ namespace ZomboTerrain
 
         public void CleanUp()
         {
-            _inputController.OnClickPauseButton -= PausePanelOn;
+            _inputController.OnClickPauseButton -= PausePanelOnOff;
             _restartGameButtonInPause.onClick.RemoveAllListeners();
             _continueGameButtonInPause.onClick.RemoveAllListeners();
             _dayButton.onClick.RemoveAllListeners();
@@ -64,10 +64,16 @@ namespace ZomboTerrain
             _sunRiseButton.onClick.RemoveAllListeners();
         }
 
-        private void PausePanelOn()
-        {            
-            _pausePanel.gameObject.SetActive(true);
-            ChangeGameTimeAndCursor(CursorLockMode.None, true, 0);
+        private void PausePanelOnOff()
+        {
+            var isActive = _pausePanel.gameObject.activeInHierarchy;
+
+            if (!isActive)    
+                ChangeGameTimeAndCursor(CursorLockMode.None, true, 0);
+            else  
+                ChangeGameTimeAndCursor(CursorLockMode.Locked, false, 1);
+
+            _pausePanel.gameObject.SetActive(!isActive);
         }
 
         private void ChangeGameTimeAndCursor(CursorLockMode cursorLockMode, bool isVisible, float timeScale)
