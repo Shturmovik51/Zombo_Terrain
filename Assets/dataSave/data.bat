@@ -1,0 +1,1 @@
+{"ObjectsActiveCondition":[false,true,true,true,false,true]}
